@@ -10,7 +10,6 @@
         /* Custom Styles */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         .hero-bg {
-            /* Tech + Rural Vibe Background */
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -22,6 +21,7 @@
     <nav class="bg-white shadow-md fixed w-full z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-blue-800">TownLink<span class="text-orange-500">.</span></a>
+            
             <div class="hidden md:flex space-x-8">
                 <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium">About</a>
                 <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium">Services</a>
@@ -29,27 +29,38 @@
                 <a href="#team" class="text-gray-600 hover:text-blue-600 font-medium">Team</a>
                 <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Contact Us</a>
             </div>
+
             <div class="md:hidden">
-                <button class="text-gray-600 focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+                <button id="mobile-menu-btn" class="text-gray-600 focus:outline-none hover:text-blue-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium border-b pb-2">About</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium border-b pb-2">Services</a>
+                <a href="#tech" class="text-gray-700 hover:text-blue-600 font-medium border-b pb-2">Technologies</a>
+                <a href="#team" class="text-gray-700 hover:text-blue-600 font-medium border-b pb-2">Team</a>
+                <a href="#contact" class="text-blue-600 font-bold">Contact Us</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-bg h-screen flex items-center justify-center text-center px-4">
-        <div class="text-white max-w-4xl">
+        <div class="text-white max-w-4xl pt-16">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">Smart Technology that Solves Real Business Problems</h1>
-            
             <p class="text-xl md:text-2xl mb-10 text-gray-200 leading-relaxed">
-                TownLink: Your Local Digital Partner. <br>
-                We give life to your ideas and build your unique identity. From simple websites to complex real-time solutions.
+                TownLink Solutions: Your Local Digital Partner. <br>
+                We give life to your ideas and build your unique identity.
             </p>
-            
             <div class="flex flex-col md:flex-row justify-center gap-4">
                 <a href="#services" class="px-8 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition shadow-lg">
                     See Our Solutions
                 </a>
-                <a href="https://wa.me/917338498962" class="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition flex items-center justify-center gap-2">
-                    <i class="fab fa-whatsapp text-xl"></i> Chat About Your Project
+                <a href="#contact" class="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition">
+                    Contact Us
                 </a>
             </div>
         </div>
@@ -61,11 +72,7 @@
             <div class="max-w-3xl mx-auto">
                 <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                     <strong>TownLink Solutions</strong> is a technology startup focused on solving real-world problems. 
-                    We are a team of experienced Engineers who believe that technology should make life easier, not harder.
-                    Whether you are a shop owner or an innovator, we engineer the tools you need to succeed.
-                </p>
-                <p class="text-xl font-semibold text-blue-800">
-                    "We Give Life to Your Idea with Your Identity."
+                    We are a team of experienced Engineers who believe that technology should make life easier.
                 </p>
             </div>
         </div>
@@ -74,41 +81,27 @@
     <section id="services" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Solutions</h2>
-            
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-blue-500">
                     <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-laptop-code"></i></div>
                     <h3 class="text-xl font-bold mb-2">Web Presence</h3>
-                    <p class="text-gray-600 text-sm">
-                        Professional Websites for Businesses and Personal Brands. We build your digital identity so the world can find you.
-                    </p>
+                    <p class="text-gray-600 text-sm">Professional Websites for Businesses and Personal Brands.</p>
                 </div>
-
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-orange-500">
                     <div class="text-orange-500 text-4xl mb-4"><i class="fas fa-cogs"></i></div>
                     <h3 class="text-xl font-bold mb-2">Real-Time Solutions</h3>
-                    <p class="text-gray-600 text-sm">
-                        Have a business headache? We use technology to fix it. We build custom logic to automate your daily tasks.
-                    </p>
+                    <p class="text-gray-600 text-sm">Custom logic to automate your daily business tasks.</p>
                 </div>
-
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-green-500">
                     <div class="text-green-500 text-4xl mb-4"><i class="fas fa-lightbulb"></i></div>
                     <h3 class="text-xl font-bold mb-2">Product Innovation</h3>
-                    <p class="text-gray-600 text-sm">
-                        We develop our own SaaS products and help you build yours. From "Smart Token" systems to new startup ideas.
-                    </p>
+                    <p class="text-gray-600 text-sm">We develop SaaS products and help you build yours.</p>
                 </div>
-
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-purple-600">
                     <div class="text-purple-600 text-4xl mb-4"><i class="fas fa-user-graduate"></i></div>
                     <h3 class="text-xl font-bold mb-2">Engineer Training</h3>
-                    <p class="text-gray-600 text-sm">
-                        Practical mentorship for students. Don't just learn theory—work on live projects and learn DevOps & Coding from industry experts.
-                    </p>
+                    <p class="text-gray-600 text-sm">Practical mentorship for students on live projects.</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -116,149 +109,113 @@
     <section id="tech" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Technologies We Master</h2>
-            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                
                 <div class="p-4">
                     <i class="fab fa-react text-5xl text-blue-400 mb-3"></i>
                     <h4 class="font-bold text-gray-700">Frontend</h4>
-                    <p class="text-sm text-gray-500">React, Next.js, HTML5</p>
                 </div>
-
                 <div class="p-4">
                     <i class="fas fa-server text-5xl text-green-600 mb-3"></i>
                     <h4 class="font-bold text-gray-700">Backend</h4>
-                    <p class="text-sm text-gray-500">Node.js, .NET Core, Python</p>
                 </div>
-
                 <div class="p-4">
                     <i class="fas fa-database text-5xl text-yellow-600 mb-3"></i>
                     <h4 class="font-bold text-gray-700">Database</h4>
-                    <p class="text-sm text-gray-500">SQL, MongoDB, PostgreSQL</p>
                 </div>
-
                 <div class="p-4">
                     <i class="fab fa-aws text-5xl text-orange-500 mb-3"></i>
                     <h4 class="font-bold text-gray-700">Cloud & DevOps</h4>
-                    <p class="text-sm text-gray-500">AWS, Docker, Kubernetes</p>
-                </div>
-
-                <div class="p-4 col-span-2 md:col-span-4 mt-6">
-                    <i class="fas fa-brain text-5xl text-purple-600 mb-3"></i>
-                    <h4 class="font-bold text-gray-700">AI & Machine Learning</h4>
-                    <p class="text-sm text-gray-500">Intelligent Automation & Predictive Logic</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-blue-900 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-10">Our Values</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-2 text-orange-400">Honesty (Pramanikathe)</h3>
-                    <p class="text-blue-100">Transparent pricing. No hidden costs.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2 text-orange-400">Discipline (Shisthu)</h3>
-                    <p class="text-blue-100">We respect deadlines and professional standards.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2 text-orange-400">Hard Work (Parishrama)</h3>
-                    <p class="text-blue-100">Dedicated to your business growth.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="team" class="py-20 bg-white">
+    <section id="team" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Meet The Partners</h2>
             <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-4">
-                    <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 overflow-hidden shadow-lg border-4 border-white">
-                        <img src="https://via.placeholder.com/150" alt="Praveen" class="w-full h-full object-cover">
-                    </div>
+                <div class="p-4 bg-white rounded shadow">
                     <h3 class="text-xl font-bold text-gray-800">Praveen</h3>
-                    <p class="text-blue-600 font-medium">Co-Founder & Cloud Architect</p>
-                    <p class="text-gray-500 text-sm mt-2">8+ Years Exp | DevOps & Strategy</p>
+                    <p class="text-blue-600 font-medium">Co-Founder</p>
                 </div>
-                <div class="p-4 transform hover:scale-105 transition duration-300">
-                    <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 overflow-hidden shadow-lg border-4 border-blue-100">
-                        <img src="https://via.placeholder.com/150" alt="Nagaraj" class="w-full h-full object-cover">
-                    </div>
+                <div class="p-4 bg-white rounded shadow">
                     <h3 class="text-xl font-bold text-gray-800">Nagaraj</h3>
-                    <p class="text-blue-600 font-bold">Lead Developer & CTO</p>
-                    <p class="text-gray-500 text-sm mt-2">8+ Years Exp | Full Stack & Tech Lead</p>
+                    <p class="text-blue-600 font-medium">Co-Founder</p>
                 </div>
-                <div class="p-4">
-                    <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 overflow-hidden shadow-lg border-4 border-white">
-                        <img src="https://via.placeholder.com/150" alt="Ranjith" class="w-full h-full object-cover">
-                    </div>
+                <div class="p-4 bg-white rounded shadow">
                     <h3 class="text-xl font-bold text-gray-800">Ranjith</h3>
-                    <p class="text-blue-600 font-medium">Head of Sales & Marketing</p>
-                    <p class="text-gray-500 text-sm mt-2">10+ Years Exp | Business Growth</p>
+                    <p class="text-blue-600 font-medium">Co-Founder</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-20 bg-blue-900 text-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Get In Touch</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            
             <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-6">Contact Information</h3>
-                    <div class="flex items-start mb-6">
-                        <div class="text-orange-500 text-2xl mr-4"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <h4 class="font-bold text-gray-700">Our Office</h4>
-                            <p class="text-gray-600">
-                                #102, 1st Floor, Digital Innovation Hub,<br>
-                                Main Road, Near Temple,<br>
-                                Coastal Karnataka, India - 581334
-                            </p>
+                
+                <div class="space-y-8">
+                    <div class="bg-blue-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4 text-orange-400">Call Us Directly</h3>
+                        <div class="space-y-3">
+                            <p class="flex items-center"><i class="fas fa-phone-alt mr-3"></i> Ranjith: <a href="tel:+916360313208" class="hover:text-orange-300 ml-1">+91 63603 13208</a></p>
+                            <p class="flex items-center"><i class="fas fa-phone-alt mr-3"></i> Nagaraj: <a href="tel:+919620996729" class="hover:text-orange-300 ml-1">+91 96209 96729</a></p>
+                            <p class="flex items-center"><i class="fas fa-phone-alt mr-3"></i> Praveen: <a href="tel:+919743640036" class="hover:text-orange-300 ml-1">+91 97436 40036</a></p>
                         </div>
                     </div>
-                    <div class="flex items-start mb-6">
-                        <div class="text-orange-500 text-2xl mr-4"><i class="fas fa-phone-alt"></i></div>
-                        <div>
-                            <h4 class="font-bold text-gray-700">Phone</h4>
-                            <p class="text-gray-600">+91 73384 98962</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start mb-6">
-                        <div class="text-orange-500 text-2xl mr-4"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <h4 class="font-bold text-gray-700">Email</h4>
-                            <p class="text-gray-600">contact@townlink.in</p>
-                        </div>
+
+                    <div class="bg-blue-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4 text-orange-400">Email Us</h3>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i> 
+                            <a href="mailto:townlinksolutions@gmail.com" class="hover:text-orange-300">townlinksolutions@gmail.com</a>
+                        </p>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col justify-center text-center h-full">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Chat with Us Instantly</h3>
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
                     
-                    <p class="text-gray-600 mb-8">
-                        Skip the forms and emails. Connect with us directly on WhatsApp for a faster response. We are happy to discuss your ideas!
-                    </p>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
 
-                    <a href="https://wa.me/917338498962" target="_blank" class="block w-full bg-green-500 text-white font-bold py-4 rounded-lg hover:bg-green-600 transition transform hover:-translate-y-1 shadow-md">
-                        <i class="fab fa-whatsapp text-2xl mr-2"></i> Click to Chat
-                    </a>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                            <input type="text" name="name" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none" placeholder="Your Name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Phone</label>
+                            <input type="text" name="phone" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none" placeholder="Your Number">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                            <textarea name="message" rows="4" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none" placeholder="How can we help?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition">
+                            Submit Request
+                        </button>
+                    </form>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p class="mb-4">&copy; 2026 TownLink Solutions. Made with <i class="fas fa-heart text-red-500"></i></p>
-            <p>Contact: +91 73384 XXXXX | Email: contact@townlink.in</p>
-        </div>
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <p>&copy; 2026 TownLink Solutions. All rights reserved.</p>
     </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
