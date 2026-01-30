@@ -14,6 +14,9 @@
             background-size: cover;
             background-position: center;
         }
+        /* Animation for Popup */
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -72,7 +75,7 @@
             <div class="max-w-3xl mx-auto">
                 <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                     <strong>TownLink Solutions</strong> is a technology startup focused on solving real-world problems. 
-                    We are a team of experienced Engineers who believe that technology should make life easier.
+                    We are a team of experienced Engineers who believe that technology should make life easier, not harder.
                 </p>
             </div>
         </div>
@@ -85,22 +88,22 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-blue-500">
                     <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-laptop-code"></i></div>
                     <h3 class="text-xl font-bold mb-2">Web Presence</h3>
-                    <p class="text-gray-600 text-sm">Professional Websites for Businesses and Personal Brands.</p>
+                    <p class="text-gray-600 text-sm">Professional Websites for Businesses and Personal Brands. We help you get discovered online.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-orange-500">
                     <div class="text-orange-500 text-4xl mb-4"><i class="fas fa-cogs"></i></div>
                     <h3 class="text-xl font-bold mb-2">Real-Time Solutions</h3>
-                    <p class="text-gray-600 text-sm">Custom logic to automate your daily business tasks.</p>
+                    <p class="text-gray-600 text-sm">Custom logic to automate your daily business tasks and inventory management.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-green-500">
                     <div class="text-green-500 text-4xl mb-4"><i class="fas fa-lightbulb"></i></div>
                     <h3 class="text-xl font-bold mb-2">Product Innovation</h3>
-                    <p class="text-gray-600 text-sm">We develop SaaS products and help you build yours.</p>
+                    <p class="text-gray-600 text-sm">We develop SaaS products and help you build yours from scratch.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-purple-600">
                     <div class="text-purple-600 text-4xl mb-4"><i class="fas fa-user-graduate"></i></div>
                     <h3 class="text-xl font-bold mb-2">Engineer Training</h3>
-                    <p class="text-gray-600 text-sm">Practical mentorship for students on live projects.</p>
+                    <p class="text-gray-600 text-sm">Practical mentorship for students on live projects with real-world tech stacks.</p>
                 </div>
             </div>
         </div>
@@ -109,23 +112,41 @@
     <section id="tech" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Technologies We Master</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4">
-                    <i class="fab fa-react text-5xl text-blue-400 mb-3"></i>
-                    <h4 class="font-bold text-gray-700">Frontend</h4>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                
+                <div class="p-6 border border-gray-100 rounded-lg hover:shadow-md transition">
+                    <i class="fab fa-react text-5xl text-blue-400 mb-4"></i>
+                    <h4 class="text-xl font-bold text-gray-700 mb-2">Frontend</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        React.js, Next.js, HTML5, Tailwind CSS, Bootstrap, JavaScript
+                    </p>
                 </div>
-                <div class="p-4">
-                    <i class="fas fa-server text-5xl text-green-600 mb-3"></i>
-                    <h4 class="font-bold text-gray-700">Backend</h4>
+
+                <div class="p-6 border border-gray-100 rounded-lg hover:shadow-md transition">
+                    <i class="fas fa-server text-5xl text-green-600 mb-4"></i>
+                    <h4 class="text-xl font-bold text-gray-700 mb-2">Backend</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Node.js, .NET Core, Python, Express.js, REST APIs
+                    </p>
                 </div>
-                <div class="p-4">
-                    <i class="fas fa-database text-5xl text-yellow-600 mb-3"></i>
-                    <h4 class="font-bold text-gray-700">Database</h4>
+
+                <div class="p-6 border border-gray-100 rounded-lg hover:shadow-md transition">
+                    <i class="fas fa-database text-5xl text-yellow-600 mb-4"></i>
+                    <h4 class="text-xl font-bold text-gray-700 mb-2">Database</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        PostgreSQL, MongoDB, SQL Server, Redis, Supabase
+                    </p>
                 </div>
-                <div class="p-4">
-                    <i class="fab fa-aws text-5xl text-orange-500 mb-3"></i>
-                    <h4 class="font-bold text-gray-700">Cloud & DevOps</h4>
+
+                <div class="p-6 border border-gray-100 rounded-lg hover:shadow-md transition">
+                    <i class="fab fa-aws text-5xl text-orange-500 mb-4"></i>
+                    <h4 class="text-xl font-bold text-gray-700 mb-2">Cloud & DevOps</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        AWS, Docker, Kubernetes, GitHub Actions, CI/CD Pipelines
+                    </p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -134,18 +155,34 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Meet The Partners</h2>
             <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-4 bg-white rounded shadow">
-                    <h3 class="text-xl font-bold text-gray-800">Praveen</h3>
-                    <p class="text-blue-600 font-medium">Co-Founder</p>
+                
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition transform duration-300">
+                    <div class="w-32 h-32 bg-blue-50 rounded-full mx-auto mb-4 overflow-hidden border-4 border-blue-100">
+                        <img src="https://robohash.org/Praveen?set=set1" alt="Praveen" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Praveen M L</h3>
+                    <p class="text-blue-600 font-bold mb-2">Co-Founder & Cloud Architect</p>
+                    <p class="text-gray-500 text-sm">8+ Years Exp | DevOps Specialist & Strategy</p>
                 </div>
-                <div class="p-4 bg-white rounded shadow">
+
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition transform duration-300">
+                    <div class="w-32 h-32 bg-blue-50 rounded-full mx-auto mb-4 overflow-hidden border-4 border-blue-100">
+                        <img src="https://robohash.org/Nagaraj?set=set1" alt="Nagaraj" class="w-full h-full object-cover">
+                    </div>
                     <h3 class="text-xl font-bold text-gray-800">Nagaraj</h3>
-                    <p class="text-blue-600 font-medium">Co-Founder</p>
+                    <p class="text-blue-600 font-bold mb-2">Lead Developer & CTO</p>
+                    <p class="text-gray-500 text-sm">8+ Years Exp | Full Stack & Tech Lead</p>
                 </div>
-                <div class="p-4 bg-white rounded shadow">
+
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition transform duration-300">
+                    <div class="w-32 h-32 bg-blue-50 rounded-full mx-auto mb-4 overflow-hidden border-4 border-blue-100">
+                        <img src="https://robohash.org/Ranjith?set=set1" alt="Ranjith" class="w-full h-full object-cover">
+                    </div>
                     <h3 class="text-xl font-bold text-gray-800">Ranjith</h3>
-                    <p class="text-blue-600 font-medium">Co-Founder</p>
+                    <p class="text-blue-600 font-bold mb-2">Head of Business</p>
+                    <p class="text-gray-500 text-sm">10+ Years Exp | Sales & Market Growth</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -157,60 +194,67 @@
             <div class="grid md:grid-cols-2 gap-12">
                 
                 <div class="space-y-8">
-                    <div class="bg-blue-800 p-6 rounded-lg">
+                    <div class="bg-blue-800 p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-bold mb-4 text-orange-400">Call Us Directly</h3>
                         <div class="space-y-3">
-                            <p class="flex items-center"><i class="fas fa-phone-alt mr-3"></i> Ranjith: <a href="tel:+916360313208" class="hover:text-orange-300 ml-1">+91 63603 13208</a></p>
-                            <p class="flex items-center"><i class="fas fa-phone-alt mr-3"></i> Nagaraj: <a href="tel:+919620996729" class="hover:text-orange-300 ml-1">+91 96209 96729</a></p>
-                            <p class="flex items-center"><i class="fas fa-phone-alt mr-3"></i> Praveen: <a href="tel:+919743640036" class="hover:text-orange-300 ml-1">+91 97436 40036</a></p>
+                            <p class="flex items-center"><i class="fas fa-phone-alt mr-3 text-gray-300"></i> Ranjith: <a href="tel:+916360313208" class="hover:text-orange-300 ml-1 font-semibold">+91 63603 13208</a></p>
+                            <p class="flex items-center"><i class="fas fa-phone-alt mr-3 text-gray-300"></i> Nagaraj: <a href="tel:+919620996729" class="hover:text-orange-300 ml-1 font-semibold">+91 96209 96729</a></p>
+                            <p class="flex items-center"><i class="fas fa-phone-alt mr-3 text-gray-300"></i> Praveen: <a href="tel:+919743640036" class="hover:text-orange-300 ml-1 font-semibold">+91 97436 40036</a></p>
                         </div>
                     </div>
 
-                    <div class="bg-blue-800 p-6 rounded-lg">
+                    <div class="bg-blue-800 p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-bold mb-4 text-orange-400">Email Us</h3>
                         <p class="flex items-center">
-                            <i class="fas fa-envelope mr-3"></i> 
-                            <a href="mailto:townlinksolutions@gmail.com" class="hover:text-orange-300">townlinksolutions@gmail.com</a>
+                            <i class="fas fa-envelope mr-3 text-gray-300"></i> 
+                            <a href="mailto:townlinksolutions@gmail.com" class="hover:text-orange-300 font-semibold">townlinksolutions@gmail.com</a>
                         </p>
                     </div>
                 </div>
 
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg relative">
                     <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
                     
-                   <form action="https://api.web3forms.com/submit" method="POST">
+                    <div id="success-message" class="hidden absolute inset-0 bg-white rounded-lg flex-col items-center justify-center text-center p-6 fade-in z-10">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-check text-green-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Message Sent!</h3>
+                        <p class="text-gray-600 mb-6">Thank you for contacting TownLink. We will get back to you shortly.</p>
+                        <button onclick="document.getElementById('success-message').classList.add('hidden'); document.getElementById('contact-form').reset();" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700">
+                            Send Another
+                        </button>
+                    </div>
 
-    <input type="hidden" name="access_key" value="231bb2bc-92a1-47d0-ab84-223cb36c7316">
-    <input type="hidden" name="subject" value="New Contact Form - TownLink">
-    <input type="hidden" name="from_name" value="TownLink Website">
-    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="231bb2bc-92a1-47d0-ab84-223cb36c7316">
+                        <input type="hidden" name="subject" value="New Contact Form - TownLink">
+                        <input type="hidden" name="from_name" value="TownLink Website">
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold mb-2">Name</label>
+                            <input type="text" name="name" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none">
+                        </div>
 
-    <div class="mb-4">
-        <label class="block text-sm font-bold mb-2">Name</label>
-        <input type="text" name="name" required class="w-full px-3 py-2 border rounded-lg">
-    </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold mb-2">Email</label>
+                            <input type="email" name="email" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none">
+                        </div>
 
-    <div class="mb-4">
-        <label class="block text-sm font-bold mb-2">Email</label>
-        <input type="email" name="email" required class="w-full px-3 py-2 border rounded-lg">
-    </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold mb-2">Phone</label>
+                            <input type="text" name="phone" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none">
+                        </div>
 
-    <div class="mb-4">
-        <label class="block text-sm font-bold mb-2">Phone</label>
-        <input type="text" name="phone" required class="w-full px-3 py-2 border rounded-lg">
-    </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold mb-2">Message</label>
+                            <textarea name="message" rows="4" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none"></textarea>
+                        </div>
 
-    <div class="mb-4">
-        <label class="block text-sm font-bold mb-2">Message</label>
-        <textarea name="message" rows="4" required class="w-full px-3 py-2 border rounded-lg"></textarea>
-    </div>
-
-    <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 rounded-lg">
-        Submit Request
-    </button>
-</form>
-
-
+                        <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition">
+                            Submit Request
+                        </button>
+                    </form>
                 </div>
 
             </div>
@@ -218,20 +262,64 @@
     </section>
 
     <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-        <p>&copy; 2026 TownLink Solutions. All rights reserved. -TEST1</p>
+        <p>&copy; 2026 TownLink Solutions. All rights reserved.</p>
     </footer>
 
     <script>
+        // 1. Mobile Menu Script
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
+
+        // 2. Form Handling Script (AJAX for Popup)
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default page reload
+            
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            // Change button text to indicate loading
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    // Show Success Popup
+                    successMessage.classList.remove('hidden');
+                } else {
+                    console.log(response);
+                    alert("Something went wrong. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Something went wrong. Please try again.");
+            })
+            .finally(() => {
+                // Reset button
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
+        });
     </script>
 
 </body>
 </html>
-
-
-
