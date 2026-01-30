@@ -179,25 +179,31 @@
                     <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
                     
                     <form action="https://api.web3forms.com/submit" method="POST">
-                        
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
 
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                            <input type="text" name="name" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none" placeholder="Your Name">
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Phone</label>
-                            <input type="text" name="phone" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none" placeholder="Your Number">
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                            <textarea name="message" rows="4" required class="w-full px-3 py-2 border rounded-lg focus:border-blue-500 outline-none" placeholder="How can we help?"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition">
-                            Submit Request
-                        </button>
-                    </form>
+    <input type="hidden" name="access_key" value="231bb2bc-92a1-47d0-ab84-223cb36c7316">
+    <input type="hidden" name="subject" value="New Contact Form Submission - TownLink">
+    <input type="hidden" name="from_name" value="TownLink Website">
+
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2">Name</label>
+        <input type="text" name="name" required class="w-full px-3 py-2 border rounded-lg">
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2">Phone</label>
+        <input type="text" name="phone" required class="w-full px-3 py-2 border rounded-lg">
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2">Message</label>
+        <textarea name="message" rows="4" required class="w-full px-3 py-2 border rounded-lg"></textarea>
+    </div>
+
+    <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 rounded-lg">
+        Submit Request
+    </button>
+</form>
+
                 </div>
 
             </div>
@@ -219,3 +225,4 @@
 
 </body>
 </html>
+
