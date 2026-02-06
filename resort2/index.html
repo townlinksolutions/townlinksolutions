@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastal Paradise Resort | Murdeshwar-Gokarna-Honavar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        .parallax {
+            background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans leading-normal tracking-normal text-gray-900">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-serif font-bold text-teal-800 tracking-widest uppercase">Coastal Paradise</div>
+            <div class="hidden md:flex space-x-8 items-center font-medium text-gray-600">
+                <a href="#about" class="hover:text-teal-600 transition">About</a>
+                <a href="#rooms" class="hover:text-teal-600 transition">Rooms</a>
+                <a href="#amenities" class="hover:text-teal-600 transition">Amenities</a>
+                <a href="#location" class="hover:text-teal-600 transition">Explore</a>
+                <a href="#contact" class="bg-teal-700 text-white px-6 py-2 rounded-full hover:bg-teal-800 transition">Book Now</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-teal-800"><i class="fas fa-bars text-2xl"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 space-y-4 border-t">
+            <a href="#about" class="block">About</a>
+            <a href="#rooms" class="block">Rooms</a>
+            <a href="#amenities" class="block">Amenities</a>
+            <a href="#location" class="block">Explore</a>
+        </div>
+    </nav>
+
+    <header class="parallax h-screen flex items-center justify-center relative">
+        <div class="absolute inset-0 gradient-overlay"></div>
+        <div class="relative text-center text-white px-4" data-aos="fade-up">
+            <h4 class="uppercase tracking-[0.3em] mb-4 font-light">Experience the Heart of Uttara Kannada</h4>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6">Between the Sea & The Spirits</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-10 opacity-90">Located centrally between the divine Murdeshwar, the serene Honavar backwaters, and the golden sands of Gokarna.</p>
+            <a href="#rooms" class="bg-white text-teal-900 px-10 py-4 rounded-full font-bold uppercase text-sm tracking-wider hover:bg-teal-50 transition shadow-2xl">View Our Retreats</a>
+        </div>
+    </header>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-serif font-bold text-teal-900 mb-6">Where Nature Meets Comfort</h2>
+                <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                    Coastal Paradise isn't just a resort; it's a gateway to the soul of coastal Karnataka. Wake up to the sound of crashing waves and the chirping of exotic birds in our tropical gardens.
+                </p>
+                <div class="flex space-x-8">
+                    <div>
+                        <span class="block text-3xl font-bold text-teal-700">50+</span>
+                        <span class="text-gray-500 text-sm">Luxury Rooms</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-bold text-teal-700">100%</span>
+                        <span class="text-gray-500 text-sm">Eco-Friendly</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="rounded-2xl shadow-2xl" alt="Resort View">
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-teal-900 mb-4">Our Luxury Suites</h2>
+                <p class="text-gray-500">Pick the perfect space for your getaway</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition group" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Deluxe Room">
+                        <div class="absolute top-4 right-4 bg-white/90 px-4 py-1 rounded-full font-bold text-teal-800">₹4,500/night</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">Garden Deluxe</h3>
+                        <p class="text-gray-500 text-sm mb-6">Spacious rooms with private balconies overlooking lush green tropical plantations.</p>
+                        <ul class="flex space-x-4 text-teal-600 text-sm mb-6">
+                            <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                            <li><i class="fas fa-snowflake"></i> AC</li>
+                        </ul>
+                        <button onclick="openBooking('Garden Deluxe')" class="w-full py-3 border-2 border-teal-700 text-teal-700 font-bold rounded-xl hover:bg-teal-700 hover:text-white transition">Check Availability</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition group" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Executive Suite">
+                        <div class="absolute top-4 right-4 bg-white/90 px-4 py-1 rounded-full font-bold text-teal-800">₹7,500/night</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">Azure Sea View</h3>
+                        <p class="text-gray-500 text-sm mb-6">Wake up to the horizon. Premium suites with floor-to-ceiling glass windows facing the sea.</p>
+                        <ul class="flex space-x-4 text-teal-600 text-sm mb-6">
+                            <li><i class="fas fa-tv"></i> Smart TV</li>
+                            <li><i class="fas fa-coffee"></i> Mini Bar</li>
+                        </ul>
+                        <button onclick="openBooking('Azure Sea View')" class="w-full py-3 border-2 border-teal-700 text-teal-700 font-bold rounded-xl hover:bg-teal-700 hover:text-white transition">Check Availability</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition group" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Heritage Cottage">
+                        <div class="absolute top-4 right-4 bg-white/90 px-4 py-1 rounded-full font-bold text-teal-800">₹9,000/night</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">Heritage Cottage</h3>
+                        <p class="text-gray-500 text-sm mb-6">Traditional Karnataka architecture with modern amenities. Perfect for complete privacy.</p>
+                        <ul class="flex space-x-4 text-teal-600 text-sm mb-6">
+                            <li><i class="fas fa-swimmer"></i> Private Pool</li>
+                            <li><i class="fas fa-spa"></i> Jacuzzi</li>
+                        </ul>
+                        <button onclick="openBooking('Heritage Cottage')" class="w-full py-3 border-2 border-teal-700 text-teal-700 font-bold rounded-xl hover:bg-teal-700 hover:text-white transition">Check Availability</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="py-20 bg-teal-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl font-serif font-bold mb-4">Five-Star Amenities</h2>
+                    <p class="text-teal-200">Everything you need for a stress-free stay</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+                <div class="text-center" data-aos="fade-up">
+                    <i class="fas fa-water text-4xl mb-4 text-orange-400"></i>
+                    <h4 class="font-bold">Infinity Pool</h4>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-utensils text-4xl mb-4 text-orange-400"></i>
+                    <h4 class="font-bold">Coastal Seafood Dining</h4>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-spa text-4xl mb-4 text-orange-400"></i>
+                    <h4 class="font-bold">Ayurvedic Spa</h4>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-ship text-4xl mb-4 text-orange-400"></i>
+                    <h4 class="font-bold">Honavar Boat Rides</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-serif font-bold text-center mb-16">The Coastal Triangle</h2>
+            <div class="grid md:grid-cols-3 gap-0 rounded-3xl overflow-hidden shadow-2xl">
+                <div class="relative h-96 group">
+                    <img src="https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h3 class="text-2xl font-bold">Murdeshwar</h3>
+                            <p class="text-xs tracking-widest uppercase">15 mins drive</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-96 group">
+                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc18a5cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-teal-800/60 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h3 class="text-2xl font-bold">Honavar Backwaters</h3>
+                            <p class="text-xs tracking-widest uppercase">Stay Location</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-96 group">
+                    <img src="https://images.unsplash.com/photo-1623194517316-cc6c2a075217?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h3 class="text-2xl font-bold">Gokarna</h3>
+                            <p class="text-xs tracking-widest uppercase">45 mins drive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-slate-900 text-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-4xl font-serif font-bold mb-8 italic">Let's Plan Your Holiday</h2>
+                <div class="space-y-6">
+                    <p class="flex items-center text-gray-400"><i class="fas fa-map-marker-alt mr-4 text-teal-500"></i> Near Idagunji Road, Honavar, Karnataka 581334</p>
+                    <p class="flex items-center text-gray-400"><i class="fas fa-phone-alt mr-4 text-teal-500"></i> +91 73384 98962</p>
+                    <p class="flex items-center text-gray-400"><i class="fas fa-envelope mr-4 text-teal-500"></i> booking@coastalparadise.com</p>
+                </div>
+            </div>
+            
+            <form id="resort-form" class="bg-white p-10 rounded-3xl text-gray-800 shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase mb-2">Check-In</label>
+                        <input type="date" class="w-full p-3 bg-gray-100 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase mb-2">Room Type</label>
+                        <select id="room-select" class="w-full p-3 bg-gray-100 rounded-lg">
+                            <option>Garden Deluxe</option>
+                            <option>Azure Sea View</option>
+                            <option>Heritage Cottage</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-xs font-bold uppercase mb-2">Full Name</label>
+                    <input type="text" placeholder="John Doe" class="w-full p-3 bg-gray-100 rounded-lg">
+                </div>
+                <button type="submit" class="w-full bg-teal-800 text-white font-bold py-4 rounded-xl hover:bg-teal-900 transition">Enquire Now</button>
+            </form>
+        </div>
+        <div class="text-center pt-20 border-t border-gray-800 mt-20 opacity-50 text-sm">
+            &copy; 2026 Coastal Paradise Resort. Powered by TownLink Solutions.
+        </div>
+    </section>
+
+    <div id="booking-modal" class="fixed inset-0 bg-black/80 z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl w-full max-w-lg p-8 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400"><i class="fas fa-times text-xl"></i></button>
+            <h3 id="modal-title" class="text-2xl font-bold mb-4 text-teal-900">Book Your Stay</h3>
+            <p class="text-gray-500 mb-6">Redirecting to our WhatsApp booking manager...</p>
+            <a id="whatsapp-link" href="#" target="_blank" class="block text-center bg-green-600 text-white font-bold py-4 rounded-xl shadow-lg">
+                <i class="fab fa-whatsapp mr-2 text-xl"></i> Confirm on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.onclick = () => menu.classList.toggle('hidden');
+
+        // Modal Logic
+        function openBooking(roomName) {
+            document.getElementById('booking-modal').classList.remove('hidden');
+            document.getElementById('modal-title').innerText = "Booking: " + roomName;
+            const phone = "917338498962";
+            const text = `Hi, I am interested in booking the ${roomName} at Coastal Paradise Resort. Please provide availability details.`;
+            document.getElementById('whatsapp-link').href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+        }
+
+        function closeModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
+
+        // Close dropdown on click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.onclick = () => menu.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
