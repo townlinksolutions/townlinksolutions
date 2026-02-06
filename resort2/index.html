@@ -27,9 +27,8 @@
             <div class="hidden lg:flex space-x-8 items-center font-bold text-xs tracking-widest text-slate-800">
                 <a href="#about" class="hover:text-blue-600">ABOUT</a>
                 <a href="#rooms" class="hover:text-blue-600">ROOMS</a>
-                <a href="#activities" class="hover:text-blue-600">ACTIVITIES</a>
                 <a href="#explore" class="hover:text-blue-600">EXPLORE</a>
-                <a href="https://wa.me/917338498962" class="bg-blue-900 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition">ENQUIRE</a>
+                <a href="#contact" class="bg-blue-900 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition">ENQUIRE</a>
             </div>
         </div>
     </nav>
@@ -45,49 +44,24 @@
         </div>
     </header>
 
-    <section class="py-12 bg-blue-900 text-white">
-        <div class="container mx-auto px-6 grid grid-cols-2 lg:grid-cols-5 gap-8 text-center">
-            <div data-aos="fade-up">
-                <i class="fas fa-seedling text-2xl text-orange-400 mb-2"></i>
-                <p class="text-[10px] font-bold tracking-widest">COCONUT FARMS</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-fire text-2xl text-orange-400 mb-2"></i>
-                <p class="text-[10px] font-bold tracking-widest">BEACH FIRECAMP</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-swimming-pool text-2xl text-orange-400 mb-2"></i>
-                <p class="text-[10px] font-bold tracking-widest">INFINITY POOL</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-ship text-2xl text-orange-400 mb-2"></i>
-                <p class="text-[10px] font-bold tracking-widest">BACKWATER BOATING</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="400">
-                <i class="fas fa-wifi text-2xl text-orange-400 mb-2"></i>
-                <p class="text-[10px] font-bold tracking-widest">HIGH-SPEED JIO</p>
-            </div>
-        </div>
-    </section>
-
     <section id="rooms" class="py-24 bg-stone-100">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-serif font-bold text-center mb-16 italic">Tropical Retreats</h2>
+            <h2 class="text-4xl font-serif font-bold text-center mb-16 italic text-blue-900">Tropical Retreats</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg relative group">
                     <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] px-3 py-1 rounded-full font-bold z-10">AVAILABLE</span>
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" class="h-56 w-full object-cover group-hover:scale-105 transition">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" class="h-56 w-full object-cover group-hover:scale-105 transition" alt="Ocean Deluxe">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Ocean Deluxe</h3>
-                        <p class="text-xs text-stone-500 mb-6 italic">AC room with direct beach trail access.</p>
+                        <p class="text-xs text-stone-500 mb-6 italic italic">AC room with direct beach trail access.</p>
                         <button onclick="enquire('Ocean Deluxe')" class="w-full bg-blue-900 text-white py-3 rounded-xl font-bold text-xs">ENQUIRE NOW</button>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg relative group border-2 border-orange-500 scale-105">
                     <span class="absolute top-4 left-4 bg-orange-500 text-white text-[10px] px-3 py-1 rounded-full font-bold z-10">ONLY 2 LEFT</span>
-                    <img src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&w=600&q=80" class="h-56 w-full object-cover group-hover:scale-105 transition">
+                    <img src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&w=600&q=80" class="h-56 w-full object-cover group-hover:scale-105 transition" alt="Wooden Cottage">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Wooden Cottage</h3>
                         <p class="text-xs text-stone-500 mb-6 italic">Premium teak-wood cottages in farm area.</p>
@@ -97,7 +71,7 @@
 
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg relative group">
                     <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] px-3 py-1 rounded-full font-bold z-10">AVAILABLE</span>
-                    <img src="https://images.unsplash.com/photo-1555854811-8aa423f4cd46?auto=format&fit=crop&w=600&q=80" class="h-56 w-full object-cover group-hover:scale-105 transition">
+                    <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=600&q=80" class="h-56 w-full object-cover group-hover:scale-105 transition" alt="Family Quadruple">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Family Quadruple</h3>
                         <p class="text-xs text-stone-500 mb-6 italic">4-Bed spacious room for family groups.</p>
@@ -107,47 +81,71 @@
 
                 <div class="bg-white rounded-3xl overflow-hidden shadow-lg relative opacity-75">
                     <span class="absolute top-4 left-4 bg-slate-500 text-white text-[10px] px-3 py-1 rounded-full font-bold z-10">FULLY BOOKED</span>
-                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80" class="h-56 w-full object-cover grayscale">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80" class="h-56 w-full object-cover grayscale" alt="Backwater Suite">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-stone-400">Backwater Suite</h3>
                         <p class="text-xs text-stone-400 mb-6">Riverfront suites with private balcony.</p>
                         <button disabled class="w-full bg-stone-300 text-stone-500 py-3 rounded-xl font-bold text-xs cursor-not-allowed">SOLD OUT</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <section id="explore" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-serif font-bold mb-4 italic">Discover Uttara Kannada</h2>
-            <p class="text-stone-500 mb-12">TownLink Retreat is centrally located in Kumta, making it the perfect hub for explorers.</p>
+            <h2 class="text-4xl font-serif font-bold mb-4 italic text-blue-900">Explore the Coastal Gem</h2>
+            <p class="text-stone-500 mb-12">TownLink Retreat Kumta is the perfect gateway to Uttara Kannada's wonders.</p>
             
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-3 gap-8">
                 <div class="relative h-[450px] rounded-[2rem] overflow-hidden group shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1623194517316-cc6c2a075217?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Gokarna Beach">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
                         <h4 class="text-white text-2xl font-bold">Gokarna Main Beach</h4>
                         <p class="text-orange-400 font-bold text-xs tracking-widest mb-2 uppercase">30 Mins Drive</p>
-                        <p class="text-stone-300 text-sm">Sacred temples and golden Om beach vistas.</p>
                     </div>
                 </div>
                 <div class="relative h-[450px] rounded-[2rem] overflow-hidden group shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1590490359854-dfba19688d70?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1632766329486-5386f78a2e1c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Mirjan Fort">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
-                        <h4 class="text-white text-2xl font-bold">Murdeshwar Statue</h4>
-                        <p class="text-orange-400 font-bold text-xs tracking-widest mb-2 uppercase">40 Mins Drive</p>
-                        <p class="text-stone-300 text-sm">The iconic Shiva statue and the temple tower.</p>
-                    </div>
-                </div>
-                <div class="relative h-[450px] rounded-[2rem] overflow-hidden group shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc18a5cf?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex flex-col justify-end p-8">
                         <h4 class="text-white text-2xl font-bold">Mirjan Fort & Estuary</h4>
                         <p class="text-orange-400 font-bold text-xs tracking-widest mb-2 uppercase">Local Kumta</p>
-                        <p class="text-stone-300 text-sm">Historical forts and Aghnashini river views.</p>
                     </div>
+                </div>
+                <div class="relative h-[450px] rounded-[2rem] overflow-hidden group shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1590490359854-dfba19688d70?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Murdeshwar Statue">
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex flex-col justify-end p-8">
+                        <h4 class="text-white text-2xl font-bold">Murdeshwar Statue</h4>
+                        <p class="text-orange-400 font-bold text-xs tracking-widest mb-2 uppercase">40 Mins Drive</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-stone-50 border-t border-stone-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-serif font-bold text-blue-900 mb-12 text-center">Plan Your Journey</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <i class="fas fa-mountain text-orange-500 mb-4 text-2xl"></i>
+                    <h5 class="font-bold">Yana Caves</h5>
+                    <p class="text-xs text-stone-500 mt-2 italic">35 KM (45 Mins)</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <i class="fas fa-water text-orange-500 mb-4 text-2xl"></i>
+                    <h5 class="font-bold">Vibhooti Falls</h5>
+                    <p class="text-xs text-stone-500 mt-2 italic">42 KM (1 Hour)</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <i class="fas fa-umbrella-beach text-orange-500 mb-4 text-2xl"></i>
+                    <h5 class="font-bold">Kaggal Beach</h5>
+                    <p class="text-xs text-stone-500 mt-2 italic italic">2 KM (Walking Distance)</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <i class="fas fa-om text-orange-500 mb-4 text-2xl"></i>
+                    <h5 class="font-bold">Idagunji Temple</h5>
+                    <p class="text-xs text-stone-500 mt-2 italic italic">25 KM (30 Mins)</p>
                 </div>
             </div>
         </div>
@@ -156,20 +154,14 @@
     <section id="contact" class="py-24 bg-slate-900 text-white">
         <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-20">
             <div>
-                <h2 class="text-4xl font-serif font-bold mb-8 italic">Ready for the Coast?</h2>
+                <h2 class="text-4xl font-serif font-bold mb-8 italic italic">Confirm Your Stay</h2>
+                <p class="mb-10 text-stone-400">Reach out for instant booking and customized tour packages in Uttara Kannada.</p>
                 <div class="space-y-6">
                     <div class="flex items-center p-6 bg-white/5 rounded-2xl border border-white/10">
                         <i class="fas fa-phone-alt text-orange-500 text-xl mr-6"></i>
                         <div>
-                            <p class="text-[10px] uppercase font-bold text-stone-500 tracking-widest">Booking Hotline</p>
-                            <p class="font-bold text-lg">+91 73384 98962</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-6 bg-white/5 rounded-2xl border border-white/10">
-                        <i class="fas fa-map-marker-alt text-orange-500 text-xl mr-6"></i>
-                        <div>
-                            <p class="text-[10px] uppercase font-bold text-stone-500 tracking-widest">Kumta Base</p>
-                            <p class="font-bold">Near Kaggal Beach, Kumta, Uttara Kannada</p>
+                            <p class="text-[10px] uppercase font-bold text-stone-500 tracking-widest">Booking Manager</p>
+                            <p class="font-bold text-lg text-lg">+91 73384 98962</p>
                         </div>
                     </div>
                 </div>
@@ -183,7 +175,7 @@
                             <input type="date" required class="w-full bg-stone-100 p-4 rounded-xl text-sm">
                         </div>
                         <div>
-                            <label class="text-[10px] font-bold uppercase mb-2 block">Room</label>
+                            <label class="text-[10px] font-bold uppercase mb-2 block">Room Type</label>
                             <select id="room-select" class="w-full bg-stone-100 p-4 rounded-xl text-sm">
                                 <option>Ocean Deluxe</option>
                                 <option>Wooden Cottage</option>
@@ -193,25 +185,15 @@
                     </div>
                     <div class="mb-4">
                         <label class="text-[10px] font-bold uppercase mb-2 block">Full Name</label>
-                        <input type="text" placeholder="John Doe" required class="w-full bg-stone-100 p-4 rounded-xl text-sm">
+                        <input type="text" placeholder="Your Name" required class="w-full bg-stone-100 p-4 rounded-xl text-sm">
                     </div>
-                    <div class="grid grid-cols-2 gap-4 mb-6">
-                        <div>
-                            <label class="text-[10px] font-bold uppercase mb-2 block">Mobile</label>
-                            <input type="tel" placeholder="+91" required class="w-full bg-stone-100 p-4 rounded-xl text-sm">
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-bold uppercase mb-2 block">Guests</label>
-                            <input type="number" min="1" max="15" placeholder="2" class="w-full bg-stone-100 p-4 rounded-xl text-sm">
-                        </div>
-                    </div>
-                    <button type="button" onclick="sendWhatsApp()" class="w-full bg-blue-900 text-white py-4 rounded-2xl font-black tracking-widest hover:bg-orange-600 transition">ENQUIRE ON WHATSAPP</button>
+                    <button type="button" onclick="sendWhatsApp()" class="w-full bg-blue-900 text-white py-4 rounded-2xl font-black tracking-widest hover:bg-orange-600 transition">REQUEST ON WHATSAPP</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-950 py-12 text-center text-slate-600">
+    <footer class="bg-slate-950 py-12 text-center text-slate-600 border-t border-white/5">
         <p class="text-xs uppercase tracking-[0.5em] mb-4 text-slate-200">TownLink Coastal Retreat</p>
         <p class="text-[10px]">Kumta, Karnataka | © 2026 Powered by TownLink Solutions.</p>
     </footer>
@@ -227,7 +209,7 @@
 
         function sendWhatsApp() {
             const room = document.getElementById('room-select').value;
-            const text = `Hi TownLink Retreat Kumta! I am checking availability for the ${room}. Please share details.`;
+            const text = `Hi TownLink Retreat Kumta! Please check availability for ${room} for my visit.`;
             window.open(`https://wa.me/917338498962?text=${encodeURIComponent(text)}`, '_blank');
         }
     </script>
