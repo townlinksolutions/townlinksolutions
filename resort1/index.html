@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TownLink Resort - Luxury Beachfront Paradise</title>
+    <meta name="description" content="Experience luxury at TownLink Resort, a premier beachfront destination featuring world-class amenities, oceanfront dining, spa, and water sports.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>TownLink Resort</h1>
+                <p class="tagline">Beachfront Luxury</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="rooms.html">Rooms & Suites</a></li>
+                <li><a href="amenities.html">Amenities</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="spa.html">Spa & Wellness</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="btn-book">Book Now</a>
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1920&h=1080&fit=crop') center/cover;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Welcome to Paradise</h2>
+            <h3>Where Luxury Meets the Ocean</h3>
+            <p>Discover an unforgettable beachfront escape at TownLink Resort</p>
+            <div class="hero-buttons">
+                <a href="booking.html" class="btn-primary">Reserve Your Stay</a>
+                <a href="#explore" class="btn-secondary">Explore Resort</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <span>Scroll to Discover</span>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome" id="explore">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Welcome to TownLink Resort</span>
+                <h2>Your Luxury Beachfront Sanctuary</h2>
+                <p class="intro">Nestled along pristine white-sand beaches with crystal-clear turquoise waters, TownLink Resort offers an unparalleled luxury experience. Our world-class resort combines breathtaking natural beauty with exceptional service, creating the perfect destination for relaxation, romance, and adventure.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🏖️</div>
+                    <h3>Private Beach</h3>
+                    <p>Exclusive 300-meter stretch of pristine white sand beach reserved for our guests</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🏊</div>
+                    <h3>Infinity Pools</h3>
+                    <p>Multiple infinity pools overlooking the ocean, including adults-only and family pools</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🍽️</div>
+                    <h3>Fine Dining</h3>
+                    <p>Five signature restaurants featuring international cuisine and fresh seafood</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💆</div>
+                    <h3>Luxury Spa</h3>
+                    <p>Award-winning oceanfront spa with holistic treatments and wellness programs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🏄</div>
+                    <h3>Water Sports</h3>
+                    <p>Complimentary kayaking, paddleboarding, snorkeling, and premium diving experiences</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⭐</div>
+                    <h3>5-Star Service</h3>
+                    <p>24/7 concierge, personalized service, and dedicated guest relations team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodations Preview -->
+    <section class="accommodations">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Luxurious Accommodations</span>
+                <h2>Oceanfront Rooms & Suites</h2>
+            </div>
+            
+            <div class="rooms-grid">
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop" alt="Deluxe Ocean View Room">
+                    </div>
+                    <div class="room-content">
+                        <h3>Deluxe Ocean View</h3>
+                        <p>Spacious 45 sqm room with panoramic ocean views, king bed, and private balcony</p>
+                        <ul class="room-features">
+                            <li>King or Twin Beds</li>
+                            <li>Private Balcony</li>
+                            <li>Ocean Views</li>
+                            <li>Max 2 Adults + 1 Child</li>
+                        </ul>
+                        <a href="rooms.html#deluxe" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+                
+                <div class="room-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop" alt="Beachfront Suite">
+                    </div>
+                    <div class="room-content">
+                        <h3>Beachfront Suite</h3>
+                        <p>Elegant 75 sqm suite with direct beach access, separate living area, and luxury amenities</p>
+                        <ul class="room-features">
+                            <li>Separate Living Room</li>
+                            <li>Direct Beach Access</li>
+                            <li>Outdoor Terrace</li>
+                            <li>Max 3 Adults + 2 Children</li>
+                        </ul>
+                        <a href="rooms.html#beachfront" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+                
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop" alt="Presidential Villa">
+                    </div>
+                    <div class="room-content">
+                        <h3>Presidential Villa</h3>
+                        <p>Ultimate luxury in our 200 sqm villa with private pool, butler service, and exclusive amenities</p>
+                        <ul class="room-features">
+                            <li>Private Infinity Pool</li>
+                            <li>Personal Butler</li>
+                            <li>3 Bedrooms</li>
+                            <li>Max 6 Adults + 3 Children</li>
+                        </ul>
+                        <a href="rooms.html#villa" class="btn-link">View Details →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="rooms.html" class="btn-primary">View All Accommodations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resort Highlights -->
+    <section class="highlights">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Resort Highlights</span>
+                <h2>Exceptional Experiences Await</h2>
+            </div>
+            
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&h=600&fit=crop" alt="Infinity Pool">
+                    <div class="highlight-overlay">
+                        <h3>Infinity Pools</h3>
+                        <p>Three stunning pools including adults-only relaxation zones</p>
+                        <a href="amenities.html#pools">Discover More</a>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=800&h=600&fit=crop" alt="Seafood Restaurant">
+                    <div class="highlight-overlay">
+                        <h3>Oceanfront Dining</h3>
+                        <p>Savor world-class cuisine with stunning sunset views</p>
+                        <a href="dining.html">Explore Restaurants</a>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop" alt="Spa Treatment">
+                    <div class="highlight-overlay">
+                        <h3>Serenity Spa</h3>
+                        <p>Rejuvenate with holistic treatments and ocean breezes</p>
+                        <a href="spa.html">Book Spa</a>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <img src="https://images.unsplash.com/photo-1476304884326-cd2c88572c5f?w=800&h=600&fit=crop" alt="Water Sports">
+                    <div class="highlight-overlay">
+                        <h3>Water Adventures</h3>
+                        <p>Dive, surf, sail, and explore the crystal-clear waters</p>
+                        <a href="activities.html">View Activities</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Overview -->
+    <section class="amenities-overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">World-Class Amenities</span>
+                <h2>Everything You Need for the Perfect Stay</h2>
+            </div>
+            
+            <div class="amenities-grid">
+                <div class="amenity-item">
+                    <span class="amenity-icon">🏖️</span>
+                    <h4>Private Beach Club</h4>
+                    <p>Cabanas, beach service, and water sports equipment</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">💪</span>
+                    <h4>Fitness Center</h4>
+                    <p>State-of-the-art gym with personal trainers</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🧘</span>
+                    <h4>Yoga Pavilion</h4>
+                    <p>Sunrise yoga and meditation sessions</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">👶</span>
+                    <h4>Kids Club</h4>
+                    <p>Supervised activities for ages 4-12</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🎾</span>
+                    <h4>Tennis Courts</h4>
+                    <p>Two championship courts with night lighting</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🎭</span>
+                    <h4>Entertainment</h4>
+                    <p>Live music, cultural shows, and beach parties</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🚗</span>
+                    <h4>Airport Transfer</h4>
+                    <p>Complimentary shuttle service</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">📶</span>
+                    <h4>High-Speed WiFi</h4>
+                    <p>Free throughout the resort</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="amenities.html" class="btn-secondary">View All Amenities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Guest Reviews</span>
+                <h2>What Our Guests Say</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Absolutely stunning resort! The beachfront suite was incredible, the staff went above and beyond, and the food was exceptional. We can't wait to return!"</p>
+                    <div class="author">
+                        <strong>Sarah & James Mitchell</strong>
+                        <span>New York, USA</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"The perfect family vacation. Kids loved the pool and Kids Club, we enjoyed the spa and romantic dinners. TownLink Resort truly has something for everyone."</p>
+                    <div class="author">
+                        <strong>Emma Thompson</strong>
+                        <span>London, UK</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Our honeymoon was magical thanks to TownLink Resort. The private villa, sunset cruises, and couples spa treatments created memories we'll treasure forever."</p>
+                    <div class="author">
+                        <strong>Michael & Lisa Chen</strong>
+                        <span>Singapore</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Resort Map -->
+    <section class="resort-map-section" style="padding: 5rem 0; background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <span class="subtitle" style="color: #0a7ea4; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 500;">Explore Our Location</span>
+                <h2 style="font-size: 2.5rem; margin: 0.5rem 0 1rem;">Interactive Resort Map</h2>
+                <p class="intro" style="color: #666; max-width: 700px; margin: 0 auto;">Discover our prime beachfront location and nearby attractions</p>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+                <!-- Map Container -->
+                <div id="homepage-map" style="height: 500px; border-radius: 15px; margin-bottom: 2rem; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1);"></div>
+                
+                <!-- Map Legend -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <span style="font-size: 24px;">🏖️</span>
+                        <div>
+                            <strong style="color: #0a7ea4; display: block;">Resort Location</strong>
+                            <small style="color: #666;">Main entrance & reception</small>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <span style="font-size: 24px;">✈️</span>
+                        <div>
+                            <strong style="color: #0a7ea4; display: block;">Airport</strong>
+                            <small style="color: #666;">25 min drive</small>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <span style="font-size: 24px;">🏙️</span>
+                        <div>
+                            <strong style="color: #0a7ea4; display: block;">Downtown</strong>
+                            <small style="color: #666;">15 min drive</small>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <span style="font-size: 24px;">⚓</span>
+                        <div>
+                            <strong style="color: #0a7ea4; display: block;">Marina</strong>
+                            <small style="color: #666;">Yacht excursions</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready for Your Dream Vacation?</h2>
+                <p>Book your luxury beachfront escape at TownLink Resort today and experience paradise</p>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="btn-primary large">Book Your Stay</a>
+                    <a href="contact.html" class="btn-secondary large">Contact Us</a>
+                </div>
+                <p class="cta-note">Best Price Guarantee · Flexible Cancellation · No Booking Fees</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>TownLink Resort</h3>
+                    <p>Experience luxury at our premier beachfront destination. Your paradise awaits.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">📹</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="rooms.html">Rooms & Suites</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="dining.html">Dining</a></li>
+                        <li><a href="spa.html">Spa & Wellness</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li>📍 123 Beachfront Boulevard<br>Paradise Bay, PB 12345</li>
+                        <li>📞 +1 (555) 123-4567</li>
+                        <li>✉️ info@townlinkresort.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 TownLink Resort. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Initialize Homepage Interactive Map
+        document.addEventListener('DOMContentLoaded', function() {
+            const map = L.map('homepage-map').setView([25.7907, -80.1300], 13);
+            
+            // Add map tiles with a beautiful style
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Resort marker with custom styling
+            const resortIcon = L.divIcon({
+                className: 'resort-marker',
+                html: `<div style="background: linear-gradient(135deg, #f4a460 0%, #ff6b6b 100%); width: 50px; height: 50px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 4px solid white; box-shadow: 0 6px 20px rgba(244,164,96,0.6); display: flex; align-items: center; justify-content: center; animation: pulse 2s infinite;">
+                    <span style="transform: rotate(45deg); font-size: 24px;">🏖️</span>
+                </div>`,
+                iconSize: [50, 50],
+                iconAnchor: [25, 50],
+                popupAnchor: [0, -50]
+            });
+            
+            const resortMarker = L.marker([25.7907, -80.1300], { icon: resortIcon }).addTo(map);
+            resortMarker.bindPopup(`
+                <div style="text-align: center; padding: 15px; min-width: 250px;">
+                    <h3 style="color: #0a7ea4; margin-bottom: 10px; font-size: 20px; font-family: 'Playfair Display', serif;">🏖️ TownLink Resort</h3>
+                    <div style="color: #666; margin: 10px 0; line-height: 1.6;">
+                        <p style="margin: 5px 0;"><strong>5-Star Luxury Beachfront Resort</strong></p>
+                        <p style="margin: 5px 0; font-size: 14px;">📍 123 Beachfront Boulevard</p>
+                        <p style="margin: 5px 0; font-size: 14px;">⭐⭐⭐⭐⭐ Rated Excellent</p>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                        <p style="font-size: 13px; color: #666; margin-bottom: 10px;">✓ Private Beach ✓ Infinity Pool ✓ Spa ✓ Fine Dining</p>
+                        <a href="booking.html" style="display: inline-block; background: linear-gradient(135deg, #f4a460 0%, #ff6b6b 100%); color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; margin-top: 5px; font-weight: 600; font-size: 14px;">Book Now</a>
+                    </div>
+                </div>
+            `).openPopup();
+            
+            // Resort area circle
+            L.circle([25.7907, -80.1300], {
+                color: '#0a7ea4',
+                fillColor: '#0a7ea4',
+                fillOpacity: 0.2,
+                radius: 300,
+                weight: 2
+            }).addTo(map);
+            
+            // Points of Interest
+            const locations = [
+                { 
+                    name: 'International Airport', 
+                    coords: [25.7959, -80.2870], 
+                    icon: '✈️',
+                    info: '25 minutes drive<br>Complimentary shuttle service',
+                    color: '#1e3a8a'
+                },
+                { 
+                    name: 'Downtown District', 
+                    coords: [25.7617, -80.1918], 
+                    icon: '🏙️',
+                    info: '15 minutes drive<br>Shopping & Entertainment',
+                    color: '#f4a460'
+                },
+                { 
+                    name: 'Marina & Yacht Club', 
+                    coords: [25.7897, -80.1320], 
+                    icon: '⚓',
+                    info: 'Private yacht excursions<br>Sunset cruises available',
+                    color: '#2c7a7b'
+                },
+                { 
+                    name: 'Public Beach Access', 
+                    coords: [25.7917, -80.1280], 
+                    icon: '🏖️',
+                    info: 'Pristine white sand beach<br>Water sports available',
+                    color: '#38b2ac'
+                },
+                { 
+                    name: 'Golf Course', 
+                    coords: [25.7850, -80.1450], 
+                    icon: '⛳',
+                    info: '18-hole championship course<br>Ocean views',
+                    color: '#10b981'
+                },
+                { 
+                    name: 'Shopping Plaza', 
+                    coords: [25.7750, -80.1350], 
+                    icon: '🛍️',
+                    info: 'Luxury boutiques & dining<br>10 minutes walk',
+                    color: '#9f7aea'
+                }
+            ];
+            
+            locations.forEach(loc => {
+                const poiIcon = L.divIcon({
+                    className: 'poi-marker',
+                    html: `<div style="background: white; padding: 10px; border-radius: 50%; box-shadow: 0 3px 10px rgba(0,0,0,0.25); border: 3px solid ${loc.color}; font-size: 18px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">${loc.icon}</div>`,
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 20]
+                });
+                
+                L.marker(loc.coords, { icon: poiIcon })
+                    .bindPopup(`<div style="text-align: center; padding: 10px;"><strong style="color: ${loc.color}; font-size: 16px;">${loc.name}</strong><br><p style="margin: 8px 0; color: #666; font-size: 13px; line-height: 1.5;">${loc.info}</p></div>`)
+                    .addTo(map);
+                
+                // Draw lines to resort
+                L.polyline([[25.7907, -80.1300], loc.coords], {
+                    color: loc.color,
+                    weight: 2,
+                    opacity: 0.4,
+                    dashArray: '5, 10'
+                }).addTo(map);
+            });
+            
+            // Add scale and zoom controls
+            L.control.scale({ imperial: true, metric: true }).addTo(map);
+            
+            // Custom info box
+            const info = L.control({ position: 'bottomleft' });
+            info.onAdd = function() {
+                const div = L.DomUtil.create('div', 'map-info-box');
+                div.innerHTML = `
+                    <div style="background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); max-width: 200px;">
+                        <h4 style="color: #0a7ea4; margin-bottom: 8px; font-size: 14px; font-weight: 600;">📍 TownLink Resort</h4>
+                        <p style="font-size: 12px; color: #666; margin: 4px 0;">Prime Beachfront Location</p>
+                        <p style="font-size: 11px; color: #999; margin: 4px 0;">Click markers for details</p>
+                    </div>
+                `;
+                return div;
+            };
+            info.addTo(map);
+        });
+    </script>
+</body>
+</html>
