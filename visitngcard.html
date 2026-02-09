@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TownLink Solutions - Premium Business Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&display=swap');
+        
+        body {
+            background-color: #f1f5f9;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            gap: 40px;
+        }
+
+        .card-container {
+            width: 525px; /* 3.5 inches */
+            height: 300px; /* 2 inches */
+            perspective: 1000px;
+        }
+
+        .card-side {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        /* FRONT DESIGN */
+        .front-design {
+            background: #0f172a;
+            color: white;
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            font-size: 44px;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .tagline-text {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-top: -10px;
+        }
+
+        .service-point {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+
+        /* BACK DESIGN */
+        .back-design {
+            background: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .icon-group {
+            display: flex;
+            gap: 8px;
+            background: #f8fafc;
+            padding: 6px 10px;
+            border-radius: 8px;
+            color: #1e40af;
+            width: fit-content;
+        }
+
+        .whatsapp-green { color: #25D366; }
+
+        .number-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-weight: 700;
+            color: #334155;
+            font-size: 14px;
+        }
+
+        .website-banner {
+            background: #eff6ff;
+            border-radius: 12px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #dbeafe;
+        }
+
+        .footer-stripe {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #1e40af 0%, #f97316 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="card-side front-design shadow-2xl">
+            <div>
+                <h1 class="brand-logo">TownLink<span class="text-orange-500">.</span></h1>
+                <p class="tagline-text">Local Digital Partner</p>
+            </div>
+            
+            <div class="service-list">
+                <div class="service-point">
+                    <i class="fas fa-globe text-orange-500"></i>
+                    <span><strong>Web Presence:</strong> Impactful Identity Design</span>
+                </div>
+                <div class="service-point">
+                    <i class="fas fa-rocket text-orange-500"></i>
+                    <span><strong>Idea to Reality:</strong> Custom Development</span>
+                </div>
+                <div class="service-point">
+                    <i class="fas fa-lightbulb text-orange-500"></i>
+                    <span><strong>Skill Upgrading:</strong> Expert Tech Coaching</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card-side back-design shadow-xl">
+            
+            <div class="contact-section">
+                <div class="flex items-start gap-4">
+                    <div class="icon-group mt-1">
+                        <i class="fas fa-phone-alt text-[10px]"></i>
+                        <i class="fab fa-whatsapp text-xs whatsapp-green"></i>
+                    </div>
+                    <div class="number-list">
+                        <p>+91 63603 13208</p>
+                        <p>+91 96209 96729</p>
+                        <p>+91 97436 40036</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="icon-group">
+                        <i class="fas fa-envelope text-[10px]"></i>
+                    </div>
+                    <p class="text-[13px] font-semibold text-slate-600 lowercase">info@townlinksolutions.com</p>
+                </div>
+            </div>
+
+            <div class="website-banner">
+                <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                    <i class="fas fa-globe text-sm"></i>
+                </div>
+                <p class="text-lg font-black text-blue-900 tracking-tighter">www.townlinksolutions.com</p>
+            </div>
+
+            <div class="flex justify-between items-center px-2">
+                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Innovation Delivered</p>
+                <div class="text-sm font-black text-slate-800">
+                    TownLink<span class="text-orange-500">.</span>
+                </div>
+            </div>
+
+            <div class="footer-stripe"></div>
+        </div>
+    </div>
+
+</body>
+</html>

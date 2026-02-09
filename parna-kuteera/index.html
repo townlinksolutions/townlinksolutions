@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Parna Kuteera - A Place to Hide..... Beach resort near Nirvana Beach, Karnataka">
+    <title>Parna Kuteera - A Place to Hide.....</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Parna Kuteera</h1>
+                    <p class="tagline-small">A Place to Hide.....</p>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#accommodation" class="nav-link">Accommodation</a></li>
+                        <li><a href="#food" class="nav-link">Food & Beverages</a></li>
+                        <li><a href="#highlights" class="nav-link">Highlights</a></li>
+                        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="btn btn-primary header-cta" onclick="openModal()">Enquire Now</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+        <ul class="mobile-nav-list">
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#accommodation" class="mobile-nav-link">Accommodation</a></li>
+            <li><a href="#food" class="mobile-nav-link">Food & Beverages</a></li>
+            <li><a href="#highlights" class="mobile-nav-link">Highlights</a></li>
+            <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-aos="fade-up">Parna Kuteera</h1>
+                <p class="hero-tagline" data-aos="fade-up" data-aos-delay="100">A Place to Hide.....</p>
+                <p class="hero-location" data-aos="fade-up" data-aos-delay="200">
+                <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Opposite Nirvana Beach, Karnataka
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <button class="btn btn-primary btn-large" onclick="openModal()">Enquire Now</button>
+                <a href="https://wa.me/919538580195?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Parna%20Kuteera" 
+                   class="btn btn-secondary btn-large" target="_blank">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
+            </div>
+            <div class="hero-slideshow" data-aos="fade-left" data-aos-delay="400">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="Images/1.jpeg" alt="Parna Kuteera Beach Resort">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/7.jpeg" alt="Parna Kuteera Resort View">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/8.jpeg" alt="Parna Kuteera Accommodation">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/9.jpeg" alt="Parna Kuteera Beach">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/10.jpeg" alt="Parna Kuteera Activities">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/11.jpeg" alt="Parna Kuteera Experience">
+                    </div>
+                </div>
+                <div class="slideshow-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Welcome to Paradise</h2>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Discover Your Perfect Escape</div>
+            
+            <!-- Rating Badge -->
+            <div class="rating-badge" data-aos="fade-up" data-aos-delay="150">
+                <div class="rating-stars">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span class="rating-number">4.3</span>
+                    <span class="rating-count">(442 Google Reviews)</span>
+                </div>
+                <div class="established">Established 2017</div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p>Nestled opposite the pristine Nirvana Beach in the serene landscapes of Uttara Kannada, Parna Kuteera offers a tranquil retreat from the hustle and bustle of everyday life. Established in 2017, our resort is a sanctuary where nature meets comfort, providing you with the perfect place to hide away and rejuvenate your soul.</p>
+                    <p>At Parna Kuteera, we believe in making travel seamless and delightful. Whether you're a solo traveler seeking tranquility or a family looking to create lasting memories, we're here for you every day of the week. Our journey began with a vision to redefine tourism through personalized services, ensuring every visit is not just a vacation, but an enriching cultural experience.</p>
+                    <p>Experience the gentle whispers of the ocean breeze, the golden hues of spectacular sunsets, and the soothing sounds of waves caressing the shore. Whether you seek adventure or peaceful relaxation, Parna Kuteera promises an unforgettable coastal experience that will leave you refreshed and inspired.</p>
+                    <p>Our experienced team crafts bespoke itineraries tailored to your desires - from historical tours steeped in heritage to thrilling outdoor adventures. With warm hospitality, comfortable accommodations, and a variety of activities, we invite you to embark on a journey of discovery and create lasting memories in this hidden gem of Karnataka's coastline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation Section -->
+    <section class="accommodation section" id="accommodation">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Accommodation</h2>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Choose Your Perfect Stay</div>
+            <div class="accommodation-grid">
+                <div class="accommodation-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Family Room</h3>
+                    <div class="occupancy">4 Occupancy</div>
+                    <p>Spacious and comfortable family rooms designed for your loved ones. Enjoy quality time together with modern amenities and a cozy atmosphere perfect for creating cherished family memories.</p>
+                    <button class="btn btn-outline" onclick="openModalWithType('Family Room (4 Occupancy)')">Enquire Now</button>
+                </div>
+                <div class="accommodation-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Dormitory</h3>
+                    <div class="occupancy">10 Occupancy</div>
+                    <p>Perfect for groups and budget travelers. Our dormitory offers a friendly communal experience with clean, well-maintained facilities, ideal for adventurers and backpackers exploring the coast.</p>
+                    <button class="btn btn-outline" onclick="openModalWithType('Dormitory (10 Occupancy)')">Enquire Now</button>
+                </div>
+                <div class="accommodation-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l8 4v6c0 5.55-3.84 10.74-8 12-4.16-1.26-8-6.45-8-12V6l8-4z"></path>
+                        </svg>
+                    </div>
+                    <h3>Tent Stay</h3>
+                    <div class="occupancy">Beach Front</div>
+                    <p>Experience ultimate adventure with our tent stays right in front of the beach. Fall asleep to the sound of waves and wake up to breathtaking ocean views. A unique glamping experience awaits!</p>
+                    <button class="btn btn-outline" onclick="openModalWithType('Tent Stay (provided in front of the beach)')">Enquire Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food & Beverages Section -->
+    <section class="food section" id="food">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Food & Beverages</h2>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Savor the Flavors</div>
+            <div class="food-grid">
+                <div class="food-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="food-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                            <path d="M7 2v20"></path>
+                            <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                        </svg>
+                    </div>
+                    <h3>Restaurant</h3>
+                    <p>Enjoy delicious meals at our in-house restaurant featuring local and international cuisine prepared with fresh ingredients.</p>
+                </div>
+                <div class="food-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="food-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Beach Dining</h3>
+                    <p>Experience the magic of dining right in front of the beach with the ocean breeze and stunning views as your backdrop.</p>
+                </div>
+                <div class="food-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="food-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6z"></path>
+                            <path d="M18 5L16 2"></path>
+                            <path d="M6 5L8 2"></path>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>Fresh Seafood</h3>
+                    <p>Indulge in the catch of the day with our exquisite seafood offerings, freshly sourced and expertly prepared to perfection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights section" id="highlights">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Highlights</h2>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Experiences That Inspire</div>
+            <div class="highlights-grid">
+                <div class="highlight-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="highlight-icon">
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>Campfire & Music</h3>
+                    <p>Gather around the campfire on the beach under starlit skies, enjoying live music and warm conversations.</p>
+                </div>
+                <div class="highlight-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="highlight-icon">
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Trekking</h3>
+                    <p>Explore scenic trails and discover hidden gems in the lush landscapes surrounding our resort.</p>
+                </div>
+                <div class="highlight-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="highlight-icon">
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                            <path d="M2 2l7.586 7.586"></path>
+                        </svg>
+                    </div>
+                    <h3>Beach Activities</h3>
+                    <p>Enjoy boating, water sports, and various beach activities for an adventure-filled experience by the sea.</p>
+                </div>
+                <div class="highlight-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="highlight-icon">
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+                            <line x1="8" y1="16" x2="8.01" y2="16"></line>
+                            <line x1="8" y1="20" x2="8.01" y2="20"></line>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            <line x1="12" y1="22" x2="12.01" y2="22"></line>
+                            <line x1="16" y1="16" x2="16.01" y2="16"></line>
+                            <line x1="16" y1="20" x2="16.01" y2="20"></line>
+                        </svg>
+                    </div>
+                    <h3>Rain Dance</h3>
+                    <p>Let loose and have fun with exciting rain dance activities that bring joy and refreshment.</p>
+                </div>
+                <div class="highlight-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="highlight-icon">
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                            <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                            <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Beach & Nature Views</h3>
+                    <p>Immerse yourself in breathtaking panoramic views of pristine beaches and untouched natural beauty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section" id="gallery">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Gallery</h2>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Capture the Moments</div>
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-large" data-aos="fade-up">
+                    <img src="Images/6.jpeg" alt="Parna Kuteera Beach Resort View">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="Images/2.jpeg" alt="Parna Kuteera Resort">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Images/3.jpeg" alt="Parna Kuteera Beach View">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="Images/4.jpeg" alt="Parna Kuteera Accommodation">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Images/5.jpeg" alt="Parna Kuteera Activities">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location section" id="location">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Location</h2>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Find Your Way to Paradise</div>
+            <div class="location-content">
+                <div class="location-info" data-aos="fade-right">
+                    <div class="location-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="location-details">
+                        <h3>Parna Kuteera</h3>
+                        <p>Opposite Nirvana Beach</p>
+                        <p>Nirvana Beach Road, Farooqui Mohallah</p>
+                        <p>Kagal, Uttara Kannada - 581351</p>
+                        <p>Karnataka, India</p>
+                        
+                        <div class="business-hours">
+                            <h4><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg> Hours of Operation</h4>
+                            <p class="open-status">Open 24 Hours - All Days</p>
+                            <p class="hours-detail">Monday - Sunday: Open 24 Hrs</p>
+                        </div>
+
+                        <div class="payment-info">
+                            <h4><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg> Payment Options</h4>
+                            <p>UPI • Cash</p>
+                        </div>
+                        
+                        <a href="https://www.google.com/maps/search/?api=1&query=Parna+Kuteera+Kagal+Uttara+Kannada+581351" 
+                           class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Let's Plan Your Perfect Getaway</div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>9538580195</p>
+                            <p>8073169921</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>parnakuteera581351@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>9538580195</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contactName" required placeholder=" ">
+                            <label for="contactName">Your Name <span class="required">*</span></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="contactPhone" required placeholder=" " pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number">
+                            <label for="contactPhone">Phone Number <span class="required">*</span></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" placeholder=" ">
+                            <label for="contactEmail">Email (Optional)</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" rows="4" required placeholder=" "></textarea>
+                            <label for="contactMessage">Your Message <span class="required">*</span></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>Parna Kuteera</h2>
+                    <p class="footer-tagline">A Place to Hide.....</p>
+                    <p class="footer-description">Your peaceful retreat by the beach</p>
+                    <p class="footer-est">Established 2017 • Rated 4.3/5 ⭐ (442 Google Reviews)</p>
+                    <p class="footer-hours">Open 24 Hours, All Days</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#accommodation">Accommodation</a></li>
+                            <li><a href="#food">Food & Beverages</a></li>
+                            <li><a href="#highlights">Highlights</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Parna Kuteera. All rights reserved.</p>
+                <p class="footer-credits">Designed and developed by <a href="https://townlinksolutions.com/" target="_blank" rel="noopener noreferrer">TownLink Solutions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Enquire Button (Mobile) -->
+    <button class="floating-enquire" onclick="openModal()" aria-label="Enquire Now">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+    </button>
+
+    <!-- Enquiry Modal -->
+    <div class="modal" id="enquiryModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+            <h2 class="modal-title">Enquire Now</h2>
+            <p class="modal-subtitle">Let us help you plan your perfect beach getaway</p>
+            <form class="enquiry-form" id="enquiryForm">
+                <div class="form-group">
+                    <input type="text" id="name" required placeholder=" ">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" required placeholder=" " pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder=" ">
+                    <label for="email">Email (Optional)</label>
+                </div>
+                <div class="form-group">
+                    <select id="accommodation" required>
+                        <option value="" disabled selected>Select Accommodation Type</option>
+                        <option value="Family Room (4 Occupancy)">Family Room (4 Occupancy)</option>
+                        <option value="Dormitory (10 Occupancy)">Dormitory (10 Occupancy)</option>
+                        <option value="Tent Stay (provided in front of the beach)">Tent Stay (Beach Front)</option>
+                    </select>
+                    <label for="accommodation" class="select-label">Accommodation Type <span class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="dates" required placeholder=" ">
+                    <label for="dates">Preferred Date <span class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="3" required placeholder=" "></textarea>
+                    <label for="message">Message <span class="required">*</span></label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit Enquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <div class="success-content">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <h3>Thank You!</h3>
+            <p>Your enquiry has been received. We'll contact you shortly.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
