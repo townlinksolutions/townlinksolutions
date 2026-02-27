@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Insurance Products - Compare and get quotes from leading insurance companies with PariRaksha.">
+    <title>Browse Insurance Products - PariRaksha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with License Info -->
+    <header class="license-header">
+        <div class="header-container">
+            <div class="license-info">
+                <p><strong>PariRaksha Insurance Advisory</strong></p>
+                <p>IRDAI License: <strong>IB/2026/45829</strong></p>
+                <p>Category: <strong>Licensed Insurance Broker</strong></p>
+            </div>
+            <div class="header-contact">
+                <a href="tel:9844706357">📞 9844706357</a>
+                <a href="mailto:info@pariraksha.com">✉️ info@pariraksha.com</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar sticky-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">PariRaksha</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="browse.html" class="active">Browse Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="browse-hero">
+        <div class="browse-hero-content">
+            <h1>Browse Insurance Products</h1>
+            <p>Compare policies from leading insurers and get instant quotes</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Quick Filters -->
+        <section class="quick-filters">
+            <h2>Popular Insurance Types</h2>
+            <div class="filter-grid">
+                <button class="filter-btn" onclick="filterProducts('term')">
+                    <span class="filter-icon">🎯</span>
+                    <span>Term Insurance</span>
+                </button>
+                <button class="filter-btn" onclick="filterProducts('health')">
+                    <span class="filter-icon">🏥</span>
+                    <span>Health Insurance</span>
+                </button>
+                <button class="filter-btn" onclick="filterProducts('motor')">
+                    <span class="filter-icon">🚗</span>
+                    <span>Motor Insurance</span>
+                </button>
+                <button class="filter-btn" onclick="filterProducts('travel')">
+                    <span class="filter-icon">✈️</span>
+                    <span>Travel Insurance</span>
+                </button>
+                <button class="filter-btn" onclick="filterProducts('home')">
+                    <span class="filter-icon">🏠</span>
+                    <span>Home Insurance</span>
+                </button>
+                <button class="filter-btn" onclick="filterProducts('investment')">
+                    <span class="filter-icon">📈</span>
+                    <span>Investment Plans</span>
+                </button>
+                <button class="filter-btn" onclick="filterProducts('all')">
+                    <span class="filter-icon">⭐</span>
+                    <span>View All</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Insurance Products Grid -->
+        <section class="products-section">
+            <h2>All Insurance Products</h2>
+            <div class="products-grid">
+                <!-- Term Insurance -->
+                <div class="product-card term">
+                    <div class="product-badge">Popular</div>
+                    <h3>👤 Term Insurance</h3>
+                    <p class="product-desc">Simple, affordable life insurance for financial protection</p>
+                    <ul class="product-features">
+                        <li>✓ Coverage up to ₹1 Crore</li>
+                        <li>✓ Lowest Premiums</li>
+                        <li>✓ Easy Underwriting</li>
+                        <li>✓ Multiple Riders Available</li>
+                    </ul>
+                    <div class="product-price">Starting from <strong>₹25/day</strong></div>
+                    <button class="btn btn-primary btn-block" onclick="scrollToForm()">Get Quote</button>
+                </div>
+
+                <!-- Health Insurance -->
+                <div class="product-card health">
+                    <div class="product-badge">Best Seller</div>
+                    <h3>🏥 Health Insurance</h3>
+                    <p class="product-desc">Comprehensive health coverage for your family</p>
+                    <ul class="product-features">
+                        <li>✓ Coverage up to ₹50 Lakhs</li>
+                        <li>✓ Cashless at 10,000+ Hospitals</li>
+                        <li>✓ Maternity & OPD Benefits</li>
+                        <li>✓ Pre-existing Disease Coverage</li>
+                    </ul>
+                    <div class="product-price">Starting from <strong>₹250/month</strong></div>
+                    <button class="btn btn-primary btn-block" onclick="scrollToForm()">Get Quote</button>
+                </div>
+
+                <!-- Motor Insurance -->
+                <div class="product-card motor">
+                    <div class="product-badge">Mandatory</div>
+                    <h3>🚗 Motor Insurance</h3>
+                    <p class="product-desc">Third-party & comprehensive vehicle coverage</p>
+                    <ul class="product-features">
+                        <li>✓ Third Party Liability</li>
+                        <li>✓ Comprehensive Coverage</li>
+                        <li>✓ Zero Depreciation Add-on</li>
+                        <li>✓ 24/7 Roadside Assistance</li>
+                    </ul>
+                    <div class="product-price">Starting from <strong>₹1,500/year</strong></div>
+                    <button class="btn btn-primary btn-block" onclick="scrollToForm()">Get Quote</button>
+                </div>
+
+                <!-- Travel Insurance -->
+                <div class="product-card travel">
+                    <h3>✈️ Travel Insurance</h3>
+                    <p class="product-desc">Protection for domestic and international trips</p>
+                    <ul class="product-features">
+                        <li>✓ Medical Emergency Coverage</li>
+                        <li>✓ Trip Cancellation</li>
+                        <li>✓ Lost Baggage Claim</li>
+                        <li>✓ 24/7 Assistance Services</li>
+                    </ul>
+                    <div class="product-price">Starting from <strong>₹99/day</strong></div>
+                    <button class="btn btn-primary btn-block" onclick="scrollToForm()">Get Quote</button>
+                </div>
+
+                <!-- Home Insurance -->
+                <div class="product-card home">
+                    <h3>🏠 Home Insurance</h3>
+                    <p class="product-desc">Complete protection for your property and belongings</p>
+                    <ul class="product-features">
+                        <li>✓ Building Coverage</li>
+                        <li>✓ Personal Belongings</li>
+                        <li>✓ Liability Protection</li>
+                        <li>✓ Theft & Burglary</li>
+                    </ul>
+                    <div class="product-price">Starting from <strong>₹2,500/year</strong></div>
+                    <button class="btn btn-primary btn-block" onclick="scrollToForm()">Get Quote</button>
+                </div>
+
+                <!-- Investment Plans -->
+                <div class="product-card investment">
+                    <div class="product-badge">High Returns</div>
+                    <h3>📈 Investment Plans</h3>
+                    <p class="product-desc">Life insurance with wealth creation benefits</p>
+                    <ul class="product-features">
+                        <li>✓ Dual Benefit: Protection + Returns</li>
+                        <li>✓ ULIPs & Savings Plans</li>
+                        <li>✓ Tax Saving (Section 80C)</li>
+                        <li>✓ Guaranteed + Variable Returns</li>
+                    </ul>
+                    <div class="product-price">Starting from <strong>₹10,000/year</strong></div>
+                    <button class="btn btn-primary btn-block" onclick="scrollToForm()">Get Quote</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instant Quote Generator -->
+        <section class="instant-quote">
+            <h2>Get Instant Quote</h2>
+            <div class="quote-form">
+                <div class="form-group">
+                    <label>Insurance Type</label>
+                    <select id="quoteInsuranceType" onchange="updateQuoteFields()">
+                        <option value="">Select Insurance Type</option>
+                        <option value="term">Term Insurance</option>
+                        <option value="health">Health Insurance</option>
+                        <option value="motor">Motor Insurance</option>
+                        <option value="travel">Travel Insurance</option>
+                        <option value="home">Home Insurance</option>
+                        <option value="investment">Investment Plans</option>
+                    </select>
+                </div>
+                
+                <!-- Age Field (for Life/Health Insurance) -->
+                <div class="form-group" id="ageField" style="display:none;">
+                    <label>Age</label>
+                    <input type="number" id="quoteAge" placeholder="25" min="18" max="65">
+                </div>
+
+                <!-- Vehicle Age Field (for Motor Insurance) -->
+                <div class="form-group" id="vehicleAgeField" style="display:none;">
+                    <label>Vehicle Age</label>
+                    <select id="quoteVehicleAge">
+                        <option value="">Select Vehicle Age</option>
+                        <option value="0-1">0-1 Year</option>
+                        <option value="1-3">1-3 Years</option>
+                        <option value="3-5">3-5 Years</option>
+                        <option value="5+">5+ Years</option>
+                    </select>
+                </div>
+
+                <!-- Duration Field (for Travel Insurance) -->
+                <div class="form-group" id="durationField" style="display:none;">
+                    <label>Duration</label>
+                    <select id="quoteDuration">
+                        <option value="">Select Duration</option>
+                        <option value="7">7 Days</option>
+                        <option value="14">14 Days</option>
+                        <option value="30">30 Days</option>
+                        <option value="365">Annual</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Coverage Amount</label>
+                    <select id="quoteCoverage">
+                        <option value="">Select Coverage</option>
+                        <option value="25">₹25 Lakhs</option>
+                        <option value="50">₹50 Lakhs</option>
+                        <option value="75">₹75 Lakhs</option>
+                        <option value="100">₹1 Crore</option>
+                    </select>
+                </div>
+                
+                <div class="form-group quote-button-group">
+                    <label>&nbsp;</label>
+                    <button class="btn btn-primary" onclick="generateInstantQuote()">Get Quote</button>
+                </div>
+            </div>
+            <div id="quoteResult" class="quote-result"></div>
+        </section>
+
+        <!-- Calculators Section -->
+        <section class="calculators-section">
+            <h2>Insurance Calculators</h2>
+            <div class="calculator-grid">
+                <div class="calculator-card">
+                    <h3>🧮 Term Insurance Calculator</h3>
+                    <p>Calculate how much life insurance cover you need</p>
+                    <button class="btn btn-outline" onclick="showCalculator('term')">Open Calculator</button>
+                </div>
+                <div class="calculator-card">
+                    <h3>💊 Health Insurance Calculator</h3>
+                    <p>Determine optimal health insurance coverage for your family</p>
+                    <button class="btn btn-outline" onclick="showCalculator('health')">Open Calculator</button>
+                </div>
+                <div class="calculator-card">
+                    <h3>🚗 Premium Calculator</h3>
+                    <p>Estimate car insurance premium for your vehicle</p>
+                    <button class="btn btn-outline" onclick="showCalculator('premium')">Open Calculator</button>
+                </div>
+                <div class="calculator-card">
+                    <h3>💰 EMI Calculator</h3>
+                    <p>Calculate monthly EMI for investment plans</p>
+                    <button class="btn btn-outline" onclick="showCalculator('emi')">Open Calculator</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partner Insurance Companies -->
+        <section class="partners-section">
+            <h2>Partner Insurance Companies</h2>
+            <p class="partners-subtitle">We work with leading IRDAI-registered insurers to give you the best options</p>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">🏢</div>
+                    <h3>LIC of India</h3>
+                    <p>Life Insurance | Investments</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">🏥</div>
+                    <h3>Max Bupa Health</h3>
+                    <p>Health Insurance | Wellness</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">🚗</div>
+                    <h3>HDFC ERGO</h3>
+                    <p>General Insurance | Motor</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">🛡️</div>
+                    <h3>ICICI Prudential</h3>
+                    <p>Life Insurance | Health</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">✈️</div>
+                    <h3>Reliance Insurance</h3>
+                    <p>General Insurance | Travel</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">🏠</div>
+                    <h3>Axis Bank Insurance</h3>
+                    <p>General Insurance | Home</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust-section">
+            <h2>Why PariRaksha?</h2>
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Insurance Partners</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">IRDAI Compliant</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Claims Support</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="browse-cta">
+            <h2>Ready to Find Your Perfect Insurance?</h2>
+            <p>Our experts will help you compare, analyze and get the best insurance plan for your needs.</p>
+            <button class="btn btn-primary btn-large" onclick="scrollToForm()">Get Free Consultation Now</button>
+        </section>
+    </div>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section" id="consultation">
+        <div class="container">
+            <div class="form-container">
+                <h2>Get Your Free Consultation</h2>
+                <form id="consultationForm" class="consultation-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        <span class="error-msg" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number">
+                        <span class="error-msg" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        <span class="error-msg" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="insuranceType">Insurance Type *</label>
+                        <select id="insuranceType" name="insuranceType" required>
+                            <option value="">Select Insurance Type</option>
+                            <option value="term">Term Insurance</option>
+                            <option value="health">Health Insurance</option>
+                            <option value="motor">Motor Insurance</option>
+                            <option value="travel">Travel Insurance</option>
+                            <option value="home">Home Insurance</option>
+                            <option value="investment">Investment Plans</option>
+                        </select>
+                        <span class="error-msg" id="insuranceError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Get Free Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>PariRaksha</h4>
+                    <p>Your trusted partner for insurance advisory and solutions.</p>
+                    <p><strong>License:</strong> IB/2026/45829</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="education.html">Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📞 <a href="tel:9844706357">9844706357</a></p>
+                    <p>✉️ <a href="mailto:info@pariraksha.com">info@pariraksha.com</a></p>
+                    <p>📍 Bangalore, Karnataka, India</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Compliance</h4>
+                    <p>IRDAI Registered Broker</p>
+                    <p>Regulated & Licensed</p>
+                    <p>100% Transparent</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PariRaksha Insurance Advisory. All rights reserved.</p>
+                <p>IRDAI Registration: IB/2026/45829 | License Valid Till: 09/06/2027</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                card.style.display = (category === 'all' || card.classList.contains(category)) ? 'block' : 'none';
+            });
+            document.querySelector('.products-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updateQuoteFields() {
+            const type = document.getElementById('quoteInsuranceType').value;
+            
+            // Hide all conditional fields first
+            document.getElementById('ageField').style.display = 'none';
+            document.getElementById('vehicleAgeField').style.display = 'none';
+            document.getElementById('durationField').style.display = 'none';
+
+            // Show relevant fields based on insurance type
+            if (type === 'term' || type === 'health' || type === 'investment') {
+                document.getElementById('ageField').style.display = 'block';
+            } else if (type === 'motor') {
+                document.getElementById('vehicleAgeField').style.display = 'block';
+            } else if (type === 'travel') {
+                document.getElementById('durationField').style.display = 'block';
+            }
+        }
+
+        function generateInstantQuote() {
+            const type = document.getElementById('quoteInsuranceType').value;
+            const coverage = document.getElementById('quoteCoverage').value;
+
+            if (!type || !coverage) {
+                showAlert('Please fill all fields', 'error');
+                return;
+            }
+
+            let premiumPerMonth = 0;
+            let disclaimer = '*This is an estimated quote. Final premium may vary based on underwriting.';
+            let quoteDetails = `<p><strong>Insurance Type:</strong> ${type.charAt(0).toUpperCase() + type.slice(1)}</p>`;
+            quoteDetails += `<p><strong>Coverage:</strong> ₹${coverage} Lakhs</p>`;
+
+            // Different calculation logic for different insurance types
+            if (type === 'term' || type === 'health' || type === 'investment') {
+                const age = document.getElementById('quoteAge').value;
+                if (!age) {
+                    showAlert('Please fill all fields', 'error');
+                    return;
+                }
+
+                const basePrices = { term: 25, health: 250, investment: 1000 };
+                const basePrice = basePrices[type];
+                const ageMultiplier = 1 + (age - 25) * 0.05;
+                premiumPerMonth = Math.round(basePrice * ageMultiplier);
+                quoteDetails += `<p><strong>Age:</strong> ${age} years</p>`;
+                
+                if (type === 'term') {
+                    disclaimer = '*Life insurance premium varies based on medical history, health condition, and lifestyle habits.';
+                } else if (type === 'health') {
+                    disclaimer = '*Health insurance premium may vary based on medical history, pre-existing conditions, and family size.';
+                } else if (type === 'investment') {
+                    disclaimer = '*Investment plan returns vary based on market conditions. Consult our experts for detailed information.';
+                }
+            } 
+            else if (type === 'motor') {
+                const vehicleAge = document.getElementById('quoteVehicleAge').value;
+                if (!vehicleAge) {
+                    showAlert('Please fill all fields', 'error');
+                    return;
+                }
+
+                // Motor insurance premium based on coverage and vehicle age
+                let baseMotor = 150;
+                const vehicleAgeMultiplier = vehicleAge === '0-1' ? 1.0 : vehicleAge === '1-3' ? 0.95 : vehicleAge === '3-5' ? 0.90 : 0.85;
+                premiumPerMonth = Math.round((baseMotor + (coverage - 25) * 2) * vehicleAgeMultiplier);
+                quoteDetails += `<p><strong>Vehicle Age:</strong> ${vehicleAge}</p>`;
+                disclaimer = '*Motor insurance premium is based on vehicle value and age. Final premium may vary based on vehicle make/model, location, and driving history.';
+            }
+            else if (type === 'travel') {
+                const duration = document.getElementById('quoteDuration').value;
+                if (!duration) {
+                    showAlert('Please fill all fields', 'error');
+                    return;
+                }
+
+                // Travel insurance premium based on duration and coverage
+                const durationMultiplier = duration === '7' ? 1.0 : duration === '14' ? 1.3 : duration === '30' ? 1.8 : 2.5;
+                premiumPerMonth = Math.round((99 + (coverage - 25) * 1.5) * durationMultiplier / 30);
+                quoteDetails += `<p><strong>Duration:</strong> ${duration} Days</p>`;
+                disclaimer = '*Travel insurance premium varies based on destination, coverage type, and travel dates.';
+            }
+            else if (type === 'home') {
+                // Home Insurance calculation
+                premiumPerMonth = Math.round(250 + (coverage - 25) * 3);
+                disclaimer = '*Home insurance premium is based on property value and location. Final premium may vary based on property age and features.';
+            }
+
+            document.getElementById('quoteResult').innerHTML = `
+                <div class="quote-result-box">
+                    <h3>Your Estimated Quote</h3>
+                    <div class="quote-details">
+                        ${quoteDetails}
+                        <p class="quote-price"><strong>Estimated Monthly Premium:</strong> ₹${premiumPerMonth}</p>
+                        <p class="quote-disclaimer">${disclaimer}</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToForm()">Talk to Expert</button>
+                </div>
+            `;
+            showAlert('Quote generated! Scroll down to talk to our expert.', 'success');
+        }
+
+        function showCalculator(type) {
+            showAlert(`${type.toUpperCase()} Calculator opening soon. Call us for instant guidance: 9844706357`, 'info');
+        }
+
+        function scrollToForm() {
+            document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('name').focus();
+        }
+
+        // Mobile menu & form handlers
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        document.getElementById('consultationForm').addEventListener('submit', handleFormSubmit);
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact PariRaksha Insurance Advisory - Get in touch for free insurance consultation. Phone, email, office address, and online contact form available.">
+    <title>Contact Us - PariRaksha Insurance Advisory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with License Info -->
+    <header class="license-header">
+        <div class="header-container">
+            <div class="license-info">
+                <p><strong>PariRaksha Insurance Advisory</strong></p>
+                <p>IRDAI License: <strong>IB/2026/45829</strong></p>
+                <p>Category: <strong>Licensed Insurance Broker</strong></p>
+            </div>
+            <div class="header-contact">
+                <a href="tel:9844706357">📞 9844706357</a>
+                <a href="mailto:info@pariraksha.com">✉️ info@pariraksha.com</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar sticky-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">PariRaksha</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="browse.html">Browse Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>We're here to help with your insurance needs</p>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="contact-info-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:9844706357">9844706357</a></p>
+                    <p style="font-size: 13px; color: #666;">Available: Mon-Sat, 9 AM - 6 PM</p>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@pariraksha.com">info@pariraksha.com</a></p>
+                    <p style="font-size: 13px; color: #666;">Response within 24 hours</p>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Office Address</h3>
+                    <p>Bangalore Business Hub<br>
+                    Indiranagar, Bangalore<br>
+                    Karnataka 560038, India</p>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/919844706357" target="_blank">Chat on WhatsApp</a></p>
+                    <p style="font-size: 13px; color: #666;">Instant messaging available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <div class="form-header">
+                    <h2>Send Us Your Details</h2>
+                    <p>We'll get back to you within 24 hours with personalized insurance recommendations</p>
+                </div>
+
+                <form class="contact-form" id="contactForm" onsubmit="handleContactForm(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Full Name *</label>
+                            <input type="text" id="contactName" name="contactName" placeholder="Your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number *</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" name="contactEmail" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactCity">City *</label>
+                            <input type="text" id="contactCity" name="contactCity" placeholder="Your city" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactInsurance">Insurance Interest *</label>
+                        <select id="contactInsurance" name="contactInsurance" required>
+                            <option value="">-- Select Insurance Type --</option>
+                            <option value="life">Life Insurance</option>
+                            <option value="health">Health Insurance</option>
+                            <option value="motor">Motor Insurance</option>
+                            <option value="term">Term Insurance</option>
+                            <option value="business">Business Insurance</option>
+                            <option value="multiple">Multiple Products</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactMessage">Your Message</label>
+                        <textarea id="contactMessage" name="contactMessage" placeholder="Tell us about your insurance needs..." rows="5"></textarea>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="contactConsent" name="contactConsent" required>
+                        <label for="contactConsent">I consent to receive calls/emails about insurance products and services</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps Placeholder Section -->
+    <section class="maps-section">
+        <div class="container">
+            <h2 class="section-title">Visit Our Office</h2>
+            <p class="section-subtitle">Find us at our Bangalore location</p>
+            
+            <div class="maps-container">
+                <div class="maps-placeholder">
+                    <p style="font-size: 48px; margin-bottom: 10px;">🗺️</p>
+                    <h4>Bangalore Business Hub</h4>
+                    <p>Indiranagar, Bangalore<br>
+                    Karnataka 560038, India</p>
+                    <p style="margin-top: 15px; font-size: 12px; color: #666;">
+                        <strong>Working Hours:</strong><br>
+                        Monday - Saturday: 9:00 AM - 6:00 PM<br>
+                        Sunday: Closed<br>
+                        Holidays: 2nd & 4th Saturday
+                    </p>
+                    <button class="btn btn-secondary" style="margin-top: 15px;" onclick="location.href='tel:9844706357'">Call for Directions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Contact Us Section -->
+    <section class="why-contact">
+        <div class="container">
+            <h2 class="section-title">Why Contact Us Today?</h2>
+            <p class="section-subtitle">Get the right insurance solution for your needs</p>
+            
+            <div class="contact-benefits">
+                <div class="benefit-item">
+                    <span class="benefit-number">01</span>
+                    <h4>Free Consultation</h4>
+                    <p>No obligation consultation to understand your insurance needs and provide personalized recommendations.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-number">02</span>
+                    <h4>Expert Guidance</h4>
+                    <p>Professional advice from IRDAI licensed advisor with years of insurance industry experience.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-number">03</span>
+                    <h4>Best Options</h4>
+                    <p>Access to multiple insurance companies ensuring you get the best coverage at competitive rates.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-number">04</span>
+                    <h4>Hassle-Free Process</h4>
+                    <p>Complete assistance from policy selection to documentation and claim support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifetime Claims Support Section -->
+    <section class="claims-support">
+        <div class="container">
+            <h2 class="section-title">Lifetime Claims Support</h2>
+            <p class="section-subtitle">We're here for you, 24/7, even after you buy your policy</p>
+            
+            <div class="claims-grid">
+                <div class="claims-card">
+                    <div class="claims-icon">🚨</div>
+                    <h3>24/7 Claims Assistance</h3>
+                    <p>Our expert claims team is available round-the-clock to assist you whenever you need to file a claim. Don't struggle alone during difficult times.</p>
+                    <p><strong>Call:</strong> <a href="tel:9844706357">9844706357</a></p>
+                </div>
+
+                <div class="claims-card">
+                    <div class="claims-icon">📋</div>
+                    <h3>Claim Filing Guidance</h3>
+                    <p>We guide you through the entire claim filing process step-by-step. Our team prepares all documentation and coordinates with the insurance company on your behalf.</p>
+                </div>
+
+                <div class="claims-card">
+                    <div class="claims-icon">⚡</div>
+                    <h3>Fast Claim Settlement</h3>
+                    <p>We follow up with the insurance company to ensure your claim is processed quickly. Our experience helps avoid delays and ensure proper claim approval.</p>
+                </div>
+
+                <div class="claims-card">
+                    <div class="claims-icon">🤝</div>
+                    <h3>Complete Handholding</h3>
+                    <p>From the moment you file a claim till the final settlement, we provide complete support and transparency. You're never alone in the process.</p>
+                </div>
+
+                <div class="claims-card">
+                    <div class="claims-icon">💡</div>
+                    <h3>Expert Advice</h3>
+                    <p>We help you understand claim denials, appeals, and explore alternative solutions. Our expertise ensures you get the benefits you deserve.</p>
+                </div>
+
+                <div class="claims-card">
+                    <div class="claims-icon">📞</div>
+                    <h3>Your Point of Contact</h3>
+                    <p>We remain your single point of contact with the insurance company, avoiding confusion and ensuring smooth communication throughout the claim process.</p>
+                </div>
+            </div>
+
+            <div class="claims-cta">
+                <h3>Need to File a Claim?</h3>
+                <p>Contact our claims team immediately. We're ready to help you get the benefits you deserve.</p>
+                <div class="cta-buttons">
+                    <a href="tel:9844706357" class="btn btn-primary">📞 Call Now</a>
+                    <a href="https://wa.me/919844706357?text=I%20need%20help%20with%20my%20insurance%20claim" target="_blank" class="btn btn-secondary">💬 WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Disclaimer -->
+    <section class="compliance-section">
+        <div class="container">
+            <div class="compliance-box">
+                <h3>📋 Important Compliance Disclosures</h3>
+                <p><strong>Insurance is subject matter of solicitation.</strong></p>
+                <p>By contacting us, you are requesting insurance information. Your personal data will be used only for contacting you about insurance products and services. We are a licensed Insurance Advisor/Broker under IRDAI (License: IB/2026/45829) and do not act as an insurance company. Actual insurance coverage is provided by licensed insurance companies.</p>
+                <p><strong>Data Protection:</strong> Your information is protected under applicable privacy laws and will not be shared with third parties without your consent.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Quick Answers</h2>
+            <p class="section-subtitle">Common questions about contacting us</p>
+            
+            <div class="faq-container" style="max-width: 700px; margin: 0 auto;">
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>What happens after I submit the contact form?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We'll review your inquiry and contact you within 24 hours via phone or email to discuss your insurance needs and provide recommendations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>What are your office hours?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We're available Monday to Saturday, 9:00 AM to 6:00 PM. Emergency insurance queries can be addressed via phone or WhatsApp.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>Is there any charge for consultation?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, our initial consultation is completely free. We only earn commission from insurance companies when you purchase a policy.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>How will you use my contact information?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your information is used only to contact you about insurance products and services. We follow strict data protection policies and never share your details without permission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PariRaksha Insurance Advisory</h4>
+                    <p><strong>Registered Address:</strong><br>
+                    Bangalore Business Hub<br>
+                    Indiranagar, Bangalore<br>
+                    Karnataka 560038, India</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><strong>Phone:</strong> 9844706357<br>
+                    <strong>Email:</strong> info@pariraksha.com<br>
+                    <strong>License:</strong> IB/2026/45829<br>
+                    <strong>Category:</strong> Licensed Insurance Broker</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-compliance">
+                <p><strong>⚠️ Compliance Notice:</strong> Insurance is subject matter of solicitation. This is for educational purposes only. Consult with our licensed advisors before making investment decisions. For license verification, visit <a href="https://www.irdai.gov.in" target="_blank">IRDAI Official Website</a>.</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 PariRaksha Insurance Advisory. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919844706357?text=Hello%20PariRaksha,%20I%20want%20to%20discuss%20insurance%20options" target="_blank" class="whatsapp-btn" title="Chat on WhatsApp">
+        <span>💬</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

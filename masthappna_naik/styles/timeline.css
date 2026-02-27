@@ -1,0 +1,198 @@
+/* Timeline Page Styles */
+
+.full-timeline-section {
+    padding: 3rem 0;
+    background-color: var(--light-bg);
+}
+
+.timeline-full {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline-full::before {
+    content: '';
+    position: absolute;
+    left: 120px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color), var(--secondary-color));
+}
+
+.timeline-item-full {
+    position: relative;
+    margin-bottom: 4rem;
+    padding-left: 180px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--text-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+    z-index: 2;
+    border: 6px solid #fff;
+}
+
+.timeline-content-full {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.timeline-content-full::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 40px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #fff;
+}
+
+.timeline-content-full h3 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(255, 107, 53, 0.1);
+    border-radius: 15px;
+}
+
+.timeline-content-full p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.timeline-content-full ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.timeline-content-full ul li {
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.timeline-content-full ul li::before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+}
+
+/* Alternating colors for timeline markers */
+.timeline-item-full:nth-child(even) .timeline-marker {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-bg));
+}
+
+.timeline-item-full:nth-child(3n) .timeline-marker {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+}
+
+/* Hover effects */
+.timeline-content-full {
+    transition: all 0.3s;
+}
+
+.timeline-item-full:hover .timeline-content-full {
+    transform: translateX(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-item-full:hover .timeline-marker {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-full::before {
+        left: 60px;
+    }
+    
+    .timeline-item-full {
+        padding-left: 120px;
+    }
+    
+    .timeline-marker {
+        width: 80px;
+        height: 80px;
+        font-size: 1.1rem;
+        left: 20px;
+    }
+    
+    .timeline-content-full h3 {
+        font-size: 1.4rem;
+    }
+    
+    .timeline-content-full p {
+        font-size: 1rem;
+    }
+    
+    .timeline-content-full::before {
+        left: -15px;
+        top: 30px;
+        border-right: 15px solid #fff;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-full::before {
+        left: 40px;
+    }
+    
+    .timeline-item-full {
+        padding-left: 90px;
+    }
+    
+    .timeline-marker {
+        width: 60px;
+        height: 60px;
+        font-size: 0.9rem;
+        left: 10px;
+        border: 4px solid #fff;
+    }
+    
+    .timeline-content-full {
+        padding: 1.5rem;
+    }
+    
+    .timeline-content-full h3 {
+        font-size: 1.2rem;
+    }
+}

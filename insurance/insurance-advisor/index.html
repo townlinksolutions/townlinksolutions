@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PariRaksha - Premium Insurance Advisory Services in Karnataka. Licensed Insurance Advisor providing Life, Health, Motor, and Term Insurance solutions.">
+    <meta name="keywords" content="Insurance Advisor, Life Insurance, Health Insurance, Motor Insurance, IRDAI Registered">
+    <meta name="author" content="PariRaksha Insurance Advisory">
+    <title>PariRaksha - Premium Insurance Advisory Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with License Info -->
+    <header class="license-header">
+        <div class="header-container">
+            <div class="license-info">
+                <p><strong>PariRaksha Insurance Advisory</strong></p>
+                <p>IRDAI License: <strong>IB/2026/45829</strong></p>
+                <p>Category: <strong>Licensed Insurance Broker</strong></p>
+            </div>
+            <div class="header-contact">
+                <a href="tel:9844706357">📞 9844706357</a>
+                <a href="mailto:info@pariraksha.com">✉️ info@pariraksha.com</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar sticky-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">PariRaksha</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="browse.html">Browse Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Protect Your Family's Financial Future Today</h1>
+            <p class="hero-subtitle">Expert Insurance Advisory from a Licensed IRDAI Professional. Multiple Insurer Options, Personalized Solutions, Complete Claim Support.</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="location.href='browse.html'">Browse Products</button>
+                <button class="btn btn-secondary" onclick="scrollToForm()">Get Free Consultation</button>
+                <button class="btn btn-secondary" onclick="location.href='tel:9844706357'">📞 Call Now</button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Why PariRaksha Section - Similar to Ditto -->
+    <section class="why-pariraksha">
+        <div class="container">
+            <h2 class="section-title">The PariRaksha Advantage</h2>
+            <p class="section-subtitle">Expert-Driven Insurance Advisory With Your Best Interests in Mind</p>
+            
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">👨‍💼</div>
+                    <h3>IRDAI Certified Experts</h3>
+                    <p>Talk to licensed insurance professionals, not pushy salesmen. Get transparent advice free from conflicts of interest with our guaranteed <strong>No-Spam Policy</strong>.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">💰</div>
+                    <h3>30-Min Free Consultation</h3>
+                    <p>Book a completely <strong>free 30-minute consultation</strong> with our expert advisors. Zero cost, zero obligations. We'll help you understand your insurance needs.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">🤝</div>
+                    <h3>End-to-End Assistance</h3>
+                    <p>Complete handholding from your first call to receiving your policy. We handle all paperwork, clarifications, and ensure smooth policy issuance.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">🚨</div>
+                    <h3>Lifetime Claim Support</h3>
+                    <p>Our expert claims team is available <strong>24/7</strong> to assist you and your family whenever you need claim support. We ensure hassle-free claim processing.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">📊</div>
+                    <h3>Policy Comparison</h3>
+                    <p>Compare multiple insurance policies side-by-side from different insurers. We help you understand coverage, benefits, and choose the best plan for your needs.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">📚</div>
+                    <h3>Insurance Education</h3>
+                    <p>Learn insurance basics, understand coverage types, tax benefits (Section 80C, 80D), and make informed decisions. Knowledge is power in insurance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture Form Section -->
+    <section class="lead-form-section">
+        <div class="container">
+            <h2 class="section-title">Get Your Free Insurance Consultation</h2>
+            <p class="section-subtitle">Fill the form below and our expert will contact you within 24 hours</p>
+            
+            <div class="lead-form-container" id="leadForm">
+                <form class="lead-form" id="consultationForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="insuranceType">Type of Insurance Needed *</label>
+                        <select id="insuranceType" name="insuranceType" required>
+                            <option value="">-- Select Insurance Type --</option>
+                            <option value="life">Life Insurance</option>
+                            <option value="health">Health Insurance</option>
+                            <option value="motor">Motor Insurance</option>
+                            <option value="term">Term Insurance</option>
+                            <option value="business">Business Insurance</option>
+                            <option value="multiple">Multiple Products</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit">Get Free Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title">Our Insurance Solutions</h2>
+            <p class="section-subtitle">Comprehensive coverage options tailored to your needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card" style="animation-delay: 0.1s;">
+                    <div class="service-icon">💚</div>
+                    <h3>Life Insurance</h3>
+                    <p>Secure your family's financial future with comprehensive life coverage and flexible policy options.</p>
+                    <a href="services.html#life-insurance" class="service-link">Learn More →</a>
+                </div>
+                
+                <div class="service-card" style="animation-delay: 0.2s;">
+                    <div class="service-icon">⚕️</div>
+                    <h3>Health Insurance</h3>
+                    <p>Affordable health coverage protecting you and your family against unexpected medical expenses.</p>
+                    <a href="services.html#health-insurance" class="service-link">Learn More →</a>
+                </div>
+                
+                <div class="service-card" style="animation-delay: 0.3s;">
+                    <div class="service-icon">🚗</div>
+                    <h3>Motor Insurance</h3>
+                    <p>Complete protection for your vehicle with comprehensive and third-party coverage options.</p>
+                    <a href="services.html#motor-insurance" class="service-link">Learn More →</a>
+                </div>
+                
+                <div class="service-card" style="animation-delay: 0.4s;">
+                    <div class="service-icon">📋</div>
+                    <h3>Term Insurance</h3>
+                    <p>Affordable term plans providing maximum coverage at minimum premiums for pure protection.</p>
+                    <a href="services.html#term-insurance" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose PariRaksha?</h2>
+            <p class="section-subtitle">Your trusted partner for insurance solutions</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Personalized Advice</h3>
+                    <p>One-on-one consultation to understand your needs and recommend the perfect insurance solution tailored to your family's unique requirements.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏢</div>
+                    <h3>Multiple Insurer Options</h3>
+                    <p>Access to leading insurance providers, giving you the freedom to choose the best coverage at the most competitive premium rates.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Claim Support Assistance</h3>
+                    <p>Complete guidance through the claims process with dedicated support ensuring your claims are processed smoothly and quickly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Trusted by hundreds of satisfied customers</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card" style="animation-delay: 0.1s;">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"PariRaksha helped me find the perfect health insurance plan for my family. Their personalized approach and support made everything so simple."</p>
+                    <p class="testimonial-author">- Rajesh Kumar, Bangalore</p>
+                </div>
+                
+                <div class="testimonial-card" style="animation-delay: 0.2s;">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"I was confused about life insurance options. The advisor took time to explain everything clearly and found me a plan within my budget."</p>
+                    <p class="testimonial-author">- Priya Sharma, Mysore</p>
+                </div>
+                
+                <div class="testimonial-card" style="animation-delay: 0.3s;">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Outstanding claim support! When I needed to file a claim, PariRaksha guided me through every step. Highly recommended!"</p>
+                    <p class="testimonial-author">- Amit Patel, Hubli</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Quick answers to common insurance questions</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>What is the minimum age for life insurance?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most life insurance policies are available for individuals aged 18 to 65 years. Some insurers offer policies up to age 75 depending on the plan selected.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>How much health insurance coverage do I need?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Coverage needs depend on your family size, age, and health condition. Generally, a minimum of ₹5 lakhs per person is recommended, with ₹10-20 lakhs for comprehensive coverage.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>What documents are needed for insurance claim?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Required documents vary by policy type. Generally, you'll need the policy document, claim form, identity proof, medical reports (for health claims), and bills/receipts. Our team will guide you through the exact requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>Can I surrender my insurance policy?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, most policies allow surrender after a certain period (usually 30 days). The surrender value depends on your policy terms. We recommend consulting with us before making this decision.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button">
+                        <span>Is PariRaksha a licensed insurance company?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>PariRaksha is a licensed Insurance Advisor/Broker registered with IRDAI (Insurance Regulatory and Development Authority of India). We are not an insurance company but represent multiple insurers to provide you the best options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Disclaimer -->
+    <section class="compliance-section">
+        <div class="container">
+            <div class="compliance-box">
+                <h3>📋 Important Compliance Disclosures</h3>
+                <p><strong>Insurance is subject matter of solicitation.</strong></p>
+                <p>PariRaksha is a licensed Insurance Advisor/Broker under IRDAI regulations. We provide advisory services and do not act as an insurance company. All products and services are offered by licensed insurance companies. Please verify licenses and credentials on <a href="https://www.irdai.gov.in" target="_blank">www.irdai.gov.in</a>.</p>
+                <p>Past performance does not guarantee future results. Insurance products are subject to underwriting approval and policy terms & conditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PariRaksha Insurance Advisory</h4>
+                    <p><strong>Registered Address:</strong><br>
+                    Bangalore Business Hub<br>
+                    Indiranagar, Bangalore<br>
+                    Karnataka 560038, India</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><strong>Phone:</strong> 9844706357<br>
+                    <strong>Email:</strong> info@pariraksha.com<br>
+                    <strong>License:</strong> IB/2026/45829<br>
+                    <strong>Category:</strong> Licensed Insurance Broker</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-compliance">
+                <p><strong>⚠️ Compliance Notice:</strong> Insurance is subject matter of solicitation. This is for educational purposes only. Consult with our licensed advisors before making investment decisions. For license verification, visit <a href="https://www.irdai.gov.in" target="_blank">IRDAI Official Website</a>.</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 PariRaksha Insurance Advisory. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919844706357?text=Hello%20PariRaksha,%20I%20want%20to%20discuss%20insurance%20options" target="_blank" class="whatsapp-btn" title="Chat on WhatsApp">
+        <span>💬</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

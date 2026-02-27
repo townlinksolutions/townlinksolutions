@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ಮಾಸ್ತಪ್ಪ ನಾಯಕ್ </title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Admin Dashboard</h1>
+                <div class="header-actions">
+                    <span class="welcome-text">Welcome, <strong>Masthappa Naik</strong></span>
+                    <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" data-section="overview">
+                    <span class="nav-icon">📊</span>
+                    <span>Overview</span>
+                </a>
+                <a href="#feedback" class="nav-item" data-section="feedback">
+                    <span class="nav-icon">💬</span>
+                    <span>Feedback</span>
+                </a>
+                <a href="#analytics" class="nav-item" data-section="analytics">
+                    <span class="nav-icon">📈</span>
+                    <span>Analytics</span>
+                </a>
+                <a href="#content" class="nav-item" data-section="content">
+                    <span class="nav-icon">📝</span>
+                    <span>Update Content</span>
+                </a>
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span>Back to Website</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <h2 class="section-title">ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಅವಲೋಕನ</h2>
+                
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h3>Total Visitors</h3>
+                            <p class="stat-number">45,678</p>
+                            <span class="stat-change positive">+12% ಈ ತಿಂಗಳು</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">💬</div>
+                        <div class="stat-info">
+                            <h3>Messages/Feedback</h3>
+                            <p class="stat-number">234</p>
+                            <span class="stat-change positive">+8% ಈ ವಾರ</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">📍</div>
+                        <div class="stat-info">
+                            <h3>Unique Locations</h3>
+                            <p class="stat-number">128</p>
+                            <span class="stat-change neutral">ಭಾರತಾದ್ಯಂತ</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">⏰</div>
+                        <div class="stat-info">
+                            <h3>Avg. Time on Site</h3>
+                            <p class="stat-number">4:35</p>
+                            <span class="stat-change positive">+15% ಇಂದು</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <h3>ವೆಬ್‌ಸೈಟ್ ಸಂದರ್ಶಕರ ಪ್ರವೃತ್ತಿ</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="visitorChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h3>ಪ್ರಮುಖ ಕಾಳಜಿಗಳು</h3>
+                        <div class="concerns-chart">
+                            <div class="concern-bar">
+                                <span class="concern-label">ಆರೋಗ್ಯ ಮೂಲಸೌಕರ್ಯ</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 85%"></div>
+                                    <span class="bar-value">85%</span>
+                                </div>
+                            </div>
+                            <div class="concern-bar">
+                                <span class="concern-label">ಪರಿಸರ ರಕ್ಷಣೆ</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 78%"></div>
+                                    <span class="bar-value">78%</span>
+                                </div>
+                            </div>
+                            <div class="concern-bar">
+                                <span class="concern-label">ಶಿಕ್ಷಣ</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 65%"></div>
+                                    <span class="bar-value">65%</span>
+                                </div>
+                            </div>
+                            <div class="concern-bar">
+                                <span class="concern-label">ಉದ್ಯೋಗ ಸೃಷ್ಟಿ</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 58%"></div>
+                                    <span class="bar-value">58%</span>
+                                </div>
+                            </div>
+                            <div class="concern-bar">
+                                <span class="concern-label">ಮೂಲಸೌಕರ್ಯ</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 52%"></div>
+                                    <span class="bar-value">52%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feedback Section -->
+            <section id="feedback" class="dashboard-section">
+                <h2 class="section-title">ಪ್ರತಿಕ್ರಿಯೆ ಮತ್ತು ಸಂದೇಶಗಳು</h2>
+                
+                <div class="feedback-filters">
+                    <button class="filter-btn active" data-filter="all">All (234)</button>
+                    <button class="filter-btn" data-filter="unread">Unread (45)</button>
+                    <button class="filter-btn" data-filter="important">Important (12)</button>
+                </div>
+
+                <div class="feedback-list">
+                    <div class="feedback-item unread">
+                        <div class="feedback-header">
+                            <div class="feedback-user">
+                                <strong>ರಮೇಶ್ ಶೆಟ್ಟಿ</strong>
+                                <span class="feedback-meta">Murdeshwar • 2 hours ago</span>
+                            </div>
+                            <span class="feedback-badge">ಆರೋಗ್ಯ</span>
+                        </div>
+                        <p class="feedback-message">ಬಹು-ವಿಶೇಷ ಆಸ್ಪತ್ರೆಗಾಗಿ ನಿಮ್ಮ ಪ್ರಯತ್ನಗಳು ಅತ್ಯಂತ ಮಹತ್ವದ್ದಾಗಿವೆ. ನಾವು ನಿಮ್ಮೊಂದಿಗೆ ಇದ್ದೇವೆ.</p>
+                        <div class="feedback-actions">
+                            <button class="action-btn">Reply</button>
+                            <button class="action-btn">Mark as Read</button>
+                            <button class="action-btn">Archive</button>
+                        </div>
+                    </div>
+
+                    <div class="feedback-item">
+                        <div class="feedback-header">
+                            <div class="feedback-user">
+                                <strong>ಪ್ರಿಯಾ ನಾಯಕ್</strong>
+                                <span class="feedback-meta">Bhatkal • 5 hours ago</span>
+                            </div>
+                            <span class="feedback-badge">ಶಿಕ್ಷಣ</span>
+                        </div>
+                        <p class="feedback-message">ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಭಗವದ್ಗೀತಾ ವಿತರಣೆ ಕಾರ್ಯಕ್ರಮ ಅತ್ಯಂತ ಪ್ರಶಂಸನೀಯ. ನಮ್ಮ ಗ್ರಾಮದಲ್ಲಿ ಕೂಡ ಇಂತಹ ಕಾರ್ಯಕ್ರಮ ಆಯೋಜಿಸಿ.</p>
+                        <div class="feedback-actions">
+                            <button class="action-btn">Reply</button>
+                            <button class="action-btn">Archive</button>
+                        </div>
+                    </div>
+
+                    <div class="feedback-item unread important">
+                        <div class="feedback-header">
+                            <div class="feedback-user">
+                                <strong>ಸುರೇಶ್ ಕುಮಾರ್</strong>
+                                <span class="feedback-meta">Honnavar • 1 day ago</span>
+                            </div>
+                            <span class="feedback-badge">ಪರಿಸರ</span>
+                        </div>
+                        <p class="feedback-message">ಶರಾವತಿ ಯೋಜನೆ ವಿರುದ್ಧ ನಿಮ್ಮ ಹೋರಾಟ ಪ್ರಶಂಸನೀಯ. ನಮ್ಮ ಗ್ರಾಮದ 500 ಜನರು ಮುಂದಿನ ಸಭೆಯಲ್ಲಿ ಭಾಗವಹಿಸಲು ಸಿದ್ಧರಿದ್ದಾರೆ.</p>
+                        <div class="feedback-actions">
+                            <button class="action-btn">Reply</button>
+                            <button class="action-btn">Mark as Read</button>
+                            <button class="action-btn">Archive</button>
+                        </div>
+                    </div>
+
+                    <div class="feedback-item">
+                        <div class="feedback-header">
+                            <div class="feedback-user">
+                                <strong>ಅನಿತಾ ಪಾಟೀಲ್</strong>
+                                <span class="feedback-meta">Kumta • 2 days ago</span>
+                            </div>
+                            <span class="feedback-badge">ಸಾಮಾಜಿಕ</span>
+                        </div>
+                        <p class="feedback-message">ಬಡ ಕುಟುಂಬಗಳಿಗೆ ನೇರ ಸಹಾಯ ಮಾಡುತ್ತಿದ್ದೀರಿ. ಇದು ನಿಜವಾದ ನಾಯಕತ್ವ. ಧನ್ಯವಾದಗಳು.</p>
+                        <div class="feedback-actions">
+                            <button class="action-btn">Reply</button>
+                            <button class="action-btn">Archive</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="dashboard-section">
+                <h2 class="section-title">ವಿಸ್ತೃತ ವಿಶ್ಲೇಷಣೆ</h2>
+                
+                <div class="analytics-grid">
+                    <!-- Demographics -->
+                    <div class="analytics-card">
+                        <h3>ವಯಸ್ಸು ವಿಭಾಗ</h3>
+                        <div class="demographics-chart">
+                            <div class="demo-item">
+                                <span class="demo-label">18-25</span>
+                                <div class="demo-bar-container">
+                                    <div class="demo-bar" style="width: 35%"></div>
+                                    <span class="demo-value">35%</span>
+                                </div>
+                            </div>
+                            <div class="demo-item">
+                                <span class="demo-label">26-35</span>
+                                <div class="demo-bar-container">
+                                    <div class="demo-bar" style="width: 42%"></div>
+                                    <span class="demo-value">42%</span>
+                                </div>
+                            </div>
+                            <div class="demo-item">
+                                <span class="demo-label">36-50</span>
+                                <div class="demo-bar-container">
+                                    <div class="demo-bar" style="width: 18%"></div>
+                                    <span class="demo-value">18%</span>
+                                </div>
+                            </div>
+                            <div class="demo-item">
+                                <span class="demo-label">50+</span>
+                                <div class="demo-bar-container">
+                                    <div class="demo-bar" style="width: 5%"></div>
+                                    <span class="demo-value">5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Geographic Distribution -->
+                    <div class="analytics-card">
+                        <h3>ಭೌಗೋಳಿಕ ವಿತರಣೆ</h3>
+                        <div class="location-list">
+                            <div class="location-item">
+                                <span class="location-name">Murdeshwar</span>
+                                <span class="location-count">12,456</span>
+                            </div>
+                            <div class="location-item">
+                                <span class="location-name">Bhatkal</span>
+                                <span class="location-count">10,234</span>
+                            </div>
+                            <div class="location-item">
+                                <span class="location-name">Honnavar</span>
+                                <span class="location-count">8,765</span>
+                            </div>
+                            <div class="location-item">
+                                <span class="location-name">Kumta</span>
+                                <span class="location-count">5,432</span>
+                            </div>
+                            <div class="location-item">
+                                <span class="location-name">Karwar</span>
+                                <span class="location-count">4,321</span>
+                            </div>
+                            <div class="location-item">
+                                <span class="location-name">Other Karnataka</span>
+                                <span class="location-count">3,210</span>
+                            </div>
+                            <div class="location-item">
+                                <span class="location-name">Other States</span>
+                                <span class="location-count">1,260</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device Stats -->
+                    <div class="analytics-card">
+                        <h3>ಸಾಧನ ಬಳಕೆ</h3>
+                        <div class="device-stats">
+                            <div class="device-item">
+                                <span class="device-icon">📱</span>
+                                <div class="device-info">
+                                    <strong>Mobile</strong>
+                                    <span>68%</span>
+                                </div>
+                            </div>
+                            <div class="device-item">
+                                <span class="device-icon">💻</span>
+                                <div class="device-info">
+                                    <strong>Desktop</strong>
+                                    <span>25%</span>
+                                </div>
+                            </div>
+                            <div class="device-item">
+                                <span class="device-icon">📟</span>
+                                <div class="device-info">
+                                    <strong>Tablet</strong>
+                                    <span>7%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Pages -->
+                    <div class="analytics-card">
+                        <h3>ಜನಪ್ರಿಯ ಪುಟಗಳು</h3>
+                        <div class="popular-pages">
+                            <div class="page-item">
+                                <span class="page-name">Home</span>
+                                <span class="page-views">18,234</span>
+                            </div>
+                            <div class="page-item">
+                                <span class="page-name">About</span>
+                                <span class="page-views">12,567</span>
+                            </div>
+                            <div class="page-item">
+                                <span class="page-name">Vision</span>
+                                <span class="page-views">9,876</span>
+                            </div>
+                            <div class="page-item">
+                                <span class="page-name">News</span>
+                                <span class="page-views">8,432</span>
+                            </div>
+                            <div class="page-item">
+                                <span class="page-name">Contact</span>
+                                <span class="page-views">6,789</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Update Section -->
+            <section id="content" class="dashboard-section">
+                <h2 class="section-title">ವಿಷಯ ನವೀಕರಣ</h2>
+                
+                <div class="content-update-grid">
+                    <div class="update-card">
+                        <h3>Add News Article</h3>
+                        <form class="update-form">
+                            <div class="form-group">
+                                <label for="newsTitle">Title (ಕನ್ನಡದಲ್ಲಿ)</label>
+                                <input type="text" id="newsTitle" placeholder="ಸುದ್ದಿ ಶೀರ್ಷಿಕೆ">
+                            </div>
+                            <div class="form-group">
+                                <label for="newsDate">Date</label>
+                                <input type="date" id="newsDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="newsContent">Content (ಕನ್ನಡದಲ್ಲಿ)</label>
+                                <textarea id="newsContent" rows="4" placeholder="ಸುದ್ದಿ ವಿವರ..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Publish News</button>
+                        </form>
+                    </div>
+
+                    <div class="update-card">
+                        <h3>Add Event</h3>
+                        <form class="update-form">
+                            <div class="form-group">
+                                <label for="eventTitle">Event Name (ಕನ್ನಡದಲ್ಲಿ)</label>
+                                <input type="text" id="eventTitle" placeholder="ಕಾರ್ಯಕ್ರಮದ ಹೆಸರು">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventDate">Event Date</label>
+                                <input type="date" id="eventDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventLocation">Location</label>
+                                <input type="text" id="eventLocation" placeholder="ಸ್ಥಳ">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventDescription">Description (ಕನ್ನಡದಲ್ಲಿ)</label>
+                                <textarea id="eventDescription" rows="3" placeholder="ಕಾರ್ಯಕ್ರಮದ ವಿವರ..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Event</button>
+                        </form>
+                    </div>
+
+                    <div class="update-card">
+                        <h3>Upload Gallery Image</h3>
+                        <form class="update-form">
+                            <div class="form-group">
+                                <label for="imageTitle">Image Title (ಕನ್ನಡದಲ್ಲಿ)</label>
+                                <input type="text" id="imageTitle" placeholder="ಚಿತ್ರ ಶೀರ್ಷಿಕೆ">
+                            </div>
+                            <div class="form-group">
+                                <label for="imageFile">Select Image</label>
+                                <input type="file" id="imageFile" accept="image/*">
+                            </div>
+                            <div class="form-group">
+                                <label for="imageCategory">Category</label>
+                                <select id="imageCategory">
+                                    <option>ಸಮಾಜಸೇವೆ</option>
+                                    <option>ಪರಿಸರ</option>
+                                    <option>ಶಿಕ್ಷಣ</option>
+                                    <option>ಕ್ರೀಡೆ</option>
+                                    <option>ಇತರೆ</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload Image</button>
+                        </form>
+                    </div>
+
+                    <div class="update-card">
+                        <h3>Update Homepage Banner</h3>
+                        <form class="update-form">
+                            <div class="form-group">
+                                <label for="bannerText">Banner Text (ಕನ್ನಡದಲ್ಲಿ)</label>
+                                <input type="text" id="bannerText" placeholder="ಮುಖ್ಯ ಸಂದೇಶ">
+                            </div>
+                            <div class="form-group">
+                                <label for="bannerSubtext">Subtext (ಕನ್ನಡದಲ್ಲಿ)</label>
+                                <input type="text" id="bannerSubtext" placeholder="ಉಪ ಸಂದೇಶ">
+                            </div>
+                            <div class="form-group">
+                                <label for="bannerImage">Banner Image</label>
+                                <input type="file" id="bannerImage" accept="image/*">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Banner</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="success-message" style="display: none;">
+                    <p>✅ Content updated successfully! (Demo mode - changes not saved)</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>
