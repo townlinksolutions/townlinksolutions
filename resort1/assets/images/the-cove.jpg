@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+  <defs>
+    <linearGradient id="cove" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a7ea4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#164e63;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#cove)"/>
+  <rect x="10" y="10" width="780" height="580" fill="none" stroke="white" stroke-width="3"/>
+  <text x="50%" y="38%" font-family="Arial, sans-serif" font-size="56" fill="white" text-anchor="middle" font-weight="bold">The Cove</text>
+  <text x="50%" y="48%" font-family="Arial, sans-serif" font-size="30" fill="rgba(255,255,255,0.95)" text-anchor="middle">Signature Restaurant</text>
+  <text x="50%" y="58%" font-family="Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.9)" text-anchor="middle">Fresh Seafood • Ocean Views</text>
+  <text x="50%" y="66%" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.85)" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+</svg>

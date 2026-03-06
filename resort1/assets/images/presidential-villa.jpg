@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a7ea4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grad4)"/>
+  <rect x="10" y="10" width="780" height="580" fill="none" stroke="#d4af37" stroke-width="4"/>
+  <text x="50%" y="38%" font-family="Arial, sans-serif" font-size="52" fill="#d4af37" text-anchor="middle" font-weight="bold">Presidential Villa</text>
+  <text x="50%" y="48%" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle">Ultimate Luxury Experience</text>
+  <text x="50%" y="56%" font-family="Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.9)" text-anchor="middle">200 sqm | 3 Bedrooms | Private Pool</text>
+  <text x="50%" y="62%" font-family="Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.9)" text-anchor="middle">Butler Service Included</text>
+</svg>

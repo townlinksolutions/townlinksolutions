@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - NIRVANA Trekk and Travel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a7fa0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1a7fa0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #1a7fa0;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #1a7fa0;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #1a7fa0;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        a.townlink:hover {
+            text-decoration: none;
+        }
+
+        a.townlink {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa502 50%, #00bcd4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        a.townlink::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffc107, #ffb300, #ffa500);
+            transition: width 0.4s ease;
+        }
+
+        a.townlink:hover::after {
+            width: 100%;
+        }
+
+        a.townlink:hover {
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #1a7fa0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #1a7fa0 0%, #00bcd4 50%, #1976d2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+            z-index: 99;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 8px 25px rgba(26, 127, 160, 0.4), 0 4px 12px rgba(0, 188, 212, 0.3);
+            overflow: hidden;
+        }
+
+        #backToTop::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        #backToTop:hover {
+            transform: translateY(-6px) scale(1.1);
+            box-shadow: 0 12px 35px rgba(26, 127, 160, 0.5), 0 6px 18px rgba(0, 188, 212, 0.4), 0 0 20px rgba(0, 188, 212, 0.2);
+        }
+
+        #backToTop:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        #backToTop.show {
+            display: flex;
+            opacity: 1;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 15px 40px;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+
+            .container {
+                padding: 25px 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 1.1em;
+            }
+
+            #backToTop {
+                bottom: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 15px 10px;
+            }
+
+            .logo-text {
+                font-size: 18px;
+            }
+
+            nav ul {
+                gap: 8px;
+                font-size: 13px;
+            }
+
+            nav a {
+                padding: 8px 10px;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 1em;
+                margin-top: 20px;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            ul {
+                margin-left: 15px;
+            }
+
+            .back-link {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            #backToTop {
+                bottom: 12px;
+                right: 12px;
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-text">NIRVANA Trekk and Travel</span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#highlights">Highlights</a></li>
+                <li><a href="index.html#itinerary">Itinerary</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <h1>Privacy Policy</h1>
+        
+        <p><strong>Effective Date: March 5, 2026</strong></p>
+
+        <h2>1. Introduction</h2>
+        <p>NIRVANA Trekk and Travel ("we", "us", "our", or "Company") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.</p>
+
+        <h2>2. Information We Collect</h2>
+        <p>We collect information you voluntarily provide to us when you:</p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+            <li>Contact us through our contact form</li>
+            <li>Book a trip or service with us</li>
+            <li>Subscribe to our newsletter</li>
+            <li>Fill out surveys or feedback forms</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the information we collect in the following ways:</p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+            <li>To process your booking and provide services</li>
+            <li>To communicate with you about your trip</li>
+            <li>To send promotional emails and updates</li>
+            <li>To improve our services</li>
+            <li>To respond to your inquiries</li>
+        </ul>
+
+        <h2>4. Data Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+
+        <h2>5. Third-Party Sharing</h2>
+        <p>We do not sell, trade, or rent users' personal information to third parties. We may share information with trusted service providers who assist us in operating our website and conducting our business.</p>
+
+        <h2>6. Your Rights</h2>
+        <p>You have the right to access, modify, or delete your personal information. Please contact us at info@nirvanatrekkdemo.com to exercise these rights.</p>
+
+        <h2>7. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Effective Date" at the top of this policy.</p>
+
+        <h2>8. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy, please contact us at:</p>
+        <p>
+            Email: <a href="mailto:info@nirvanatrekkdemo.com">info@nirvanatrekkdemo.com</a><br>
+            Phone: <a href="tel:+919538580195">+91 95385 80195</a>
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 NIRVANA Trekk and Travel - Coastal Adventures. All Rights Reserved.</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-conditions.html">Terms & Conditions</a></p>
+    <button id="backToTop" title="Back to Top">↑</button>
+
+    <script>
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
