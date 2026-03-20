@@ -1,273 +1,368 @@
 <!DOCTYPE html>
-<html lang="kn">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timeline - ಮಾಸ್ತಪ್ಪ ನಾಯಕ್ </title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/timeline.css">
+    <title>Timeline | Mastappa Naik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Kannada:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', 'Noto Sans Kannada', sans-serif; }
+        .kn { font-family: 'Noto Sans Kannada', sans-serif; }
+    </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900">
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h2>ಮಾಸ್ತಪ್ಪ ನಾಯಕ್ </h2>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-                <li><a href="vision.html">Vision</a></li>
-                <li><a href="achievements.html">Achievements</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="community.html">Community</a></li>
-                
-            </ul>
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-slate-600 hover:text-orange-600 transition-colors font-bold">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                <span class="lang-text" data-en="Back to Home" data-kn="ಮುಖಪುಟಕ್ಕೆ ಹಿಂತಿರುಗಿ">Back to Home</span>
+            </a>
+            <button onclick="toggleLang()" class="bg-slate-100 border border-slate-200 text-slate-700 px-4 py-2 rounded-lg font-bold text-xs hover:bg-slate-200 transition-all flex items-center gap-2" id="langBtn">
+                <i data-lucide="languages" class="w-4 h-4"></i>
+                <span>ಕನ್ನಡ</span>
+            </button>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>ಪ್ರಯಾಣದ ಕಾಲರೇಖೆ</h1>
-            <p>ಸೇವೆ ಮತ್ತು ಸಮರ್ಪಣೆಯ 25 ವರ್ಷಗಳು</p>
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-100 py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 lang-text" data-en="Journey Timeline" data-kn="ಪ್ರಯಾಣದ ಕಾಲರೇಖೆ">Journey Timeline</h1>
+            <p class="text-xl text-slate-500 font-medium lang-text" data-en="25 Years of Service and Dedication" data-kn="ಸೇವೆ ಮತ್ತು ಸಮರ್ಪಣೆಯ 25 ವರ್ಷಗಳು">25 Years of Service and Dedication</p>
         </div>
-    </section>
+    </header>
 
     <!-- Timeline Section -->
-    <section class="full-timeline-section">
-        <div class="container">
-            <div class="timeline-full">
-                <!-- 2026 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2026</div>
-                    <div class="timeline-content-full">
-                        <h3>ಭಾರತದ ಕೈಗಾರಿಕ ಐಕಾನ್ ಪ್ರಶಸ್ತಿ - 2026</h3>
-                        <div class="timeline-date">February 2026</div>
-                        <p>ಭಟ್ಕಳದ ಪ್ರಮುಖ ಉದ್ಯಮಿಯಾಗಿ ರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದಲ್ಲಿ "ಭಾರತದ ಕೈಗಾರಿಕ ಐಕಾನ್ ಪ್ರಶಸ್ತಿ - 2026" ಪ್ರಶಸ್ತಿಯಿಂದ ಗೌರವಿಸಲಾಯಿತು. ಈ ಪ್ರಶಸ್ತಿ ಉದ್ಯಮಶೀಲತೆ ಮತ್ತು ಸಮಾಜಸೇವೆಗೆ ಗುರುತಿಸಿ ನೀಡಲಾಗಿದೆ.</p>
-                        <ul>
-                            <li>🏆 ರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದ ಗುರುತಿಸುವಿಕೆ</li>
-                            <li>💼 YoungOneIndia ವ್ಯಾಪಾರ ವಿಸ್ತರಣೆ</li>
-                            <li>📰 ರಾಜ್ಯಾದ್ಯಂತ ಮಾಧ್ಯಮ ಪ್ರಸಾರ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2025-2026 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2025</div>
-                    <div class="timeline-content-full">
-                        <h3>ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ - ಆಸ್ಪತ್ರೆ ಮತ್ತು ಪರಿಸರ</h3>
-                        <div class="timeline-date">November 2025 - February 2026</div>
-                        <p>ಉತ್ತರ ಕನ್ನಡ ಜಿಲ್ಲೆಯಲ್ಲಿ ಬಹು-ವಿಶೇಷ ಆಸ್ಪತ್ರೆ ಸ್ಥಾಪನೆ ಮತ್ತು ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಯೋಜನೆ ರದ್ದು ಮಾಡಲು ಮುಖ್ಯಮಂತ್ರಿಗಳಿಗೆ ಪತ್ರ ಬರೆಯುವ 7 ಲಕ್ಷ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ ಆರಂಭಿಸಿದರು.</p>
-                        <ul>
-                            <li>🩸 ರಕ್ತದಿಂದ ಪತ್ರ ಬರೆದು ಪ್ರಚಾರ ಆರಂಭ</li>
-                            <li>📮 25,000 ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ವಿತರಣೆ</li>
-                            <li>👥 ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ಯುವಜನರ ಸಹಭಾಗಿತ್ವ</li>
-                            <li>🏛️ ಜಿಲ್ಲಾಧಿಕಾರಿಗಳೊಂದಿಗೆ ಸಭೆ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2024-2025 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2024</div>
-                    <div class="timeline-content-full">
-                        <h3>ನದಿಯ ಉಳಿವಿಗಾಗಿ ಪದಯಾತ್ರೆ</h3>
-                        <div class="timeline-date">September 2024</div>
-                        <p>"ನದಿಯ ಉಳಿವಿಗಾಗಿ" ಘೋಷಣೆಯೊಂದಿಗೆ ಶರಾವತಿ ನದಿ ರಕ್ಷಣೆಗಾಗಿ ಗ್ರಾಮ ಗ್ರಾಮಕ್ಕೆ ಪದಯಾತ್ರೆ ನೇತೃತ್ವ ವಹಿಸಿದರು. ಪೋಲೀಸ್ ನಿರ್ಬಂಧಗಳ ಹೊರತಾಗಿಯೂ ಹೋರಾಟ ಮುಂದುವರೆಸಿದರು.</p>
-                        <ul>
-                            <li>🌳 16,000+ ಮರಗಳ ರಕ್ಷಣೆಗಾಗಿ ಹೋರಾಟ</li>
-                            <li>🦁 ಅಪರೂಪದ ಜೀವಿಗಳ (lion-tailed macaque) ಸಂರಕ್ಷಣೆ</li>
-                            <li>👨‍👩‍👧‍👦 ಗ್ರಾಮೀಣ ಜನರ ಜೀವನೋಪಾಯ ರಕ್ಷಣೆ</li>
-                            <li>🏛️ ಚತುರ್ಮುಖ ಬಸದಿ ಸ್ಮಾರಕ ಸಂರಕ್ಷಣೆ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2023 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2023</div>
-                    <div class="timeline-content-full">
-                        <h3>ಭಗವದ್ಗೀತಾ ವಿತರಣೆ ಮತ್ತು ಶಿಕ್ಷಣ ಕಾರ್ಯಕ್ರಮ</h3>
-                        <div class="timeline-date">March 2023</div>
-                        <p>ಗೋರೇಟೆ ಗ್ರಾಮದ "ಜ್ಞಾನ ದೇಗುಲ"ದಲ್ಲಿ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಭಗವದ್ಗೀತಾ ವಿತರಣೆ ಮಾಡಿ ಸಂಸ್ಕಾರ, ಮೌಲ್ಯಗಳು ಮತ್ತು ಆತ್ಮವಿಶ್ವಾಸ ಬೆಳೆಸುವ ಕಾರ್ಯಕ್ರಮ ಆಯೋಜಿಸಿದರು.</p>
-                        <ul>
-                            <li>📚 ನೂರಾರು ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಗ್ರಂಥ ವಿತರಣೆ</li>
-                            <li>🎓 ಶೈಕ್ಷಣಿಕ ಮೌಲ್ಯಗಳ ಕಾರ್ಯಕ್ರಮ</li>
-                            <li>🙏 ಸಂಸ್ಕಾರ ಮತ್ತು ಶಿಸ್ತು ಪ್ರಚಾರ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2022 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2022</div>
-                    <div class="timeline-content-full">
-                        <h3>ಬಡ ಕುಟುಂಬಗಳಿಗೆ ನೇರ ಸಹಾಯ</h3>
-                        <div class="timeline-date">December 2022</div>
-                        <p>ಮೂಡಕಣಿ ಗ್ರಾಮದ ಕೃಷ್ಣ ನಾಯಕ್ ಕುಟುಂಬಕ್ಕೆ ಗ್ಯಾಸ್ ಒಲೆ ಮತ್ತು ಸಿಲಿಂಡರ್ ದಾನ ಮಾಡಿದರು. ಆಟೋ ಚಾಲಕರು ಮತ್ತು ಸ್ಥಳೀಯ ನೆಟ್‌ವರ್ಕ್ ಮೂಲಕ ಬಡ ಕುಟುಂಬಗಳನ್ನು ಗುರುತಿಸಿ ಸಹಾಯ ಮಾಡುವ ವ್ಯವಸ್ಥೆ ಆರಂಭಿಸಿದರು.</p>
-                        <ul>
-                            <li>🏠 ಅನೇಕ ಬಡ ಕುಟುಂಬಗಳಿಗೆ ಸಹಾಯ</li>
-                            <li>🚗 ಆಟೋ ಚಾಲಕರ ನೆಟ್‌ವರ್ಕ್ ಸ್ಥಾಪನೆ</li>
-                            <li>💝 ಪುನೀತ್ ರಾಜ್‌ಕುಮಾರ್ ಸ್ಫೂರ್ತಿಯಿಂದ ಕೆಲಸ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2020-2021 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2020</div>
-                    <div class="timeline-content-full">
-                        <h3>COVID-19 ಸಾಂಕ್ರಾಮಿಕ ಸಹಾಯ</h3>
-                        <div class="timeline-date">2020-2021</div>
-                        <p>COVID-19 ಸಾಂಕ್ರಾಮಿಕ ಸಮಯದಲ್ಲಿ ಸಮುದಾಯಕ್ಕೆ ವ್ಯಾಪಕ ಸಹಾಯ ಒದಗಿಸಿದರು. ಆಹಾರ, ಔಷಧಿಗಳು ಮತ್ತು ಅಗತ್ಯ ವಸ್ತುಗಳನ್ನು ಬಡ ಕುಟುಂಬಗಳಿಗೆ ವಿತರಿಸಿದರು.</p>
-                        <ul>
-                            <li>🍚 ಆಹಾರ ಪ್ಯಾಕೆಟ್‌ಗಳ ವಿತರಣೆ</li>
-                            <li>💊 ಔಷಧಿ ಸಹಾಯ</li>
-                            <li>😷 ಮಾಸ್ಕ್ ಮತ್ತು ಸ್ಯಾನಿಟೈಜರ್ ವಿತರಣೆ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2018-2019 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2019</div>
-                    <div class="timeline-content-full">
-                        <h3>ಕ್ರೀಡಾ ಯುವಜನ ಅಭಿವೃದ್ಧಿ</h3>
-                        <div class="timeline-date">2018-2019</div>
-                        <p>ಮುರ್ದೇಶ್ವರ ಮತ್ತು ಹೊನ್ನಾವರ ಪ್ರದೇಶದಲ್ಲಿ ವಾಲಿಬಾಲ್ ಟೂರ್ನಮೆಂಟ್‌ಗಳು ಮತ್ತು ಇತರ ಕ್ರೀಡಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಆಯೋಜಿಸಿ ಯುವಜನರಿಗೆ ಅವಕಾಶ ಒದಗಿಸಿದರು.</p>
-                        <ul>
-                            <li>⚽ ವಾಲಿಬಾಲ್ ಟೂರ್ನಮೆಂಟ್ ಉದ್ಘಾಟನೆ</li>
-                            <li>🏆 ಯುವ ಕ್ರೀಡಾಪಟುಗಳಿಗೆ ಬೆಂಬಲ</li>
-                            <li>👨‍👩‍👧‍👦 ಸಮುದಾಯ ಕ್ರೀಡಾ ಮನೋಭಾವ ಬೆಳೆಸುವಿಕೆ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2015 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2015</div>
-                    <div class="timeline-content-full">
-                        <h3>YoungOneIndia ಸ್ಥಾಪನೆ</h3>
-                        <div class="timeline-date">2015</div>
-                        <p>ಚೆನ್ನೈನಲ್ಲಿ YoungOneIndia ಕಂಪನಿಯನ್ನು ಸ್ಥಾಪಿಸಿದರು. ವ್ಯಾಪಾರದ ಮೂಲಕ ಉದ್ಯೋಗಾವಕಾಶಗಳನ್ನು ಸೃಷ್ಟಿಸುವ ಗುರಿಯೊಂದಿಗೆ ಕೆಲಸ ಆರಂಭಿಸಿದರು.</p>
-                        <ul>
-                            <li>💼 ನೂರಾರು ಉದ್ಯೋಗಾವಕಾಶಗಳು</li>
-                            <li>🏢 ಚೆನ್ನೈನಲ್ಲಿ ವ್ಯಾಪಾರ ವಿಸ್ತರಣೆ</li>
-                            <li>📈 ಉದ್ಯಮಶೀಲತೆಯ ಪ್ರಯಾಣ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2010 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2010</div>
-                    <div class="timeline-content-full">
-                        <h3>ಅತಿಥೇಯ ಮತ್ತು ರಿಯಲ್ ಎಸ್ಟೇಟ್ ವ್ಯವಹಾರ</h3>
-                        <div class="timeline-date">2010-2015</div>
-                        <p>ಮುರ್ದೇಶ್ವರ ಮತ್ತು ಭಟ್ಕಳ ಪ್ರದೇಶದಲ್ಲಿ ಅತಿಥೇಯ ಉದ್ಯಮ ಮತ್ತು ರಿಯಲ್ ಎಸ್ಟೇಟ್ ವ್ಯವಹಾರವನ್ನು ಆರಂಭಿಸಿದರು. ಸ್ಥಳೀಯ ಪ್ರವಾಸೋದ್ಯಮ ಮೂಲಸೌಕರ್ಯ ಅಭಿವೃದ್ಧಿಗೆ ಕೊಡುಗೆ.</p>
-                        <ul>
-                            <li>🏨 ಅತಿಥೇಯ ಉದ್ಯಮ ಅಭಿವೃದ್ಧಿ</li>
-                            <li>🏗️ ರಿಯಲ್ ಎಸ್ಟೇಟ್ ಯೋಜನೆಗಳು</li>
-                            <li>🌊 ಮುರ್ದೇಶ್ವರ ಪ್ರವಾಸೋದ್ಯಮಕ್ಕೆ ಕೊಡುಗೆ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2005 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2005</div>
-                    <div class="timeline-content-full">
-                        <h3>ದೇವಸ್ಥಾನ ಸಮಿತಿಗಳಲ್ಲಿ ಸಕ್ರಿಯತೆ</h3>
-                        <div class="timeline-date">2005-Present</div>
-                        <p>ಸ್ಥಳೀಯ ದೇವಸ್ಥಾನ ಸಮಿತಿಗಳಲ್ಲಿ ಸಕ್ರಿಯವಾಗಿ ಭಾಗವಹಿಸಿ ಧಾರ್ಮಿಕ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಆಯೋಜಿಸಿದರು.</p>
-                        <ul>
-                            <li>🕉️ ಧಾರ್ಮಿಕ ಸಂಘಟನೆಗಳು</li>
-                            <li>🎭 ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು</li>
-                            <li>🙏 ಸಮುದಾಯ ಸೇವೆ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2000 -->
-                <div class="timeline-item-full">
-                    <div class="timeline-marker">2000</div>
-                    <div class="timeline-content-full">
-                        <h3>ಸಮಾಜಸೇವೆಯ ಪ್ರಾರಂಭ</h3>
-                        <div class="timeline-date">2000</div>
-                        <p>ಮೀನುಗಾರ ಸಮುದಾಯ ಮತ್ತು ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಸಮಸ್ಯೆಗಳಿಗಾಗಿ ಕೆಲಸ ಮಾಡಲು ಪ್ರಾರಂಭಿಸಿದರು. ನಮಧಾರಿ ಸಮುದಾಯದ ಧ್ವನಿಯಾಗಿ ಪ್ರಾರಂಭ.</p>
-                        <ul>
-                            <li>🐟 ಮೀನುಗಾರ ಸಮುದಾಯ ಹಕ್ಕುಗಳು</li>
-                            <li>👥 ಸಾಮುದಾಯಿಕ ನಾಯಕತ್ವ</li>
-                            <li>📢 ಜನರ ಧ್ವನಿ</li>
-                        </ul>
-                    </div>
+    <main class="max-w-4xl mx-auto px-6 py-20">
+        <div class="relative border-l-4 border-orange-500 ml-6 md:ml-12 space-y-12">
+            
+            <!-- 2026 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2026</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Industrial Icon Award of India - 2026" data-kn="ಭಾರತದ ಕೈಗಾರಿಕಾ ಐಕಾನ್ ಪ್ರಶಸ್ತಿ - 2026">Industrial Icon Award of India - 2026</h3>
+                    <span class="inline-block bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-xs font-bold mb-4">February 2026</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Recognized at the national level as a prominent entrepreneur from Bhatkal. This award honors his contributions to trade and social service." data-kn="ಭಟ್ಕಳದ ಪ್ರಮುಖ ಉದ್ಯಮಿಯಾಗಿ ರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದಲ್ಲಿ ಮನ್ನಣೆ. ಈ ಪ್ರಶಸ್ತಿಯು ವ್ಯಾಪಾರ ಮತ್ತು ಸಮಾಜ ಸೇವೆಗೆ ಅವರ ಕೊಡುಗೆಯನ್ನು ಗೌರವಿಸುತ್ತದೆ.">Recognized at the national level as a prominent entrepreneur from Bhatkal. This award honors his contributions to trade and social service.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="award" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="National Level Recognition" data-kn="ರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದ ಗುರುತಿಸುವಿಕೆ">National Level Recognition</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="trending-up" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="YoungOneIndia Business Expansion" data-kn="YoungOneIndia ವ್ಯಾಪಾರ ವಿಸ್ತರಣೆ">YoungOneIndia Business Expansion</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="tv" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="State Media Coverage" data-kn="ರಾಜ್ಯಮಟ್ಟದ ಮಾಧ್ಯಮ ಪ್ರಸಾರ">State Media Coverage</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>ಈ ಪ್ರಯಾಣದ ಭಾಗವಾಗಿರಿ</h2>
-            <p>ಮುಂದಿನ 25 ವರ್ಷಗಳಲ್ಲಿ ಉತ್ತರ ಕನ್ನಡದ ರೂಪಾಂತರಕ್ಕೆ ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ</p>
-            <div class="cta-buttons">
-                <a href="community.html" class="btn btn-primary">Join Movement</a>
-                <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+            <!-- 2025 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2025</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Postcard Campaign - Hospital and Environment" data-kn="ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ - ಆಸ್ಪತ್ರೆ ಮತ್ತು ಪರಿಸರ">Postcard Campaign - Hospital and Environment</h3>
+                    <span class="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold mb-4">November 2025 - February 2026</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Launched a massive campaign for a multi-specialty hospital in Uttara Kannada and opposed the Sharavathi Pumped Storage Project to protect the environment." data-kn="ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಬಹು-ವಿಶೇಷ ಆಸ್ಪತ್ರೆಗಾಗಿ ಬೃಹತ್ ಅಭಿಯಾನವನ್ನು ಪ್ರಾರಂಭಿಸಿದರು ಮತ್ತು ಪರಿಸರವನ್ನು ರಕ್ಷಿಸಲು ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಯೋಜನೆಯನ್ನು ವಿರೋಧಿಸಿದರು.">Launched a massive campaign for a multi-specialty hospital in Uttara Kannada and opposed the Sharavathi Pumped Storage Project to protect the environment.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="droplet" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Blood Letter Campaign for Hospital" data-kn="ಆಸ್ಪತ್ರೆಗಾಗಿ ರಕ್ತದಿಂದ ಪತ್ರ ಬರೆಯುವ ಅಭಿಯಾನ">Blood Letter Campaign for Hospital</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="mail" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="7 Lakh Postcards Sent to Government" data-kn="ಸರ್ಕಾರಕ್ಕೆ 7 ಲಕ್ಷ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್‌ಗಳ ರವಾನೆ">7 Lakh Postcards Sent to Government</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="users" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Student and Youth Awareness Meetings" data-kn="ವಿದ್ಯಾರ್ಥಿ ಮತ್ತು ಯುವಜನರ ಜಾಗೃತಿ ಸಭೆಗಳು">Student and Youth Awareness Meetings</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- 2024 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2024</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Padyatra for River Conservation" data-kn="ನದಿಯ ಉಳಿವಿಗಾಗಿ ಪದಯಾತ್ರೆ">Padyatra for River Conservation</h3>
+                    <span class="inline-block bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-xs font-bold mb-4">September 2024</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Led a padyatra from Gerusoppa to protect the Sharavathi river and its surrounding forest, raising voice against environmental destruction." data-kn="ಶರಾವತಿ ನದಿ ಮತ್ತು ಅದರ ಸುತ್ತಮುತ್ತಲಿನ ಅರಣ್ಯವನ್ನು ರಕ್ಷಿಸಲು ಗೇರುಸೊಪ್ಪದಿಂದ ಪದಯಾತ್ರೆಯನ್ನು ಮುನ್ನಡೆಸಿದರು, ಪರಿಸರ ನಾಶದ ವಿರುದ್ಧ ಧ್ವನಿ ಎತ್ತಿದರು.">Led a padyatra from Gerusoppa to protect the Sharavathi river and its surrounding forest, raising voice against environmental destruction.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="tree-pine" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Fight to Protect 16,000+ Trees" data-kn="16,000+ ಮರಗಳ ರಕ್ಷಣೆಗಾಗಿ ಹೋರಾಟ">Fight to Protect 16,000+ Trees</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="paw-print" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Lion-tailed Macaque Conservation" data-kn="ಅಪರೂಪದ ಜೀವಿಗಳ (Lion-tailed macaque) ಸಂರಕ್ಷಣೆ">Lion-tailed Macaque Conservation</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="megaphone" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Mass Awareness for Rural People" data-kn="ಗ್ರಾಮೀಣ ಜನರ ಜನಾಂದೋಲನ ರಕ್ಷಣೆ">Mass Awareness for Rural People</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2023 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2023</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Bhagavad Gita Distribution and Education" data-kn="ಭಗವದ್ಗೀತಾ ವಿತರಣೆ ಮತ್ತು ಶಿಕ್ಷಣ ಕಾರ್ಯಕ್ರಮ">Bhagavad Gita Distribution and Education</h3>
+                    <span class="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold mb-4">March 2023</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Organized value-based education programs at Jnana Degula, Gorete village, distributing Bhagavad Gita to students to foster ethics." data-kn="ಗೋರೇಟೆ ಗ್ರಾಮದ 'ಜ್ಞಾನ ದೇಗುಲ'ದಲ್ಲಿ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಭಗವದ್ಗೀತೆ ವಿತರಣೆ ಮಾಡಿ ಸಂಸ್ಕಾರ, ಮೌಲ್ಯಗಳು ಮತ್ತು ಆತ್ಮವಿಶ್ವಾಸ ಬೆಳೆಸುವ ಕಾರ್ಯಕ್ರಮ ಆಯೋಜಿಸಿದರು.">Organized value-based education programs at Jnana Degula, Gorete village, distributing Bhagavad Gita to students to foster ethics.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="book-open" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Free Books for Hundreds of Students" data-kn="ನೂರಾರು ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಗ್ರಂಥ ವಿತರಣೆ">Free Books for Hundreds of Students</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Value-based Education Workshop" data-kn="ಶೈಕ್ಷಣಿಕ ಮೌಲ್ಯಗಳ ಕಾರ್ಯಕ್ರಮ">Value-based Education Workshop</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2022</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Direct Help to Poor Families" data-kn="ಬಡ ಕುಟುಂಬಗಳಿಗೆ ನೇರ ಸಹಾಯ">ಬಡ ಕುಟುಂಬಗಳಿಗೆ ನೇರ ಸಹಾಯ</h3>
+                    <span class="inline-block bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-xs font-bold mb-4">December 2022</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Visited poor families in Moodkani village and provided food kits, cooking gas, and financial support to those in need." data-kn="ಮೂಡಕಣಿ ಗ್ರಾಮದ ಬಡ ಕುಟುಂಬಗಳಿಗೆ ಭೇಟಿ ನೀಡಿ ಆಹಾರ ಕಿಟ್, ಅಡುಗೆ ಅನಿಲ ಮತ್ತು ಆರ್ಥಿಕ ಸಹಾಯವನ್ನು ಒದಗಿಸಿದರು.">Visited poor families in Moodkani village and provided food kits, cooking gas, and financial support to those in need.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="heart" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Support for Needy Families" data-kn="ಅನೇಕ ಬಡ ಕುಟುಂಬಗಳಿಗೆ ಸಹಾಯ">Support for Needy Families</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="phone-call" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Established Local Support Network" data-kn="ಅರ್ಹ ಫಲಾನುಭವಿಗಳ ನೆಟ್‌ವರ್ಕ್ ಸ್ಥಾಪನೆ">Established Local Support Network</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2020 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2020</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="COVID-19 Pandemic Relief" data-kn="COVID-19 ಸಾಂಕ್ರಾಮಿಕ ಸಹಾಯ">COVID-19 ಸಾಂಕ್ರಾಮಿಕ ಸಹಾಯ</h3>
+                    <span class="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold mb-4">2020-2021</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Provided extensive support during the COVID-19 pandemic, distributing food kits, medicine, and safety gear to thousands of families." data-kn="COVID-19 ಸಾಂಕ್ರಾಮಿಕ ಸಮಯದಲ್ಲಿ ಸಾವಿರಾರು ಕುಟುಂಬಗಳಿಗೆ ಆಹಾರ ಕಿಟ್‌ಗಳು, ಔಷಧಿ ಮತ್ತು ಸುರಕ್ಷತಾ ಸಾಧನಗಳನ್ನು ವಿತರಿಸುವ ಮೂಲಕ ವ್ಯಾಪಕ ಬೆಂಬಲ ನೀಡಿದರು.">Provided extensive support during the COVID-19 pandemic, distributing food kits, medicine, and safety gear to thousands of families.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="package" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Food Kit Distribution" data-kn="ಆಹಾರ ಪ್ಯಾಕೆಟ್‌ಗಳ ವಿತರಣೆ">Food Kit Distribution</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="pill" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Medical Aid" data-kn="ಔಷಧಿ ಸಹಾಯ">Medical Aid</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Mask and Sanitizer Distribution" data-kn="ಮಾಸ್ಕ್ ಮತ್ತು ಸ್ಯಾನಿಟೈಸರ್ ವಿತರಣೆ">Mask and Sanitizer Distribution</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2019 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2019</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Sports and Youth Development" data-kn="ಕ್ರೀಡಾ ಯುವಜನ ಅಭಿವೃದ್ಧಿ">ಕ್ರೀಡಾ ಯುವಜನ ಅಭಿವೃದ್ಧಿ</h3>
+                    <span class="inline-block bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-xs font-bold mb-4">2018-2019</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Organized volleyball tournaments and other sports events in Bhatkal region to encourage local talent and promote physical fitness." data-kn="ಭಟ್ಕಳ ಪ್ರದೇಶದಲ್ಲಿ ವಾಲಿಬಾಲ್ ಪಂದ್ಯಾವಳಿಗಳು ಮತ್ತು ಇತರ ಕ್ರೀಡಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಆಯೋಜಿಸುವ ಮೂಲಕ ಸ್ಥಳೀಯ ಪ್ರತಿಭೆಗಳನ್ನು ಪ್ರೋತ್ಸಾಹಿಸಿದರು.">Organized volleyball tournaments and other sports events in Bhatkal region to encourage local talent and promote physical fitness.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="trophy" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Volleyball Tournament Sponsorship" data-kn="ವಾಲಿಬಾಲ್ ಟೂರ್ನಮೆಂಟ್ ಉದ್ಘಾಟನೆ">Volleyball Tournament Sponsorship</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="user-check" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Support for Young Athletes" data-kn="ಯುವ ಕ್ರೀಡಾಪಟುಗಳಿಗೆ ಬೆಂಬಲ">Support for Young Athletes</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2015 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2015</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Establishment of YoungOneIndia" data-kn="YoungOneIndia ಸ್ಥಾಪನೆ">YoungOneIndia ಸ್ಥಾಪನೆ</h3>
+                    <span class="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold mb-4">2015</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Founded YoungOneIndia in Chennai, focusing on trade and industry to create employment opportunities and contribute to the economy." data-kn="ಚೆನ್ನೈನಲ್ಲಿ YoungOneIndia ಕಂಪನಿಯನ್ನು ಸ್ಥಾಪಿಸಿದರು, ವ್ಯಾಪಾರ ಮತ್ತು ಉದ್ಯಮದ ಮೂಲಕ ಉದ್ಯೋಗಾವಕಾಶಗಳನ್ನು ಸೃಷ್ಟಿಸುವ ಗುರಿಯೊಂದಿಗೆ ಕೆಲಸ ಆರಂಭಿಸಿದರು.">Founded YoungOneIndia in Chennai, focusing on trade and industry to create employment opportunities and contribute to the economy.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="briefcase" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Hundreds of Job Opportunities" data-kn="ನೂರಾರು ಉದ್ಯೋಗಾವಕಾಶಗಳು">Hundreds of Job Opportunities</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="globe" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Chennai Business Expansion" data-kn="ಚೆನ್ನೈನಲ್ಲಿ ವ್ಯಾಪಾರ ವಿಸ್ತರಣೆ">Chennai Business Expansion</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2010 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2010</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Hospitality and Real Estate Business" data-kn="ಅತಿಥೇಯ ಮತ್ತು ರಿಯಲ್ ಎಸ್ಟೇಟ್ ವ್ಯವಹಾರ">ಅತಿಥೇಯ ಮತ್ತು ರಿಯಲ್ ಎಸ್ಟೇಟ್ ವ್ಯವಹಾರ</h3>
+                    <span class="inline-block bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-xs font-bold mb-4">2010-2015</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Started hospitality and real estate ventures in Bhatkal region, contributing to local tourism infrastructure development." data-kn="ಭಟ್ಕಳ ಪ್ರದೇಶದಲ್ಲಿ ಅತಿಥೇಯ ಉದ್ಯಮ ಮತ್ತು ರಿಯಲ್ ಎಸ್ಟೇಟ್ ವ್ಯವಹಾರವನ್ನು ಆರಂಭಿಸಿದರು, ಸ್ಥಳೀಯ ಪ್ರವಾಸೋದ್ಯಮ ಮೂಲಸೌಕರ್ಯ ಅಭಿವೃದ್ಧಿಗೆ ಕೊಡುಗೆ ನೀಡಿದರು.">Started hospitality and real estate ventures in Bhatkal region, contributing to local tourism infrastructure development.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="hotel" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Hospitality Industry Growth" data-kn="ಅತಿಥೇಯ ಉದ್ಯಮ ಅಭಿವೃದ್ಧಿ">Hospitality Industry Growth</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="home" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Real Estate Projects" data-kn="ರಿಯಲ್ ಎಸ್ಟೇಟ್ ಯೋಜನೆಗಳು">Real Estate Projects</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2005 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2005</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Activity in Temple Committees" data-kn="ದೇವಸ್ಥಾನ ಸಮಿತಿಗಳಲ್ಲಿ ಸಕ್ರಿಯತೆ">ದೇವಸ್ಥಾನ ಸಮಿತಿಗಳಲ್ಲಿ ಸಕ್ರಿಯತೆ</h3>
+                    <span class="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold mb-4">2005-Present</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Actively participated in local temple committees, organizing religious and cultural programs for the community." data-kn="ಸ್ಥಳೀಯ ದೇವಸ್ಥಾನ ಸಮಿತಿಗಳಲ್ಲಿ ಸಕ್ರಿಯವಾಗಿ ಭಾಗವಹಿಸಿ ಧಾರ್ಮಿಕ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಆಯೋಜಿಸಿದರು.">Actively participated in local temple committees, organizing religious and cultural programs for the community.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="milestone" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Religious Organizations" data-kn="ಧಾರ್ಮಿಕ ಸಂಘಟನೆಗಳು">Religious Organizations</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="music" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Cultural Programs" data-kn="ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು">Cultural Programs</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2000 -->
+            <div class="relative pl-10 md:pl-16">
+                <div class="absolute -left-[26px] md:-left-[30px] top-0 w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm md:text-base">2000</div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 lang-text" data-en="Start of Social Service" data-kn="ಸಮಾಜಸೇವೆಯ ಪ್ರಾರಂಭ">ಸಮಾಜಸೇವೆಯ ಪ್ರಾರಂಭ</h3>
+                    <span class="inline-block bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-xs font-bold mb-4">2000</span>
+                    <p class="text-slate-600 mb-6 lang-text" data-en="Began his journey in social service, focusing on the problems of backward classes and becoming a voice for the community." data-kn="ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಸಮಸ್ಯೆಗಳಿಗಾಗಿ ಕೆಲಸ ಮಾಡಲು ಸಮಾಜಸೇವೆಯ ಪಯಣ ಆರಂಭಿಸಿದರು, ಸಮುದಾಯದ ಧ್ವನಿಯಾಗಿ ಹೊರಹೊಮ್ಮಿದರು.">Began his journey in social service, focusing on the problems of backward classes and becoming a voice for the community.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="user-plus" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Community Rights" data-kn="ಸಮುದಾಯದ ಹಕ್ಕುಗಳು">Community Rights</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-700">
+                            <i data-lucide="users-2" class="w-4 h-4 text-orange-500"></i>
+                            <span class="lang-text" data-en="Community Leadership" data-kn="ಸಮುದಾಯಿಕ ನಾಯಕತ್ವ">Community Leadership</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>ಮಾಸ್ತಪ್ಪ ನಾಯಕ್ </h3>
-                    <p>ಜನರ ಧ್ವನಿ, ಅಭಿವೃದ್ಧಿಯ ದೃಷ್ಟಿ</p>
+    <footer class="bg-slate-900 text-white py-20 border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left mb-16">
+                <!-- Brand -->
+                <div>
+                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl mb-6 mx-auto md:mx-0">MN</div>
+                    <h3 class="text-xl font-bold mb-2">Mastappa Naik</h3>
+                    <p class="text-slate-500 text-sm lang-text" 
+                       data-en="Building a better future for Bhatkal through service and leadership."
+                       data-kn="ಸೇವೆ ಮತ್ತು ನಾಯಕತ್ವದ ಮೂಲಕ ಭಟ್ಕಳಕ್ಕೆ ಉತ್ತಮ ಭವಿಷ್ಯವನ್ನು ನಿರ್ಮಿಸುವುದು.">
+                        Building a better future for Bhatkal through service and leadership.
+                    </p>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="vision.html">Vision</a></li>
-                        <li><a href="achievements.html">Achievements</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+
+                <!-- Social Media Shortcuts -->
+                <div class="flex flex-col items-center">
+                    <h4 class="text-xs font-black uppercase tracking-widest text-orange-500 mb-6 lang-text"
+                        data-en="Connect With Us" data-kn="ನಮ್ಮೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ">
+                        Connect With Us
+                    </h4>
+                    <div class="flex gap-4">
+                        <a href="https://facebook.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all group">
+                            <i data-lucide="facebook" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-pink-600 transition-all group">
+                            <i data-lucide="instagram" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-red-600 transition-all group">
+                            <i data-lucide="youtube" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-sky-500 transition-all group">
+                            <i data-lucide="twitter" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Community</h4>
-                    <ul>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="community.html">Get Involved</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>📧 info@masthappanaik.in</p>
-                    <p>📱 +91 98765 43210</p>
-                    <p>📍 Murdeshwar, Karnataka</p>
+
+                <!-- Quick Links -->
+                <div class="flex flex-col items-center md:items-end">
+                    <h4 class="text-xs font-black uppercase tracking-widest text-orange-500 mb-6 lang-text"
+                        data-en="Quick Links" data-kn="ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು">
+                        Quick Links
+                    </h4>
+                    <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-sm font-bold text-slate-400">
+                        <a href="index.html" class="hover:text-orange-400 transition-colors">Home</a>
+                        <a href="biodata.html" class="hover:text-orange-400 transition-colors">Biography</a>
+                        <a href="timeline.html" class="hover:text-orange-400 transition-colors text-white">Timeline</a>
+                        <a href="events.html" class="hover:text-orange-400 transition-colors">Events</a>
+                        <a href="index.html#contact" class="hover:text-orange-400 transition-colors">Contact</a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Masthappa Naik Balase. All rights reserved.</p>
+            
+            <div class="pt-12 border-t border-white/5 text-center">
+                <p class="text-slate-500 text-xs lang-text" 
+                   data-en="© 2026 Mastappa Naik. All Rights Reserved."
+                   data-kn="© 2026 ಮಾಸ್ತಪ್ಪ ನಾಯಕ್. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.">
+                    © 2026 Mastappa Naik. All Rights Reserved.
+                </p>
             </div>
         </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script>
+        let currentLang = 'en';
+
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'kn' : 'en';
+            updateLanguageUI();
+        }
+
+        function updateLanguageUI() {
+            const btnText = currentLang === 'en' ? 'ಕನ್ನಡ' : 'English';
+            document.querySelector('#langBtn span').innerText = btnText;
+            
+            document.querySelectorAll('.lang-text').forEach(el => {
+                el.innerText = el.getAttribute(`data-${currentLang}`);
+            });
+        }
+
+        window.onload = () => {
+            lucide.createIcons();
+            updateLanguageUI();
+        };
+    </script>
 </body>
 </html>

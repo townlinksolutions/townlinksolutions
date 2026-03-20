@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biography | Mastappa Naik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .kn { display: none; }
+        .lang-kn .kn { display: block; }
+        .lang-kn .en { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-900 selection:bg-orange-100 selection:text-orange-900">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-slate-600 hover:text-orange-600 transition-colors font-bold uppercase tracking-widest text-sm">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                <span class="en">Back to Home</span>
+                <span class="kn">ಮುಖಪುಟಕ್ಕೆ ಹಿಂತಿರುಗಿ</span>
+            </a>
+            
+            <button onclick="toggleLanguage()" class="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-lg font-bold text-xs hover:bg-slate-200 transition-colors">
+                <i data-lucide="languages" class="w-4 h-4"></i>
+                <span class="en">ಕನ್ನಡ</span>
+                <span class="kn">English</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-slate-900 py-24 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-orange-600 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-600 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
+        </div>
+        
+        <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+                <span class="en">Biography</span>
+                <span class="kn">ಜೀವನಚರಿತ್ರೆ</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-orange-400 font-bold italic">
+                <span class="en">A Journey of Service and Leadership</span>
+                <span class="kn">ಸೇವೆ ಮತ್ತು ನಾಯಕತ್ವದ ಪ್ರಯಾಣ</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <main class="max-w-5xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Sidebar Navigation -->
+            <aside class="lg:col-span-1 hidden lg:block sticky top-32 h-fit">
+                <nav class="space-y-2">
+                    <a href="#early-life" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="book-open"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Early Life & Background</span>
+                            <span class="kn">ಆರಂಭಿಕ ಜೀವನ ಮತ್ತು ಹಿನ್ನೆಲೆ</span>
+                        </span>
+                    </a>
+                    <a href="#social-activism" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="users"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Social Activism & Leadership</span>
+                            <span class="kn">ಸಾಮಾಜಿಕ ಕ್ರಿಯಾಶೀಲತೆ ಮತ್ತು ನಾಯಕತ್ವ</span>
+                        </span>
+                    </a>
+                    <a href="#business-journey" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="briefcase"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Business Journey</span>
+                            <span class="kn">ವ್ಯವಹಾರ ಪ್ರಯಾಣ</span>
+                        </span>
+                    </a>
+                    <a href="#philosophy" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="heart"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Life Philosophy</span>
+                            <span class="kn">ಜೀವನ ತತ್ವ</span>
+                        </span>
+                    </a>
+                    <a href="#honors" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="award"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Honors & Recognition</span>
+                            <span class="kn">ಗೌರವಗಳು ಮತ್ತು ಮಾನ್ಯತೆ</span>
+                        </span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-24">
+                <!-- Early Life -->
+                <section id="early-life" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Early Life & Background</span>
+                            <span class="kn">ಆರಂಭಿಕ ಜೀವನ ಮತ್ತು ಹಿನ್ನೆಲೆ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p>
+                            <span class="en">Born in the coastal town of Bhatkal, Mastappa Naik grew up in a family that valued hard work and community service. His early years were shaped by the challenges faced by the people of Uttara Kannada, which instilled in him a deep sense of responsibility towards his roots.</span>
+                            <span class="kn">ಕರಾವಳಿ ಪಟ್ಟಣವಾದ ಭಟ್ಕಳದಲ್ಲಿ ಜನಿಸಿದ ಮಾಸ್ತಪ್ಪ ನಾಯಕ್ ಅವರು ಕಠಿಣ ಪರಿಶ್ರಮ ಮತ್ತು ಸಮುದಾಯ ಸೇವೆಯನ್ನು ಗೌರವಿಸುವ ಕುಟುಂಬದಲ್ಲಿ ಬೆಳೆದರು. ಅವರ ಆರಂಭಿಕ ವರ್ಷಗಳು ಉತ್ತರ ಕನ್ನಡದ ಜನರು ಎದುರಿಸುತ್ತಿರುವ ಸವಾಲುಗಳಿಂದ ರೂಪುಗೊಂಡವು, ಇದು ಅವರಲ್ಲಿ ತಮ್ಮ ಬೇರುಗಳ ಬಗ್ಗೆ ಆಳವಾದ ಜವಾಬ್ದಾರಿಯ ಪ್ರಜ್ಞೆಯನ್ನು ಮೂಡಿಸಿತು.</span>
+                        </p>
+                        <p>
+                            <span class="en">He completed his education with a focus on understanding the socio-economic landscape of his region, laying the foundation for his future endeavors in both business and social activism.</span>
+                            <span class="kn">ಅವರು ತಮ್ಮ ಪ್ರದೇಶದ ಸಾಮಾಜಿಕ-ಆರ್ಥಿಕ ಭೂದೃಶ್ಯವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವತ್ತ ಗಮನಹರಿಸಿ ತಮ್ಮ ಶಿಕ್ಷಣವನ್ನು ಪೂರ್ಣಗೊಳಿಸಿದರು, ಇದು ಅವರ ಭವಿಷ್ಯದ ವ್ಯವಹಾರ ಮತ್ತು ಸಾಮಾಜಿಕ ಕ್ರಿಯಾಶೀಲತೆಗೆ ಅಡಿಪಾಯ ಹಾಕಿತು.</span>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Social Activism -->
+                <section id="social-activism" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Social Activism & Leadership</span>
+                            <span class="kn">ಸಾಮಾಜಿಕ ಕ್ರಿಯಾಶೀಲತೆ ಮತ್ತು ನಾಯಕತ್ವ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p>
+                            <span class="en">For over 25 years, Mastappa Naik has been at the forefront of numerous social movements. He is widely recognized as a champion for the rights of the backward classes, particularly the Namadhari community.</span>
+                            <span class="kn">25 ವರ್ಷಗಳಿಗೂ ಹೆಚ್ಚು ಕಾಲ, ಮಾಸ್ತಪ್ಪ ನಾಯಕ್ ಅವರು ಹಲವಾರು ಸಾಮಾಜಿಕ ಚಳುವಳಿಗಳ ಮುಂಚೂಣಿಯಲ್ಲಿದ್ದಾರೆ. ಅವರು ಹಿಂದುಳಿದ ವರ್ಗಗಳ, ವಿಶೇಷವಾಗಿ ನಮಧಾರಿ ಸಮುದಾಯದ ಹಕ್ಕುಗಳಿಗಾಗಿ ಹೋರಾಡುವ ನಾಯಕರಾಗಿ ವ್ಯಾಪಕವಾಗಿ ಗುರುತಿಸಲ್ಪಟ್ಟಿದ್ದಾರೆ.</span>
+                        </p>
+                        <p>
+                            <span class="en">His leadership in the 'Postcard Campaign for Health' brought national attention to the lack of multi-specialty healthcare in Uttara Kannada. He has also been a vocal opponent of projects that threaten the delicate ecological balance of the Sharavathi river basin.</span>
+                            <span class="kn">ಆರೋಗ್ಯಕ್ಕಾಗಿ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಚಳುವಳಿಯಲ್ಲಿ ಅವರ ನಾಯಕತ್ವವು ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಬಹುವಿಶೇಷ ಆರೋಗ್ಯ ರಕ್ಷಣೆಯ ಕೊರತೆಯ ಬಗ್ಗೆ ರಾಷ್ಟ್ರೀಯ ಗಮನವನ್ನು ಸೆಳೆಯಿತು. ಶರಾವತಿ ನದಿ ಪಾತ್ರದ ಸೂಕ್ಷ್ಮ ಪರಿಸರ ಸಮತೋಲನಕ್ಕೆ ಧಕ್ಕೆ ತರುವ ಯೋಜನೆಗಳ ವಿರುದ್ಧವೂ ಅವರು ಧ್ವನಿ ಎತ್ತಿದ್ದಾರೆ.</span>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Business Journey -->
+                <section id="business-journey" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                            <i data-lucide="briefcase"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Business Journey</span>
+                            <span class="kn">ವ್ಯವಹಾರ ಪ್ರಯಾಣ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p>
+                            <span class="en">As an entrepreneur, Mastappa Naik has demonstrated that business success and social responsibility can go hand in hand. He has built several successful ventures that have provided employment opportunities to hundreds of local residents.</span>
+                            <span class="kn">ಒಬ್ಬ ಉದ್ಯಮಿಯಾಗಿ, ಮಾಸ್ತಪ್ಪ ನಾಯಕ್ ಅವರು ವ್ಯವಹಾರದ ಯಶಸ್ಸು ಮತ್ತು ಸಾಮಾಜಿಕ ಜವಾಬ್ದಾರಿ ಜೊತೆಜೊತೆಯಾಗಿ ಸಾಗಬಹುದು ಎಂದು ತೋರಿಸಿಕೊಟ್ಟಿದ್ದಾರೆ. ಅವರು ನೂರಾರು ಸ್ಥಳೀಯ ನಿವಾಸಿಗಳಿಗೆ ಉದ್ಯೋಗಾವಕಾಶಗಳನ್ನು ಒದಗಿಸಿದ ಹಲವಾರು ಯಶಸ್ವಿ ಉದ್ಯಮಗಳನ್ನು ನಿರ್ಮಿಸಿದ್ದಾರೆ.</span>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Philosophy -->
+                <section id="philosophy" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                            <i data-lucide="heart"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Life Philosophy</span>
+                            <span class="kn">ಜೀವನ ತತ್ವ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p>
+                            <span class="en">Mastappa Naik's life is guided by the principle: 'Service is Religion - Society is God'. He believes that true leadership is about serving the most vulnerable and ensuring that every individual has the opportunity to thrive.</span>
+                            <span class="kn">ಮಾಸ್ತಪ್ಪ ನಾಯಕ್ ಅವರ ಜೀವನವು 'ಸೇವೆಯೇ ಧರ್ಮ - ಸಮಾಜವೇ ದೇವರು' ಎಂಬ ತತ್ವದಿಂದ ಮಾರ್ಗದರ್ಶಿಸಲ್ಪಟ್ಟಿದೆ. ನಿಜವಾದ ನಾಯಕತ್ವವು ಅತ್ಯಂತ ದುರ್ಬಲರಿಗೆ ಸೇವೆ ಸಲ್ಲಿಸುವುದು ಮತ್ತು ಪ್ರತಿಯೊಬ್ಬ ವ್ಯಕ್ತಿಯು ಅಭಿವೃದ್ಧಿ ಹೊಂದಲು ಅವಕಾಶವನ್ನು ಹೊಂದಿರುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುವುದು ಎಂದು ಅವರು ನಂಬುತ್ತಾರೆ.</span>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Honors -->
+                <section id="honors" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Honors & Recognition</span>
+                            <span class="kn">ಗೌರವಗಳು ಮತ್ತು ಮಾನ್ಯತೆ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p>
+                            <span class="en">Throughout his career, Mastappa Naik has received numerous awards for his contributions to society and industry. These include honors from various community organizations, media houses, and government bodies.</span>
+                            <span class="kn">ತಮ್ಮ ವೃತ್ತಿಜೀವನದ ಉದ್ದಕ್ಕೂ, ಮಾಸ್ತಪ್ಪ ನಾಯಕ್ ಅವರು ಸಮಾಜ ಮತ್ತು ಕೈಗಾರಿಕೆಗೆ ನೀಡಿದ ಕೊಡುಗೆಗಳಿಗಾಗಿ ಹಲವಾರು ಪ್ರಶಸ್ತಿಗಳನ್ನು ಪಡೆದಿದ್ದಾರೆ. ಇವುಗಳಲ್ಲಿ ವಿವಿಧ ಸಮುದಾಯ ಸಂಘಟನೆಗಳು, ಮಾಧ್ಯಮ ಸಂಸ್ಥೆಗಳು ಮತ್ತು ಸರ್ಕಾರಿ ಸಂಸ್ಥೆಗಳಿಂದ ಬಂದ ಗೌರವಗಳು ಸೇರಿವೆ.</span>
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left mb-16">
+                <!-- Brand -->
+                <div>
+                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl mb-6 mx-auto md:mx-0">MN</div>
+                    <h3 class="text-xl font-bold mb-2">Mastappa Naik</h3>
+                    <p class="text-slate-400 text-sm">
+                        <span class="en">Building a better future for Bhatkal through service and leadership.</span>
+                        <span class="kn">ಸೇವೆ ಮತ್ತು ನಾಯಕತ್ವದ ಮೂಲಕ ಭಟ್ಕಳಕ್ಕೆ ಉತ್ತಮ ಭವಿಷ್ಯವನ್ನು ನಿರ್ಮಿಸುವುದು.</span>
+                    </p>
+                </div>
+
+                <!-- Social Media Shortcuts -->
+                <div class="flex flex-col items-center">
+                    <h4 class="text-xs font-black uppercase tracking-widest text-orange-500 mb-6">
+                        <span class="en">Connect With Us</span>
+                        <span class="kn">ನಮ್ಮೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ</span>
+                    </h4>
+                    <div class="flex gap-4">
+                        <a href="https://facebook.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all group">
+                            <i data-lucide="facebook" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-pink-600 transition-all group">
+                            <i data-lucide="instagram" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-red-600 transition-all group">
+                            <i data-lucide="youtube" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-sky-500 transition-all group">
+                            <i data-lucide="twitter" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-col items-center md:items-end">
+                    <h4 class="text-xs font-black uppercase tracking-widest text-orange-500 mb-6">
+                        <span class="en">Quick Links</span>
+                        <span class="kn">ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು</span>
+                    </h4>
+                    <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-sm font-bold text-slate-400">
+                        <a href="index.html" class="hover:text-orange-400 transition-colors">Home</a>
+                        <a href="biodata.html" class="hover:text-orange-400 transition-colors text-white">Biography</a>
+                        <a href="timeline.html" class="hover:text-orange-400 transition-colors">Timeline</a>
+                        <a href="events.html" class="hover:text-orange-400 transition-colors">Events</a>
+                        <a href="index.html#contact" class="hover:text-orange-400 transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-white/5 text-center">
+                <p class="text-slate-500 text-xs">© 2026 Mastappa Naik. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleLanguage() {
+            document.body.classList.toggle('lang-kn');
+        }
+    </script>
+</body>
+</html>
