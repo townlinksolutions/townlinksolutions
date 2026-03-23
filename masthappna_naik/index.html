@@ -26,6 +26,157 @@
         .animate-marquee:hover {
             animation-play-state: paused;
         }
+        /* Vertical Interactive Timeline Styles - Enhanced */
+        .timeline-container {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-top: 2rem;
+        }
+        @media (min-width: 768px) {
+            .timeline-container {
+                padding-left: 4rem;
+            }
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #f1f5f9;
+            z-index: 0;
+            border-radius: 10px;
+        }
+        @media (min-width: 768px) {
+            .timeline-container::before {
+                left: 1.25rem;
+            }
+        }
+        .timeline-progress-line {
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #f97316, #fb923c);
+            z-index: 1;
+            transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+        }
+        @media (min-width: 768px) {
+            .timeline-progress-line {
+                left: 1.25rem;
+            }
+        }
+        .timeline-card {
+            position: relative;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            background: transparent;
+            border: 1px solid transparent;
+        }
+        .timeline-card:hover {
+            background: rgba(241, 245, 249, 0.5);
+        }
+        .timeline-card.active {
+            background: white;
+            border-color: #f1f5f9;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            transform: translateX(5px);
+        }
+        @media (min-width: 768px) {
+            .timeline-card.active {
+                transform: translateX(15px);
+            }
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -2.25rem;
+            top: 2rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            background: white;
+            border: 3px solid #cbd5e1;
+            border-radius: 50%;
+            z-index: 2;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (min-width: 768px) {
+            .timeline-dot {
+                left: -3.5rem;
+                width: 1.75rem;
+                height: 1.75rem;
+                top: 2.25rem;
+            }
+        }
+        .timeline-card.active .timeline-dot {
+            background: #f97316;
+            border-color: #f97316;
+            transform: scale(1.2);
+            box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.15);
+        }
+        .timeline-card.active .timeline-dot::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+        }
+        .timeline-detail-box {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .timeline-card.active .timeline-detail-box {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 1.5rem;
+        }
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+        @media (min-width: 768px) {
+            .timeline-year {
+                font-size: 2.25rem;
+            }
+        }
+        .timeline-card.active .timeline-year {
+            color: #f97316;
+            transform: scale(1.1);
+        }
+        .timeline-short-desc {
+            transition: all 0.3s ease;
+        }
+        .timeline-card.active .timeline-short-desc {
+            transform: translateX(5px);
+        }
+        .timeline-progress-bar-inner {
+            height: 4px;
+            background: #f97316;
+            width: 0%;
+            transition: width 0.1s linear;
+            border-radius: 2px;
+        }
+        .timeline-card .expand-icon {
+            transition: transform 0.5s ease;
+            color: #94a3b8;
+        }
+        .timeline-card.active .expand-icon {
+            transform: rotate(180deg);
+            color: #f97316;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-900 overflow-x-hidden selection:bg-orange-100 selection:text-orange-900">
@@ -191,18 +342,58 @@
 
                     <div class="space-y-6 text-slate-700 text-xl leading-relaxed">
                         <p>
-                            <span class="en">Mastappa Naik, a prominent social worker and entrepreneur from Bhatkal region, has been working continuously for the rights of the people of Uttara Kannada district and for the development of the society for the last 25 years.</span>
-                            <span class="kn">ಭಟ್ಕಳ ಪ್ರದೇಶದ ಪ್ರಮುಖ ಸಮಾಜಸೇವಕ ಮತ್ತು ಉದ್ಯಮಿಯಾದ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಕಳೆದ 25 ವರ್ಷಗಳಿಂದ ಉತ್ತರ ಕನ್ನಡ ಜಿಲ್ಲೆಯ ಜನರ ಹಕ್ಕುಗಳಿಗಾಗಿ ಮತ್ತು ಸಮಾಜದ ಅಭಿವೃದ್ಧಿಗಾಗಿ ನಿರಂತರವಾಗಿ ಕಾರ್ಯನಿರತರಾಗಿದ್ದಾರೆ.</span>
+                            <span class="en">Mastappa Naik is a visionary leader, a dedicated social reformer, and a successful entrepreneur whose life is a testament to the power of selfless service. For over 25 years, he has been the unwavering voice of the people of Uttara Kannada, championing the rights of the marginalized and driving transformative change across the district.</span>
+                            <span class="kn">ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಒಬ್ಬ ದಾರ್ಶನಿಕ ನಾಯಕ, ಸಮರ್ಪಿತ ಸಮಾಜ ಸುಧಾರಕ ಮತ್ತು ಯಶಸ್ವಿ ಉದ್ಯಮಿಯಾಗಿದ್ದು, ಅವರ ಜೀವನವು ನಿಸ್ವಾರ್ಥ ಸೇವೆಯ ಶಕ್ತಿಗೆ ಸಾಕ್ಷಿಯಾಗಿದೆ. ಕಳೆದ 25 ವರ್ಷಗಳಿಂದ, ಅವರು ಉತ್ತರ ಕನ್ನಡದ ಜನರ ಅಚಲ ಧ್ವನಿಯಾಗಿದ್ದಾರೆ, ಹಿಂದುಳಿದವರ ಹಕ್ಕುಗಳಿಗಾಗಿ ಹೋರಾಡುತ್ತಿದ್ದಾರೆ ಮತ್ತು ಜಿಲ್ಲೆಯಾದ್ಯಂತ ಪರಿವರ್ತನಾ ಬದಲಾವಣೆಯನ್ನು ತರುತ್ತಿದ್ದಾರೆ.</span>
                         </p>
                         <p>
-                            <span class="en">As a well-wisher of backward classes, he has actively participated in local administration and community organizations, serving as the voice of the Namadhari community.</span>
-                            <span class="kn">ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಹಿತಚಿಂತಕರಾಗಿ, ಅವರು ಸ್ಥಳೀಯ ಆಡಳಿತ ಮತ್ತು ಸಮುದಾಯ ಸಂಘಟನೆಗಳಲ್ಲಿ ಸಕ್ರಿಯವಾಗಿ ಭಾಗವಹಿಸಿದ್ದು, ನಮಧಾರಿ ಸಮುದಾಯದ ಧ್ವನಿಯಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸಿದ್ದಾರೆ.</span>
+                            <span class="en">From spearheading massive healthcare movements to protecting the delicate ecological balance of the Western Ghats, his impact spans across social justice, environmental conservation, and economic empowerment. As a leader of the Namadhari community and a well-wisher of all backward classes, he has bridged the gap between industrial excellence and grassroots activism.</span>
+                            <span class="kn">ಬೃಹತ್ ಆರೋಗ್ಯ ಚಳುವಳಿಗಳ ನೇತೃತ್ವದಿಂದ ಹಿಡಿದು ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ಸೂಕ್ಷ್ಮ ಪರಿಸರ ಸಮತೋಲನವನ್ನು ರಕ್ಷಿಸುವವರೆಗೆ, ಅವರ ಪ್ರಭಾವವು ಸಾಮಾಜಿಕ ನ್ಯಾಯ, ಪರಿಸರ ಸಂರಕ್ಷಣೆ ಮತ್ತು ಆರ್ಥಿಕ ಸಬಲೀಕರಣದಾದ್ಯಂತ ಹರಡಿದೆ. ನಮಧಾರಿ ಸಮುದಾಯದ ನಾಯಕರಾಗಿ ಮತ್ತು ಎಲ್ಲಾ ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಹಿತೈಷಿಯಾಗಿ, ಅವರು ಕೈಗಾರಿಕಾ ಶ್ರೇಷ್ಠತೆ ಮತ್ತು ತಳಮಟ್ಟದ ಕ್ರಿಯಾಶೀಲತೆಯ ನಡುವಿನ ಅಂತರವನ್ನು ಕಡಿಮೆ ಮಾಡಿದ್ದಾರೆ.</span>
+                        </p>
+                        <p>
+                            <span class="en">His journey is not just about achievements, but about a relentless pursuit of a self-reliant and developed Uttara Kannada where every individual has the opportunity to thrive.</span>
+                            <span class="kn">ಅವರ ಪ್ರಯಾಣವು ಕೇವಲ ಸಾಧನೆಗಳ ಬಗ್ಗೆ ಅಲ್ಲ, ಆದರೆ ಪ್ರತಿಯೊಬ್ಬ ವ್ಯಕ್ತಿಯು ಅಭಿವೃದ್ಧಿ ಹೊಂದಲು ಅವಕಾಶವಿರುವ ಸ್ವಾವಲಂಬಿ ಮತ್ತು ಅಭಿವೃದ್ಧಿ ಹೊಂದಿದ ಉತ್ತರ ಕನ್ನಡದ ನಿರಂತರ ಅನ್ವೇಷಣೆಯಾಗಿದೆ.</span>
                         </p>
                     </div>
                     <a href="biodata.html" class="inline-block bg-orange-600 text-white px-10 py-5 rounded-xl font-black text-lg hover:bg-orange-700 transition-all shadow-xl">
                         <span class="en">Read Full Biography</span>
                         <span class="kn">ಪೂರ್ಣ ಜೀವನಚರಿತ್ರೆ ಓದಿ</span>
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                    <div class="text-4xl md:text-5xl font-black text-orange-600 mb-2">25+</div>
+                    <div class="text-slate-600 font-bold uppercase tracking-wider text-sm">
+                        <span class="en">Years of Service</span>
+                        <span class="kn">ವರ್ಷಗಳ ಸೇವೆ</span>
+                    </div>
+                </div>
+                <div class="text-center p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                    <div class="text-4xl md:text-5xl font-black text-green-600 mb-2">16K+</div>
+                    <div class="text-slate-600 font-bold uppercase tracking-wider text-sm">
+                        <span class="en">Trees Protected</span>
+                        <span class="kn">ಮರಗಳ ರಕ್ಷಣೆ</span>
+                    </div>
+                </div>
+                <div class="text-center p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                    <div class="text-4xl md:text-5xl font-black text-blue-600 mb-2">10K+</div>
+                    <div class="text-slate-600 font-bold uppercase tracking-wider text-sm">
+                        <span class="en">Lives Impacted</span>
+                        <span class="kn">ಜೀವಗಳ ಮೇಲೆ ಪ್ರಭಾವ</span>
+                    </div>
+                </div>
+                <div class="text-center p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                    <div class="text-4xl md:text-5xl font-black text-yellow-600 mb-2">50+</div>
+                    <div class="text-slate-600 font-bold uppercase tracking-wider text-sm">
+                        <span class="en">Community Projects</span>
+                        <span class="kn">ಸಮುದಾಯ ಯೋಜನೆಗಳು</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -313,6 +504,131 @@
         </div>
     </section>
 
+    <!-- Campaigns & Movements Section -->
+    <section id="campaigns" class="py-32 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="space-y-4">
+                    <h2 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
+                        <span class="en">Campaigns & <br><span class="text-orange-600">Movements</span></span>
+                        <span class="kn">ಅಭಿಯಾನಗಳು ಮತ್ತು <br><span class="text-orange-600">ಚಳುವಳಿಗಳು</span></span>
+                    </h2>
+                    <p class="text-xl text-slate-500 font-medium max-w-xl">
+                        <span class="en">Transformative actions that have shaped the future of Uttara Kannada.</span>
+                        <span class="kn">ಉತ್ತರ ಕನ್ನಡದ ಭವಿಷ್ಯವನ್ನು ರೂಪಿಸಿದ ಪರಿವರ್ತನಾ ಕ್ರಮಗಳು.</span>
+                    </p>
+                </div>
+                <a href="biodata.html#activism" class="group flex items-center gap-3 text-orange-600 font-black text-lg">
+                    <span class="en">View All Campaigns</span>
+                    <span class="kn">ಎಲ್ಲಾ ಅಭಿಯಾನಗಳನ್ನು ನೋಡಿ</span>
+                    <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Postcard Campaign -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-orange-600 rounded-[3rem] translate-x-3 translate-y-3 -z-10 opacity-0 group-hover:opacity-10 transition-all"></div>
+                    <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 h-full flex flex-col">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+                            <i data-lucide="mail" class="text-orange-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4">
+                            <span class="en">Postcard Campaign</span>
+                            <span class="kn">ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ</span>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed mb-8 flex-grow">
+                            <span class="en">Mobilized 25,000+ postcards to demand a multi-specialty hospital, reaching 7 lakh people.</span>
+                            <span class="kn">ಮಲ್ಟಿ-ಸ್ಪೆಷಾಲಿಟಿ ಆಸ್ಪತ್ರೆಗೆ ಒತ್ತಾಯಿಸಲು 25,000+ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಸಂಗ್ರಹಿಸಿ, 7 ಲಕ್ಷ ಜನರನ್ನು ತಲುಪಿದರು.</span>
+                        </p>
+                        <div class="text-orange-600 font-black text-sm uppercase tracking-widest">25,000+ Postcards</div>
+                    </div>
+                </div>
+
+                <!-- Mega Padayatra -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-orange-600 rounded-[3rem] translate-x-3 translate-y-3 -z-10 opacity-0 group-hover:opacity-10 transition-all"></div>
+                    <div class="bg-slate-900 p-10 rounded-[3rem] border border-slate-800 h-full flex flex-col text-white">
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+                            <i data-lucide="footprints" class="text-orange-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-black mb-4">
+                            <span class="en">36km Mega Padayatra</span>
+                            <span class="kn">36 ಕಿಮೀ ಬೃಹತ್ ಪಾದಯಾತ್ರೆ</span>
+                        </h3>
+                        <p class="text-slate-400 leading-relaxed mb-8 flex-grow">
+                            <span class="en">A historic march through 100+ villages to raise awareness on environmental protection.</span>
+                            <span class="kn">ಪರಿಸರ ಸಂರಕ್ಷಣೆಯ ಬಗ್ಗೆ ಜಾಗೃತಿ ಮೂಡಿಸಲು 100+ ಹಳ್ಳಿಗಳ ಮೂಲಕ ಐತಿಹಾಸಿಕ ಪಾದಯಾತ್ರೆ.</span>
+                        </p>
+                        <div class="text-orange-500 font-black text-sm uppercase tracking-widest">36km March</div>
+                    </div>
+                </div>
+
+                <!-- Sharavathi Protection -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-orange-600 rounded-[3rem] translate-x-3 translate-y-3 -z-10 opacity-0 group-hover:opacity-10 transition-all"></div>
+                    <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 h-full flex flex-col">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+                            <i data-lucide="shield-check" class="text-green-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4">
+                            <span class="en">Sharavathi Protection</span>
+                            <span class="kn">ಶರಾವತಿ ಸಂರಕ್ಷಣೆ</span>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed mb-8 flex-grow">
+                            <span class="en">Successfully led the movement to protect 16,000 trees from the Sharavathi project.</span>
+                            <span class="kn">ಶರಾವತಿ ಯೋಜನೆಯಿಂದ 16,000 ಮರಗಳನ್ನು ರಕ್ಷಿಸುವ ಚಳುವಳಿಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಮುನ್ನಡೆಸಿದರು.</span>
+                        </p>
+                        <div class="text-green-600 font-black text-sm uppercase tracking-widest">16,000 Trees</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Youth & Inspiration Section -->
+    <section class="py-32 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8">
+                    <div class="inline-block px-4 py-2 bg-orange-600 rounded-full text-xs font-black uppercase tracking-widest">Youth Icon</div>
+                    <h2 class="text-4xl md:text-6xl font-black leading-tight">
+                        <span class="en">Inspiring the <br><span class="text-orange-500">Next Generation</span></span>
+                        <span class="kn">ಮುಂದಿನ ಪೀಳಿಗೆಗೆ <br><span class="text-orange-500">ಸ್ಪೂರ್ತಿ</span></span>
+                    </h2>
+                    <p class="text-xl text-slate-400 leading-relaxed">
+                        <span class="en">Mastappa Naik believes that the youth are the backbone of our nation. Through sports, education, and moral guidance, he empowers young minds to take charge of their future.</span>
+                        <span class="kn">ಯುವಜನತೆಯೇ ನಮ್ಮ ರಾಷ್ಟ್ರದ ಬೆನ್ನೆಲುಬು ಎಂದು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ನಂಬಿದ್ದಾರೆ. ಕ್ರೀಡೆ, ಶಿಕ್ಷಣ ಮತ್ತು ನೈತಿಕ ಮಾರ್ಗದರ್ಶನದ ಮೂಲಕ ಅವರು ಯುವ ಮನಸ್ಸುಗಳನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುತ್ತಾರೆ.</span>
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-6 bg-white/5 rounded-3xl border border-white/10">
+                            <div class="text-orange-500 mb-4"><i data-lucide="trophy"></i></div>
+                            <h4 class="font-bold mb-2">Sports Support</h4>
+                            <p class="text-sm text-slate-500">Promoting fitness and discipline through local tournaments.</p>
+                        </div>
+                        <div class="p-6 bg-white/5 rounded-3xl border border-white/10">
+                            <div class="text-orange-500 mb-4"><i data-lucide="graduation-cap"></i></div>
+                            <h4 class="font-bold mb-2">Education</h4>
+                            <p class="text-sm text-slate-500">Providing scholarships and resources for higher studies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="aspect-[4/5] rounded-[3rem] overflow-hidden">
+                        <img src="https://picsum.photos/seed/youth_inspiration/800/1000" alt="Youth Inspiration" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2rem] text-slate-900 shadow-2xl max-w-xs">
+                        <i data-lucide="quote" class="text-orange-600 mb-4"></i>
+                        <p class="font-bold italic text-lg leading-tight">
+                            "The energy of our youth is the greatest asset of Uttara Kannada."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Vision Block -->
     <section class="py-16 md:py-24 bg-orange-600 text-white overflow-hidden relative">
         <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -371,124 +687,311 @@
                                     <li class="flex gap-3">
                                         <i data-lucide="check-circle-2" class="text-orange-600 shrink-0 w-5 h-5"></i>
                                         <span>
-                                            <span class="en"><strong>Broken Promises:</strong> Since 2019, various Chief Ministers promised funds, but proposals were repeatedly rejected.</span>
-                                            <span class="kn"><strong>ಮುರಿದ ಭರವಸೆಗಳು:</strong> 2019 ರಿಂದ, ವಿವಿಧ ಮುಖ್ಯಮಂತ್ರಿಗಳು ಹಣದ ಭರವಸೆ ನೀಡಿದರು, ಆದರೆ ಪ್ರಸ್ತಾವನೆಗಳನ್ನು ಪದೇ ಪದೇ ತಿರಸ್ಕರಿಸಲಾಯಿತು.</span>
-                                        </span>
-                                    </li>
-                                    <li class="flex gap-3">
-                                        <i data-lucide="check-circle-2" class="text-orange-600 shrink-0 w-5 h-5"></i>
-                                        <span>
-                                            <span class="en"><strong>Catalyst Incidents:</strong> Tragic accidents highlighted that patients died simply because local hospitals couldn't treat them.</span>
-                                            <span class="kn"><strong>ಪ್ರೇರಕ ಘಟನೆಗಳು:</strong> ಸ್ಥಳೀಯ ಆಸ್ಪತ್ರೆಗಳಲ್ಲಿ ಚಿಕಿತ್ಸೆ ನೀಡಲು ಸಾಧ್ಯವಾಗದ ಕಾರಣ ರೋಗಿಗಳು ಸಾವನ್ನಪ್ಪುತ್ತಿದ್ದಾರೆ ಎಂಬುದು ದುರಂತ ಅಪಘಾತಗಳಿಂದ ಸಾಬೀತಾಯಿತು.</span>
+                                            <span class="en"><strong>Broken Promises:</strong> Since 2019, various Chief Ministers promised funds, but progress remained stalled.</span>
+                                            <span class="kn"><strong>ಮುರಿದ ಭರವಸೆಗಳು:</strong> 2019 ರಿಂದ, ವಿವಿಧ ಮುಖ್ಯಮಂತ್ರಿಗಳು ಹಣದ ಭರವಸೆ ನೀಡಿದರು, ಆದರೆ ಪ್ರಗತಿಯು ಸ್ಥಗಿತಗೊಂಡಿತು.</span>
                                         </span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="space-y-8">
-                            <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-2xl">
-                                <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
-                                    <i data-lucide="user-check" class="text-orange-500"></i>
-                                    <span class="en">Mastappa Naik's Efforts</span>
-                                    <span class="kn">ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ಪ್ರಯತ್ನಗಳು</span>
-                                </h3>
-                                <div class="space-y-4">
-                                    <div class="flex gap-4">
-                                        <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shrink-0">
-                                            <i data-lucide="pen-tool" class="w-5 h-5 text-orange-400"></i>
-                                        </div>
-                                        <p class="text-sm text-slate-300">
-                                            <span class="en">Wrote a letter in his own blood to the Prime Minister to highlight the urgency.</span>
-                                            <span class="kn">ಪರಿಸ್ಥಿತಿಯ ತುರ್ತುಸ್ಥಿತಿಯನ್ನು ಎತ್ತಿ ತೋರಿಸಲು ಪ್ರಧಾನ ಮಂತ್ರಿಗೆ ತಮ್ಮದೇ ರಕ್ತದಲ್ಲಿ ಪತ್ರ ಬರೆದರು.</span>
-                                        </p>
-                                    </div>
-                                    <div class="flex gap-4">
-                                        <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shrink-0">
-                                            <i data-lucide="users" class="w-5 h-5 text-orange-400"></i>
-                                        </div>
-                                        <p class="text-sm text-slate-300">
-                                            <span class="en">United people under the #NoHospitalNoVote movement across 11 talukas.</span>
-                                            <span class="kn">#NoHospitalNoVote ಚಳುವಳಿಯ ಅಡಿಯಲ್ಲಿ 11 ತಾಲೂಕುಗಳಲ್ಲಿ ಜನರನ್ನು ಒಗ್ಗೂಡಿಸಿದರು.</span>
-                                        </p>
-                                    </div>
+                        <div class="timeline-container max-w-4xl mx-auto">
+                            <div class="timeline-progress-line" id="timelineProgress"></div>
+                
+                <!-- 2012 -->
+                <div class="timeline-card active" onclick="goToTimeline(0)">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                            <span class="timeline-year">2012</span>
+                            <div class="timeline-short-desc flex flex-col">
+                                <span class="en font-black text-lg md:text-2xl text-slate-900">Founded "Young One India"</span>
+                                <span class="kn font-black text-lg md:text-2xl text-slate-900">"ಯಂಗ್ ಒನ್ ಇಂಡಿಯಾ" ಸ್ಥಾಪನೆ</span>
+                                <span class="en text-slate-500 text-sm md:text-base font-medium">Entrepreneurial Beginning in Chennai.</span>
+                                <span class="kn text-slate-500 text-sm md:text-base font-medium">ಚೆನ್ನೈನಲ್ಲಿ ಉದ್ಯಮಶೀಲತೆಯ ಆರಂಭ.</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon w-6 h-6 shrink-0 mt-1"></i>
+                    </div>
+                    <div class="timeline-detail-box">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 shadow-inner relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-slate-200">
+                                <div class="timeline-progress-bar-inner" id="pb-0"></div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
+                                <span class="en">Established "Young One India" in Chennai, marking the start of a successful entrepreneurial journey focused on industrial equipment and storage solutions. This foundation paved the way for future social initiatives.</span>
+                                <span class="kn">ಚೆನ್ನೈನಲ್ಲಿ "ಯಂಗ್ ಒನ್ ಇಂಡಿಯಾ" ಸ್ಥಾಪನೆ. ಕೈಗಾರಿಕಾ ಉಪಕರಣಗಳು ಮತ್ತು ಶೇಖರಣಾ ಪರಿಹಾರಗಳ ಮೇಲೆ ಗಮನಹರಿಸುವ ಮೂಲಕ ಯಶಸ್ವಿ ಉದ್ಯಮಶೀಲತೆಯ ಪ್ರಯಾಣದ ಆರಂಭವನ್ನು ಗುರುತಿಸಿತು.</span>
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-orange-600 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                    <span class="en">Industrial Growth</span>
+                                    <span class="kn">ಕೈಗಾರಿಕಾ ಬೆಳವಣಿಗೆ</span>
                                 </div>
-                                <button onclick="openDetail('postcard')" class="mt-8 w-full bg-orange-600 hover:bg-orange-700 text-white py-4 rounded-2xl font-black transition-all">
-                                    <span class="en">Read Full Story</span>
-                                    <span class="kn">ಪೂರ್ಣ ಕಥೆಯನ್ನು ಓದಿ</span>
-                                </button>
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-slate-500 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    <span class="en">Chennai</span>
+                                    <span class="kn">ಚೆನ್ನೈ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2015 -->
+                <div class="timeline-card" onclick="goToTimeline(1)">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                            <span class="timeline-year">2015</span>
+                            <div class="timeline-short-desc flex flex-col">
+                                <span class="en font-black text-lg md:text-2xl text-slate-900">Road Safety Awareness</span>
+                                <span class="kn font-black text-lg md:text-2xl text-slate-900">ರಸ್ತೆ ಸುರಕ್ಷತಾ ಜಾಗೃತಿ</span>
+                                <span class="en text-slate-500 text-sm md:text-base font-medium">Public Safety Campaign in Bhatkal.</span>
+                                <span class="kn text-slate-500 text-sm md:text-base font-medium">ಭಟ್ಕಳದಲ್ಲಿ ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತಾ ಅಭಿಯಾನ.</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon w-6 h-6 shrink-0 mt-1"></i>
+                    </div>
+                    <div class="timeline-detail-box">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 shadow-inner relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-slate-200">
+                                <div class="timeline-progress-bar-inner" id="pb-1"></div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
+                                <span class="en">Launched a comprehensive road safety campaign in Bhatkal. Distributed hundreds of helmets and conducted workshops to educate the public on traffic rules and safety measures.</span>
+                                <span class="kn">ಭಟ್ಕಳದಲ್ಲಿ ಸಮಗ್ರ ರಸ್ತೆ ಸುರಕ್ಷತಾ ಅಭಿಯಾನವನ್ನು ಪ್ರಾರಂಭಿಸಲಾಯಿತು. ನೂರಾರು ಹೆಲ್ಮೆಟ್‌ಗಳನ್ನು ವಿತರಿಸಲಾಯಿತು ಮತ್ತು ಸಂಚಾರ ನಿಯಮಗಳ ಬಗ್ಗೆ ಸಾರ್ವಜನಿಕರಿಗೆ ಶಿಕ್ಷಣ ನೀಡಲು ಕಾರ್ಯಾಗಾರಗಳನ್ನು ನಡೆಸಲಾಯಿತು.</span>
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-orange-600 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                    <span class="en">Public Awareness</span>
+                                    <span class="kn">ಸಾರ್ವಜನಿಕ ಜಾಗೃತಿ</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-slate-500 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    <span class="en">Bhatkal</span>
+                                    <span class="kn">ಭಟ್ಕಳ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2017 -->
+                <div class="timeline-card" onclick="goToTimeline(2)">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                            <span class="timeline-year">2017</span>
+                            <div class="timeline-short-desc flex flex-col">
+                                <span class="en font-black text-lg md:text-2xl text-slate-900">Digital Empowerment</span>
+                                <span class="kn font-black text-lg md:text-2xl text-slate-900">ಡಿಜಿಟಲ್ ಸಬಲೀಕರಣ</span>
+                                <span class="en text-slate-500 text-sm md:text-base font-medium">Literacy & Library Modernization.</span>
+                                <span class="kn text-slate-500 text-sm md:text-base font-medium">ಸಾಕ್ಷರತೆ ಮತ್ತು ಗ್ರಂಥಾಲಯ ಆಧುನೀಕರಣ.</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon w-6 h-6 shrink-0 mt-1"></i>
+                    </div>
+                    <div class="timeline-detail-box">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 shadow-inner relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-slate-200">
+                                <div class="timeline-progress-bar-inner" id="pb-2"></div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
+                                <span class="en">Initiated digital literacy programs for senior citizens to bridge the generational gap. Modernized the local public library with digital infrastructure and internet access.</span>
+                                <span class="kn">ಪೀಳಿಗೆಯ ಅಂತರವನ್ನು ಕಡಿಮೆ ಮಾಡಲು ಹಿರಿಯ ನಾಗರಿಕರಿಗಾಗಿ ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಪ್ರಾರಂಭಿಸಲಾಯಿತು. ಡಿಜಿಟಲ್ ಮೂಲಸೌಕರ್ಯ ಮತ್ತು ಇಂಟರ್ನೆಟ್ ಪ್ರವೇಶದೊಂದಿಗೆ ಸ್ಥಳೀಯ ಸಾರ್ವಜನಿಕ ಗ್ರಂಥಾಲಯವನ್ನು ಆಧುನೀಕರಿಸಲಾಯಿತು.</span>
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-orange-600 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="laptop" class="w-4 h-4"></i>
+                                    <span class="en">Education & Tech</span>
+                                    <span class="kn">ಶಿಕ್ಷಣ ಮತ್ತು ತಂತ್ರಜ್ಞಾನ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="timeline-card" onclick="goToTimeline(3)">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                            <span class="timeline-year">2019</span>
+                            <div class="timeline-short-desc flex flex-col">
+                                <span class="en font-black text-lg md:text-2xl text-slate-900">Youth Empowerment Centers</span>
+                                <span class="kn font-black text-lg md:text-2xl text-slate-900">ಯುವ ಸಬಲೀಕರಣ ಕೇಂದ್ರಗಳು</span>
+                                <span class="en text-slate-500 text-sm md:text-base font-medium">Skill Development for local youth.</span>
+                                <span class="kn text-slate-500 text-sm md:text-base font-medium">ಸ್ಥಳೀಯ ಯುವಕರಿಗೆ ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿ.</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon w-6 h-6 shrink-0 mt-1"></i>
+                    </div>
+                    <div class="timeline-detail-box">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 shadow-inner relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-slate-200">
+                                <div class="timeline-progress-bar-inner" id="pb-3"></div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
+                                <span class="en">Established vocational training centers to provide local youth with industry-relevant skills. Focused on practical training to improve employability in rural Uttara Kannada.</span>
+                                <span class="kn">ಸ್ಥಳೀಯ ಯುವಕರಿಗೆ ಉದ್ಯಮಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಕೌಶಲ್ಯಗಳನ್ನು ಒದಗಿಸಲು ವೃತ್ತಿಪರ ತರಬೇತಿ ಕೇಂದ್ರಗಳನ್ನು ಸ್ಥಾಪಿಸಲಾಯಿತು. ಗ್ರಾಮೀಣ ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಉದ್ಯೋಗಾವಕಾಶವನ್ನು ಸುಧಾರಿಸಲು ಪ್ರಾಯೋಗಿಕ ತರಬೇತಿಯ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸಲಾಯಿತು.</span>
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-orange-600 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                                    <span class="en">Job Readiness</span>
+                                    <span class="kn">ಉದ್ಯೋಗ ಸಿದ್ಧತೆ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="timeline-card" onclick="goToTimeline(4)">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                            <span class="timeline-year">2021</span>
+                            <div class="timeline-short-desc flex flex-col">
+                                <span class="en font-black text-lg md:text-2xl text-slate-900">The Postcard Campaign</span>
+                                <span class="kn font-black text-lg md:text-2xl text-slate-900">ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ</span>
+                                <span class="en text-slate-500 text-sm md:text-base font-medium">Healthcare Advocacy for Uttara Kannada.</span>
+                                <span class="kn text-slate-500 text-sm md:text-base font-medium">ಉತ್ತರ ಕನ್ನಡಕ್ಕಾಗಿ ಆರೋಗ್ಯ ವಕಾಲತ್ತು.</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon w-6 h-6 shrink-0 mt-1"></i>
+                    </div>
+                    <div class="timeline-detail-box">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 shadow-inner relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-slate-200">
+                                <div class="timeline-progress-bar-inner" id="pb-4"></div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
+                                <span class="en">Organized a massive campaign with over 25,000 postcards sent to the government demanding a Multi-Specialty Hospital in Uttara Kannada, highlighting the region's healthcare crisis.</span>
+                                <span class="kn">ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಬಹುವಿಶೇಷ ಆಸ್ಪತ್ರೆಗೆ ಒತ್ತಾಯಿಸಿ ಸರ್ಕಾರಕ್ಕೆ 25,000 ಕ್ಕೂ ಹೆಚ್ಚು ಪೋಸ್ಟ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಕಳುಹಿಸುವ ಬೃಹತ್ ಅಭಿಯಾನವನ್ನು ಆಯೋಜಿಸಲಾಯಿತು.</span>
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-orange-600 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="heart-pulse" class="w-4 h-4"></i>
+                                    <span class="en">Health Rights</span>
+                                    <span class="kn">ಆರೋಗ್ಯ ಹಕ್ಕುಗಳು</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-card" onclick="goToTimeline(5)">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                            <span class="timeline-year">2023</span>
+                            <div class="timeline-short-desc flex flex-col">
+                                <span class="en font-black text-lg md:text-2xl text-slate-900">Sharavathi Project Opposition</span>
+                                <span class="kn font-black text-lg md:text-2xl text-slate-900">ಶರಾವತಿ ಯೋಜನೆಯ ವಿರೋಧ</span>
+                                <span class="en text-slate-500 text-sm md:text-base font-medium">Environment Protection of Western Ghats.</span>
+                                <span class="kn text-slate-500 text-sm md:text-base font-medium">ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ಪರಿಸರ ಸಂರಕ್ಷಣೆ.</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon w-6 h-6 shrink-0 mt-1"></i>
+                    </div>
+                    <div class="timeline-detail-box">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 shadow-inner relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-slate-200">
+                                <div class="timeline-progress-bar-inner" id="pb-5"></div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
+                                <span class="en">Led a historic movement to protect the Western Ghats from the Sharavathi Pumped Storage Project. Successfully advocated for the preservation of 16,000+ trees and local biodiversity.</span>
+                                <span class="kn">ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಯೋಜನೆಯಿಂದ ಪಶ್ಚಿಮ ಘಟ್ಟಗಳನ್ನು ರಕ್ಷಿಸಲು ಐತಿಹಾಸಿಕ ಚಳವಳಿಯ ನೇತೃತ್ವ ವಹಿಸಿದ್ದರು. 16,000+ ಮರಗಳ ಸಂರಕ್ಷಣೆಗಾಗಿ ಯಶಸ್ವಿಯಾಗಿ ವಾದಿಸಿದರು.</span>
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-orange-600 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="leaf" class="w-4 h-4"></i>
+                                    <span class="en">Eco-Conservation</span>
+                                    <span class="kn">ಪರಿಸರ ಸಂರಕ್ಷಣೆ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="timeline-card" onclick="goToTimeline(6)">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                            <span class="timeline-year">2025</span>
+                            <div class="timeline-short-desc flex flex-col">
+                                <span class="en font-black text-lg md:text-2xl text-slate-900">The Great 36km Padayatra</span>
+                                <span class="kn font-black text-lg md:text-2xl text-slate-900">36 ಕಿಮೀ ಬೃಹತ್ ಪಾದಯಾತ್ರೆ</span>
+                                <span class="en text-slate-500 text-sm md:text-base font-medium">Mass Movement for public awareness.</span>
+                                <span class="kn text-slate-500 text-sm md:text-base font-medium">ಸಾರ್ವಜನಿಕ ಜಾಗೃತಿಗಾಗಿ ಬೃಹತ್ ಚಳವಳಿ.</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon w-6 h-6 shrink-0 mt-1"></i>
+                    </div>
+                    <div class="timeline-detail-box">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 shadow-inner relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-slate-200">
+                                <div class="timeline-progress-bar-inner" id="pb-6"></div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
+                                <span class="en">Conducted a 36km march through various villages to connect with local residents, understand their grievances, and raise awareness about environmental and social issues.</span>
+                                <span class="kn">ಸ್ಥಳೀಯ ನಿವಾಸಿಗಳೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಲು, ಅವರ ಕುಂದುಕೊರತೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಮತ್ತು ಸಾಮಾಜಿಕ ಸಮಸ್ಯೆಗಳ ಬಗ್ಗೆ ಜಾಗೃತಿ ಮೂಡಿಸಲು ವಿವಿಧ ಹಳ್ಳಿಗಳ ಮೂಲಕ 36 ಕಿಮೀ ಪಾದಯಾತ್ರೆ ನಡೆಸಿದರು.</span>
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-orange-600 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="footprints" class="w-4 h-4"></i>
+                                    <span class="en">Community Connect</span>
+                                    <span class="kn">ಸಮುದಾಯ ಸಂಪರ್ಕ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2026 -->
+                <div class="timeline-card" onclick="goToTimeline(7)">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                            <span class="timeline-year">2026</span>
+                            <div class="timeline-short-desc flex flex-col">
+                                <span class="en font-black text-lg md:text-2xl text-slate-900">National Industrial Award</span>
+                                <span class="kn font-black text-lg md:text-2xl text-slate-900">ರಾಷ್ಟ್ರೀಯ ಕೈಗಾರಿಕಾ ಪ್ರಶಸ್ತಿ</span>
+                                <span class="en text-slate-500 text-sm md:text-base font-medium">Recognition for Entrepreneurship.</span>
+                                <span class="kn text-slate-500 text-sm md:text-base font-medium">ಉದ್ಯಮಶೀಲತೆಗಾಗಿ ಮಾನ್ಯತೆ.</span>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon w-6 h-6 shrink-0 mt-1"></i>
+                    </div>
+                    <div class="timeline-detail-box">
+                        <div class="bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-100 shadow-inner relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-slate-200">
+                                <div class="timeline-progress-bar-inner" id="pb-7"></div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-8 text-base md:text-lg">
+                                <span class="en">Honored with the "Bharata Kyagarika Vikas Award" for outstanding contributions to entrepreneurship and social service, recognizing over a decade of dedicated work.</span>
+                                <span class="kn">ಉದ್ಯಮಶೀಲತೆ ಮತ್ತು ಸಮಾಜ ಸೇವೆಗೆ ನೀಡಿದ ಅತ್ಯುತ್ತಮ ಕೊಡುಗೆಗಾಗಿ "ಭಾರತ ಕೈಗಾರಿಕಾ ವಿಕಾಸ ಪ್ರಶಸ್ತಿ" ಯೊಂದಿಗೆ ಗೌರವಿಸಲಾಯಿತು.</span>
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4">
+                                <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 text-orange-600 font-bold text-xs uppercase tracking-wider shadow-sm">
+                                    <i data-lucide="award" class="w-4 h-4"></i>
+                                    <span class="en">Excellence Award</span>
+                                    <span class="kn">ಶ್ರೇಷ್ಠ ಪ್ರಶಸ್ತಿ</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Timeline Summary Section -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-                    <span class="en">Timeline of Major Achievements</span>
-                    <span class="kn">ಪ್ರಮುಖ ಸಾಧನೆಗಳ ಟೈಮ್‌ಲೈನ್</span>
-                </h2>
-                <p class="text-xl text-slate-500 font-medium">
-                    <span class="en">Journey of Social Service and Development</span>
-                    <span class="kn">ಸಮಾಜ ಸೇವೆ ಮತ್ತು ಅಭಿವೃದ್ಧಿಯ ಪ್ರಯಾಣ</span>
-                </p>
-            </div>
-
-            <div class="relative max-w-4xl mx-auto">
-                <!-- Vertical Line -->
-                <div class="absolute left-6 md:left-1/2 transform md:-translateX-1/2 h-full w-1 bg-orange-100"></div>
-
-                <!-- Timeline Items -->
-                <div class="space-y-12">
-                    <!-- 2026 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-orange-500 text-white font-bold text-sm z-10 md:absolute md:left-1/2 md:transform md:-translateX-1/2 shadow-lg">2026</div>
-                        <div class="w-full md:w-[45%] pl-12 md:pl-0">
-                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 group-hover:border-orange-200 transition-all">
-                                <h3 class="font-black text-xl mb-2 text-orange-600">
-                                    <span class="en">Industrial Icon Award</span>
-                                    <span class="kn">ಭಾರತದ ಕೈಗಾರಿಕಾ ಐಕಾನ್ ಪ್ರಶಸ್ತಿ</span>
-                                </h3>
-                                <p class="text-slate-600 text-sm">
-                                    <span class="en">Received the 'Industrial Icon Award of India - 2026' as a prominent entrepreneur from Bhatkal.</span>
-                                    <span class="kn">ಭಟ್ಕಳದ ಪ್ರಮುಖ ಉದ್ಯಮಿಯಾಗಿ 'ಭಾರತದ ಕೈಗಾರಿಕಾ ಐಕಾನ್ ಪ್ರಶಸ್ತಿ - 2026' ಪ್ರಶಸ್ತಿಯನ್ನು ಪಡೆದರು.</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 2025 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-slate-800 text-white font-bold text-sm z-10 md:absolute md:left-1/2 md:transform md:-translateX-1/2 shadow-lg">2025</div>
-                        <div class="w-full md:w-[45%] pl-12 md:pl-0">
-                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 group-hover:border-orange-200 transition-all">
-                                <h3 class="font-black text-xl mb-2 text-orange-600">
-                                    <span class="en">Sharavathi Project Opposition</span>
-                                    <span class="kn">ಶರಾವತಿ ಯೋಜನೆ ವಿರೋಧ ಚಳವಳಿ</span>
-                                </h3>
-                                <p class="text-slate-600 text-sm">
-                                    <span class="en">Led a public movement against the Sharavathi Pumped Storage Project to protect 16,000 trees.</span>
-                                    <span class="kn">ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಯೋಜನೆಯ ವಿರುದ್ಧ ಬೃಹತ್ ಪರಿಸರ ಚಳವಳಿ ನಡೆಸಿದರು.</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-16">
-                <a href="timeline.html" class="inline-block bg-white border-2 border-orange-500 text-orange-600 px-8 py-3 rounded-full font-bold hover:bg-orange-500 hover:text-white transition-all">
-                    <span class="en">View Complete Timeline</span>
-                    <span class="kn">ಸಂಪೂರ್ಣ ಟೈಮ್‌ಲೈನ್ ವೀಕ್ಷಿಸಿ</span>
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
+</div>
+</section>
 
     <!-- Campaigns Section -->
     <section id="campaigns" class="py-32 bg-slate-50">
@@ -1956,7 +2459,7 @@
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <h3 class="text-3xl font-black text-slate-900 mb-6">ಸ್ಥಳೀಯ ಕಲಾವಿದರ ಸಬಲೀಕರಣ</h3>
-                                <p>ಉತ್ತರ ಕನ್ನಡದ ಜಾನಪದ ಕಲೆಗಳನ್ನು ಪುನರುಜ್ಜೀವನಗೊಳಿಸಲು ಮತ್ತು ಬೆಂಬಲಿಸಲು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಮಾಡಿದ ವ್ಯಾಪಕ ಕೆಲಸಗಳನ್ನು ಪ್ರಜಾವಾಣಿ ವಿವರಿಸುತ್ತದೆ. ಕೋಲಾಟಕ್ಕಾಗಿ ಕಾರ್ಯಾಗಾರಗಳನ್ನು ಆಯೋಜಿಸುವುದರಿಂದ ಹಿಡಿದು ಯಕ್ಷಗಾನ ತಂಡಗಳಿಗೆ ಆರ್ಥಿಕ ನೆರವು ನೀಡುವವರೆಗೆ, ಅವರ ಉಪಕ್ರಮಗಳು ಸಾಂಪ್ರದಾಯಿಕ ಕಲಾ ಪ್ರಕಾರಗಳಿಗೆ ಹೊಸ ಜೀವವನ್ನು ನೀಡುತ್ತಿವೆ.</p>
+                                <p>ಉತ್ತರ ಕನ್ನಡದ ಜಾನಪದ ಕಲೆಗಳನ್ನು ಪುನರುಜ್ಜೀವನಗೊಳಿಸಲು ಮತ್ತು ಬೆಂಬಲಿಸಲು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಮಾಡಿದ ವ್ಯಾಪಕ ಕೆಲಸಗಳನ್ನು ಪ್ರಜಾವಾಣಿ ವಿವರಿಸುತ್ತದೆ. ಕೋಲಾಟಕ್ಕಾಗಿ ಕಾರ್ಯಾಗಾರಗಳನ್ನು ಆಯೋಜಿಸುವುದರಿಂದ ಹಿಟ್ಟು ಯಕ್ಷಗಾನ ತಂಡಗಳಿಗೆ ಆರ್ಥಿಕ ನೆರವು ನೀಡುವವರೆಗೆ, ಅವರ ಉಪಕ್ರಮಗಳು ಸಾಂಪ್ರದಾಯಿಕ ಕಲಾ ಪ್ರಕಾರಗಳಿಗೆ ಹೊಸ ಜೀವವನ್ನು ನೀಡುತ್ತಿವೆ.</p>
                                 <p>ಸಾಂಸ್ಕೃತಿಕ ಗುರುತು ಸಮುದಾಯದ ಬೆನ್ನೆಲುಬು ಎಂದು ಲೇಖನವು ಒತ್ತಿಹೇಳುತ್ತದೆ, ಮತ್ತು ನಾಯಕ್ ಅವರ ಪ್ರಯತ್ನಗಳು ವೇಗವಾಗಿ ಬದಲಾಗುತ್ತಿರುವ ಜಗತ್ತಿನಲ್ಲಿ ಯುವ ಪೀಳಿಗೆಯು ತಮ್ಮ ಬೇರುಗಳೊಂದಿಗೆ ಸಂಪರ್ಕದಲ್ಲಿರುವುದನ್ನು ಖಚಿತಪಡಿಸುತ್ತಿವೆ.</p>
                             </div>
                         </div>
@@ -3722,55 +4225,59 @@
                                 <div class="relative pl-10">
                                     <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2026</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Industrial Icon Award</h3>
-                                        <p class="text-slate-600">Recognized at the national level as a prominent entrepreneur from Bhatkal. This award honors his contributions to trade and social service.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">National Industrial Recognition</h3>
+                                        <p class="text-slate-600">Honored with the "Bharata Kyagarika Vikas Award" for excellence in entrepreneurship and social service.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
                                     <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2025</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Postcard Campaign</h3>
-                                        <p class="text-slate-600">Launched a massive campaign for a multi-specialty hospital in Uttara Kannada and opposed the Sharavathi Pumped Storage Project.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">The Great 36km Padayatra</h3>
+                                        <p class="text-slate-600">Completed a 36km march through villages for public welfare and environmental awareness.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2024</div>
-                                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Padyatra for River Conservation</h3>
-                                        <p class="text-slate-600">Led a padyatra from Gerusoppa to protect the Sharavathi river and its surrounding forest.</p>
-                                    </div>
-                                </div>
-                                <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2023</div>
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2023</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Bhagavad Gita Distribution</h3>
-                                        <p class="text-slate-600">Organized value-based education programs and distributed Bhagavad Gita to students.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Environmental Advocacy</h3>
+                                        <p class="text-slate-600">Led movement against the Sharavathi Pumped Storage Project to protect 16,000+ trees.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2020</div>
-                                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">COVID-19 Relief</h3>
-                                        <p class="text-slate-600">Provided extensive support during the pandemic, distributing food kits and medical aid.</p>
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2021</div>
+                                    <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Healthcare Movement</h3>
+                                        <p class="text-slate-600">Spearheaded the "Postcard Campaign" with 25,000+ cards demanding a Multi-Specialty Hospital.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2015</div>
-                                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">YoungOneIndia Founded</h3>
-                                        <p class="text-slate-600">Established YoungOneIndia to create employment opportunities and contribute to the economy.</p>
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2019</div>
+                                    <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Youth Skill Development</h3>
+                                        <p class="text-slate-600">Established skill development centers for vocational training, empowering local youth.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2000</div>
-                                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Start of Social Service</h3>
-                                        <p class="text-slate-600">Began journey in social service, focusing on the rights of backward classes.</p>
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2017</div>
+                                    <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Digital Empowerment</h3>
+                                        <p class="text-slate-600">Started digital literacy programs for senior citizens and modernized the local public library.</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="text-center">
-                                <a href="timeline.html" class="inline-block bg-orange-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-orange-700 transition-all shadow-xl">View Full Timeline Page</a>
+                                <div class="relative pl-10">
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2015</div>
+                                    <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Road Safety Awareness</h3>
+                                        <p class="text-slate-600">Launched a major road safety campaign in Bhatkal, distributing helmets and educating commuters.</p>
+                                    </div>
+                                </div>
+                                <div class="relative pl-10">
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2012</div>
+                                    <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Young One India Founded</h3>
+                                        <p class="text-slate-600">Established "Young One India" in Chennai, focusing on industrial equipment and storage solutions.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     `
@@ -3783,55 +4290,59 @@
                                 <div class="relative pl-10">
                                     <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2026</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ಕೈಗಾರಿಕಾ ಐಕಾನ್ ಪ್ರಶಸ್ತಿ</h3>
-                                        <p class="text-slate-600">ಭಟ್ಕಳದ ಪ್ರಮುಖ ಉದ್ಯಮಿಯಾಗಿ ರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದಲ್ಲಿ ಮನ್ನಣೆ. ಈ ಪ್ರಶಸ್ತಿಯು ವ್ಯಾಪಾರ ಮತ್ತು ಸಮಾಜ ಸೇವೆಗೆ ಅವರ ಕೊಡುಗೆಯನ್ನು ಗೌರವಿಸುತ್ತದೆ.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ರಾಷ್ಟ್ರೀಯ ಕೈಗಾರಿಕಾ ಮಾನ್ಯತೆ</h3>
+                                        <p class="text-slate-600">ಉದ್ಯಮಶೀಲತೆ ಮತ್ತು ಸಮಾಜ ಸೇವೆಗಾಗಿ "ಭಾರತ ಕೈಗಾರಿಕಾ ವಿಕಾಸ ಪ್ರಶಸ್ತಿ" ಗೌರವ.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
                                     <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2025</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ</h3>
-                                        <p class="text-slate-600">ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಬಹು-ವಿಶೇಷ ಆಸ್ಪತ್ರೆಗಾಗಿ ಬೃಹತ್ ಅಭಿಯಾನ ಮತ್ತು ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಯೋಜನೆಯ ವಿರೋಧ.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">36 ಕಿಮೀ ಬೃಹತ್ ಪಾದಯಾತ್ರೆ</h3>
+                                        <p class="text-slate-600">ಸಾರ್ವಜನಿಕ ಕಲ್ಯಾಣ ಮತ್ತು ಪರಿಸರ ಸಂರಕ್ಷಣೆಗಾಗಿ ಹಳ್ಳಿಗಳ ಮೂಲಕ 36 ಕಿಮೀ ನಡಿಗೆ.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2024</div>
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2023</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ನದಿಯ ಉಳಿವಿಗಾಗಿ ಪದಯಾತ್ರೆ</h3>
-                                        <p class="text-slate-600">ಶರಾವತಿ ನದಿ ಮತ್ತು ಅದರ ಸುತ್ತಮುತ್ತಲಿನ ಅರಣ್ಯವನ್ನು ರಕ್ಷಿಸಲು ಗೇರುಸೊಪ್ಪದಿಂದ ಪದಯಾತ್ರೆಯನ್ನು ಮುನ್ನಡೆಸಿದರು.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ಪರಿಸರ ಸಂರಕ್ಷಣೆ</h3>
+                                        <p class="text-slate-600">ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಯೋಜನೆಯ ವಿರುದ್ಧ ಹೋರಾಟ. 16,000+ ಮರಗಳ ರಕ್ಷಣೆ.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2023</div>
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2021</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ಭಗವದ್ಗೀತೆ ವಿತರಣೆ</h3>
-                                        <p class="text-slate-600">ಮೌಲ್ಯಾಧಾರಿತ ಶಿಕ್ಷಣ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಆಯೋಜಿಸಿ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಭಗವದ್ಗೀತೆ ವಿತರಿಸಿದರು.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ಆರೋಗ್ಯ ಚಳವಳಿ</h3>
+                                        <p class="text-slate-600">ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಬಹುವಿಶೇಷ ಆಸ್ಪತ್ರೆಗೆ ಒತ್ತಾಯಿಸಿ 25,000+ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನದ ನೇತೃತ್ವ.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2020</div>
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2019</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ಕೋವಿಡ್-19 ಪರಿಹಾರ</h3>
-                                        <p class="text-slate-600">ಸಾಂಕ್ರಾಮಿಕ ಸಮಯದಲ್ಲಿ ಆಹಾರ ಕಿಟ್ ಮತ್ತು ವೈದ್ಯಕೀಯ ನೆರವು ವಿತರಿಸುವ ಮೂಲಕ ವ್ಯಾಪಕ ಬೆಂಬಲ ನೀಡಿದರು.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ಯುವ ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿ</h3>
+                                        <p class="text-slate-600">ವೃತ್ತಿಪರ ತರಬೇತಿಗಾಗಿ ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿ ಕೇಂದ್ರಗಳ ಸ್ಥಾಪನೆ. ಉತ್ತರ ಕನ್ನಡದ ಯುವಕರ ಸಬಲೀಕರಣ.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2015</div>
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2017</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">YoungOneIndia ಸ್ಥಾಪನೆ</h3>
-                                        <p class="text-slate-600">ಉದ್ಯೋಗಾವಕಾಶಗಳನ್ನು ಸೃಷ್ಟಿಸಲು ಮತ್ತು ಆರ್ಥಿಕತೆಗೆ ಕೊಡುಗೆ ನೀಡಲು YoungOneIndia ಸ್ಥಾಪಿಸಿದರು.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ಡಿಜಿಟಲ್ ಸಬಲೀಕರಣ</h3>
+                                        <p class="text-slate-600">ಹಿರಿಯ ನಾಗರಿಕರಿಗಾಗಿ ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತಾ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಸಾರ್ವಜನಿಕ ಗ್ರಂಥಾಲಯದ ಆಧುನೀಕರಣ.</p>
                                     </div>
                                 </div>
                                 <div class="relative pl-10">
-                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2000</div>
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-orange-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2015</div>
                                     <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
-                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ಸಮಾಜಸೇವೆಯ ಪ್ರಾರಂಭ</h3>
-                                        <p class="text-slate-600">ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಹಕ್ಕುಗಳ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸಿ ಸಮಾಜಸೇವೆಯ ಪಯಣ ಆರಂಭಿಸಿದರು.</p>
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">ರಸ್ತೆ ಸುರಕ್ಷತಾ ಜಾಗೃತಿ</h3>
+                                        <p class="text-slate-600">ಭಟ್ಕಳದಲ್ಲಿ ಪ್ರಮುಖ ರಸ್ತೆ ಸುರಕ್ಷತಾ ಅಭಿಯಾನ. ಹೆಲ್ಮೆಟ್ ವಿತರಣೆ ಮತ್ತು ಸಂಚಾರ ನಿಯಮಗಳ ಬಗ್ಗೆ ಶಿಕ್ಷಣ.</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="text-center">
-                                <a href="timeline.html" class="inline-block bg-orange-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-orange-700 transition-all shadow-xl">ಪೂರ್ಣ ಕಾಲರೇಖೆ ಪುಟವನ್ನು ವೀಕ್ಷಿಸಿ</a>
+                                <div class="relative pl-10">
+                                    <div class="absolute -left-[26px] top-0 w-12 h-12 bg-slate-800 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-black text-sm">2012</div>
+                                    <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
+                                        <h3 class="text-2xl font-black text-slate-900 mb-2">Young One India ಸ್ಥಾಪನೆ</h3>
+                                        <p class="text-slate-600">ಚೆನ್ನೈನಲ್ಲಿ "ಯಂಗ್ ಒನ್ ಇಂಡಿಯಾ" ಸ್ಥಾಪನೆ. ಕೈಗಾರಿಕಾ ಉಪಕರಣಗಳು ಮತ್ತು ಶೇಖರಣಾ ಪರಿಹಾರಗಳ ಮೇಲೆ ಗಮನ.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     `
@@ -3940,6 +4451,86 @@
 
             document.getElementById('modal-content').classList.add('hidden');
             document.getElementById('success-content').classList.remove('hidden');
+        }
+
+        // Timeline Logic
+        let currentTimelineIndex = 0;
+        const timelineCards = document.querySelectorAll('.timeline-card');
+        const totalTimelineItems = timelineCards.length;
+        const timelineProgress = document.getElementById('timelineProgress');
+        let timelineInterval;
+        let progressInterval;
+        let progressPercent = 0;
+        const DURATION = 8000; // 8 seconds per card
+
+        if (timelineCards.length > 0) {
+            function updateTimeline() {
+                // Reset progress
+                progressPercent = 0;
+                clearInterval(progressInterval);
+
+                timelineCards.forEach((card, index) => {
+                    const progressBar = card.querySelector('.timeline-progress-bar-inner');
+                    if (index === currentTimelineIndex) {
+                        card.classList.add('active');
+                        // Calculate progress line height
+                        const cardTop = card.offsetTop;
+                        const cardHeight = card.offsetHeight;
+                        if (timelineProgress) {
+                            timelineProgress.style.height = `${cardTop + (cardHeight / 2)}px`;
+                        }
+                        
+                        // Start progress bar animation
+                        if (progressBar) {
+                            progressInterval = setInterval(() => {
+                                progressPercent += (100 / (DURATION / 100));
+                                if (progressPercent > 100) progressPercent = 100;
+                                progressBar.style.width = `${progressPercent}%`;
+                            }, 100);
+                        }
+                    } else {
+                        card.classList.remove('active');
+                        if (progressBar) progressBar.style.width = '0%';
+                    }
+                });
+            }
+
+            function nextTimeline() {
+                currentTimelineIndex = (currentTimelineIndex + 1) % totalTimelineItems;
+                updateTimeline();
+            }
+
+            function goToTimeline(index) {
+                currentTimelineIndex = index;
+                updateTimeline();
+                // Reset interval when user interacts
+                clearInterval(timelineInterval);
+                timelineInterval = setInterval(nextTimeline, DURATION);
+            }
+
+            // Auto-play
+            timelineInterval = setInterval(nextTimeline, DURATION);
+            updateTimeline(); // Initial call
+
+            // Pause on hover
+            const timelineSection = document.querySelector('.timeline-container');
+            if (timelineSection) {
+                timelineSection.addEventListener('mouseenter', () => {
+                    clearInterval(timelineInterval);
+                    clearInterval(progressInterval);
+                });
+                timelineSection.addEventListener('mouseleave', () => {
+                    clearInterval(timelineInterval);
+                    timelineInterval = setInterval(nextTimeline, DURATION);
+                    // Resume progress bar from current percent
+                    progressInterval = setInterval(() => {
+                        progressPercent += (100 / (DURATION / 100));
+                        if (progressPercent > 100) progressPercent = 100;
+                        const activeBar = timelineCards[currentTimelineIndex].querySelector('.timeline-progress-bar-inner');
+                        if (activeBar) activeBar.style.width = `${progressPercent}%`;
+                    }, 100);
+                });
+            }
         }
     </script>
 </body>

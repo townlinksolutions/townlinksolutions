@@ -12,6 +12,7 @@
         .kn { display: none; }
         .lang-kn .kn { display: block; }
         .lang-kn .en { display: none; }
+        .carousel-dot { transition: all 0.3s ease; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen text-slate-900 selection:bg-orange-100 selection:text-orange-900">
@@ -58,25 +59,81 @@
             <!-- Sidebar Navigation -->
             <aside class="lg:col-span-1 hidden lg:block sticky top-32 h-fit">
                 <nav class="space-y-2">
+                    <a href="#gallery" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="camera"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Visual Journey</span>
+                            <span class="kn">ದೃಶ್ಯ ಪ್ರಯಾಣ</span>
+                        </span>
+                    </a>
                     <a href="#early-life" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
                         <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="book-open"></i></div>
                         <span class="font-bold text-slate-600 group-hover:text-slate-900">
-                            <span class="en">Early Life & Background</span>
-                            <span class="kn">ಆರಂಭಿಕ ಜೀವನ ಮತ್ತು ಹಿನ್ನೆಲೆ</span>
+                            <span class="en">Early Life & Roots</span>
+                            <span class="kn">ಆರಂಭಿಕ ಜೀವನ ಮತ್ತು ಬೇರುಗಳು</span>
                         </span>
                     </a>
-                    <a href="#social-activism" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
-                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="users"></i></div>
-                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
-                            <span class="en">Social Activism & Leadership</span>
-                            <span class="kn">ಸಾಮಾಜಿಕ ಕ್ರಿಯಾಶೀಲತೆ ಮತ್ತು ನಾಯಕತ್ವ</span>
-                        </span>
-                    </a>
-                    <a href="#business-journey" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                    <a href="#industrial" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
                         <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="briefcase"></i></div>
                         <span class="font-bold text-slate-600 group-hover:text-slate-900">
-                            <span class="en">Business Journey</span>
-                            <span class="kn">ವ್ಯವಹಾರ ಪ್ರಯಾಣ</span>
+                            <span class="en">Industrial Visionary & Success</span>
+                            <span class="kn">ಕೈಗಾರಿಕಾ ದಾರ್ಶನಿಕ ಮತ್ತು ಯಶಸ್ಸು</span>
+                        </span>
+                    </a>
+                    <a href="#activism" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="megaphone"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">The People's Voice</span>
+                            <span class="kn">ಜನರ ಧ್ವನಿ</span>
+                        </span>
+                    </a>
+                    <a href="#social-service" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="heart-handshake"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Social Service & Campaigns</span>
+                            <span class="kn">ಸಾಮಾಜಿಕ ಸೇವೆ ಮತ್ತು ಅಭಿಯಾನಗಳು</span>
+                        </span>
+                    </a>
+                    <a href="#environment" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="tree-pine"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Environmental Guardian</span>
+                            <span class="kn">ಪರಿಸರ ರಕ್ಷಕ</span>
+                        </span>
+                    </a>
+                    <a href="#justice" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="scale"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Justice & Accountability</span>
+                            <span class="kn">ನ್ಯಾಯ ಮತ್ತು ಹೊಣೆಗಾರಿಕೆ</span>
+                        </span>
+                    </a>
+                    <a href="#spiritual" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="flame"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Spiritual & Religious Journey</span>
+                            <span class="kn">ಆಧ್ಯಾತ್ಮಿಕ ಮತ್ತು ಧಾರ್ಮಿಕ ಪ್ರಯಾಣ</span>
+                        </span>
+                    </a>
+                    <a href="#culture" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="landmark"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Cultural Anchor</span>
+                            <span class="kn">ಸಾಂಸ್ಕೃತಿಕ ಆಧಾರ</span>
+                        </span>
+                    </a>
+                    <a href="#politics" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="flag"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Political Vision & Agenda</span>
+                            <span class="kn">ರಾಜಕೀಯ ದೃಷ್ಟಿಕೋನ ಮತ್ತು ಕಾರ್ಯಸೂಚಿ</span>
+                        </span>
+                    </a>
+                    <a href="#youth" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
+                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="zap"></i></div>
+                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
+                            <span class="en">Youth & Sports</span>
+                            <span class="kn">ಯುವಜನತೆ ಮತ್ತು ಕ್ರೀಡೆ</span>
                         </span>
                     </a>
                     <a href="#philosophy" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
@@ -86,18 +143,111 @@
                             <span class="kn">ಜೀವನ ತತ್ವ</span>
                         </span>
                     </a>
-                    <a href="#honors" class="flex items-center gap-3 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all group">
-                        <div class="text-slate-400 group-hover:text-orange-600 transition-colors"><i data-lucide="award"></i></div>
-                        <span class="font-bold text-slate-600 group-hover:text-slate-900">
-                            <span class="en">Honors & Recognition</span>
-                            <span class="kn">ಗೌರವಗಳು ಮತ್ತು ಮಾನ್ಯತೆ</span>
-                        </span>
-                    </a>
                 </nav>
+
+                <!-- Quick Facts -->
+                <div class="mt-12 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                    <h4 class="font-black text-slate-900 mb-6 flex items-center gap-2">
+                        <i data-lucide="info" class="text-orange-600"></i>
+                        <span class="en">Quick Facts</span>
+                        <span class="kn">ತ್ವರಿತ ಮಾಹಿತಿ</span>
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b border-slate-50 pb-3">
+                            <span class="text-slate-400 text-sm font-bold uppercase tracking-wider">Name</span>
+                            <span class="text-slate-900 font-bold">Mastappa Naik</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-slate-50 pb-3">
+                            <span class="text-slate-400 text-sm font-bold uppercase tracking-wider">Location</span>
+                            <span class="text-slate-900 font-bold">Murdeshwar, UK</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-slate-50 pb-3">
+                            <span class="text-slate-400 text-sm font-bold uppercase tracking-wider">Profession</span>
+                            <span class="text-slate-900 font-bold">Industrialist</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400 text-sm font-bold uppercase tracking-wider">Focus</span>
+                            <span class="text-slate-900 font-bold">Social Service</span>
+                        </div>
+                    </div>
+                </div>
             </aside>
 
             <!-- Main Content -->
-            <div class="lg:col-span-2 space-y-24">
+            <div class="lg:col-span-2 space-y-32">
+                <!-- Visual Journey Carousel -->
+                <section id="gallery" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                            <i data-lucide="camera"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Visual Journey</span>
+                            <span class="kn">ದೃಶ್ಯ ಪ್ರಯಾಣ</span>
+                        </h2>
+                    </div>
+                    
+                    <div class="relative group overflow-hidden rounded-[2.5rem] bg-slate-200 aspect-[16/9] shadow-2xl border border-white/20">
+                        <!-- Carousel Track -->
+                        <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out h-full">
+                            <!-- Slide 1 -->
+                            <div class="min-w-full h-full relative">
+                                <img src="https://picsum.photos/seed/leader1/1200/675" alt="Mastappa Naik in Action" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-10">
+                                    <div class="text-white">
+                                        <p class="text-orange-400 font-black uppercase tracking-widest text-xs mb-2">Community Engagement</p>
+                                        <h3 class="text-2xl font-bold">
+                                            <span class="en">Listening to the People</span>
+                                            <span class="kn">ಜನರ ಮಾತುಗಳನ್ನು ಆಲಿಸುವುದು</span>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="min-w-full h-full relative">
+                                <img src="https://picsum.photos/seed/leader2/1200/675" alt="Mastappa Naik Social Service" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-10">
+                                    <div class="text-white">
+                                        <p class="text-orange-400 font-black uppercase tracking-widest text-xs mb-2">Social Service</p>
+                                        <h3 class="text-2xl font-bold">
+                                            <span class="en">Dedicated to Welfare</span>
+                                            <span class="kn">ಕಲ್ಯಾಣಕ್ಕೆ ಸಮರ್ಪಿತ</span>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="min-w-full h-full relative">
+                                <img src="https://picsum.photos/seed/leader3/1200/675" alt="Mastappa Naik Leadership" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-10">
+                                    <div class="text-white">
+                                        <p class="text-orange-400 font-black uppercase tracking-widest text-xs mb-2">Leadership</p>
+                                        <h3 class="text-2xl font-bold">
+                                            <span class="en">Vision for Progress</span>
+                                            <span class="kn">ಪ್ರಗತಿಯ ದೃಷ್ಟಿಕೋನ</span>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-orange-600">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-orange-600">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+
+                        <!-- Indicators -->
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                            <div class="carousel-dot w-2 h-2 rounded-full bg-white/30 transition-all cursor-pointer" onclick="goToSlide(0)"></div>
+                            <div class="carousel-dot w-2 h-2 rounded-full bg-white/30 transition-all cursor-pointer" onclick="goToSlide(1)"></div>
+                            <div class="carousel-dot w-2 h-2 rounded-full bg-white/30 transition-all cursor-pointer" onclick="goToSlide(2)"></div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Early Life -->
                 <section id="early-life" class="scroll-mt-32">
                     <div class="flex items-center gap-4 mb-8">
@@ -105,68 +255,524 @@
                             <i data-lucide="book-open"></i>
                         </div>
                         <h2 class="text-3xl font-black text-slate-900">
-                            <span class="en">Early Life & Background</span>
-                            <span class="kn">ಆರಂಭಿಕ ಜೀವನ ಮತ್ತು ಹಿನ್ನೆಲೆ</span>
+                            <span class="en">Early Life & Roots</span>
+                            <span class="kn">ಆರಂಭಿಕ ಜೀವನ ಮತ್ತು ಬೇರುಗಳು</span>
                         </h2>
                     </div>
                     <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
                         <p>
-                            <span class="en">Born in the coastal town of Bhatkal, Mastappa Naik grew up in a family that valued hard work and community service. His early years were shaped by the challenges faced by the people of Uttara Kannada, which instilled in him a deep sense of responsibility towards his roots.</span>
-                            <span class="kn">ಕರಾವಳಿ ಪಟ್ಟಣವಾದ ಭಟ್ಕಳದಲ್ಲಿ ಜನಿಸಿದ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಕಠಿಣ ಪರಿಶ್ರಮ ಮತ್ತು ಸಮುದಾಯ ಸೇವೆಯನ್ನು ಗೌರವಿಸುವ ಕುಟುಂಬದಲ್ಲಿ ಬೆಳೆದರು. ಅವರ ಆರಂಭಿಕ ವರ್ಷಗಳು ಉತ್ತರ ಕನ್ನಡದ ಜನರು ಎದುರಿಸುತ್ತಿರುವ ಸವಾಲುಗಳಿಂದ ರೂಪುಗೊಂಡವು, ಇದು ಅವರಲ್ಲಿ ತಮ್ಮ ಬೇರುಗಳ ಬಗ್ಗೆ ಆಳವಾದ ಜವಾಬ್ದಾರಿಯ ಪ್ರಜ್ಞೆಯನ್ನು ಮೂಡಿಸಿತು.</span>
+                            <span class="en">Born in the coastal town of Bhatkal, Mastappa Naik Balase grew up in Murdeshwar, a land defined by its rich heritage and the resilient spirit of its people. His early years were shaped by the challenges faced by the coastal communities of Uttara Kannada, instilling in him a deep sense of responsibility towards his roots. From a young age, he was known for his inquisitive nature and a strong desire to make a difference in the lives of those around him.</span>
+                            <span class="kn">ಕರಾವಳಿ ಪಟ್ಟಣವಾದ ಭಟ್ಕಳದಲ್ಲಿ ಜನಿಸಿದ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಬಲಸೆ ಅವರು ಮುರ್ಡೇಶ್ವರದಲ್ಲಿ ಬೆಳೆದರು, ಇದು ಶ್ರೀಮಂತ ಪರಂಪರೆ ಮತ್ತು ಜನರ ಚೇತರಿಸಿಕೊಳ್ಳುವ ಚೈತನ್ಯದಿಂದ ವ್ಯಾಖ್ಯಾನಿಸಲ್ಪಟ್ಟ ಭೂಮಿಯಾಗಿದೆ. ಅವರ ಆರಂಭಿಕ ವರ್ಷಗಳು ಉತ್ತರ ಕನ್ನಡದ ಕರಾವಳಿ ಸಮುದಾಯಗಳು ಎದುರಿಸುತ್ತಿರುವ ಸವಾಲುಗಳಿಂದ ರೂಪುಗೊಂಡವು, ಇದು ಅವರಲ್ಲಿ ತಮ್ಮ ಬೇರುಗಳ ಬಗ್ಗೆ ಆಳವಾದ ಜವಾಬ್ದಾರಿಯ ಪ್ರಜ್ಞೆಯನ್ನು ಮೂಡಿಸಿತು. ಚಿಕ್ಕಂದಿನಿಂದಲೂ ಅವರು ತಮ್ಮ ಕುತೂಹಲಕಾರಿ ಸ್ವಭಾವ ಮತ್ತು ಸುತ್ತಮುತ್ತಲಿನವರ ಜೀವನದಲ್ಲಿ ಬದಲಾವಣೆ ತರುವ ಬಲವಾದ ಬಯಕೆಗೆ ಹೆಸರುವಾಸಿಯಾಗಿದ್ದರು.</span>
                         </p>
                         <p>
-                            <span class="en">He completed his education with a focus on understanding the socio-economic landscape of his region, laying the foundation for his future endeavors in both business and social activism.</span>
-                            <span class="kn">ಅವರು ತಮ್ಮ ಪ್ರದೇಶದ ಸಾಮಾಜಿಕ-ಆರ್ಥಿಕ ಭೂದೃಶ್ಯವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವತ್ತ ಗಮನಹರಿಸಿ ತಮ್ಮ ಶಿಕ್ಷಣವನ್ನು ಪೂರ್ಣಗೊಳಿಸಿದರು, ಇದು ಅವರ ಭವಿಷ್ಯದ ವ್ಯವಹಾರ ಮತ್ತು ಸಾಮಾಜಿಕ ಕ್ರಿಯಾಶೀಲತೆಗೆ ಅಡಿಪಾಯ ಹಾಕಿತು.</span>
+                            <span class="en">Growing up in a family that valued hard work and community service, he witnessed firsthand the socio-economic landscape of his region. He saw the struggles of the common man, the lack of basic healthcare, and the untapped potential of the local youth. This understanding laid the foundation for his future endeavors, where he would bridge the gap between business success and social activism. His education and early experiences in the local community were pivotal in shaping his worldview, emphasizing the importance of integrity, hard work, and empathy.</span>
+                            <span class="kn">ಕಠಿಣ ಪರಿಶ್ರಮ ಮತ್ತು ಸಮುದಾಯ ಸೇವೆಯನ್ನು ಗೌರವಿಸುವ ಕುಟುಂಬದಲ್ಲಿ ಬೆಳೆದ ಅವರು, ತಮ್ಮ ಪ್ರದೇಶದ ಸಾಮಾಜಿಕ-ಆರ್ಥಿಕ ಭೂದೃಶ್ಯವನ್ನು ನೇರವಾಗಿ ಕಂಡರು. ಅವರು ಸಾಮಾನ್ಯ ಮನುಷ್ಯನ ಹೋರಾಟಗಳು, ಮೂಲಭೂತ ಆರೋಗ್ಯ ರಕ್ಷಣೆಯ ಕೊರತೆ ಮತ್ತು ಸ್ಥಳೀಯ ಯುವಕರ ಬಳಕೆಯಾಗದ ಸಾಮರ್ಥ್ಯವನ್ನು ಕಂಡರು. ಈ ತಿಳುವಳಿಕೆಯು ಅವರ ಭವಿಷ್ಯದ ಪ್ರಯತ್ನಗಳಿಗೆ ಅಡಿಪಾಯ ಹಾಕಿತು, ಅಲ್ಲಿ ಅವರು ವ್ಯವಹಾರದ ಯಶಸ್ಸು ಮತ್ತು ಸಾಮಾಜಿಕ ಕ್ರಿಯಾಶೀಲತೆಯ ನಡುವಿನ ಅಂತರವನ್ನು ಕಡಿಮೆ ಮಾಡಿದರು. ಅವರ ಶಿಕ್ಷಣ ಮತ್ತು ಸ್ಥಳೀಯ ಸಮುದಾಯದಲ್ಲಿನ ಆರಂಭಿಕ ಅನುಭವಗಳು ಅವರ ವಿಶ್ವದೃಷ್ಟಿಕೋನವನ್ನು ರೂಪಿಸುವಲ್ಲಿ ಪ್ರಮುಖವಾಗಿದ್ದವು, ಸಮಗ್ರತೆ, ಕಠಿಣ ಪರಿಶ್ರಮ ಮತ್ತು ಸಹಾನುಭೂತಿಯ ಪ್ರಾಮುಖ್ಯತೆಯನ್ನು ಒತ್ತಿಹೇಳಿದವು.</span>
                         </p>
-                    </div>
-                </section>
-
-                <!-- Social Activism -->
-                <section id="social-activism" class="scroll-mt-32">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
-                            <i data-lucide="users"></i>
+                        <div class="bg-orange-50 p-8 rounded-3xl border border-orange-100">
+                            <h4 class="font-black text-slate-900 mb-4 flex items-center gap-2">
+                                <i data-lucide="history" class="text-orange-600"></i>
+                                <span class="en">Formative Years</span>
+                                <span class="kn">ರೂಪುಗೊಂಡ ವರ್ಷಗಳು</span>
+                            </h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                <span class="en">During his youth, Mastappa was deeply involved in local cultural and sports activities, which helped him build a strong network and understand the pulse of the community. These years were not just about personal growth but about identifying the systemic issues that needed to be addressed for the holistic development of Bhatkal and Murdeshwar.</span>
+                                <span class="kn">ತನ್ನ ಯೌವನದಲ್ಲಿ, ಮಾಸ್ತಪ್ಪ ಸ್ಥಳೀಯ ಸಾಂಸ್ಕೃತಿಕ ಮತ್ತು ಕ್ರೀಡಾ ಚಟುವಟಿಕೆಗಳಲ್ಲಿ ಆಳವಾಗಿ ತೊಡಗಿಸಿಕೊಂಡಿದ್ದರು, ಇದು ಅವರಿಗೆ ಬಲವಾದ ನೆಟ್‌ವರ್ಕ್ ನಿರ್ಮಿಸಲು ಮತ್ತು ಸಮುದಾಯದ ನಾಡಿಮಿಡಿತವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡಿತು. ಈ ವರ್ಷಗಳು ಕೇವಲ ವೈಯಕ್ತಿಕ ಬೆಳವಣಿಗೆಯ ಬಗ್ಗೆ ಮಾತ್ರವಲ್ಲದೆ ಭಟ್ಕಳ ಮತ್ತು ಮುರ್ಡೇಶ್ವರದ ಸಮಗ್ರ ಅಭಿವೃದ್ಧಿಗಾಗಿ ಪರಿಹರಿಸಬೇಕಾದ ವ್ಯವಸ್ಥಿತ ಸಮಸ್ಯೆಗಳನ್ನು ಗುರುತಿಸುವ ಬಗ್ಗೆಯೂ ಆಗಿದ್ದವು.</span>
+                            </p>
                         </div>
-                        <h2 class="text-3xl font-black text-slate-900">
-                            <span class="en">Social Activism & Leadership</span>
-                            <span class="kn">ಸಾಮಾಜಿಕ ಕ್ರಿಯಾಶೀಲತೆ ಮತ್ತು ನಾಯಕತ್ವ</span>
-                        </h2>
-                    </div>
-                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
-                        <p>
-                            <span class="en">For over 25 years, Mastappa Naik has been at the forefront of numerous social movements. He is widely recognized as a champion for the rights of the backward classes, particularly the Namadhari community.</span>
-                            <span class="kn">25 ವರ್ಷಗಳಿಗೂ ಹೆಚ್ಚು ಕಾಲ, ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಹಲವಾರು ಸಾಮಾಜಿಕ ಚಳುವಳಿಗಳ ಮುಂಚೂಣಿಯಲ್ಲಿದ್ದಾರೆ. ಅವರು ಹಿಂದುಳಿದ ವರ್ಗಗಳ, ವಿಶೇಷವಾಗಿ ನಮಧಾರಿ ಸಮುದಾಯದ ಹಕ್ಕುಗಳಿಗಾಗಿ ಹೋರಾಡುವ ನಾಯಕರಾಗಿ ವ್ಯಾಪಕವಾಗಿ ಗುರುತಿಸಲ್ಪಟ್ಟಿದ್ದಾರೆ.</span>
-                        </p>
-                        <p>
-                            <span class="en">His leadership in the 'Postcard Campaign for Health' brought national attention to the lack of multi-specialty healthcare in Uttara Kannada. He has also been a vocal opponent of projects that threaten the delicate ecological balance of the Sharavathi river basin.</span>
-                            <span class="kn">ಆರೋಗ್ಯಕ್ಕಾಗಿ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಚಳುವಳಿಯಲ್ಲಿ ಅವರ ನಾಯಕತ್ವವು ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಬಹುವಿಶೇಷ ಆರೋಗ್ಯ ರಕ್ಷಣೆಯ ಕೊರತೆಯ ಬಗ್ಗೆ ರಾಷ್ಟ್ರೀಯ ಗಮನವನ್ನು ಸೆಳೆಯಿತು. ಶರಾವತಿ ನದಿ ಪಾತ್ರದ ಸೂಕ್ಷ್ಮ ಪರಿಸರ ಸಮತೋಲನಕ್ಕೆ ಧಕ್ಕೆ ತರುವ ಯೋಜನೆಗಳ ವಿರುದ್ಧವೂ ಅವರು ಧ್ವನಿ ಎತ್ತಿದ್ದಾರೆ.</span>
-                        </p>
                     </div>
                 </section>
 
-                <!-- Business Journey -->
-                <section id="business-journey" class="scroll-mt-32">
+                <!-- Industrial Visionary -->
+                <section id="industrial" class="scroll-mt-32">
                     <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                        <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-600/20">
                             <i data-lucide="briefcase"></i>
                         </div>
                         <h2 class="text-3xl font-black text-slate-900">
-                            <span class="en">Business Journey</span>
-                            <span class="kn">ವ್ಯವಹಾರ ಪ್ರಯಾಣ</span>
+                            <span class="en">Industrial Visionary & Success</span>
+                            <span class="kn">ಕೈಗಾರಿಕಾ ದಾರ್ಶನಿಕ ಮತ್ತು ಯಶಸ್ಸು</span>
                         </h2>
                     </div>
-                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
-                        <p>
-                            <span class="en">As an entrepreneur, Mastappa Naik has demonstrated that business success and social responsibility can go hand in hand. He has built several successful ventures that have provided employment opportunities to hundreds of local residents.</span>
-                            <span class="kn">ಒಬ್ಬ ಉದ್ಯಮಿಯಾಗಿ, ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ವ್ಯವಹಾರದ ಯಶಸ್ಸು ಮತ್ತು ಸಾಮಾಜಿಕ ಜವಾಬ್ದಾರಿ ಜೊತೆಜೊತೆಯಾಗಿ ಸಾಗಬಹುದು ಎಂದು ತೋರಿಸಿಕೊಟ್ಟಿದ್ದಾರೆ. ಅವರು ನೂರಾರು ಸ್ಥಳೀಯ ನಿವಾಸಿಗಳಿಗೆ ಉದ್ಯೋಗಾವಕಾಶಗಳನ್ನು ಒದಗಿಸಿದ ಹಲವಾರು ಯಶಸ್ವಿ ಉದ್ಯಮಗಳನ್ನು ನಿರ್ಮಿಸಿದ್ದಾರೆ.</span>
+                    <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-8">
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="flex-1 space-y-4">
+                                <h3 class="text-2xl font-black text-slate-900">
+                                    <span class="en">Young One India: A Legacy of Quality</span>
+                                    <span class="kn">ಯಂಗ್ ಒನ್ ಇಂಡಿಯಾ: ಗುಣಮಟ್ಟದ ಪರಂಪರೆ</span>
+                                </h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    <span class="en">Established in 2012 in Chennai, Young One India stands as a testament to Mastappa Naik's entrepreneurial spirit and his commitment to industrial excellence. Starting as a small venture, it has grown into a leading provider of industrial equipment, conveyor systems, and storage solutions across India. The company's success is built on the pillars of innovation, reliability, and customer-centricity.</span>
+                                    <span class="kn">2012 ರಲ್ಲಿ ಚೆನ್ನೈನಲ್ಲಿ ಸ್ಥಾಪನೆಯಾದ ಯಂಗ್ ಒನ್ ಇಂಡಿಯಾ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ಉದ್ಯಮಶೀಲತೆಯ ಚೈತನ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಶ್ರೇಷ್ಠತೆಗೆ ಅವರ ಬದ್ಧತೆಗೆ ಸಾಕ್ಷಿಯಾಗಿದೆ. ಸಣ್ಣ ಉದ್ಯಮವಾಗಿ ಪ್ರಾರಂಭವಾಗಿ, ಇದು ಇಂದು ಭಾರತದಾದ್ಯಂತ ಕೈಗಾರಿಕಾ ಉಪಕರಣಗಳು, ಕನ್ವೇಯರ್ ಸಿಸ್ಟಮ್‌ಗಳು ಮತ್ತು ಶೇಖರಣಾ ಪರಿಹಾರಗಳ ಪ್ರಮುಖ ಪೂರೈಕೆದಾರರಾಗಿ ಬೆಳೆದಿದೆ. ಕಂಪನಿಯ ಯಶಸ್ಸು ನಾವೀನ್ಯತೆ, ವಿಶ್ವಾಸಾರ್ಹತೆ ಮತ್ತು ಗ್ರಾಹಕ ಕೇಂದ್ರಿತತೆಯ ಸ್ತಂಭಗಳ ಮೇಲೆ ನಿರ್ಮಿತವಾಗಿದೆ.</span>
+                                </p>
+                            </div>
+                            <div class="w-full md:w-48 h-48 bg-slate-50 rounded-3xl flex flex-col items-center justify-center text-center p-4 border border-slate-100">
+                                <div class="text-3xl font-black text-blue-600 mb-1">2012</div>
+                                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Founded</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-black text-slate-900">
+                                <span class="en">Business Philosophy</span>
+                                <span class="kn">ವ್ಯಾಪಾರ ತತ್ವಶಾಸ್ತ್ರ</span>
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="en">Mastappa Naik believes that a business should not just be a profit-making entity but a vehicle for social change. Under his leadership, Young One India has prioritized ethical business practices and has been a significant source of employment for local youth from Uttara Kannada, providing them with skills and opportunities to grow in the industrial sector. He often says, "Success is meaningful only when it empowers others."</span>
+                                <span class="kn">ವ್ಯಾಪಾರವು ಕೇವಲ ಲಾಭ ಗಳಿಸುವ ಘಟಕವಾಗಿರದೆ ಸಾಮಾಜಿಕ ಬದಲಾವಣೆಯ ವಾಹನವಾಗಿರಬೇಕು ಎಂದು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ನಂಬುತ್ತಾರೆ. ಅವರ ನಾಯಕತ್ವದಲ್ಲಿ, ಯಂಗ್ ಒನ್ ಇಂಡಿಯಾ ನೈತಿಕ ವ್ಯವಹಾರ ಪದ್ಧತಿಗಳಿಗೆ ಆದ್ಯತೆ ನೀಡಿದೆ ಮತ್ತು ಉತ್ತರ ಕನ್ನಡದ ಸ್ಥಳೀಯ ಯುವಕರಿಗೆ ಉದ್ಯೋಗದ ಪ್ರಮುಖ ಮೂಲವಾಗಿದೆ, ಅವರಿಗೆ ಕೈಗಾರಿಕಾ ಕ್ಷೇತ್ರದಲ್ಲಿ ಬೆಳೆಯಲು ಕೌಶಲ್ಯ ಮತ್ತು ಅವಕಾಶಗಳನ್ನು ಒದಗಿಸಿದೆ. ಅವರು ಆಗಾಗ್ಗೆ ಹೇಳುತ್ತಾರೆ, "ಯಶಸ್ಸು ಇತರರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸಿದಾಗ ಮಾತ್ರ ಅರ್ಥಪೂರ್ಣವಾಗಿರುತ್ತದೆ."</span>
+                            </p>
+                        </div>
+                        <div class="pt-8 border-t border-slate-100">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 shrink-0">
+                                    <i data-lucide="award"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-black text-slate-900 mb-2">
+                                        <span class="en">Industrial Icon Award 2026</span>
+                                        <span class="kn">ಕೈಗಾರಿಕಾ ಐಕಾನ್ ಪ್ರಶಸ್ತಿ 2026</span>
+                                    </h4>
+                                    <p class="text-slate-500 text-sm">
+                                        <span class="en">Recognized with the 'Bharathada Kaigarika Icon Prashasti' for his outstanding contributions to industrial development and economic growth. This award highlights his role as a visionary leader who has successfully integrated business success with social responsibility.</span>
+                                        <span class="kn">ಕೈಗಾರಿಕಾ ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಆರ್ಥಿಕ ಬೆಳವಣಿಗೆಗೆ ನೀಡಿದ ಅತ್ಯುತ್ತಮ ಕೊಡುಗೆಗಳಿಗಾಗಿ 'ಭಾರತದ ಕೈಗಾರಿಕಾ ಐಕಾನ್ ಪ್ರಶಸ್ತಿ' ನೀಡಿ ಗೌರವಿಸಲಾಗಿದೆ. ಈ ಪ್ರಶಸ್ತಿಯು ವ್ಯವಹಾರದ ಯಶಸ್ಸನ್ನು ಸಾಮಾಜಿಕ ಜವಾಬ್ದಾರಿಯೊಂದಿಗೆ ಯಶಸ್ವಿಯಾಗಿ ಸಂಯೋಜಿಸಿದ ದಾರ್ಶನಿಕ ನಾಯಕನಾಗಿ ಅವರ ಪಾತ್ರವನ್ನು ಎತ್ತಿ ತೋರಿಸುತ್ತದೆ.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The People's Voice -->
+                <section id="activism" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                            <i data-lucide="megaphone"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">The People's Voice</span>
+                            <span class="kn">ಜನರ ಧ್ವನಿ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-12">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            <span class="en">Mastappa Naik has always believed that the true power of a leader lies in being the voice for those who are unheard. His activism is not just about protests; it's about persistent advocacy for the fundamental rights of the people of Uttara Kannada.</span>
+                            <span class="kn">ನಾಯಕನ ನಿಜವಾದ ಶಕ್ತಿಯು ಕೇಳಿಸದವರ ಧ್ವನಿಯಾಗುವುದರಲ್ಲಿದೆ ಎಂದು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಯಾವಾಗಲೂ ನಂಬಿದ್ದಾರೆ. ಅವರ ಕ್ರಿಯಾಶೀಲತೆಯು ಕೇವಲ ಪ್ರತಿಭಟನೆಗಳ ಬಗ್ಗೆ ಮಾತ್ರವಲ್ಲ; ಇದು ಉತ್ತರ ಕನ್ನಡದ ಜನರ ಮೂಲಭೂತ ಹಕ್ಕುಗಳಿಗಾಗಿ ನಿರಂತರ ಸಮರ್ಥನೆಯಾಗಿದೆ.</span>
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <h3 class="text-xl font-black text-slate-900 mb-4 flex items-center gap-3">
+                                    <i data-lucide="mail" class="text-orange-600"></i>
+                                    <span class="en">Postcard Campaign</span>
+                                    <span class="kn">ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ</span>
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    <span class="en">Mobilized over 25,000 postcards from citizens across 11 talukas, reaching 7 lakh people to demand a multi-specialty hospital in Uttara Kannada. This campaign was a historic display of public unity, forcing the administration to acknowledge the dire state of healthcare in the region. Mastappa personally visited hundreds of villages to explain the importance of this demand.</span>
+                                    <span class="kn">ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಮಲ್ಟಿ-ಸ್ಪೆಷಾಲಿಟಿ ಆಸ್ಪತ್ರೆಗೆ ಒತ್ತಾಯಿಸಲು 11 ತಾಲೂಕುಗಳ ನಾಗರಿಕರಿಂದ 25,000 ಕ್ಕೂ ಹೆಚ್ಚು ಪೋಸ್ಟ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಸಂಗ್ರಹಿಸಿ, 7 ಲಕ್ಷ ಜನರನ್ನು ತಲುಪಿದರು. ಈ ಅಭಿಯಾನವು ಸಾರ್ವಜನಿಕ ಏಕತೆಯ ಐತಿಹಾಸಿಕ ಪ್ರದರ್ಶನವಾಗಿದ್ದು, ಈ ಪ್ರದೇಶದ ಆರೋಗ್ಯ ರಕ್ಷಣೆಯ ಭೀಕರ ಸ್ಥಿತಿಯನ್ನು ಒಪ್ಪಿಕೊಳ್ಳುವಂತೆ ಆಡಳಿತವನ್ನು ಒತ್ತಾಯಿಸಿತು. ಮಾಸ್ತಪ್ಪ ಅವರು ವೈಯಕ್ತಿಕವಾಗಿ ನೂರಾರು ಹಳ್ಳಿಗಳಿಗೆ ಭೇಟಿ ನೀಡಿ ಈ ಬೇಡಿಕೆಯ ಮಹತ್ವವನ್ನು ವಿವರಿಸಿದರು.</span>
+                                </p>
+                            </div>
+                            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <h3 class="text-xl font-black text-slate-900 mb-4 flex items-center gap-3">
+                                    <i data-lucide="droplet" class="text-red-600"></i>
+                                    <span class="en">Protest with Blood</span>
+                                    <span class="kn">ರಕ್ತದೊಂದಿಗೆ ಪ್ರತಿಭಟನೆ</span>
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    <span class="en">In a powerful symbolic act of dedication, he wrote a letter to the Chief Minister using his own blood to highlight the urgency of healthcare needs. This act resonated deeply with the masses, symbolizing that he is willing to give his all for the welfare of his people. It wasn't just a protest; it was a statement of ultimate commitment.</span>
+                                    <span class="kn">ಸಮರ್ಪಣೆಯ ಪ್ರಬಲ ಸಾಂಕೇತಿಕ ಕ್ರಿಯೆಯಲ್ಲಿ, ಆರೋಗ್ಯ ರಕ್ಷಣೆಯ ಅಗತ್ಯತೆಗಳ ತುರ್ತುಸ್ಥಿತಿಯನ್ನು ಎತ್ತಿ ತೋರಿಸಲು ಅವರು ತಮ್ಮದೇ ರಕ್ತವನ್ನು ಬಳಸಿ ಮುಖ್ಯಮಂತ್ರಿಗೆ ಪತ್ರ ಬರೆದರು. ಈ ಕ್ರಿಯೆಯು ಜನಸಾಮಾನ್ಯರಲ್ಲಿ ಆಳವಾಗಿ ಪ್ರತಿಧ್ವನಿಸಿತು, ಅವರು ತಮ್ಮ ಜನರ ಕಲ್ಯಾಣಕ್ಕಾಗಿ ಎಲ್ಲವನ್ನೂ ನೀಡಲು ಸಿದ್ಧರಿದ್ದಾರೆ ಎಂದು ಸಂಕೇತಿಸುತ್ತದೆ. ಇದು ಕೇವಲ ಪ್ರತಿಭಟನೆಯಾಗಿರಲಿಲ್ಲ; ಇದು ಅಂತಿಮ ಬದ್ಧತೆಯ ಹೇಳಿಕೆಯಾಗಿತ್ತು.</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-slate-900 text-white p-10 rounded-[2.5rem] relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-orange-600/10 rounded-full blur-3xl"></div>
+                            <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
+                                <i data-lucide="footprints" class="text-orange-500"></i>
+                                <span class="en">The 36km Mega Padayatra</span>
+                                <span class="kn">36 ಕಿಮೀ ಬೃಹತ್ ಪಾದಯಾತ್ರೆ</span>
+                            </h3>
+                            <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                                <span class="en">Leading from the front, Mastappa Naik organized and completed a grueling 36km march through numerous villages to raise awareness on environmental protection and public welfare. This mass movement united youth, women, and activists in a singular cause for regional progress. The padayatra served as a platform for people to share their grievances directly with him, further strengthening his resolve to fight for their rights.</span>
+                                <span class="kn">ಮುಂಚೂಣಿಯಲ್ಲಿ ನಿಂತು, ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಪರಿಸರ ಸಂರಕ್ಷಣೆ ಮತ್ತು ಸಾರ್ವಜನಿಕ ಕಲ್ಯಾಣದ ಬಗ್ಗೆ ಜಾಗೃತಿ ಮೂಡಿಸಲು ಹಲವಾರು ಹಳ್ಳಿಗಳ ಮೂಲಕ 36 ಕಿಮೀ ನಡಿಗೆಯನ್ನು ಆಯೋಜಿಸಿ ಪೂರ್ಣಗೊಳಿಸಿದರು. ಈ ಬೃಹತ್ ಚಳುವಳಿಯು ಪ್ರಾದೇಶಿಕ ಪ್ರಗತಿಗಾಗಿ ಯುವಕರು, ಮಹಿಳೆಯರು ಮತ್ತು ಕಾರ್ಯಕರ್ತರನ್ನು ಒಂದುಗೂಡಿಸಿತು. ಪಾದಯಾತ್ರೆಯು ಜನರು ತಮ್ಮ ಕುಂದುಕೊರತೆಗಳನ್ನು ನೇರವಾಗಿ ಅವರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಲು ವೇದಿಕೆಯಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸಿತು, ಅವರ ಹಕ್ಕುಗಳಿಗಾಗಿ ಹೋರಾಡುವ ಅವರ ಸಂಕಲ್ಪವನ್ನು ಮತ್ತಷ್ಟು ಬಲಪಡಿಸಿತು.</span>
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="px-4 py-2 bg-white/5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/10">36 Kilometers</div>
+                                <div class="px-4 py-2 bg-white/5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/10">100+ Villages</div>
+                                <div class="px-4 py-2 bg-white/5 rounded-full text-xs font-bold uppercase tracking-widest border border-white/10">Mass Awareness</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Social Service & Campaigns -->
+                <section id="social-service" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-pink-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-pink-600/20">
+                            <i data-lucide="heart-handshake"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Social Service & Campaigns</span>
+                            <span class="kn">ಸಾಮಾಜಿಕ ಸೇವೆ ಮತ್ತು ಅಭಿಯಾನಗಳು</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-8">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            <span class="en">For Mastappa Naik, social service is not a part-time activity; it is a way of life. He has initiated and supported numerous campaigns aimed at improving the quality of life for the underprivileged and fostering a sense of community.</span>
+                            <span class="kn">ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರಿಗೆ ಸಾಮಾಜಿಕ ಸೇವೆಯು ಅರೆಕಾಲಿಕ ಚಟುವಟಿಕೆಯಲ್ಲ; ಅದು ಜೀವನದ ಒಂದು ಮಾರ್ಗವಾಗಿದೆ. ಅವರು ಹಿಂದುಳಿದವರ ಜೀವನದ ಗುಣಮಟ್ಟವನ್ನು ಸುಧಾರಿಸಲು ಮತ್ತು ಸಮುದಾಯದ ಪ್ರಜ್ಞೆಯನ್ನು ಬೆಳೆಸುವ ಗುರಿಯನ್ನು ಹೊಂದಿರುವ ಹಲವಾರು ಅಭಿಯಾನಗಳನ್ನು ಪ್ರಾರಂಭಿಸಿದ್ದಾರೆ ಮತ್ತು ಬೆಂಬಲಿಸಿದ್ದಾರೆ.</span>
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 mb-4">
+                                    <i data-lucide="heart-pulse"></i>
+                                </div>
+                                <h4 class="font-black text-slate-900 mb-2">
+                                    <span class="en">Health Camps</span>
+                                    <span class="kn">ಆರೋಗ್ಯ ಶಿಬಿರಗಳು</span>
+                                </h4>
+                                <p class="text-slate-500 text-sm">
+                                    <span class="en">Organizes regular free health check-up camps in remote areas, providing access to specialist doctors and essential medicines.</span>
+                                    <span class="kn">ದೂರದ ಪ್ರದೇಶಗಳಲ್ಲಿ ನಿಯಮಿತವಾಗಿ ಉಚಿತ ಆರೋಗ್ಯ ತಪಾಸಣಾ ಶಿಬಿರಗಳನ್ನು ಆಯೋಜಿಸುತ್ತಾರೆ, ತಜ್ಞ ವೈದ್ಯರು ಮತ್ತು ಅಗತ್ಯ ಔಷಧಿಗಳ ಲಭ್ಯತೆಯನ್ನು ಒದಗಿಸುತ್ತಾರೆ.</span>
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+                                    <i data-lucide="graduation-cap"></i>
+                                </div>
+                                <h4 class="font-black text-slate-900 mb-2">
+                                    <span class="en">Education Support</span>
+                                    <span class="kn">ಶಿಕ್ಷಣ ಬೆಂಬಲ</span>
+                                </h4>
+                                <p class="text-slate-500 text-sm">
+                                    <span class="en">Provides scholarships and educational kits to meritorious students from economically weaker sections, ensuring that financial constraints don't hinder their dreams.</span>
+                                    <span class="kn">ಆರ್ಥಿಕವಾಗಿ ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಪ್ರತಿಭಾವಂತ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ವಿದ್ಯಾರ್ಥಿವೇತನ ಮತ್ತು ಶೈಕ್ಷಣಿಕ ಕಿಟ್‌ಗಳನ್ನು ಒದಗಿಸುತ್ತಾರೆ, ಆರ್ಥಿಕ ಮುಗ್ಗಟ್ಟು ಅವರ ಕನಸುಗಳಿಗೆ ಅಡ್ಡಿಯಾಗದಂತೆ ನೋಡಿಕೊಳ್ಳುತ್ತಾರೆ.</span>
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-4">
+                                    <i data-lucide="users-2"></i>
+                                </div>
+                                <h4 class="font-black text-slate-900 mb-2">
+                                    <span class="en">Community Welfare</span>
+                                    <span class="kn">ಸಮುದಾಯ ಕಲ್ಯಾಣ</span>
+                                </h4>
+                                <p class="text-slate-500 text-sm">
+                                    <span class="en">Actively involved in disaster relief and supporting local self-help groups to empower women and promote local crafts.</span>
+                                    <span class="kn">ವಿಪತ್ತು ಪರಿಹಾರದಲ್ಲಿ ಸಕ್ರಿಯವಾಗಿ ತೊಡಗಿಸಿಕೊಂಡಿದ್ದಾರೆ ಮತ್ತು ಮಹಿಳೆಯರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸಲು ಮತ್ತು ಸ್ಥಳೀಯ ಕರಕುಶಲ ವಸ್ತುಗಳನ್ನು ಉತ್ತೇಜಿಸಲು ಸ್ಥಳೀಯ ಸ್ವಸಹಾಯ ಗುಂಪುಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತಾರೆ.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Environmental Guardian -->
+                <section id="environment" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-green-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-green-600/20">
+                            <i data-lucide="tree-pine"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Environmental Guardian</span>
+                            <span class="kn">ಪರಿಸರ ರಕ್ಷಕ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-8">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            <span class="en">The Western Ghats are the lungs of our region, and Mastappa Naik has emerged as one of its most dedicated protectors. He understands that ecological balance is non-negotiable for the long-term survival of our communities.</span>
+                            <span class="kn">ಪಶ್ಚಿಮ ಘಟ್ಟಗಳು ನಮ್ಮ ಪ್ರದೇಶದ ಶ್ವಾಸಕೋಶಗಳು, ಮತ್ತು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅದರ ಅತ್ಯಂತ ಸಮರ್ಪಿತ ರಕ್ಷಕರಲ್ಲಿ ಒಬ್ಬರಾಗಿ ಹೊರಹೊಮ್ಮಿದ್ದಾರೆ. ನಮ್ಮ ಸಮುದಾಯಗಳ ದೀರ್ಘಕಾಲೀನ ಉಳಿವಿಗಾಗಿ ಪರಿಸರ ಸಮತೋಲನವು ಅನಿವಾರ್ಯ ಎಂದು ಅವರು ಅರ್ಥಮಾಡಿಕೊಂಡಿದ್ದಾರೆ.</span>
+                        </p>
+                        <div class="bg-green-50 p-10 rounded-[2.5rem] border border-green-100">
+                            <h3 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
+                                <i data-lucide="shield-check" class="text-green-600"></i>
+                                <span class="en">Sharavathi Project Opposition</span>
+                                <span class="kn">ಶರಾವತಿ ಯೋಜನೆ ವಿರೋಧ</span>
+                            </h3>
+                            <p class="text-slate-700 text-lg leading-relaxed mb-8">
+                                <span class="en">A vocal opponent of the Sharavathi Pumped Storage Project, he successfully advocated for the protection of 16,000 trees and the delicate biodiversity of the Western Ghats. He raised critical concerns about the use of 18,000 tons of explosives and the threat to endangered species like the Lion-tailed Macaque. His fight was not just against a project, but for the preservation of a heritage that belongs to future generations.</span>
+                                <span class="kn">ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಯೋಜನೆಯ ಧ್ವನಿ ಎತ್ತಿದ ವಿರೋಧಿಯಾದ ಅವರು, 16,000 ಮರಗಳು ಮತ್ತು ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ಸೂಕ್ಷ್ಮ ಜೀವವೈವಿಧ್ಯದ ರಕ್ಷಣೆಗಾಗಿ ಯಶಸ್ವಿಯಾಗಿ ಪ್ರತಿಪಾದಿಸಿದರು. ಅವರು 18,000 ಟನ್ ಸ್ಫೋಟಕಗಳ ಬಳಕೆ ಮತ್ತು ಸಿಂಹಬಾಲದ ಮಕಾಕ್‌ನಂತಹ ಅಳಿವಿನಂಚಿನಲ್ಲಿರುವ ಪ್ರಭೇದಗಳಿಗೆ ಇರುವ ಭೀತಿಯ ಬಗ್ಗೆ ಗಂಭೀರ ಕಳವಳ ವ್ಯಕ್ತಪಡಿಸಿದರು. ಅವರ ಹೋರಾಟವು ಕೇವಲ ಒಂದು ಯೋಜನೆಯ ವಿರುದ್ಧವಾಗಿರಲಿಲ್ಲ, ಆದರೆ ಮುಂದಿನ ಪೀಳಿಗೆಗೆ ಸೇರಿದ ಪರಂಪರೆಯ ಸಂರಕ್ಷಣೆಗಾಗಿ ಆಗಿತ್ತು.</span>
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white p-6 rounded-2xl border border-green-100 flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600"><i data-lucide="trees"></i></div>
+                                    <span class="font-bold text-slate-700">16,000 Trees Protected</span>
+                                </div>
+                                <div class="bg-white p-6 rounded-2xl border border-green-100 flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600"><i data-lucide="mountain"></i></div>
+                                    <span class="font-bold text-slate-700">Heritage Site Preservation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-lg leading-relaxed italic border-l-4 border-green-500 pl-6">
+                            <span class="en">"Development should not destroy the future of our land and people. We must choose sustainable solutions like battery energy storage over ecological destruction. Our forests are not just resources; they are our life-support systems."</span>
+                            <span class="kn">"ಅಭಿವೃದ್ಧಿಯು ನಮ್ಮ ಭೂಮಿ ಮತ್ತು ಜನರ ಭವಿಷ್ಯವನ್ನು ನಾಶಪಡಿಸಬಾರದು. ಪರಿಸರ ನಾಶದ ಬದಲು ಬ್ಯಾಟರಿ ಶಕ್ತಿ ಸಂಗ್ರಹಣೆಯಂತಹ ಸುಸ್ಥಿರ ಪರಿಹಾರಗಳನ್ನು ನಾವು ಆರಿಸಿಕೊಳ್ಳಬೇಕು. ನಮ್ಮ ಕಾಡುಗಳು ಕೇವಲ ಸಂಪನ್ಮೂಲಗಳಲ್ಲ; ಅವು ನಮ್ಮ ಜೀವನ ಬೆಂಬಲ ವ್ಯವಸ್ಥೆಗಳು."</span>
                         </p>
                     </div>
                 </section>
 
-                <!-- Philosophy -->
+                <!-- Justice & Accountability -->
+                <section id="justice" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-slate-900/20">
+                            <i data-lucide="scale"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Justice & Accountability</span>
+                            <span class="kn">ನ್ಯಾಯ ಮತ್ತು ಹೊಣೆಗಾರಿಕೆ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-8">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            <span class="en">Integrity and accountability are the cornerstones of Mastappa Naik's public life. He has never shied away from challenging the status quo when it comes to protecting public interest and ensuring justice for the common man.</span>
+                            <span class="kn">ಸಮಗ್ರತೆ ಮತ್ತು ಹೊಣೆಗಾರಿಕೆಯು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ಸಾರ್ವಜನಿಕ ಜೀವನದ ಮೂಲಾಧಾರಗಳಾಗಿವೆ. ಸಾರ್ವಜನಿಕ ಹಿತಾಸಕ್ತಿಯನ್ನು ರಕ್ಷಿಸುವ ಮತ್ತು ಸಾಮಾನ್ಯ ಮನುಷ್ಯನಿಗೆ ನ್ಯಾಯವನ್ನು ಖಚಿತಪಡಿಸುವ ವಿಷಯ ಬಂದಾಗ ಅವರು ಎಂದಿಗೂ ಯಥಾಸ್ಥಿತಿಯನ್ನು ಸವಾಲು ಮಾಡಲು ಹಿಂಜರಿಯಲಿಲ್ಲ.</span>
+                        </p>
+                        <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
+                            <h3 class="text-2xl font-black text-slate-900 mb-6">
+                                <span class="en">Fighting the Land Mafia</span>
+                                <span class="kn">ಭೂ ಮಾಫಿಯಾ ವಿರುದ್ಧ ಹೋರಾಟ</span>
+                            </h3>
+                            <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                                <span class="en">Fearless in his pursuit of justice, Mastappa Naik has exposed numerous instances of government land encroachment and benami property dealings. Using historical records from 1974 and 2004, he has provided evidence-based allegations against influential figures, ensuring that public assets are protected for the community. His work has led to increased scrutiny of land deals and has empowered local residents to speak up against illegal encroachments.</span>
+                                <span class="kn">ನ್ಯಾಯದ ಹುಡುಕಾಟದಲ್ಲಿ ನಿರ್ಭೀತರಾದ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಸರ್ಕಾರಿ ಭೂಮಿ ಒತ್ತುವರಿ ಮತ್ತು ಬೆನಾಮಿ ಆಸ್ತಿ ವ್ಯವಹಾರಗಳ ಹಲವಾರು ಪ್ರಕರಣಗಳನ್ನು ಬಯಲಿಗೆಳೆದಿದ್ದಾರೆ. 1974 ಮತ್ತು 2004 ರ ಐತಿಹಾಸಿಕ ದಾಖಲೆಗಳನ್ನು ಬಳಸಿಕೊಂಡು, ಅವರು ಪ್ರಭಾವಿ ವ್ಯಕ್ತಿಗಳ ವಿರುದ್ಧ ಪುರಾವೆ ಆಧಾರಿತ ಆರೋಪಗಳನ್ನು ಮಾಡಿದ್ದಾರೆ, ಸಾರ್ವಜನಿಕ ಆಸ್ತಿಗಳನ್ನು ಸಮುದಾಯಕ್ಕಾಗಿ ರಕ್ಷಿಸಲಾಗಿದೆ ಎಂದು ಖಚಿತಪಡಿಸಿದ್ದಾರೆ. ಅವರ ಕೆಲಸವು ಭೂ ವ್ಯವಹಾರಗಳ ಹೆಚ್ಚಿನ ಪರಿಶೀಲನೆಗೆ ಕಾರಣವಾಗಿದೆ ಮತ್ತು ಸ್ಥಳೀಯ ನಿವಾಸಿಗಳು ಅಕ್ರಮ ಒತ್ತುವರಿಗಳ ವಿರುದ್ಧ ಧ್ವನಿ ಎತ್ತಲು ಸಬಲೀಕರಣಗೊಳಿಸಿದೆ.</span>
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="p-6 bg-slate-50 rounded-2xl text-center">
+                                    <div class="text-orange-600 mb-2"><i data-lucide="file-text" class="mx-auto"></i></div>
+                                    <div class="text-sm font-bold text-slate-900">Evidence Based</div>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-2xl text-center">
+                                    <div class="text-orange-600 mb-2"><i data-lucide="gavel" class="mx-auto"></i></div>
+                                    <div class="text-sm font-bold text-slate-900">Legal Action</div>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-2xl text-center">
+                                    <div class="text-orange-600 mb-2"><i data-lucide="shield-alert" class="mx-auto"></i></div>
+                                    <div class="text-sm font-bold text-slate-900">Anti-Corruption</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                            <h4 class="font-black text-slate-900 mb-4 flex items-center gap-2">
+                                <i data-lucide="alert-triangle" class="text-orange-600"></i>
+                                <span class="en">Public Safety & Discipline</span>
+                                <span class="kn">ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತೆ ಮತ್ತು ಶಿಸ್ತು</span>
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="en">He has taken a strong stance against illegal activities such as drug trafficking (ganja) and theft. By coordinating with senior police officials and submitting formal representations, he works to ensure a secure and disciplined social environment for the youth of Uttara Kannada. He believes that a safe community is the first step towards a prosperous one.</span>
+                                <span class="kn">ಅವರು ಮಾದಕವಸ್ತು ಸಾಗಾಣಿಕೆ (ಗಾಂಜಾ) ಮತ್ತು ಕಳ್ಳತನದಂತಹ ಅಕ್ರಮ ಚಟುವಟಿಕೆಗಳ ವಿರುದ್ಧ ಕಠಿಣ ನಿಲುವು ತಳೆದಿದ್ದಾರೆ. ಹಿರಿಯ ಪೊಲೀಸ್ ಅಧಿಕಾರಿಗಳೊಂದಿಗೆ ಸಮನ್ವಯ ಸಾಧಿಸುವ ಮೂಲಕ ಮತ್ತು ಔಪಚಾರಿಕ ಪ್ರಾತಿನಿಧ್ಯಗಳನ್ನು ಸಲ್ಲಿಸುವ ಮೂಲಕ, ಅವರು ಉತ್ತರ ಕನ್ನಡದ ಯುವಕರಿಗೆ ಸುರಕ್ಷಿತ ಮತ್ತು ಶಿಸ್ತಿನ ಸಾಮಾಜಿಕ ವಾತಾವರಣವನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ಕೆಲಸ ಮಾಡುತ್ತಾರೆ. ಸುರಕ್ಷಿತ ಸಮುದಾಯವು ಸಮೃದ್ಧ ಸಮುದಾಯದತ್ತ ಮೊದಲ ಹೆಜ್ಜೆ ಎಂದು ಅವರು ನಂಬುತ್ತಾರೆ.</span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Spiritual & Religious Journey -->
+                <section id="spiritual" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-amber-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-amber-600/20">
+                            <i data-lucide="flame"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Spiritual & Religious Journey</span>
+                            <span class="kn">ಆಧ್ಯಾತ್ಮಿಕ ಮತ್ತು ಧಾರ್ಮಿಕ ಪ್ರಯಾಣ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-8">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            <span class="en">Deeply rooted in the spiritual traditions of India, Mastappa Naik finds strength and guidance in his faith. He believes that spirituality is not just about rituals, but about serving humanity with a pure heart.</span>
+                            <span class="kn">ಭಾರತದ ಆಧ್ಯಾತ್ಮಿಕ ಸಂಪ್ರದಾಯಗಳಲ್ಲಿ ಆಳವಾಗಿ ಬೇರೂರಿರುವ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ತಮ್ಮ ನಂಬಿಕೆಯಲ್ಲಿ ಶಕ್ತಿ ಮತ್ತು ಮಾರ್ಗದರ್ಶನವನ್ನು ಕಂಡುಕೊಳ್ಳುತ್ತಾರೆ. ಆಧ್ಯಾತ್ಮಿಕತೆಯು ಕೇವಲ ಆಚರಣೆಗಳ ಬಗ್ಗೆ ಮಾತ್ರವಲ್ಲ, ಶುದ್ಧ ಹೃದಯದಿಂದ ಮಾನವೀಯತೆಯ ಸೇವೆ ಮಾಡುವುದರ ಬಗ್ಗೆ ಎಂದು ಅವರು ನಂಬುತ್ತಾರೆ.</span>
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-amber-50 p-8 rounded-3xl border border-amber-100">
+                                <h3 class="text-xl font-black text-slate-900 mb-4 flex items-center gap-3">
+                                    <i data-lucide="landmark" class="text-amber-600"></i>
+                                    <span class="en">Temple Restoration</span>
+                                    <span class="kn">ದೇವಸ್ಥಾನದ ಜೀರ್ಣೋದ್ಧಾರ</span>
+                                </h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    <span class="en">He has been a key contributor to the restoration and maintenance of several local temples, ensuring that these spiritual hubs continue to provide solace and guidance to the community. He believes in preserving the sanctity and architectural heritage of our sacred spaces.</span>
+                                    <span class="kn">ಅವರು ಹಲವಾರು ಸ್ಥಳೀಯ ದೇವಾಲಯಗಳ ಜೀರ್ಣೋದ್ಧಾರ ಮತ್ತು ನಿರ್ವಹಣೆಗೆ ಪ್ರಮುಖ ಕೊಡುಗೆ ನೀಡಿದ್ದಾರೆ, ಈ ಆಧ್ಯಾತ್ಮಿಕ ಕೇಂದ್ರಗಳು ಸಮುದಾಯಕ್ಕೆ ಸಾಂತ್ವನ ಮತ್ತು ಮಾರ್ಗದರ್ಶನ ನೀಡುವುದನ್ನು ಮುಂದುವರಿಸುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುತ್ತಾರೆ. ನಮ್ಮ ಪವಿತ್ರ ಸ್ಥಳಗಳ ಪಾವಿತ್ರ್ಯತೆ ಮತ್ತು ವಾಸ್ತುಶಿಲ್ಪದ ಪರಂಪರೆಯನ್ನು ಸಂರಕ್ಷಿಸುವಲ್ಲಿ ಅವರು ನಂಬಿಕೆ ಹೊಂದಿದ್ದಾರೆ.</span>
+                                </p>
+                            </div>
+                            <div class="bg-amber-50 p-8 rounded-3xl border border-amber-100">
+                                <h3 class="text-xl font-black text-slate-900 mb-4 flex items-center gap-3">
+                                    <i data-lucide="sun" class="text-amber-600"></i>
+                                    <span class="en">Spiritual Values</span>
+                                    <span class="kn">ಆಧ್ಯಾತ್ಮಿಕ ಮೌಲ್ಯಗಳು</span>
+                                </h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    <span class="en">His life is guided by the principles of 'Dharma' and 'Karma'. He actively participates in religious discourses and promotes the values of tolerance, compassion, and selfless service. For him, every act of kindness is a form of worship.</span>
+                                    <span class="kn">ಅವರ ಜೀವನವು 'ಧರ್ಮ' ಮತ್ತು 'ಕರ್ಮ' ತತ್ವಗಳಿಂದ ಮಾರ್ಗದರ್ಶಿಸಲ್ಪಟ್ಟಿದೆ. ಅವರು ಧಾರ್ಮಿಕ ಪ್ರವಚನಗಳಲ್ಲಿ ಸಕ್ರಿಯವಾಗಿ ಭಾಗವಹಿಸುತ್ತಾರೆ ಮತ್ತು ಸಹಿಷ್ಣುತೆ, ಸಹಾನುಭೂತಿ ಮತ್ತು ನಿಸ್ವಾರ್ಥ ಸೇವೆಯ ಮೌಲ್ಯಗಳನ್ನು ಉತ್ತೇಜಿಸುತ್ತಾರೆ. ಅವರಿಗೆ, ಪ್ರತಿಯೊಂದು ದಯೆಯ ಕ್ರಿಯೆಯು ಒಂದು ರೀತಿಯ ಆರಾಧನೆಯಾಗಿದೆ.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cultural Anchor -->
+                <section id="culture" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-purple-600/20">
+                            <i data-lucide="palette"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Cultural Anchor</span>
+                            <span class="kn">ಸಾಂಸ್ಕೃತಿಕ ಆಧಾರಸ್ತಂಭ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-8">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            <span class="en">The rich cultural tapestry of coastal Karnataka is something Mastappa Naik holds very dear. He is a passionate patron of traditional arts and works tirelessly to ensure they are passed on to future generations.</span>
+                            <span class="kn">ಕರಾವಳಿ ಕರ್ನಾಟಕದ ಶ್ರೀಮಂತ ಸಾಂಸ್ಕೃತಿಕ ಪರಂಪರೆಯು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರಿಗೆ ಬಹಳ ಪ್ರಿಯವಾದದ್ದು. ಅವರು ಸಾಂಪ್ರದಾಯಿಕ ಕಲೆಗಳ ಬಗ್ಗೆ ಅಪಾರ ಆಸಕ್ತಿ ಹೊಂದಿದ್ದಾರೆ ಮತ್ತು ಅವುಗಳನ್ನು ಮುಂದಿನ ಪೀಳಿಗೆಗೆ ವರ್ಗಾಯಿಸುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ದಣಿವರಿಯಿಲ್ಲದೆ ಕೆಲಸ ಮಾಡುತ್ತಾರೆ.</span>
+                        </p>
+                        <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
+                            <h3 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
+                                <i data-lucide="music" class="text-purple-600"></i>
+                                <span class="en">Patron of Yakshagana</span>
+                                <span class="kn">ಯಕ್ಷಗಾನದ ಪೋಷಕ</span>
+                            </h3>
+                            <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                                <span class="en">As a dedicated supporter of Yakshagana, the traditional theater form of Karnataka, he has sponsored numerous performances and provided financial assistance to struggling artists. He believes that Yakshagana is not just entertainment but a powerful medium for storytelling and moral education. He often hosts cultural festivals that bring together artists from across the state, providing them with a platform to showcase their talent.</span>
+                                <span class="kn">ಕರ್ನಾಟಕದ ಸಾಂಪ್ರದಾಯಿಕ ರಂಗಭೂಮಿ ಪ್ರಕಾರವಾದ ಯಕ್ಷಗಾನದ ಸಮರ್ಪಿತ ಬೆಂಬಲಿಗರಾಗಿ, ಅವರು ಹಲವಾರು ಪ್ರದರ್ಶನಗಳನ್ನು ಪ್ರಾಯೋಜಿಸಿದ್ದಾರೆ ಮತ್ತು ಕಷ್ಟದಲ್ಲಿರುವ ಕಲಾವಿದರಿಗೆ ಆರ್ಥಿಕ ನೆರವು ನೀಡಿದ್ದಾರೆ. ಯಕ್ಷಗಾನವು ಕೇವಲ ಮನರಂಜನೆಯಲ್ಲ ಆದರೆ ಕಥೆ ಹೇಳುವ ಮತ್ತು ನೈತಿಕ ಶಿಕ್ಷಣದ ಪ್ರಬಲ ಮಾಧ್ಯಮ ಎಂದು ಅವರು ನಂಬುತ್ತಾರೆ. ಅವರು ಆಗಾಗ್ಗೆ ರಾಜ್ಯಾದ್ಯಂತದ ಕಲಾವಿದರನ್ನು ಒಟ್ಟುಗೂಡಿಸುವ ಸಾಂಸ್ಕೃತಿಕ ಉತ್ಸವಗಳನ್ನು ಆಯೋಜಿಸುತ್ತಾರೆ, ಅವರಿಗೆ ತಮ್ಮ ಪ್ರತಿಭೆಯನ್ನು ಪ್ರದರ್ಶಿಸಲು ವೇದಿಕೆಯನ್ನು ಒದಗಿಸುತ್ತಾರೆ.</span>
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="p-6 bg-purple-50 rounded-2xl">
+                                    <span class="font-bold text-slate-900 block mb-2">Artist Support</span>
+                                    <span class="text-sm text-slate-500">Providing financial aid and insurance to veteran and upcoming Yakshagana performers.</span>
+                                </div>
+                                <div class="p-6 bg-purple-50 rounded-2xl">
+                                    <span class="font-bold text-slate-900 block mb-2">Cultural Festivals</span>
+                                    <span class="text-sm text-slate-500">Organizing annual events to celebrate and promote local folk traditions and music.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                            <h4 class="font-black text-slate-900 mb-4 flex items-center gap-2">
+                                <i data-lucide="book" class="text-orange-600"></i>
+                                <span class="en">Promoting Values</span>
+                                <span class="kn">ಮೌಲ್ಯಗಳ ಪ್ರಚಾರ</span>
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="en">At initiatives like Jnana Degula, he has distributed copies of the Bhagavad Gita to students, encouraging discipline, moral values, and self-confidence. He believes that a strong moral foundation is essential for the youth to navigate the challenges of the modern world.</span>
+                                <span class="kn">ಜ್ಞಾನ ದೇಗುಲದಂತಹ ಉಪಕ್ರಮಗಳಲ್ಲಿ, ಅವರು ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಭಗವದ್ಗೀತೆಯ ಪ್ರತಿಗಳನ್ನು ವಿತರಿಸಿದ್ದಾರೆ, ಶಿಸ್ತು, ನೈತಿಕ ಮೌಲ್ಯಗಳು ಮತ್ತು ಆತ್ಮವಿಶ್ವಾಸವನ್ನು ಪ್ರೋತ್ಸಾಹಿಸಿದ್ದಾರೆ. ಆಧುನಿಕ ಪ್ರಪಂಚದ ಸವಾಲುಗಳನ್ನು ಎದುರಿಸಲು ಯುವಜನತೆಗೆ ಬಲವಾದ ನೈತಿಕ ಅಡಿಪಾಯ ಅತ್ಯಗತ್ಯ ಎಂದು ಅವರು ನಂಬುತ್ತಾರೆ.</span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Youth & Sports -->
+                <section id="youth" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-600/20">
+                            <i data-lucide="trophy"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Youth & Sports Inspiration</span>
+                            <span class="kn">ಯುವಜನತೆ ಮತ್ತು ಕ್ರೀಡಾ ಸ್ಫೂರ್ತಿ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-8">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            <span class="en">Mastappa Naik sees the youth as the architects of tomorrow. His mission is to empower them through education, discipline, and sports, creating a generation that is both physically and mentally strong.</span>
+                            <span class="kn">ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಯುವಕರನ್ನು ನಾಳೆಯ ಶಿಲ್ಪಿಗಳಾಗಿ ನೋಡುತ್ತಾರೆ. ಶಿಕ್ಷಣ, ಶಿಸ್ತು ಮತ್ತು ಕ್ರೀಡೆಗಳ ಮೂಲಕ ಅವರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು ಅವರ ಉದ್ದೇಶವಾಗಿದೆ, ದೈಹಿಕವಾಗಿ ಮತ್ತು ಮಾನಸಿಕವಾಗಿ ಬಲವಾಗಿರುವ ಪೀಳಿಗೆಯನ್ನು ಸೃಷ್ಟಿಸುವುದು ಅವರ ಗುರಿಯಾಗಿದೆ.</span>
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-blue-50 p-8 rounded-3xl border border-blue-100">
+                                <h3 class="text-xl font-black text-slate-900 mb-4 flex items-center gap-3">
+                                    <i data-lucide="medal" class="text-blue-600"></i>
+                                    <span class="en">Championing Local Talent</span>
+                                    <span class="kn">ಸ್ಥಳೀಯ ಪ್ರತಿಭೆಗಳ ಪ್ರೋತ್ಸಾಹ</span>
+                                </h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    <span class="en">He is a regular sponsor of local cricket, kabaddi, and volleyball tournaments. By providing modern sports equipment and coaching facilities, he ensures that rural athletes have the same opportunities as their urban counterparts. He believes that sports teach teamwork, resilience, and leadership.</span>
+                                    <span class="kn">ಅವರು ಸ್ಥಳೀಯ ಕ್ರಿಕೆಟ್, ಕಬಡ್ಡಿ ಮತ್ತು ವಾಲಿಬಾಲ್ ಪಂದ್ಯಾವಳಿಗಳ ನಿಯಮಿತ ಪ್ರಾಯೋಜಕರಾಗಿದ್ದಾರೆ. ಆಧುನಿಕ ಕ್ರೀಡಾ ಉಪಕರಣಗಳು ಮತ್ತು ತರಬೇತಿ ಸೌಲಭ್ಯಗಳನ್ನು ಒದಗಿಸುವ ಮೂಲಕ, ಗ್ರಾಮೀಣ ಕ್ರೀಡಾಪಟುಗಳು ತಮ್ಮ ನಗರ ಕ್ರೀಡಾಪಟುಗಳಂತೆಯೇ ಅದೇ ಅವಕಾಶಗಳನ್ನು ಹೊಂದಿರುವುದನ್ನು ಅವರು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುತ್ತಾರೆ. ಕ್ರೀಡೆಗಳು ತಂಡದ ಕೆಲಸ, ಸ್ಥಿತಿಸ್ಥಾಪಕತ್ವ ಮತ್ತು ನಾಯಕತ್ವವನ್ನು ಕಲಿಸುತ್ತವೆ ಎಂದು ಅವರು ನಂಬುತ್ತಾರೆ.</span>
+                                </p>
+                            </div>
+                            <div class="bg-blue-50 p-8 rounded-3xl border border-blue-100">
+                                <h3 class="text-xl font-black text-slate-900 mb-4 flex items-center gap-3">
+                                    <i data-lucide="sparkles" class="text-blue-600"></i>
+                                    <span class="en">Youth Mentorship</span>
+                                    <span class="kn">ಯುವ ಮಾರ್ಗದರ್ಶನ</span>
+                                </h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    <span class="en">Mastappa frequently interacts with students and young professionals, sharing his journey of success and encouraging them to pursue their goals with integrity. He is a role model for many who aspire to balance professional success with social responsibility.</span>
+                                    <span class="kn">ಮಾಸ್ತಪ್ಪ ಅವರು ಆಗಾಗ್ಗೆ ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ಯುವ ವೃತ್ತಿಪರರೊಂದಿಗೆ ಸಂವಹನ ನಡೆಸುತ್ತಾರೆ, ತಮ್ಮ ಯಶಸ್ಸಿನ ಪ್ರಯಾಣವನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ ಮತ್ತು ಸಮಗ್ರತೆಯೊಂದಿಗೆ ತಮ್ಮ ಗುರಿಗಳನ್ನು ಬೆನ್ನಟ್ಟಲು ಅವರನ್ನು ಪ್ರೋತ್ಸಾಹಿಸುತ್ತಾರೆ. ವೃತ್ತಿಪರ ಯಶಸ್ಸನ್ನು ಸಾಮಾಜಿಕ ಜವಾಬ್ದಾರಿಯೊಂದಿಗೆ ಸಮತೋಲನಗೊಳಿಸಲು ಬಯಸುವ ಅನೇಕರಿಗೆ ಅವರು ಮಾದರಿಯಾಗಿದ್ದಾರೆ.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-orange-600 rounded-[2.5rem] p-10 text-white flex flex-col md:flex-row items-center gap-8">
+                            <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center shrink-0">
+                                <i data-lucide="heart" class="w-12 h-12"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-2xl mb-2">Inspired by Puneeth Rajkumar</h4>
+                                <p class="text-orange-100 leading-relaxed">
+                                    <span class="en">Deeply inspired by the legacy of service left by the legendary actor, Mastappa Naik strives to emulate his commitment to social welfare and community empowerment. He believes in the power of 'Appu's' philosophy of selfless service.</span>
+                                    <span class="kn">ಲೆಜೆಂಡರಿ ನಟ ಬಿಟ್ಟುಹೋದ ಸೇವೆಯ ಪರಂಪರೆಯಿಂದ ಆಳವಾಗಿ ಪ್ರೇರಿತರಾಗಿರುವ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಸಾಮಾಜಿಕ ಕಲ್ಯಾಣ ಮತ್ತು ಸಮುದಾಯ ಸಬಲೀಕರಣದ ಕಡೆಗೆ ಅವರ ಬದ್ಧತೆಯನ್ನು ಅನುಕರಿಸಲು ಶ್ರಮಿಸುತ್ತಾರೆ. ಅವರು 'ಅಪ್ಪು' ಅವರ ನಿಸ್ವಾರ್ಥ ಸೇವೆಯ ತತ್ವದ ಶಕ್ತಿಯನ್ನು ನಂಬುತ್ತಾರೆ.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Political Vision & Agenda -->
+                <section id="political" class="scroll-mt-32">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-indigo-600/20">
+                            <i data-lucide="flag"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900">
+                            <span class="en">Political Vision & Agenda</span>
+                            <span class="kn">ರಾಜಕೀಯ ದೃಷ್ಟಿಕೋನ ಮತ್ತು ಕಾರ್ಯಸೂಚಿ</span>
+                        </h2>
+                    </div>
+                    <div class="space-y-8">
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            <span class="en">Mastappa Naik's entry into the public sphere is driven by a clear vision for the progress of Uttara Kannada. His political agenda is centered on transparency, development, and the empowerment of every citizen.</span>
+                            <span class="kn">ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ಸಾರ್ವಜನಿಕ ಕ್ಷೇತ್ರಕ್ಕೆ ಪ್ರವೇಶವು ಉತ್ತರ ಕನ್ನಡದ ಪ್ರಗತಿಯ ಸ್ಪಷ್ಟ ದೃಷ್ಟಿಕೋನದಿಂದ ಪ್ರೇರಿತವಾಗಿದೆ. ಅವರ ರಾಜಕೀಯ ಕಾರ್ಯಸೂಚಿಯು ಪಾರದರ್ಶಕತೆ, ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಪ್ರತಿಯೊಬ್ಬ ನಾಗರಿಕನ ಸಬಲೀಕರಣದ ಮೇಲೆ ಕೇಂದ್ರೀಕೃತವಾಗಿದೆ.</span>
+                        </p>
+                        <div class="bg-indigo-900 text-white p-10 rounded-[2.5rem] relative overflow-hidden">
+                            <div class="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"></div>
+                            <h3 class="text-2xl font-black mb-6">
+                                <span class="en">The Agenda for Progress</span>
+                                <span class="kn">ಪ್ರಗತಿಯ ಕಾರ್ಯಸೂಚಿ</span>
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 text-indigo-400"><i data-lucide="check-circle-2"></i></div>
+                                        <div>
+                                            <span class="font-bold block">Healthcare Revolution</span>
+                                            <span class="text-slate-300 text-sm">Establishing world-class medical facilities in every taluka.</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 text-indigo-400"><i data-lucide="check-circle-2"></i></div>
+                                        <div>
+                                            <span class="font-bold block">Sustainable Industrialization</span>
+                                            <span class="text-slate-300 text-sm">Promoting eco-friendly industries that create local jobs.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 text-indigo-400"><i data-lucide="check-circle-2"></i></div>
+                                        <div>
+                                            <span class="font-bold block">Educational Empowerment</span>
+                                            <span class="text-slate-300 text-sm">Upgrading rural schools with digital infrastructure.</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="mt-1 text-indigo-400"><i data-lucide="check-circle-2"></i></div>
+                                        <div>
+                                            <span class="font-bold block">Transparent Governance</span>
+                                            <span class="text-slate-300 text-sm">Ensuring every rupee of public fund is accounted for.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Life Philosophy -->
                 <section id="philosophy" class="scroll-mt-32">
                     <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                        <div class="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-slate-900/20">
                             <i data-lucide="heart"></i>
                         </div>
                         <h2 class="text-3xl font-black text-slate-900">
@@ -174,37 +780,44 @@
                             <span class="kn">ಜೀವನ ತತ್ವ</span>
                         </h2>
                     </div>
-                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
-                        <p>
-                            <span class="en">Mastappa Naik's life is guided by the principle: 'Service is Religion - Society is God'. He believes that true leadership is about serving the most vulnerable and ensuring that every individual has the opportunity to thrive.</span>
-                            <span class="kn">ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ಜೀವನವು 'ಸೇವೆಯೇ ಧರ್ಮ - ಸಮಾಜವೇ ದೇವರು' ಎಂಬ ತತ್ವದಿಂದ ಮಾರ್ಗದರ್ಶಿಸಲ್ಪಟ್ಟಿದೆ. ನಿಜವಾದ ನಾಯಕತ್ವವು ಅತ್ಯಂತ ದುರ್ಬಲರಿಗೆ ಸೇವೆ ಸಲ್ಲಿಸುವುದು ಮತ್ತು ಪ್ರತಿಯೊಬ್ಬ ವ್ಯಕ್ತಿಯು ಅಭಿವೃದ್ಧಿ ಹೊಂದಲು ಅವಕಾಶವನ್ನು ಹೊಂದಿರುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುವುದು ಎಂದು ಅವರು ನಂಬುತ್ತಾರೆ.</span>
+                    <div class="bg-slate-50 p-12 rounded-[3rem] border border-slate-100 text-center">
+                        <i data-lucide="quote" class="w-12 h-12 text-orange-600 mx-auto mb-8 opacity-20"></i>
+                        <p class="text-2xl font-medium text-slate-800 leading-relaxed mb-12 italic">
+                            <span class="en">"My life is dedicated to the soil that raised me and the people who believe in me. True leadership is not about holding a position, but about holding the hands of those who need support. I dream of an Uttara Kannada where every youth has a job, every patient has a bed, and every voice has a value. Service is my religion, and society is my God."</span>
+                            <span class="kn">"ನನ್ನ ಜೀವನವು ನನ್ನನ್ನು ಬೆಳೆಸಿದ ಮಣ್ಣಿಗೆ ಮತ್ತು ನನ್ನನ್ನು ನಂಬುವ ಜನರಿಗೆ ಸಮರ್ಪಿತವಾಗಿದೆ. ನಿಜವಾದ ನಾಯಕತ್ವವು ಅಧಿಕಾರವನ್ನು ಹೊಂದುವುದರ ಬಗ್ಗೆ ಅಲ್ಲ, ಬದಲಿಗೆ ಬೆಂಬಲದ ಅಗತ್ಯವಿರುವವರ ಕೈಗಳನ್ನು ಹಿಡಿಯುವುದರ ಬಗ್ಗೆ. ಪ್ರತಿಯೊಬ್ಬ ಯುವಕನಿಗೆ ಕೆಲಸವಿರುವ, ಪ್ರತಿಯೊಬ್ಬ ರೋಗಿಗೆ ಹಾಸಿಗೆಯಿರುವ ಮತ್ತು ಪ್ರತಿಯೊಂದು ಧ್ವನಿಗೆ ಮೌಲ್ಯವಿರುವ ಉತ್ತರ ಕನ್ನಡದ ಕನಸು ನನ್ನದು. ಸೇವೆಯೇ ನನ್ನ ಧರ್ಮ, ಮತ್ತು ಸಮಾಜವೇ ನನ್ನ ದೇವರು."</span>
                         </p>
+                        <div class="flex flex-col items-center gap-4">
+                            <div class="w-20 h-1 bg-orange-600 rounded-full"></div>
+                            <span class="text-xl font-black text-slate-900 uppercase tracking-widest">Mastappa Naik</span>
+                        </div>
                     </div>
                 </section>
 
-                <!-- Honors -->
-                <section id="honors" class="scroll-mt-32">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
-                            <i data-lucide="award"></i>
-                        </div>
-                        <h2 class="text-3xl font-black text-slate-900">
-                            <span class="en">Honors & Recognition</span>
-                            <span class="kn">ಗೌರವಗಳು ಮತ್ತು ಮಾನ್ಯತೆ</span>
-                        </h2>
-                    </div>
-                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
-                        <p>
-                            <span class="en">Throughout his career, Mastappa Naik has received numerous awards for his contributions to society and industry. These include honors from various community organizations, media houses, and government bodies.</span>
-                            <span class="kn">ತಮ್ಮ ವೃತ್ತಿಜೀವನದ ಉದ್ದಕ್ಕೂ, ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಸಮಾಜ ಮತ್ತು ಕೈಗಾರಿಕೆಗೆ ನೀಡಿದ ಕೊಡುಗೆಗಳಿಗಾಗಿ ಹಲವಾರು ಪ್ರಶಸ್ತಿಗಳನ್ನು ಪಡೆದಿದ್ದಾರೆ. ಇವುಗಳಲ್ಲಿ ವಿವಿಧ ಸಮುದಾಯ ಸಂಘಟನೆಗಳು, ಮಾಧ್ಯಮ ಸಂಸ್ಥೆಗಳು ಮತ್ತು ಸರ್ಕಾರಿ ಸಂಸ್ಥೆಗಳಿಂದ ಬಂದ ಗೌರವಗಳು ಸೇರಿವೆ.</span>
-                        </p>
+                <!-- Contact Section -->
+                <section class="bg-orange-600 rounded-[3rem] p-12 text-white text-center">
+                    <h2 class="text-3xl font-black mb-6">
+                        <span class="en">Join the Movement</span>
+                        <span class="kn">ಚಳುವಳಿಯಲ್ಲಿ ಸೇರಿ</span>
+                    </h2>
+                    <p class="text-orange-100 text-lg mb-10 max-w-xl mx-auto">
+                        <span class="en">Be a part of Mastappa Naik's vision for a better Uttara Kannada. Your support can make a difference.</span>
+                        <span class="kn">ಉತ್ತಮ ಉತ್ತರ ಕನ್ನಡಕ್ಕಾಗಿ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ದೃಷ್ಟಿಕೋನದ ಭಾಗವಾಗಿರಿ. ನಿಮ್ಮ ಬೆಂಬಲವು ಬದಲಾವಣೆಯನ್ನು ತರಬಹುದು.</span>
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="index.html#contact" class="px-8 py-4 bg-white text-orange-600 rounded-2xl font-black hover:bg-orange-50 transition-all">
+                            <span class="en">Contact Us</span>
+                            <span class="kn">ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</span>
+                        </a>
+                        <a href="index.html#work" class="px-8 py-4 bg-orange-700 text-white rounded-2xl font-black hover:bg-orange-800 transition-all">
+                            <span class="en">View Our Work</span>
+                            <span class="kn">ನಮ್ಮ ಕೆಲಸವನ್ನು ನೋಡಿ</span>
+                        </a>
                     </div>
                 </section>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <!-- Footer -->
     <footer class="bg-slate-900 text-white py-20 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
@@ -269,6 +882,47 @@
         function toggleLanguage() {
             document.body.classList.toggle('lang-kn');
         }
+
+        // Carousel Logic
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const track = document.getElementById('carousel-track');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+            if (!track) return;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('bg-white', 'w-8');
+                    dot.classList.remove('bg-white/30', 'w-2');
+                } else {
+                    dot.classList.remove('bg-white', 'w-8');
+                    dot.classList.add('bg-white/30', 'w-2');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Auto-scroll
+        setInterval(nextSlide, 5000);
+
+        // Initial call
+        updateCarousel();
     </script>
 </body>
 </html>
