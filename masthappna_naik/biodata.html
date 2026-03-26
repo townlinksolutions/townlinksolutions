@@ -187,63 +187,23 @@
                         </h2>
                     </div>
                     
-                    <div class="relative group overflow-hidden rounded-[2.5rem] bg-slate-200 aspect-[16/9] shadow-2xl border border-white/20">
+                    <div class="relative group overflow-hidden rounded-[2.5rem] bg-slate-900 h-[500px] md:h-[700px] shadow-2xl border border-white/20">
                         <!-- Carousel Track -->
                         <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out h-full">
-                            <!-- Slide 1 -->
-                            <div class="min-w-full h-full relative">
-                                <img src="https://picsum.photos/seed/leader1/1200/675" alt="Mastappa Naik in Action" class="w-full h-full object-cover" referrerPolicy="no-referrer">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-10">
-                                    <div class="text-white">
-                                        <p class="text-orange-400 font-black uppercase tracking-widest text-xs mb-2">Community Engagement</p>
-                                        <h3 class="text-2xl font-bold">
-                                            <span class="en">Listening to the People</span>
-                                            <span class="kn">ಜನರ ಮಾತುಗಳನ್ನು ಆಲಿಸುವುದು</span>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="min-w-full h-full relative">
-                                <img src="https://picsum.photos/seed/leader2/1200/675" alt="Mastappa Naik Social Service" class="w-full h-full object-cover" referrerPolicy="no-referrer">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-10">
-                                    <div class="text-white">
-                                        <p class="text-orange-400 font-black uppercase tracking-widest text-xs mb-2">Social Service</p>
-                                        <h3 class="text-2xl font-bold">
-                                            <span class="en">Dedicated to Welfare</span>
-                                            <span class="kn">ಕಲ್ಯಾಣಕ್ಕೆ ಸಮರ್ಪಿತ</span>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Slide 3 -->
-                            <div class="min-w-full h-full relative">
-                                <img src="https://picsum.photos/seed/leader3/1200/675" alt="Mastappa Naik Leadership" class="w-full h-full object-cover" referrerPolicy="no-referrer">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-10">
-                                    <div class="text-white">
-                                        <p class="text-orange-400 font-black uppercase tracking-widest text-xs mb-2">Leadership</p>
-                                        <h3 class="text-2xl font-bold">
-                                            <span class="en">Vision for Progress</span>
-                                            <span class="kn">ಪ್ರಗತಿಯ ದೃಷ್ಟಿಕೋನ</span>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- Slides will be injected here by JS -->
                         </div>
 
                         <!-- Controls -->
-                        <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-orange-600">
+                        <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-orange-600 z-10">
                             <i data-lucide="chevron-left"></i>
                         </button>
-                        <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-orange-600">
+                        <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-orange-600 z-10">
                             <i data-lucide="chevron-right"></i>
                         </button>
 
-                        <!-- Indicators -->
-                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-                            <div class="carousel-dot w-2 h-2 rounded-full bg-white/30 transition-all cursor-pointer" onclick="goToSlide(0)"></div>
-                            <div class="carousel-dot w-2 h-2 rounded-full bg-white/30 transition-all cursor-pointer" onclick="goToSlide(1)"></div>
-                            <div class="carousel-dot w-2 h-2 rounded-full bg-white/30 transition-all cursor-pointer" onclick="goToSlide(2)"></div>
+                        <!-- Counter -->
+                        <div class="absolute top-6 right-6 bg-black/50 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-bold tracking-widest z-10">
+                            <span id="slide-counter">1 / 36</span>
                         </div>
                     </div>
                 </section>
@@ -364,8 +324,8 @@
                                     <span class="kn">ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ</span>
                                 </h3>
                                 <p class="text-slate-600 text-sm leading-relaxed">
-                                    <span class="en">Mobilized over 25,000 postcards from citizens across 11 talukas, reaching 7 lakh people to demand a multi-specialty hospital in Uttara Kannada. This campaign was a historic display of public unity, forcing the administration to acknowledge the dire state of healthcare in the region. Mastappa personally visited hundreds of villages to explain the importance of this demand.</span>
-                                    <span class="kn">ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಮಲ್ಟಿ-ಸ್ಪೆಷಾಲಿಟಿ ಆಸ್ಪತ್ರೆಗೆ ಒತ್ತಾಯಿಸಲು 11 ತಾಲೂಕುಗಳ ನಾಗರಿಕರಿಂದ 25,000 ಕ್ಕೂ ಹೆಚ್ಚು ಪೋಸ್ಟ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಸಂಗ್ರಹಿಸಿ, 7 ಲಕ್ಷ ಜನರನ್ನು ತಲುಪಿದರು. ಈ ಅಭಿಯಾನವು ಸಾರ್ವಜನಿಕ ಏಕತೆಯ ಐತಿಹಾಸಿಕ ಪ್ರದರ್ಶನವಾಗಿದ್ದು, ಈ ಪ್ರದೇಶದ ಆರೋಗ್ಯ ರಕ್ಷಣೆಯ ಭೀಕರ ಸ್ಥಿತಿಯನ್ನು ಒಪ್ಪಿಕೊಳ್ಳುವಂತೆ ಆಡಳಿತವನ್ನು ಒತ್ತಾಯಿಸಿತು. ಮಾಸ್ತಪ್ಪ ಅವರು ವೈಯಕ್ತಿಕವಾಗಿ ನೂರಾರು ಹಳ್ಳಿಗಳಿಗೆ ಭೇಟಿ ನೀಡಿ ಈ ಬೇಡಿಕೆಯ ಮಹತ್ವವನ್ನು ವಿವರಿಸಿದರು.</span>
+                                    <span class="en">Mobilized over 200,000 postcards from citizens across 11 talukas, reaching 7 lakh people to demand a multi-specialty hospital in Uttara Kannada. This campaign was a historic display of public unity, forcing the administration to acknowledge the dire state of healthcare in the region. Mastappa personally visited hundreds of villages to explain the importance of this demand.</span>
+                                    <span class="kn">ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಮಲ್ಟಿ-ಸ್ಪೆಷಾಲಿಟಿ ಆಸ್ಪತ್ರೆಗೆ ಒತ್ತಾಯಿಸಲು 11 ತಾಲೂಕುಗಳ ನಾಗರಿಕರಿಂದ 200,000 ಕ್ಕೂ ಹೆಚ್ಚು ಪೋಸ್ಟ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಸಂಗ್ರಹಿಸಿ, 7 ಲಕ್ಷ ಜನರನ್ನು ತಲುಪಿದರು. ಈ ಅಭಿಯಾನವು ಸಾರ್ವಜನಿಕ ಏಕತೆಯ ಐತಿಹಾಸಿಕ ಪ್ರದರ್ಶನವಾಗಿದ್ದು, ಈ ಪ್ರದೇಶದ ಆರೋಗ್ಯ ರಕ್ಷಣೆಯ ಭೀಕರ ಸ್ಥಿತಿಯನ್ನು ಒಪ್ಪಿಕೊಳ್ಳುವಂತೆ ಆಡಳಿತವನ್ನು ಒತ್ತಾಯಿಸಿತು. ಮಾಸ್ತಪ್ಪ ಅವರು ವೈಯಕ್ತಿಕವಾಗಿ ನೂರಾರು ಹಳ್ಳಿಗಳಿಗೆ ಭೇಟಿ ನೀಡಿ ಈ ಬೇಡಿಕೆಯ ಮಹತ್ವವನ್ನು ವಿವರಿಸಿದರು.</span>
                                 </p>
                             </div>
                             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
@@ -885,44 +845,59 @@
 
         // Carousel Logic
         let currentSlide = 0;
-        const totalSlides = 3;
         const track = document.getElementById('carousel-track');
-        const dots = document.querySelectorAll('.carousel-dot');
+        let totalSlides = 0;
+
+        function initCarousel() {
+            if (!track) return;
+            
+            const images = [
+                ...Array.from({length: 26}, (_, i) => `https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo${i + 1}.jpg`),
+                ...Array.from({length: 10}, (_, i) => `https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/nesws${i + 1}.jpg`)
+            ];
+            
+            totalSlides = images.length;
+            
+            images.forEach((src, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'min-w-full h-full relative flex items-center justify-center bg-slate-900';
+                slide.innerHTML = `
+                    <img src="${src}" alt="Gallery Image ${index + 1}" class="w-full h-full object-contain p-4 md:p-8" referrerPolicy="no-referrer">
+                `;
+                track.appendChild(slide);
+            });
+            
+            updateCarousel();
+        }
 
         function updateCarousel() {
-            if (!track) return;
+            if (!track || totalSlides === 0) return;
+            
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            dots.forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.classList.add('bg-white', 'w-8');
-                    dot.classList.remove('bg-white/30', 'w-2');
-                } else {
-                    dot.classList.remove('bg-white', 'w-8');
-                    dot.classList.add('bg-white/30', 'w-2');
-                }
-            });
+            
+            const counter = document.getElementById('slide-counter');
+            if (counter) {
+                counter.innerText = `${currentSlide + 1} / ${totalSlides}`;
+            }
         }
 
         function nextSlide() {
+            if (totalSlides === 0) return;
             currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
         }
 
         function prevSlide() {
+            if (totalSlides === 0) return;
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateCarousel();
         }
 
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
-        }
-
         // Auto-scroll
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 4000);
 
         // Initial call
-        updateCarousel();
+        initCarousel();
     </script>
 </body>
 </html>
