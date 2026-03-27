@@ -853,16 +853,23 @@
             
             const images = [
                 ...Array.from({length: 26}, (_, i) => `https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo${i + 1}.jpg`),
-                ...Array.from({length: 10}, (_, i) => `https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/nesws${i + 1}.jpg`)
+                ...Array.from({length: 30}, (_, i) => `https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news${i + 1}.jpg`)
             ];
             
             totalSlides = images.length;
             
             images.forEach((src, index) => {
                 const slide = document.createElement('div');
-                slide.className = 'min-w-full h-full relative flex items-center justify-center bg-slate-900';
+                slide.className = 'min-w-full h-full relative flex items-center justify-center bg-black overflow-hidden';
                 slide.innerHTML = `
-                    <img src="${src}" alt="Gallery Image ${index + 1}" class="w-full h-full object-contain p-4 md:p-8" referrerPolicy="no-referrer">
+                    <!-- Blurred Background -->
+                    <div class="absolute inset-0 z-0 opacity-40">
+                        <img src="${src}" class="w-full h-full object-cover blur-2xl scale-110" referrerPolicy="no-referrer">
+                    </div>
+                    <!-- Main Image -->
+                    <div class="relative z-10 w-full h-full p-4 md:p-12 flex items-center justify-center transition-transform duration-700 ease-out slide-img">
+                        <img src="${src}" alt="Gallery Image ${index + 1}" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl ring-1 ring-white/10" referrerPolicy="no-referrer">
+                    </div>
                 `;
                 track.appendChild(slide);
             });
@@ -873,7 +880,20 @@
         function updateCarousel() {
             if (!track || totalSlides === 0) return;
             
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            track.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+            
+            // Add scale effect to active slide
+            const slides = track.children;
+            for (let i = 0; i < slides.length; i++) {
+                const imgContainer = slides[i].querySelector('.slide-img');
+                if (i === currentSlide) {
+                    imgContainer.style.transform = 'scale(1)';
+                    imgContainer.style.opacity = '1';
+                } else {
+                    imgContainer.style.transform = 'scale(0.9)';
+                    imgContainer.style.opacity = '0.5';
+                }
+            }
             
             const counter = document.getElementById('slide-counter');
             if (counter) {
@@ -881,23 +901,34 @@
             }
         }
 
+        let autoSlideInterval;
+
+        function resetInterval() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                if (totalSlides === 0) return;
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            }, 4000);
+        }
+
         function nextSlide() {
             if (totalSlides === 0) return;
             currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
+            resetInterval();
         }
 
         function prevSlide() {
             if (totalSlides === 0) return;
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateCarousel();
+            resetInterval();
         }
-
-        // Auto-scroll
-        setInterval(nextSlide, 4000);
 
         // Initial call
         initCarousel();
+        resetInterval();
     </script>
 </body>
 </html>

@@ -77,104 +77,715 @@
     </header>
 
     <!-- Clippings Grid -->
-    <section class="py-24 bg-slate-900">
+    <section class="py-24 relative z-10" style="background-image: url('https://images.unsplash.com/photo-1551269901-5c5e14c25df7?q=80&w=2069&auto=format&fit=crop'); background-size: cover; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black/60 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-transparent to-slate-900/80"></div>
         <div class="max-w-7xl mx-auto px-6 space-y-24">
-            <!-- Category 1: Political Leadership & Party Engagements -->
-            <div id="category-political" class="space-y-12">
-                <h2 class="text-3xl md:text-5xl font-black text-white border-l-8 border-orange-600 pl-8 tracking-tighter">
-                    <span class="en">Political Leadership & Party Engagements</span>
-                    <span class="kn">ರಾಜಕೀಯ ನಾಯಕತ್ವ ಮತ್ತು ಪಕ್ಷದ ತೊಡಗಿಸಿಕೊಳ್ಳುವಿಕೆಗಳು</span>
+            <!-- All News Clippings -->
+            <div id="category-all" class="space-y-12">
+                <div class="inline-block bg-[#2e1c11]/80 backdrop-blur-sm border border-[#8D6E63]/50 p-6 rounded-xl shadow-2xl mb-8">
+        <h2 class="text-3xl md:text-5xl font-black text-[#FFF8DC] border-l-8 border-orange-500 pl-6 tracking-tighter" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                    <span class="en">All Press Clippings</span>
+                    <span class="kn">ಎಲ್ಲಾ ಪತ್ರಿಕಾ ತುಣುಕುಗಳು</span>
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="clippings-political">
                 </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Clipping 1 -->
+                            <div onclick="openDetail('news-udayavani')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-2">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-red-400 to-red-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
             </div>
-
-            <hr class="border-white/5">
-
-            <!-- Category 2: Social Welfare & Community Service -->
-            <div id="category-social" class="space-y-12">
-                <h2 class="text-3xl md:text-5xl font-black text-white border-l-8 border-orange-600 pl-8 tracking-tighter">
-                    <span class="en">Social Welfare & Community Service</span>
-                    <span class="kn">ಸಾಮಾಜಿಕ ಕಲ್ಯಾಣ ಮತ್ತು ಸಮುದಾಯ ಸೇವೆ</span>
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="clippings-social">
-                </div>
-            </div>
-
-            <hr class="border-white/5">
-
-            <!-- Category 3: Public Advocacy & Protest -->
-            <div id="category-advocacy" class="space-y-12">
-                <h2 class="text-3xl md:text-5xl font-black text-white border-l-8 border-orange-600 pl-8 tracking-tighter">
-                    <span class="en">Public Advocacy & Protest</span>
-                    <span class="kn">ಸಾರ್ವಜನಿಕ ವಕಾಲತ್ತು ಮತ್ತು ಪ್ರತಿಭಟನೆ</span>
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="clippings-advocacy">
-                </div>
-            </div>
-
-            <hr class="border-white/5">
-
-            <!-- Category 4: Honors, Awards & Media Profiles -->
-            <div id="category-honors" class="space-y-12">
-                <h2 class="text-3xl md:text-5xl font-black text-white border-l-8 border-orange-600 pl-8 tracking-tighter">
-                    <span class="en">Honors, Awards & Media Profiles</span>
-                    <span class="kn">ಗೌರವಗಳು,
-        <div class="hidden"></div>
-    </section>
-ext-orange-400 transition-colors mb-4 leading-tight">
-                            <span class="en">Urban Planning Seminar</span>
-                            <span class="kn">ನಗರ ಯೋಜನೆ ವಿಚಾರಗೋಷ್ಠಿ</span>
-                        </h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            <span class="en">Discussing sustainable urban development strategies for Bhatkal's growing population.</span>
-                            <span class="kn">ಭಟ್ಕಳದ ಬೆಳೆಯುತ್ತಿರುವ ಜನಸಂಖ್ಯೆಗೆ ಸುಸ್ಥಿರ ನಗರ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯತಂತ್ರಗಳ ಬಗ್ಗೆ ಚರ್ಚಿಸುವುದು.</span>
-                        </p>
-                        <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                            <span class="en">Click for more details</span>
-                            <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                            <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Clipping 20 -->
-                <div onclick="openDetail('news-20')" class="bg-white/5 border border-white/10 rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-white/10 transition-all duration-500 group/item hover:border-orange-500/30">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news20.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 opacity-70 group-hover/item:opacity-100" alt="News Clipping 20">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6">
-                            <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Samyukta Karnataka</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-slate-500 text-xs font-bold">Jan 25, 2026</span>
-                            <div class="flex gap-1">
-                                <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Udayavani Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Udayavani</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">March 15, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Leading Social Reform in Bhatkal</span>
+                                        <span class="kn">ಭಟ್ಕಳದಲ್ಲಿ ಸಾಮಾಜಿಕ ಸುಧಾರಣೆಯ ನೇತೃತ್ವ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Mastappa Naik's vision for a progressive Bhatkal through sustainable community initiatives.</span>
+                                        <span class="kn">ಸುಸ್ಥಿರ ಸಮುದಾಯ ಉಪಕ್ರಮಗಳ ಮೂಲಕ ಪ್ರಗತಿಪರ ಭಟ್ಕಳಕ್ಕಾಗಿ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ದೃಷ್ಟಿಕೋನ.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <h4 class="text-2xl font-bold text-white group-hover/item:text-orange-400 transition-colors mb-4 leading-tight">
-                            <span class="en">Disaster Relief Fund</span>
-                            <span class="kn">ವಿಪತ್ತು ಪರಿಹಾರ ನಿಧಿ</span>
-                        </h4>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            <span class="en">Establishing a dedicated fund to provide immediate assistance during natural calamities.</span>
-                            <span class="kn">ನೈಸರ್ಗಿಕ ವಿಕೋಪಗಳ ಸಮಯದಲ್ಲಿ ತಕ್ಷಣದ ನೆರವು ನೀಡಲು ಮೀಸಲಾದ ನಿಧಿಯನ್ನು ಸ್ಥಾಪಿಸುವುದು.</span>
-                        </p>
-                        <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                            <span class="en">Click for more details</span>
-                            <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                            <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                        </div>
-                    </div>
+                            
+<!-- Clipping 2 -->
+                            <div onclick="openDetail('news-prajavani')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-2">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-blue-400 to-blue-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Prajavani Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Prajavani</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">March 12, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Support for Local Folk Artists</span>
+                                        <span class="kn">ಸ್ಥಳೀಯ ಜಾನಪದ ಕಲಾವಿದರಿಗೆ ಬೆಂಬಲ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Preserving the rich cultural heritage of Uttara Kannada by empowering traditional performers.</span>
+                                        <span class="kn">ಸಾಂಪ್ರದಾಯಿಕ ಪ್ರದರ್ಶಕರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವ ಮೂಲಕ ಉತ್ತರ ಕನ್ನಡದ ಶ್ರೀಮಂತ ಸಾಂಸ್ಕೃತಿಕ ಪರಂಪರೆಯನ್ನು ಸಂರಕ್ಷಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+<!-- Clipping 3 -->
+                            <div onclick="openDetail('news-vijayavani')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-1">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news3.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Vijayavani Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Vijayavani</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">March 10, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">A New Vision for Leadership</span>
+                                        <span class="kn">ನಾಯಕತ್ವಕ್ಕಾಗಿ ಹೊಸ ದೃಷ್ಟಿಕೋನ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">How transparent governance and youth involvement can transform the district's future.</span>
+                                        <span class="kn">ಪಾರದರ್ಶಕ ಆಡಳಿತ ಮತ್ತು ಯುವಕರ ಪಾಲ್ಗೊಳ್ಳುವಿಕೆ ಜಿಲ್ಲೆಯ ಭವಿಷ್ಯವನ್ನು ಹೇಗೆ ಬದಲಾಯಿಸಬಹುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+<!-- Clipping 4 -->
+                            <div onclick="openDetail('news-kannadaprabha')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-1">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-green-400 to-green-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news4.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Kannada Prabha Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Kannada Prabha</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">March 08, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Educational Initiatives Launched</span>
+                                        <span class="kn">ಶೈಕ್ಷಣಿಕ ಉಪಕ್ರಮಗಳ ಚಾಲನೆ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Bridging the digital divide in rural schools through modern infrastructure and literacy programs.</span>
+                                        <span class="kn">ಆಧುನಿಕ ಮೂಲಸೌಕರ್ಯ ಮತ್ತು ಸಾಕ್ಷರತಾ ಕಾರ್ಯಕ್ರಮಗಳ ಮೂಲಕ ಗ್ರಾಮೀಣ ಶಾಲೆಗಳಲ್ಲಿ ಡಿಜಿಟಲ್ ಅಂತರವನ್ನು ಕಡಿಮೆ ಮಾಡುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+<!-- Clipping 5 -->
+                            <div onclick="openDetail('news-karavali')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-3">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-red-400 to-red-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news5.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Karavali Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Karavali Munjavu</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">March 05, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Women Empowerment Initiatives</span>
+                                        <span class="kn">ಮಹಿಳಾ ಸಬಲೀಕರಣ ಉಪಕ್ರಮಗಳು</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Fostering independence through vocational training and skill development.</span>
+                                        <span class="kn">ವೃತ್ತಿಪರ ತರಬೇತಿ ಮತ್ತು ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿಯ ಮೂಲಕ ಸ್ವಾತಂತ್ರ್ಯವನ್ನು ಬೆಳೆಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+<!-- Clipping 6 -->
+                            <div onclick="openDetail('news-varta')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-3">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-blue-400 to-blue-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news6.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Varta Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Varta Bharati</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">March 03, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Healthcare Access for All</span>
+                                        <span class="kn">ಎಲ್ಲರಿಗೂ ಆರೋಗ್ಯ ಸೇವೆಯ ಪ್ರವೇಶ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Bringing medical services to remote areas through mobile health clinics.</span>
+                                        <span class="kn">ಮೊಬೈಲ್ ಆರೋಗ್ಯ ಚಿಕಿತ್ಸಾಲಯಗಳ ಮೂಲಕ ದೂರದ ಪ್ರದೇಶಗಳಿಗೆ ವೈದ್ಯಕೀಯ ಸೇವೆಗಳನ್ನು ತರುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+<!-- Clipping 7 -->
+                            <div onclick="openDetail('news-times')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-2">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news7.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Times Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Times of India</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">March 01, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Promoting Sustainable Agriculture</span>
+                                        <span class="kn">ಸುಸ್ಥಿರ ಕೃಷಿಯನ್ನು ಉತ್ತೇಜಿಸುವುದು</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Empowering farmers with organic farming techniques and market linkages.</span>
+                                        <span class="kn">ಸಾವಯವ ಕೃಷಿ ತಂತ್ರಗಳು ಮತ್ತು ಮಾರುಕಟ್ಟೆ ಸಂಪರ್ಕಗಳೊಂದಿಗೆ ರೈತರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+<!-- Clipping 8 -->
+                            <div onclick="openDetail('news-hindu')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-2">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-green-400 to-green-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news8.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Hindu Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">The Hindu</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 25, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Infrastructure Growth in Hinterland</span>
+                                        <span class="kn">ಒಳನಾಡಿನಲ್ಲಿ ಮೂಲಸೌಕರ್ಯ ಬೆಳವಣಿಗೆ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Connecting remote villages to highways for better accessibility.</span>
+                                        <span class="kn">ಉತ್ತಮ ಪ್ರವೇಶಕ್ಕಾಗಿ ದೂರದ ಗ್ರಾಮಗಳನ್ನು ಹೆದ್ದಾರಿಗಳಿಗೆ ಸಂಪರ್ಕಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+<!-- Clipping 9 -->
+                            <div onclick="openDetail('news-deccan')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-1">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-red-400 to-red-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news9.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Deccan Herald Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Deccan Herald</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 22, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Youth Empowerment Programs</span>
+                                        <span class="kn">ಯುವ ಸಬಲೀಕರಣ ಕಾರ್ಯಕ್ರಮಗಳು</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Launching skill development centers to provide better career opportunities for the youth.</span>
+                                        <span class="kn">ಯುವಕರಿಗೆ ಉತ್ತಮ ವೃತ್ತಿ ಅವಕಾಶಗಳನ್ನು ಒದಗಿಸಲು ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿ ಕೇಂದ್ರಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+<!-- Clipping 10 -->
+                            <div onclick="openDetail('news-samyukta')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-1">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-blue-400 to-blue-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news10.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="Samyukta Karnataka Clipping">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Samyukta Karnataka</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 20, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Environmental Conservation Drive</span>
+                                        <span class="kn">ಪರಿಸರ ಸಂರಕ್ಷಣಾ ಅಭಿಯಾನ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Initiating large-scale afforestation and waste management projects in the district.</span>
+                                        <span class="kn">ಜಿಲ್ಲೆಯಲ್ಲಿ ಬೃಹತ್ ಪ್ರಮಾಣದ ಅರಣ್ಯೀಕರಣ ಮತ್ತು ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಯೋಜನೆಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 11 -->
+                            <div onclick="openDetail('news-11')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-3">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news11.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 11">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Karavali Munjavu</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 18, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Educational Scholarship Drive</span>
+                                        <span class="kn">ಶೈಕ್ಷಣಿಕ ವಿದ್ಯಾರ್ಥಿವೇತನ ಅಭಿಯಾನ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Providing financial aid to meritorious students from underprivileged backgrounds.</span>
+                                        <span class="kn">ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಪ್ರತಿಭಾವಂತ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಆರ್ಥಿಕ ನೆರವು ನೀಡುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 12 -->
+                            <div onclick="openDetail('news-12')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-3">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-green-400 to-green-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news12.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 12">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Varta Bharati</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 15, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Women Empowerment Workshop</span>
+                                        <span class="kn">ಮಹಿಳಾ ಸಬಲೀಕರಣ ಕಾರ್ಯಾಗಾರ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Empowering women through vocational training and self-help group initiatives.</span>
+                                        <span class="kn">ವೃತ್ತಿಪರ ತರಬೇತಿ ಮತ್ತು ಸ್ವಸಹಾಯ ಗುಂಪು ಉಪಕ್ರಮಗಳ ಮೂಲಕ ಮಹಿಳೆಯರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 13 -->
+                            <div onclick="openDetail('news-13')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-2">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-red-400 to-red-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news13.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 13">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Times of India</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 12, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Digital Literacy Campaign</span>
+                                        <span class="kn">ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತಾ ಅಭಿಯಾನ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Bridging the digital divide by providing basic computer education in rural areas.</span>
+                                        <span class="kn">ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ಮೂಲಭೂತ ಕಂಪ್ಯೂಟರ್ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸುವ ಮೂಲಕ ಡಿಜಿಟಲ್ ಅಂತರವನ್ನು ಕಡಿಮೆ ಮಾಡುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 14 -->
+                            <div onclick="openDetail('news-14')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-2">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-blue-400 to-blue-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news14.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 14">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">The Hindu</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 10, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Rural Electrification Project</span>
+                                        <span class="kn">ಗ್ರಾಮೀಣ ವಿದ್ಯುದೀಕರಣ ಯೋಜನೆ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Ensuring 24/7 power supply to remote villages through solar and grid expansion.</span>
+                                        <span class="kn">ಸೌರ ಮತ್ತು ಗ್ರಿಡ್ ವಿಸ್ತರಣೆಯ ಮೂಲಕ ದೂರದ ಹಳ್ಳಿಗಳಿಗೆ 24/7 ವಿದ್ಯುತ್ ಪೂರೈಕೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 15 -->
+                            <div onclick="openDetail('news-15')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-1">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news15.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 15">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Udayavani</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 08, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Clean Water Initiative</span>
+                                        <span class="kn">ಶುದ್ಧ ನೀರಿನ ಉಪಕ್ರಮ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Installing water purification plants to provide safe drinking water to every household.</span>
+                                        <span class="kn">ಪ್ರತಿ ಮನೆಗೆ ಸುರಕ್ಷಿತ ಕುಡಿಯುವ ನೀರನ್ನು ಒದಗಿಸಲು ನೀರು ಶುದ್ಧೀಕರಣ ಘಟಕಗಳನ್ನು ಸ್ಥಾಪಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 16 -->
+                            <div onclick="openDetail('news-16')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-1">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-green-400 to-green-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news16.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 16">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Prajavani</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 05, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Cultural Festival Patronage</span>
+                                        <span class="kn">ಸಾಂಸ್ಕೃತಿಕ ಹಬ್ಬದ ಪ್ರೋತ್ಸಾಹ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Supporting local festivals to preserve and promote the unique traditions of Bhatkal.</span>
+                                        <span class="kn">ಭಟ್ಕಳದ ವಿಶಿಷ್ಟ ಸಂಪ್ರದಾಯಗಳನ್ನು ಸಂರಕ್ಷಿಸಲು ಮತ್ತು ಉತ್ತೇಜಿಸಲು ಸ್ಥಳೀಯ ಹಬ್ಬಗಳನ್ನು ಬೆಂಬಲಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 17 -->
+                            <div onclick="openDetail('news-17')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-3">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-red-400 to-red-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news17.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 17">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Vijayavani</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Feb 02, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Sports Infrastructure Development</span>
+                                        <span class="kn">ಕ್ರೀಡಾ ಮೂಲಸೌಕರ್ಯ ಅಭಿವೃದ್ಧಿ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Building modern sports complexes to encourage youth participation in athletics.</span>
+                                        <span class="kn">ಕ್ರೀಡೆಯಲ್ಲಿ ಯುವಕರ ಭಾಗವಹಿಸುವಿಕೆಯನ್ನು ಉತ್ತೇಜಿಸಲು ಆಧುನಿಕ ಕ್ರೀಡಾ ಸಂಕೀರ್ಣಗಳನ್ನು ನಿರ್ಮಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 18 -->
+                            <div onclick="openDetail('news-18')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-3">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-blue-400 to-blue-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news18.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 18">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Kannada Prabha</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Jan 30, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Senior Citizen Welfare</span>
+                                        <span class="kn">ಹಿರಿಯ ನಾಗರಿಕರ ಕಲ್ಯಾಣ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Launching health insurance and community centers for the elderly.</span>
+                                        <span class="kn">ಹಿರಿಯರಿಗಾಗಿ ಆರೋಗ್ಯ ವಿಮೆ ಮತ್ತು ಸಮುದಾಯ ಕೇಂದ್ರಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 19 -->
+                            <div onclick="openDetail('news-19')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 -rotate-2">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news19.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 19">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Deccan Herald</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Jan 28, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Urban Planning Seminar</span>
+                                        <span class="kn">ನಗರ ಯೋಜನೆ ವಿಚಾರಗೋಷ್ಠಿ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Discussing sustainable urban development strategies for Bhatkal's growing population.</span>
+                                        <span class="kn">ಭಟ್ಕಳದ ಬೆಳೆಯುತ್ತಿರುವ ಜನಸಂಖ್ಯೆಗೆ ಸುಸ್ಥಿರ ನಗರ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯತಂತ್ರಗಳ ಬಗ್ಗೆ ಚರ್ಚಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+<!-- Clipping 20 -->
+                            <div onclick="openDetail('news-20')" class="relative bg-[#fdfbf7] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] p-3 pb-6 rounded-sm shadow-[2px_4px_15px_rgba(0,0,0,0.4)] cursor-pointer transition-all duration-500 group hover:scale-105 hover:shadow-[5px_15px_30px_rgba(0,0,0,0.6)] hover:z-50 rotate-2">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full shadow-[0_4px_4px_rgba(0,0,0,0.5)] z-20 flex items-center justify-center bg-gradient-to-br from-green-400 to-green-700 border-2 border-black/20">
+                <div class="w-2 h-2 rounded-full bg-white/60 absolute top-1 left-1"></div>
+                <div class="w-1 h-3 bg-gray-400 absolute -bottom-2 left-1/2 -translate-x-1/2 -z-10 shadow-sm"></div>
+            </div>
+                                <div class="h-56 overflow-hidden relative mb-4 border border-gray-200">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news20.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 " alt="News Clipping 20">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-6">
+                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Samyukta Karnataka</span>
+                                    </div>
+                                </div>
+                                <div class="px-2">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-gray-500 text-xs font-bold font-mono">Jan 25, 2026</span>
+                                        
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900 font-serif group-hover:text-orange-600 transition-colors mb-3 leading-tight">
+                                        <span class="en">Disaster Relief Fund</span>
+                                        <span class="kn">ವಿಪತ್ತು ಪರಿಹಾರ ನಿಧಿ</span>
+                                    </h4>
+                                    <p class="text-gray-700 text-sm line-clamp-3 mb-4 font-serif">
+                                        <span class="en">Establishing a dedicated fund to provide immediate assistance during natural calamities.</span>
+                                        <span class="kn">ನೈಸರ್ಗಿಕ ವಿಕೋಪಗಳ ಸಮಯದಲ್ಲಿ ತಕ್ಷಣದ ನೆರವು ನೀಡಲು ಮೀಸಲಾದ ನಿಧಿಯನ್ನು ಸ್ಥಾಪಿಸುವುದು.</span>
+                                    </p>
+                                    <div class="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider">
+                                        <span class="en">Click for more details</span>
+                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer class="bg-slate-900 text-white py-20 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
