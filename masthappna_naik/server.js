@@ -59,6 +59,33 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
+// Endpoint to update news data
+app.post('/api/news/update', async (req, res) => {
+  try {
+    const { newsItems } = req.body;
+    const fs = await import('fs');
+    const path = await import('path');
+    
+    const dataFilePath = path.join(__dirname, 'src', 'news_data.js');
+    const fileContent = `const newsItems = ${JSON.stringify(newsItems, null, 2)};
+
+if (typeof window !== 'undefined') {
+  window.newsItems = newsItems;
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = newsItems;
+}
+`;
+    fs.writeFileSync(dataFilePath, fileContent);
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error updating news data:', error);
+    res.status(500).json({ success: false, error: 'Failed to update news data' });
+  }
+});
+
+console.log('GEMINI_API_KEY in server:', !!process.env.GEMINI_API_KEY);
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

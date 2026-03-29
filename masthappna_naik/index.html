@@ -6,6 +6,7 @@
     <title>Mastappa Naik | Voice of People</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="src/news_data.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -176,6 +177,22 @@
         .timeline-card.active .expand-icon {
             transform: rotate(180deg);
             color: #f97316;
+        }
+
+        /* 3D Carousel Styles */
+        .perspective-2000 { perspective: 2000px; }
+        .preserve-3d { transform-style: preserve-3d; }
+        .slide-3d {
+            position: absolute;
+            width: 80%;
+            max-width: 500px;
+            height: 100%;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            user-select: none;
+        }
+        @media (min-width: 768px) {
+            .slide-3d { width: 60%; }
         }
     </style>
 </head>
@@ -358,6 +375,48 @@
                         <span class="en">Read Full Biography</span>
                         <span class="kn">ಪೂರ್ಣ ಜೀವನಚರಿತ್ರೆ ಓದಿ</span>
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Journey Carousel -->
+    <section id="gallery" class="py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                            <i data-lucide="camera"></i>
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900 tracking-tight">
+                            <span class="en">Visual Journey</span>
+                            <span class="kn">ದೃಶ್ಯ ಪ್ರಯಾಣ</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 bg-white p-2 rounded-2xl shadow-sm border border-slate-100">
+                    <button onclick="prevGallerySlide()" class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-slate-50 text-slate-400 hover:text-orange-600 transition-all">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <div class="h-8 w-px bg-slate-100"></div>
+                    <button onclick="nextGallerySlide()" class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-slate-50 text-slate-400 hover:text-orange-600 transition-all">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative perspective-2000 h-[500px] md:h-[650px] flex items-center justify-center overflow-hidden py-12">
+                <!-- Carousel Container -->
+                <div id="gallery-carousel-container" class="relative w-full h-full flex items-center justify-center preserve-3d transition-transform duration-1000 ease-out">
+                    <!-- Slides will be injected here by JS -->
+                </div>
+
+                <!-- Progress Bar Container -->
+                <div class="absolute bottom-0 left-0 w-full px-12 pb-8">
+                    <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                        <div id="gallery-progress-bar" class="h-full bg-orange-600 w-0 transition-all duration-500 ease-linear"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1264,745 +1323,8 @@
 
                 <div class="relative group">
                     <div class="overflow-hidden">
-                        <div class="animate-marquee py-8">
-                            <!-- Clipping 1 -->
-                            <div onclick="openDetail('news-udayavani')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news1.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Udayavani Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Udayavani</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">March 15, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Leading Social Reform in Bhatkal</span>
-                                        <span class="kn">ಭಟ್ಕಳದಲ್ಲಿ ಸಾಮಾಜಿಕ ಸುಧಾರಣೆಯ ನೇತೃತ್ವ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Mastappa Naik's vision for a progressive Bhatkal through sustainable community initiatives.</span>
-                                        <span class="kn">ಸುಸ್ಥಿರ ಸಮುದಾಯ ಉಪಕ್ರಮಗಳ ಮೂಲಕ ಪ್ರಗತಿಪರ ಭಟ್ಕಳಕ್ಕಾಗಿ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ದೃಷ್ಟಿಕೋನ.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 2 -->
-                            <div onclick="openDetail('news-prajavani')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news2.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Prajavani Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Prajavani</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">March 12, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Support for Local Folk Artists</span>
-                                        <span class="kn">ಸ್ಥಳೀಯ ಜಾನಪದ ಕಲಾವಿದರಿಗೆ ಬೆಂಬಲ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Preserving the rich cultural heritage of Uttara Kannada by empowering traditional performers.</span>
-                                        <span class="kn">ಸಾಂಪ್ರದಾಯಿಕ ಪ್ರದರ್ಶಕರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವ ಮೂಲಕ ಉತ್ತರ ಕನ್ನಡದ ಶ್ರೀಮಂತ ಸಾಂಸ್ಕೃತಿಕ ಪರಂಪರೆಯನ್ನು ಸಂರಕ್ಷಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 3 -->
-                            <div onclick="openDetail('news-vijayavani')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news3.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Vijayavani Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Vijayavani</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">March 10, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">A New Vision for Leadership</span>
-                                        <span class="kn">ನಾಯಕತ್ವಕ್ಕಾಗಿ ಹೊಸ ದೃಷ್ಟಿಕೋನ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">How transparent governance and youth involvement can transform the district's future.</span>
-                                        <span class="kn">ಪಾರದರ್ಶಕ ಆಡಳಿತ ಮತ್ತು ಯುವಕರ ಪಾಲ್ಗೊಳ್ಳುವಿಕೆ ಜಿಲ್ಲೆಯ ಭವಿಷ್ಯವನ್ನು ಹೇಗೆ ಬದಲಾಯಿಸಬಹುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 4 -->
-                            <div onclick="openDetail('news-kannadaprabha')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news4.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Kannada Prabha Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Kannada Prabha</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">March 08, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Educational Initiatives Launched</span>
-                                        <span class="kn">ಶೈಕ್ಷಣಿಕ ಉಪಕ್ರಮಗಳ ಚಾಲನೆ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Bridging the digital divide in rural schools through modern infrastructure and literacy programs.</span>
-                                        <span class="kn">ಆಧುನಿಕ ಮೂಲಸೌಕರ್ಯ ಮತ್ತು ಸಾಕ್ಷರತಾ ಕಾರ್ಯಕ್ರಮಗಳ ಮೂಲಕ ಗ್ರಾಮೀಣ ಶಾಲೆಗಳಲ್ಲಿ ಡಿಜಿಟಲ್ ಅಂತರವನ್ನು ಕಡಿಮೆ ಮಾಡುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 5 -->
-                            <div onclick="openDetail('news-karavali')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news5.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Karavali Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Karavali Munjavu</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">March 05, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Women Empowerment Initiatives</span>
-                                        <span class="kn">ಮಹಿಳಾ ಸಬಲೀಕರಣ ಉಪಕ್ರಮಗಳು</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Fostering independence through vocational training and skill development.</span>
-                                        <span class="kn">ವೃತ್ತಿಪರ ತರಬೇತಿ ಮತ್ತು ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿಯ ಮೂಲಕ ಸ್ವಾತಂತ್ರ್ಯವನ್ನು ಬೆಳೆಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 6 -->
-                            <div onclick="openDetail('news-varta')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news6.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Varta Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Varta Bharati</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">March 03, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Healthcare Access for All</span>
-                                        <span class="kn">ಎಲ್ಲರಿಗೂ ಆರೋಗ್ಯ ಸೇವೆಯ ಪ್ರವೇಶ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Bringing medical services to remote areas through mobile health clinics.</span>
-                                        <span class="kn">ಮೊಬೈಲ್ ಆರೋಗ್ಯ ಚಿಕಿತ್ಸಾಲಯಗಳ ಮೂಲಕ ದೂರದ ಪ್ರದೇಶಗಳಿಗೆ ವೈದ್ಯಕೀಯ ಸೇವೆಗಳನ್ನು ತರುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 7 -->
-                            <div onclick="openDetail('news-times')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news7.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Times Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Times of India</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">March 01, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Promoting Sustainable Agriculture</span>
-                                        <span class="kn">ಸುಸ್ಥಿರ ಕೃಷಿಯನ್ನು ಉತ್ತೇಜಿಸುವುದು</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Empowering farmers with organic farming techniques and market linkages.</span>
-                                        <span class="kn">ಸಾವಯವ ಕೃಷಿ ತಂತ್ರಗಳು ಮತ್ತು ಮಾರುಕಟ್ಟೆ ಸಂಪರ್ಕಗಳೊಂದಿಗೆ ರೈತರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 8 -->
-                            <div onclick="openDetail('news-hindu')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news8.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Hindu Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">The Hindu</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 25, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Infrastructure Growth in Hinterland</span>
-                                        <span class="kn">ಒಳನಾಡಿನಲ್ಲಿ ಮೂಲಸೌಕರ್ಯ ಬೆಳವಣಿಗೆ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Connecting remote villages to highways for better accessibility.</span>
-                                        <span class="kn">ಉತ್ತಮ ಪ್ರವೇಶಕ್ಕಾಗಿ ದೂರದ ಗ್ರಾಮಗಳನ್ನು ಹೆದ್ದಾರಿಗಳಿಗೆ ಸಂಪರ್ಕಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 9 -->
-                            <div onclick="openDetail('news-deccan')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news9.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Deccan Herald Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Deccan Herald</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 22, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Youth Empowerment Programs</span>
-                                        <span class="kn">ಯುವ ಸಬಲೀಕರಣ ಕಾರ್ಯಕ್ರಮಗಳು</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Launching skill development centers to provide better career opportunities for the youth.</span>
-                                        <span class="kn">ಯುವಕರಿಗೆ ಉತ್ತಮ ವೃತ್ತಿ ಅವಕಾಶಗಳನ್ನು ಒದಗಿಸಲು ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿ ಕೇಂದ್ರಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 10 -->
-                            <div onclick="openDetail('news-samyukta')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news10.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Samyukta Karnataka Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Samyukta Karnataka</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 20, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Environmental Conservation Drive</span>
-                                        <span class="kn">ಪರಿಸರ ಸಂರಕ್ಷಣಾ ಅಭಿಯಾನ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Initiating large-scale afforestation and waste management projects in the district.</span>
-                                        <span class="kn">ಜಿಲ್ಲೆಯಲ್ಲಿ ಬೃಹತ್ ಪ್ರಮಾಣದ ಅರಣ್ಯೀಕರಣ ಮತ್ತು ತ್ಯಾಜ್ಯ ನಿರ್ವಹಣೆ ಯೋಜನೆಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 11 -->
-                            <div onclick="openDetail('news-11')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news11.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 11">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Karavali Munjavu</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 18, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Educational Scholarship Drive</span>
-                                        <span class="kn">ಶೈಕ್ಷಣಿಕ ವಿದ್ಯಾರ್ಥಿವೇತನ ಅಭಿಯಾನ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Providing financial aid to meritorious students from underprivileged backgrounds.</span>
-                                        <span class="kn">ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಪ್ರತಿಭಾವಂತ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಆರ್ಥಿಕ ನೆರವು ನೀಡುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 12 -->
-                            <div onclick="openDetail('news-12')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news12.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 12">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Varta Bharati</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 15, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Women Empowerment Workshop</span>
-                                        <span class="kn">ಮಹಿಳಾ ಸಬಲೀಕರಣ ಕಾರ್ಯಾಗಾರ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Empowering women through vocational training and self-help group initiatives.</span>
-                                        <span class="kn">ವೃತ್ತಿಪರ ತರಬೇತಿ ಮತ್ತು ಸ್ವಸಹಾಯ ಗುಂಪು ಉಪಕ್ರಮಗಳ ಮೂಲಕ ಮಹಿಳೆಯರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 13 -->
-                            <div onclick="openDetail('news-13')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news13.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 13">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Times of India</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 12, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Digital Literacy Campaign</span>
-                                        <span class="kn">ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತಾ ಅಭಿಯಾನ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Bridging the digital divide by providing basic computer education in rural areas.</span>
-                                        <span class="kn">ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ಮೂಲಭೂತ ಕಂಪ್ಯೂಟರ್ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸುವ ಮೂಲಕ ಡಿಜಿಟಲ್ ಅಂತರವನ್ನು ಕಡಿಮೆ ಮಾಡುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 14 -->
-                            <div onclick="openDetail('news-14')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news14.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 14">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">The Hindu</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 10, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Rural Electrification Project</span>
-                                        <span class="kn">ಗ್ರಾಮೀಣ ವಿದ್ಯುದೀಕರಣ ಯೋಜನೆ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Ensuring 24/7 power supply to remote villages through solar and grid expansion.</span>
-                                        <span class="kn">ಸೌರ ಮತ್ತು ಗ್ರಿಡ್ ವಿಸ್ತರಣೆಯ ಮೂಲಕ ದೂರದ ಹಳ್ಳಿಗಳಿಗೆ 24/7 ವಿದ್ಯುತ್ ಪೂರೈಕೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 15 -->
-                            <div onclick="openDetail('news-15')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news15.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 15">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Udayavani</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 08, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Clean Water Initiative</span>
-                                        <span class="kn">ಶುದ್ಧ ನೀರಿನ ಉಪಕ್ರಮ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Installing water purification plants to provide safe drinking water to every household.</span>
-                                        <span class="kn">ಪ್ರತಿ ಮನೆಗೆ ಸುರಕ್ಷಿತ ಕುಡಿಯುವ ನೀರನ್ನು ಒದಗಿಸಲು ನೀರು ಶುದ್ಧೀಕರಣ ಘಟಕಗಳನ್ನು ಸ್ಥಾಪಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 16 -->
-                            <div onclick="openDetail('news-16')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news16.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 16">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Prajavani</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 05, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Cultural Festival Patronage</span>
-                                        <span class="kn">ಸಾಂಸ್ಕೃತಿಕ ಹಬ್ಬದ ಪ್ರೋತ್ಸಾಹ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Supporting local festivals to preserve and promote the unique traditions of Bhatkal.</span>
-                                        <span class="kn">ಭಟ್ಕಳದ ವಿಶಿಷ್ಟ ಸಂಪ್ರದಾಯಗಳನ್ನು ಸಂರಕ್ಷಿಸಲು ಮತ್ತು ಉತ್ತೇಜಿಸಲು ಸ್ಥಳೀಯ ಹಬ್ಬಗಳನ್ನು ಬೆಂಬಲಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 17 -->
-                            <div onclick="openDetail('news-17')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news17.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 17">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Vijayavani</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Feb 02, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Sports Infrastructure Development</span>
-                                        <span class="kn">ಕ್ರೀಡಾ ಮೂಲಸೌಕರ್ಯ ಅಭಿವೃದ್ಧಿ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Building modern sports complexes to encourage youth participation in athletics.</span>
-                                        <span class="kn">ಕ್ರೀಡೆಯಲ್ಲಿ ಯುವಕರ ಭಾಗವಹಿಸುವಿಕೆಯನ್ನು ಉತ್ತೇಜಿಸಲು ಆಧುನಿಕ ಕ್ರೀಡಾ ಸಂಕೀರ್ಣಗಳನ್ನು ನಿರ್ಮಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 18 -->
-                            <div onclick="openDetail('news-18')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news18.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 18">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Kannada Prabha</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Jan 30, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Senior Citizen Welfare</span>
-                                        <span class="kn">ಹಿರಿಯ ನಾಗರಿಕರ ಕಲ್ಯಾಣ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Launching health insurance and community centers for the elderly.</span>
-                                        <span class="kn">ಹಿರಿಯರಿಗಾಗಿ ಆರೋಗ್ಯ ವಿಮೆ ಮತ್ತು ಸಮುದಾಯ ಕೇಂದ್ರಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 19 -->
-                            <div onclick="openDetail('news-19')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news19.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 19">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Deccan Herald</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Jan 28, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Urban Planning Seminar</span>
-                                        <span class="kn">ನಗರ ಯೋಜನೆ ವಿಚಾರಗೋಷ್ಠಿ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Discussing sustainable urban development strategies for Bhatkal's growing population.</span>
-                                        <span class="kn">ಭಟ್ಕಳದ ಬೆಳೆಯುತ್ತಿರುವ ಜನಸಂಖ್ಯೆಗೆ ಸುಸ್ಥಿರ ನಗರ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯತಂತ್ರಗಳ ಬಗ್ಗೆ ಚರ್ಚಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Clipping 20 -->
-                            <div onclick="openDetail('news-20')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news20.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping 20">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Samyukta Karnataka</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">Jan 25, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Disaster Relief Fund</span>
-                                        <span class="kn">ವಿಪತ್ತು ಪರಿಹಾರ ನಿಧಿ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Establishing a dedicated fund to provide immediate assistance during natural calamities.</span>
-                                        <span class="kn">ನೈಸರ್ಗಿಕ ವಿಕೋಪಗಳ ಸಮಯದಲ್ಲಿ ತಕ್ಷಣದ ನೆರವು ನೀಡಲು ಮೀಸಲಾದ ನಿಧಿಯನ್ನು ಸ್ಥಾಪಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Duplicate for Seamless Loop -->
-                            <!-- Clipping 1 -->
-                            <div onclick="openDetail('news-udayavani')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news1.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Udayavani Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Udayavani</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">March 15, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Leading Social Reform in Bhatkal</span>
-                                        <span class="kn">ಭಟ್ಕಳದಲ್ಲಿ ಸಾಮಾಜಿಕ ಸುಧಾರಣೆಯ ನೇತೃತ್ವ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Mastappa Naik's vision for a progressive Bhatkal through sustainable community initiatives.</span>
-                                        <span class="kn">ಸುಸ್ಥಿರ ಸಮುದಾಯ ಉಪಕ್ರಮಗಳ ಮೂಲಕ ಪ್ರಗತಿಪರ ಭಟ್ಕಳಕ್ಕಾಗಿ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ದೃಷ್ಟಿಕೋನ.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Clipping 2 -->
-                            <div onclick="openDetail('news-prajavani')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500">
-                                <div class="h-56 overflow-hidden relative">
-                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news2.jpg" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="Prajavani Clipping">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                    <div class="absolute bottom-4 left-6">
-                                        <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Prajavani</span>
-                                    </div>
-                                </div>
-                                <div class="p-8">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <span class="text-amber-800 text-xs font-bold">March 12, 2026</span>
-                                        <div class="flex gap-1">
-                                            <div class="w-1 h-1 rounded-full bg-orange-500"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
-                                            <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
-                                        <span class="en">Support for Local Folk Artists</span>
-                                        <span class="kn">ಸ್ಥಳೀಯ ಜಾನಪದ ಕಲಾವಿದರಿಗೆ ಬೆಂಬಲ</span>
-                                    </h4>
-                                    <p class="text-amber-900 text-sm line-clamp-2 mb-4">
-                                        <span class="en">Preserving the rich cultural heritage of Uttara Kannada by empowering traditional performers.</span>
-                                        <span class="kn">ಸಾಂಪ್ರದಾಯಿಕ ಪ್ರದರ್ಶಕರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವ ಮೂಲಕ ಉತ್ತರ ಕನ್ನಡದ ಶ್ರೀಮಂತ ಸಾಂಸ್ಕೃತಿಕ ಪರಂಪರೆಯನ್ನು ಸಂರಕ್ಷಿಸುವುದು.</span>
-                                    </p>
-                                    <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
-                                        <span class="en">Click for more details</span>
-                                        <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
-                                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="animate-marquee py-8" id="news-marquee-container">
+                            <!-- Dynamically populated by JS -->
                         </div>
                     </div>
                     <!-- Gradient Overlays for Fade Effect -->
@@ -2409,9 +1731,9 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">Pioneering Change in Bhatkal</h3>
-                                <p>This detailed report by Udayavani explores the transformative social reforms initiated by Mastappa Naik in the Bhatkal region. The article highlights his hands-on approach to community development, focusing on sustainable solutions for long-standing local issues.</p>
-                                <p>Key highlights include his efforts in improving local infrastructure, promoting communal harmony, and creating self-employment opportunities for the marginalized sections of society. His leadership is described as "inclusive and forward-thinking," bridging the gap between traditional values and modern progress.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Protest Against Sharavati Project</h3>
+                                <p>A report on the conclusion of a Padayatra (protest march) in Honnavar opposing the Sharavati Pumped Storage Project and river diversion, followed by a memorandum submission to the Tahsildar.</p>
+                                <p>The protest highlighted the environmental impact of the Sharavati Pumped Storage Project and the importance of eco-friendly development in Uttara Kannada.</p>
                             </div>
                         </div>
                     `
@@ -2436,9 +1758,9 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಭಟ್ಕಳದಲ್ಲಿ ಬದಲಾವಣೆಯ ಹರಿಕಾರ</h3>
-                                <p>ಭಟ್ಕಳ ಪ್ರದೇಶದಲ್ಲಿ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಪ್ರಾರಂಭಿಸಿದ ರೂಪಾಂತರದ ಸಾಮಾಜಿಕ ಸುಧಾರಣೆಗಳನ್ನು ಉದಯವಾಣಿಯ ಈ ವಿವರವಾದ ವರದಿಯು ಅನ್ವೇಷಿಸುತ್ತದೆ. ದೀರ್ಘಕಾಲದ ಸ್ಥಳೀಯ ಸಮಸ್ಯೆಗಳಿಗೆ ಸುಸ್ಥಿರ ಪರಿಹಾರಗಳ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸುವ ಸಮುದಾಯ ಅಭಿವೃದ್ಧಿಗೆ ಅವರ ಪ್ರಾಯೋಗಿಕ ವಿಧಾನವನ್ನು ಲೇಖನವು ಎತ್ತಿ ತೋರಿಸುತ್ತದೆ.</p>
-                                <p>ಸ್ಥಳೀಯ ಮೂಲಸೌಕರ್ಯಗಳನ್ನು ಸುಧಾರಿಸುವಲ್ಲಿ ಅವರ ಪ್ರಯತ್ನಗಳು, ಕೋಮು ಸೌಹಾರ್ದತೆಯನ್ನು ಉತ್ತೇಜಿಸುವುದು ಮತ್ತು ಸಮಾಜದ ಅಂಚಿನಲ್ಲಿರುವ ವರ್ಗಗಳಿಗೆ ಸ್ವಯಂ ಉದ್ಯೋಗಾವಕಾಶಗಳನ್ನು ಸೃಷ್ಟಿಸುವುದು ಪ್ರಮುಖ ಮುಖ್ಯಾಂಶಗಳಾಗಿವೆ. ಅವರ ನಾಯಕತ್ವವನ್ನು "ಅಂತರ್ಗತ ಮತ್ತು ಮುಂದಾಲೋಚನೆಯುಳ್ಳದ್ದು" ಎಂದು ವಿವರಿಸಲಾಗಿದೆ, ಇದು ಸಾಂಪ್ರದಾಯಿಕ ಮೌಲ್ಯಗಳು ಮತ್ತು ಆಧುನಿಕ ಪ್ರಗತಿಯ ನಡುವಿನ ಅಂತರವನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಶರಾವತಿ ಯೋಜನೆಯ ವಿರುದ್ಧ ಪ್ರತಿಭಟನೆ</h3>
+                                <p>ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಯೋಜನೆ ಮತ್ತು ನದಿ ತಿರುವು ಯೋಜನೆಯನ್ನು ವಿರೋಧಿಸಿ ಹೊನ್ನಾವರದಲ್ಲಿ ನಡೆದ ಪಾದಯಾತ್ರೆಯ ಸಮಾರೋಪ ಮತ್ತು ತಹಸೀಲ್ದಾರರಿಗೆ ಮನವಿ ಸಲ್ಲಿಸಿದ ವರದಿ.</p>
+                                <p>ಈ ಯೋಜನೆಗಳು ಉತ್ತರ ಕನ್ನಡದ ಪರಿಸರಕ್ಕೆ ಹಾನಿಕಾರಕವೆಂದು ನಾಯಕರು ಮತ್ತು ಕಾರ್ಯಕರ್ತರು ವ್ಯಕ್ತಪಡಿಸಿದರು. ವಿನಾಶಕಾರಿ ಮೂಲಸೌಕರ್ಯಗಳಿಗಿಂತ ಪರಿಸರ ಸ್ನೇಹಿ ಪ್ರವಾಸೋದ್ಯಮದ ಮೂಲಕ ಜಿಲ್ಲೆಯನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸಬೇಕೆಂದು ಅವರು ಒತ್ತಿ ಹೇಳಿದರು.</p>
                             </div>
                         </div>
                     `
@@ -2465,9 +1787,9 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">Empowering Local Artists</h3>
-                                <p>Prajavani features the extensive work done by Mastappa Naik to revive and support the folk arts of Uttara Kannada. From organizing workshops for Kolata to providing financial aid to Yakshagana troupes, his initiatives are breathing new life into traditional art forms.</p>
-                                <p>The article emphasizes that cultural identity is the backbone of a community, and Naik's efforts are ensuring that the younger generation remains connected to their roots while navigating a rapidly changing world.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Attack on the Environment Will Not Be Tolerated</h3>
+                                <p>This news report covers the large-scale Padayatra (protest march) organized to oppose the Sharavati Pumped Storage Project, which traveled from Gerusoppa to the Honnavar Tahsildar's office.</p>
+                                <p>Key highlights include Masthappa Naik's criticism of administrative hurdles, reaffirmation of the movement's purpose, and Maruthi Guruji's statement that development should not come at the cost of the environment. The community sentiment strongly opposes "commission-driven" projects that threaten the regional ecosystem.</p>
                             </div>
                         </div>
                     `
@@ -2492,9 +1814,9 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಸ್ಥಳೀಯ ಕಲಾವಿದರ ಸಬಲೀಕರಣ</h3>
-                                <p>ಉತ್ತರ ಕನ್ನಡದ ಜಾನಪದ ಕಲೆಗಳನ್ನು ಪುನರುಜ್ಜೀವನಗೊಳಿಸಲು ಮತ್ತು ಬೆಂಬಲಿಸಲು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಮಾಡಿದ ವ್ಯಾಪಕ ಕೆಲಸಗಳನ್ನು ಪ್ರಜಾವಾಣಿ ವಿವರಿಸುತ್ತದೆ. ಕೋಲಾಟಕ್ಕಾಗಿ ಕಾರ್ಯಾಗಾರಗಳನ್ನು ಆಯೋಜಿಸುವುದರಿಂದ ಹಿಟ್ಟು ಯಕ್ಷಗಾನ ತಂಡಗಳಿಗೆ ಆರ್ಥಿಕ ನೆರವು ನೀಡುವವರೆಗೆ, ಅವರ ಉಪಕ್ರಮಗಳು ಸಾಂಪ್ರದಾಯಿಕ ಕಲಾ ಪ್ರಕಾರಗಳಿಗೆ ಹೊಸ ಜೀವವನ್ನು ನೀಡುತ್ತಿವೆ.</p>
-                                <p>ಸಾಂಸ್ಕೃತಿಕ ಗುರುತು ಸಮುದಾಯದ ಬೆನ್ನೆಲುಬು ಎಂದು ಲೇಖನವು ಒತ್ತಿಹೇಳುತ್ತದೆ, ಮತ್ತು ನಾಯಕ್ ಅವರ ಪ್ರಯತ್ನಗಳು ವೇಗವಾಗಿ ಬದಲಾಗುತ್ತಿರುವ ಜಗತ್ತಿನಲ್ಲಿ ಯುವ ಪೀಳಿಗೆಯು ತಮ್ಮ ಬೇರುಗಳೊಂದಿಗೆ ಸಂಪರ್ಕದಲ್ಲಿರುವುದನ್ನು ಖಚಿತಪಡಿಸುತ್ತಿವೆ.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಪರಿಸರದ ಮೇಲಿನ ದಾಳಿಯನ್ನು ಸಹಿಸಲಾಗುವುದಿಲ್ಲ</h3>
+                                <p>ಈ ವರದಿಯು ಶರಾವತಿ ಪಂಪ್ಡ್ ಸ್ಟೋರೇಜ್ ಯೋಜನೆಯನ್ನು ವಿರೋಧಿಸಿ ಗೆರುಸೊಪ್ಪದಿಂದ ಹೊನ್ನಾವರ ತಹಸೀಲ್ದಾರರ ಕಚೇರಿಯವರೆಗೆ ಆಯೋಜಿಸಲಾದ ಬೃಹತ್ ಪಾದಯಾತ್ರೆಯನ್ನು ಒಳಗೊಂಡಿದೆ.</p>
+                                <p>ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರ ಆಡಳಿತಾತ್ಮಕ ಅಡೆತಡೆಗಳ ಟೀಕೆ, ಚಳವಳಿಯ ಉದ್ದೇಶದ ಪುನರುಚ್ಚಾರ ಮತ್ತು ಪರಿಸರದ ವೆಚ್ಚದಲ್ಲಿ ಅಭಿವೃದ್ಧಿ ಬರಬಾರದು ಎಂಬ ಮಾರುತಿ ಗುರೂಜಿ ಅವರ ಹೇಳಿಕೆಗಳು ಇದರ ಪ್ರಮುಖ ಅಂಶಗಳಾಗಿವೆ. ಪ್ರಾದೇಶಿಕ ಪರಿಸರ ವ್ಯವಸ್ಥೆಗೆ ಬೆದರಿಕೆ ಹಾಕುವ "ಕಮಿಷನ್ ಆಧಾರಿತ" ಯೋಜನೆಗಳನ್ನು ಸಮುದಾಯವು ಬಲವಾಗಿ ವಿರೋಧಿಸುತ್ತದೆ.</p>
                             </div>
                         </div>
                     `
@@ -2521,9 +1843,9 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">A New Era for Uttara Kannada</h3>
-                                <p>Vijayavani highlights the emerging leadership of Mastappa Naik, focusing on his commitment to transparency and industrial growth. The article discusses his plans for bringing sustainable industries to the district while ensuring environmental protection.</p>
-                                <p>His focus on youth employment and skill development centers is seen as a game-changer for the region, aiming to stop the migration of talent to bigger cities by creating opportunities locally.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">36 KM Massive Protest March</h3>
+                                <p>This report details the 36 km massive protest march (Padayatra) in Honnavar, which demanded the cancellation of the Sharavati Pumped Storage Project and the establishment of a Multi-Specialty Hospital in the district.</p>
+                                <p>The march, led by Masthappa Naik and Maruthi Guruji, reached the Tahsildar's office, symbolizing peaceful resistance. The article highlights the dual demands for environmental protection and improved healthcare infrastructure as critical for the district's future.</p>
                             </div>
                         </div>
                     `
@@ -2558,7 +1880,7 @@
             },
             'news-kannadaprabha': {
                 en: {
-                    title: 'Kannada Prabha: Educational Revolution',
+                    title: 'Kannada Prabha: Honnavar Utsava Report',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
@@ -2577,9 +1899,9 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">Modernizing Rural Education</h3>
-                                <p>Kannada Prabha reports on the successful launch of digital literacy programs in several rural schools across Bhatkal, an initiative spearheaded by Mastappa Naik. The program provides computers, high-speed internet, and specialized training for teachers.</p>
-                                <p>Naik believes that "education is the most powerful weapon to change the world," and his focus is on ensuring that every child in Uttara Kannada has access to quality, modern education regardless of their background.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Struggle Intensifies at Honnavar Utsava</h3>
+                                <p>This article covers an event held at the St. Anthony Ground in Honnavar, organized by the Honnavar Utsava Committee. It highlights how the platform was used to both celebrate local talent and voice strong opposition to the Sharavati project.</p>
+                                <p>Key highlights include Masthappa Naik's warning that the struggle will continue if the Pumped Storage Project is not stopped, and his criticism of the government's approach. He emphasized that the Sharavati River should not be treated as a political "food source."</p>
                             </div>
                         </div>
                     `
@@ -2633,9 +1955,9 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">Fostering Independence</h3>
-                                <p>Karavali Munjavu highlights the impact of vocational training centers established by Mastappa Naik. These centers focus on tailoring, handicrafts, and small-scale food processing, enabling hundreds of women to become breadwinners for their families.</p>
-                            </div>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Recognized as a Bharat Industrial Icon</h3>
+                                <p>Karavali Munjavu celebrates the national recognition of Masthappa Naik, who was honored with the "Bharat Industrial Icon" award in Chennai. This award recognizes his innovation in the industrial field, commitment to social responsibility, and role as an inspiration to the youth.</p>
+                                <p>The article highlights that his professional success is deeply connected to his public service, as he continues to lead the struggle against the Sharavati Pumped Storage Project and the movement for a Multi-Specialty Hospital in the district.</p>
                         </div>
                     `
                 },
@@ -2668,7 +1990,7 @@
             },
             'news-varta': {
                 en: {
-                    title: 'Varta Bharati: Healthcare Access',
+                    title: 'Varta Bharati: Sharavati River Struggle',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
@@ -2687,8 +2009,9 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">Reaching the Unreached</h3>
-                                <p>Varta Bharati reports on the mobile health initiative that brings doctors and medicines to the doorstep of remote forest dwellers. This initiative has significantly improved health indicators in the region.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Politicians Appear Like Tigers Only During Elections</h3>
+                                <p>This news article details the proceedings of the third day of the Honnavar Utsava at the St. Anthony Ground. It focuses on the intersection of cultural celebration and the persistent demand for environmental justice and better healthcare.</p>
+                                <p>Key highlights include Masthappa Naik's sharp critique of the "seasonal" nature of political concern, his reiteration that the Sharavati Pumped Storage Project is a threat to local livelihoods, and the collective demand for a Multi-Specialty Hospital.</p>
                             </div>
                         </div>
                     `
@@ -2715,6 +2038,342 @@
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <h3 class="text-3xl font-black text-slate-900 mb-6">ತಲುಪದವರನ್ನು ತಲುಪುವುದು</h3>
                                 <p>ದೂರದ ಅರಣ್ಯವಾಸಿಗಳ ಮನೆ ಬಾಗಿಲಿಗೆ ವೈದ್ಯರು ಮತ್ತು ಔಷಧಿಗಳನ್ನು ತರುವ ಮೊಬೈಲ್ ಆರೋಗ್ಯ ಉಪಕ್ರಮದ ಬಗ್ಗೆ ವಾರ್ತಾ ಭಾರತಿ ವರದಿ ಮಾಡಿದೆ. ಈ ಉಪಕ್ರಮವು ಪ್ರದೇಶದ ಆರೋಗ್ಯ ಸೂಚಕಗಳನ್ನು ಗಣನೀಯವಾಗಿ ಸುಧಾರಿಸಿದೆ.</p>
+                            </div>
+                        </div>
+                    `
+                }
+            },
+            'news-7': {
+                en: {
+                    title: 'Alleged Illegal Land Transfer in Honnavar',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-7" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news7.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 7 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-7')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-7')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Alleged Illegal Land Transfer in Honnavar</h3>
+                                <p>This article covers a press meet held at the Sagar Residency in Honnavar, where Masthappa Naik presented documents to back claims of a land-related scam involving four acres of government land.</p>
+                                <p>Key highlights include the allegation that land in Survey Numbers 238 and 330, identified as government property in 1974 and 2004, was suddenly cleared for private use in early 2026 under political pressure. Naik emphasized that such land should be preserved for public purposes and vowed to challenge this "illegal" approval in court.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                kn: {
+                    title: 'ಹೊನ್ನಾವರದಲ್ಲಿ ಸರ್ಕಾರಿ ಭೂಮಿಯ ಅಕ್ರಮ ವರ್ಗಾವಣೆ ಆರೋಪ',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-7-kn" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news7.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 7 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-7-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-7-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಹೊನ್ನಾವರದಲ್ಲಿ ಸರ್ಕಾರಿ ಭೂಮಿಯ ಅಕ್ರಮ ವರ್ಗಾವಣೆ ಆರೋಪ</h3>
+                                <p>ಹೊನ್ನಾವರದ ಸಾಗರ್ ರೆಸಿಡೆನ್ಸಿಯಲ್ಲಿ ನಡೆದ ಪತ್ರಿಕಾಗೋಷ್ಠಿಯಲ್ಲಿ ಉದ್ಯಮಿ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ನಾಲ್ಕು ಎಕರೆ ಸರ್ಕಾರಿ ಭೂಮಿಯ ಅಕ್ರಮ ವರ್ಗಾವಣೆಯ ಆರೋಪದ ಕುರಿತು ದಾಖಲೆಗಳನ್ನು ಮಂಡಿಸಿದರು.</p>
+                                <p>1974 ಮತ್ತು 2004ರಲ್ಲಿ ಸರ್ಕಾರಿ ಆಸ್ತಿ ಎಂದು ಗುರುತಿಸಲ್ಪಟ್ಟಿದ್ದ ಭೂಮಿಯನ್ನು 2026ರ ಆರಂಭದಲ್ಲಿ ರಾಜಕೀಯ ಒತ್ತಡದಿಂದ ಖಾಸಗಿ ಬಳಕೆಗಾಗಿ ತೆರವುಗೊಳಿಸಲಾಗಿದೆ ಎಂದು ಅವರು ಆರೋಪಿಸಿದ್ದಾರೆ. ಈ ಅಕ್ರಮ ಅನುಮೋದನೆಯನ್ನು ನ್ಯಾಯಾಲಯದಲ್ಲಿ ಪ್ರಶ್ನಿಸುವುದಾಗಿ ಅವರು ಎಚ್ಚರಿಸಿದ್ದಾರೆ.</p>
+                            </div>
+                        </div>
+                    `
+                }
+            },
+            'news-8': {
+                en: {
+                    title: 'Land Mafia Allegations in Honnavar',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-8" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news8.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 8 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-8')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-8')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Land Mafia Allegations in Honnavar</h3>
+                                <p>Masthappa Naik Balle has exposed the illegal transfer of four acres of valuable government land to private individuals, alleging the involvement of a land mafia operating under political influence in Honnavar.</p>
+                                <p>He has called for a thorough investigation into the matter and urged the authorities to reclaim the land for public use, highlighting the need for transparency in land administration.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                kn: {
+                    title: 'ಹೊನ್ನಾವರದಲ್ಲಿ ಭೂ ಮಾಫಿಯಾ ಆರೋಪ',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-8-kn" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news8.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 8 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-8-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-8-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಹೊನ್ನಾವರದಲ್ಲಿ ಭೂ ಮಾಫಿಯಾ ಆರೋಪ</h3>
+                                <p>ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಬಲ್ಲೆ ಅವರು ರಾಜಕೀಯ ಪ್ರಭಾವದಿಂದ ನಾಲ್ಕು ಎಕರೆ ಸರ್ಕಾರಿ ಭೂಮಿಯನ್ನು ಖಾಸಗಿ ವ್ಯಕ್ತಿಗಳಿಗೆ ಅಕ್ರಮವಾಗಿ ವರ್ಗಾಯಿಸಿದ ಪ್ರಕರಣವನ್ನು ಬಯಲಿಗೆಳೆದಿದ್ದಾರೆ.</p>
+                                <p>ಈ ವಿಷಯದ ಬಗ್ಗೆ ಸಂಪೂರ್ಣ ತನಿಖೆಗೆ ಅವರು ಒತ್ತಾಯಿಸಿದ್ದಾರೆ ಮತ್ತು ಭೂ ಆಡಳಿತದಲ್ಲಿ ಪಾರದರ್ಶಕತೆಯ ಅಗತ್ಯವನ್ನು ಎತ್ತಿ ತೋರಿಸುತ್ತಾ, ಸಾರ್ವಜನಿಕ ಬಳಕೆಗಾಗಿ ಭೂಮಿಯನ್ನು ಮರುಪಡೆಯುವಂತೆ ಅಧಿಕಾರಿಗಳಿಗೆ ಆಗ್ರಹಿಸಿದ್ದಾರೆ.</p>
+                            </div>
+                        </div>
+                    `
+                }
+            },
+            'news-10': {
+                en: {
+                    title: 'Illegal Transfer of Government Land',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-10" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news10.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 10 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-10')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-10')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Illegal Transfer of Government Land</h3>
+                                <p>A report on a press conference led by Masthappa Naik, alleging the illegal transfer of four acres of government land in Honnavar. This incident highlights the ongoing concerns regarding land administration in the region.</p>
+                                <p>Naik has vowed to continue his efforts to expose such irregularities and protect government land from being misappropriated by private interests.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                kn: {
+                    title: 'ಸರ್ಕಾರಿ ಭೂಮಿಯ ಅಕ್ರಮ ವರ್ಗಾವಣೆ',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-10-kn" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news10.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 10 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-10-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-10-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಸರ್ಕಾರಿ ಭೂಮಿಯ ಅಕ್ರಮ ವರ್ಗಾವಣೆ</h3>
+                                <p>ಹೊನ್ನಾವರದಲ್ಲಿ ನಾಲ್ಕು ಎಕರೆ ಸರ್ಕಾರಿ ಭೂಮಿಯನ್ನು ಅಕ್ರಮವಾಗಿ ವರ್ಗಾಯಿಸಿದ ಆರೋಪದ ಕುರಿತು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ನೇತೃತ್ವದ ಪತ್ರಿಕಾಗೋಷ್ಠಿಯ ವರದಿ. ಈ ಘಟನೆಯು ಪ್ರದೇಶದ ಭೂ ಆಡಳಿತದ ಬಗ್ಗೆ ನಡೆಯುತ್ತಿರುವ ಕಳವಳಗಳನ್ನು ಎತ್ತಿ ತೋರಿಸುತ್ತದೆ.</p>
+                                <p>ಅಂತಹ ಅಕ್ರಮಗಳನ್ನು ಬಯಲಿಗೆಳೆಯಲು ಮತ್ತು ಖಾಸಗಿ ಹಿತಾಸಕ್ತಿಗಳಿಂದ ಸರ್ಕಾರಿ ಭೂಮಿಯನ್ನು ದುರುಪಯೋಗಪಡಿಸಿಕೊಳ್ಳದಂತೆ ರಕ್ಷಿಸಲು ತಮ್ಮ ಪ್ರಯತ್ನಗಳನ್ನು ಮುಂದುವರಿಸುವುದಾಗಿ ನಾಯ್ಕ ಪ್ರತಿಜ್ಞೆ ಮಾಡಿದ್ದಾರೆ.</p>
+                            </div>
+                        </div>
+                    `
+                }
+            },
+            'news-11': {
+                en: {
+                    title: 'Illegal Grabbing of Government Property',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-11" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news11.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 11 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-11')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-11')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Illegal Grabbing of Government Property</h3>
+                                <p>In a press conference held at a private hotel in Honnavar, Masthappa Naik Balle leveled grave accusations against influential politicians and officials regarding the illegal grabbing of government property worth ₹50 crore through "Benami" transactions.</p>
+                                <p>The controversy involves four acres of high-value government land in Prabhatnagar, Honnavar (Survey Numbers 238 and 239). Naik highlighted administrative contradictions, alleged abuse of power by politicians from the Bhatkal-Honnavar constituency, and demanded the cancellation of the order to grant the land to private individuals, vowing to fight it in court.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                kn: {
+                    title: 'ಸರ್ಕಾರಿ ಆಸ್ತಿ ಅಕ್ರಮವಾಗಿ ವಶಪಡಿಸಿಕೊಂಡ ಆರೋಪ',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-11-kn" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news11.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 11 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-11-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-11-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಸರ್ಕಾರಿ ಆಸ್ತಿ ಅಕ್ರಮವಾಗಿ ವಶಪಡಿಸಿಕೊಂಡ ಆರೋಪ</h3>
+                                <p>ಹೊನ್ನಾವರದ ಖಾಸಗಿ ಹೋಟೆಲ್‌ನಲ್ಲಿ ನಡೆದ ಪತ್ರಿಕಾಗೋಷ್ಠಿಯಲ್ಲಿ, ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಬಲ್ಲೆ ಅವರು ಪ್ರಭಾವಿ ರಾಜಕಾರಣಿಗಳು ಮತ್ತು ಅಧಿಕಾರಿಗಳ ವಿರುದ್ಧ ದಾಖಲೆಗಳ ಸಮೇತ ಗಂಭೀರ ಆರೋಪ ಮಾಡಿದರು. ವಿವಾದವು ಹೊನ್ನಾವರದ ಪ್ರಭಾತ್‌‌ನಗರದಲ್ಲಿ (ಸರ್ವೆ ನಂ. 238 ಮತ್ತು 239) ಸುಮಾರು ₹50 ಕೋಟಿ ಮೌಲ್ಯದ ನಾಲ್ಕು ಎಕರೆ ಸರ್ಕಾರಿ ಭೂಮಿಗೆ ಸಂಬಂಧಿಸಿದೆ.</p>
+                                <p>1974 ಮತ್ತು 2004 ರಲ್ಲಿ ಭೂಮಿಯನ್ನು ಸರ್ಕಾರಿ ಮಾಲೀಕತ್ವದ್ದೆಂದು ಘೋಷಿಸಿದ್ದರೂ, ಜನವರಿ 12, 2026 ರಂದು ಭೂ ನ್ಯಾಯಮಂಡಳಿಯು ನಾಲ್ಕು ಖಾಸಗಿ ವ್ಯಕ್ತಿಗಳಿಗೆ ಭೂಮಿಯನ್ನು ಮಂಜೂರು ಮಾಡಲು ಆದೇಶ ಹೊರಡಿಸಿದೆ ಎಂದು ಅವರು ಆಡಳಿತದ ವೈರುಧ್ಯವನ್ನು ಎತ್ತಿ ತೋರಿಸಿದರು. ಭಟ್ಕಳ-ಹೊನ್ನಾವರ ಕ್ಷೇತ್ರದ "ಪ್ರಭಾವಿ ರಾಜಕಾರಣಿಗಳು" ಅಕ್ರಮ ಹಂಚಿಕೆಗಾಗಿ ಅಧಿಕಾರಿಗಳಿಗೆ ಲಂಚ ನೀಡಿದ್ದಾರೆ ಅಥವಾ ಒತ್ತಡ ಹೇರಿದ್ದಾರೆ ಎಂದು ನಾಯ್ಕ ಆರೋಪಿಸಿದರು. ಆದೇಶವನ್ನು ತಕ್ಷಣವೇ ರದ್ದುಗೊಳಿಸುವಂತೆ ಮತ್ತು ಭೂಮಿಯನ್ನು ಸಾರ್ವಜನಿಕ ಬಳಕೆಗಾಗಿ ಸರ್ಕಾರಕ್ಕೆ ಹಿಂದಿರುಗಿಸಲು ನ್ಯಾಯಾಲಯದಲ್ಲಿ ಹೋರಾಡುವುದಾಗಿ ಅವರು ಹೇಳಿದರು.</p>
+                            </div>
+                        </div>
+                    `
+                }
+            },
+            'news-12': {
+                en: {
+                    title: 'Multi-Crore Land Scam Allegations',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-12" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news12.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 12 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-12')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-12')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Multi-Crore Land Scam Allegations</h3>
+                                <p>Entrepreneur Masthappa Naik Balle exposed an alleged misappropriation of public property in the Prabhatnagar area of Honnavar. The headline focuses on the illegal transfer of land under Survey Numbers 238 and 239, estimated to be worth approximately ₹50 crore.</p>
+                                <p>Naik highlighted contradictory records and alleged that an "influential politician" pressured officials for these "illegal" allocations. He pointed out the double standard of the administration and committed to a legal battle to return the land for public use.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                kn: {
+                    title: 'ಬಹು-ಕೋಟಿ ಭೂ ಹಗರಣದ ಆರೋಪ',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-12-kn" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news12.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 12 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-12-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-12-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಬಹು-ಕೋಟಿ ಭೂ ಹಗರಣದ ಆರೋಪ</h3>
+                                <p>ಹೊನ್ನಾವರದ ಪ್ರಭಾತ್‌‌ನಗರ ಪ್ರದೇಶದಲ್ಲಿ ಸಾರ್ವಜನಿಕ ಆಸ್ತಿಗಳ ದುರುಪಯೋಗದ ಆರೋಪವನ್ನು ಉದ್ಯಮಿ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಬಲ್ಲೆ ಅವರು ಬಹಿರಂಗಪಡಿಸಿದ ಮಾಧ್ಯಮಗೋಷ್ಠಿಯ ವರದಿ. ಶೀರ್ಷಿಕೆಯು ಸರ್ವೆ ನಂ. 238 ಮತ್ತು 239 ರ ಅಡಿಯಲ್ಲಿ ಸುಮಾರು ₹50 ಕೋಟಿ ಮೌಲ್ಯದ ಭೂಮಿಯ ಅಕ್ರಮ ವರ್ಗಾವಣೆಯ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸಿದೆ.</p>
+                                <p>1974 ಮತ್ತು 2004 ರ ಅಧಿಕೃತ ಆದೇಶಗಳು ಈ ಪ್ರದೇಶವನ್ನು ಸರ್ಕಾರಿ ಆಸ್ತಿ ಎಂದು ಸ್ಪಷ್ಟವಾಗಿ ಸೂಚಿಸಿದ್ದರೂ, ಜನವರಿ 12, 2026 ರಂದು ಭೂ ನ್ಯಾಯಮಂಡಳಿಯು ನಾಲ್ಕು ಖಾಸಗಿ ವ್ಯಕ್ತಿಗಳಿಗೆ ಭೂಮಿಯನ್ನು ಮಂಜೂರು ಮಾಡಲು ಆದೇಶ ನೀಡಿದೆ ಎಂದು ನಾಯ್ಕ ಅವರು ವಿರೋಧಾಭಾಸದ ದಾಖಲೆಗಳನ್ನು ಎತ್ತಿ ತೋರಿಸಿದರು. ಭಟ್ಕಳ-ಹೊನ್ನಾವರ ಕ್ಷೇತ್ರದ "ಪ್ರಭಾವಿ ರಾಜಕಾರಣಿ" ತಮ್ಮ ಸಹಚರರಿಗೆ ಈ "ಅಕ್ರಮ" ಹಂಚಿಕೆಗಳನ್ನು ಮಾಡಲು ಅಧಿಕಾರಿಗಳ ಮೇಲೆ ಒತ್ತಡ ಹೇರಿದ್ದಾರೆ ಎಂದು ವರದಿಯು ಆರೋಪಿಸಿದೆ. ಭೂಮಿಯನ್ನು ಸಾರ್ವಜನಿಕ ಬಳಕೆಗಾಗಿ ಸರ್ಕಾರಕ್ಕೆ ಹಿಂದಿರುಗಿಸಬೇಕೆಂದು ಅವರು ಒತ್ತಾಯಿಸಿದರು ಮತ್ತು ನ್ಯಾಯಮಂಡಳಿಯ ಆದೇಶವನ್ನು ನ್ಯಾಯಾಲಯದಲ್ಲಿ ಪ್ರಶ್ನಿಸುವುದಾಗಿ ಘೋಷಿಸಿದರು.</p>
+                            </div>
+                        </div>
+                    `
+                }
+            },
+            'news-13': {
+                en: {
+                    title: 'Shortage of Specialists in Bhatkal Hospital',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-13" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news13.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 13 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-13')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-13')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Shortage of Specialists in Bhatkal Hospital</h3>
+                                <p>Social activist Masthappa Naik and other activists submitted a formal memorandum to the Bhatkal Taluk Government Hospital administration, highlighting the deteriorating medical services and demanding immediate recruitment of specialist doctors.</p>
+                                <p>The report highlights a critical shortage of doctors, nurses, and technicians, forcing patients to travel for basic care. Naik criticized the "Janata Darshana" as ineffective, noted a lack of quality medicines and functioning equipment, and emphasized that the poor are most affected by the failing facility.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                kn: {
+                    title: 'ಭಟ್ಕಳ ಆಸ್ಪತ್ರೆಯಲ್ಲಿ ತಜ್ಞ ವೈದ್ಯರ ಕೊರತೆ',
+                    content: `
+                        <div class="space-y-8">
+                            <div class="relative group">
+                                <div id="carousel-news-13-kn" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/news/news13.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="News 13 Clipping">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center">
+                                    <button onclick="scrollCarousel(-1, 'carousel-news-13-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center">
+                                    <button onclick="scrollCarousel(1, 'carousel-news-13-kn')" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prose prose-xl max-w-none text-slate-600">
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಭಟ್ಕಳ ಆಸ್ಪತ್ರೆಯಲ್ಲಿ ತಜ್ಞ ವೈದ್ಯರ ಕೊರತೆ</h3>
+                                <p>ಈ ಲೇಖನವು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಮತ್ತು ಇತರ ಕಾರ್ಯಕರ್ತರು ಆಸ್ಪತ್ರೆ ಆಡಳಿತ ಮತ್ತು ಹಿರಿಯ ಅಧಿಕಾರಿಗಳಿಗೆ ಸಲ್ಲಿಸಿದ ಔಪಚಾರಿಕ ಜ್ಞಾಪನಾ ಪತ್ರವನ್ನು ವಿವರಿಸುತ್ತದೆ, ಭಟ್ಕಳದಲ್ಲಿ ಕ್ಷೀಣಿಸುತ್ತಿರುವ ವೈದ್ಯಕೀಯ ಸೇವೆಗಳನ್ನು ಎತ್ತಿ ತೋರಿಸುತ್ತದೆ. ತಜ್ಞ ವೈದ್ಯರ ಹುದ್ದೆಗಳನ್ನು ಭರ್ತಿ ಮಾಡಲು ಶೀರ್ಷಿಕೆಯು ಕರೆ ನೀಡಿದೆ.</p>
+                                <p>ವೈದ್ಯರು, ದಾದಿಯರು ಮತ್ತು ತಂತ್ರಜ್ಞರ ತೀವ್ರ ಕೊರತೆಯ ಬಗ್ಗೆ ವರದಿಯು ತಿಳಿಸುತ್ತದೆ, ಇದರಿಂದಾಗಿ ರೋಗಿಗಳು ಮೂಲಭೂತ ಆರೈಕೆಗಾಗಿ ದೂರದ ಖಾಸಗಿ ಆಸ್ಪತ್ರೆಗಳಿಗೆ ಪ್ರಯಾಣಿಸಬೇಕಾಗುತ್ತದೆ. ಆರೋಗ್ಯ ಅಗತ್ಯತೆಗಳನ್ನು ಪೂರೈಸದಿದ್ದರೆ "ಜನತಾ ದರ್ಶನ" ನಿರುಪಯುಕ್ತ ಎಂದು ನಾಯ್ಕ ಟೀಕಿಸಿದರು ಮತ್ತು ಭರ್ತಿ ಮಾಡದ ವೈದ್ಯರ ನೇಮಕಾತಿಗಳ ಬಗ್ಗೆ ಪ್ರಶ್ನಿಸಿದರು. ಗುಣಮಟ್ಟದ ಔಷಧಿಗಳು, ನೈರ್ಮಲ್ಯ ಮತ್ತು ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಉಪಕರಣಗಳ ಕೊರತೆಯನ್ನೂ ಅವರು ಗಮನಿಸಿದರು. ಬಡವರು ಹೆಚ್ಚು ಪರಿಣಾಮಕ್ಕೊಳಗಾಗಿದ್ದಾರೆ, ಅವರು ವಿಫಲವಾದ ಸೌಲಭ್ಯವನ್ನು ಅವಲಂಬಿಸಿದ್ದಾರೆ.</p>
                             </div>
                         </div>
                     `
@@ -3106,7 +2765,7 @@
             },
             'news-14': {
                 en: {
-                    title: 'The Hindu: Rural Electrification Project',
+                    title: 'Urgent Demand for Specialist Doctors in Bhatkal Hospital',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
@@ -3125,15 +2784,14 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">Lighting Up Lives</h3>
-                                <p>The Hindu reports on the successful completion of the rural electrification project in several remote hamlets. This project, supported by Mastappa Naik, uses solar micro-grids to provide reliable power to areas previously off the grid.</p>
-                                <p>Residents expressed their joy as electricity has transformed their daily lives, especially for children studying at night.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Urgent Demand for Specialist Doctors</h3>
+                                <p>Masthappa Naik has raised a strong demand for the immediate recruitment of specialist doctors at the Bhatkal Taluk Government Hospital. He highlighted the severe shortage of medical staff and the resulting hardships faced by the local population. He urged the government to take swift action to ensure quality healthcare services are available to the people of Bhatkal.</p>
                             </div>
                         </div>
                     `
                 },
                 kn: {
-                    title: 'ದಿ ಹಿಂದೂ: ಗ್ರಾಮೀಣ ವಿದ್ಯುದೀಕರಣ ಯೋಜನೆ',
+                    title: 'ಭಟ್ಕಳ ಆಸ್ಪತ್ರೆಯಲ್ಲಿ ತಜ್ಞ ವೈದ್ಯರ ತುರ್ತು ಬೇಡಿಕೆ',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
@@ -3152,9 +2810,8 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಜೀವನಗಳನ್ನು ಬೆಳಗಿಸುವುದು</h3>
-                                <p>ಹಲವಾರು ದೂರದ ಹಳ್ಳಿಗಳಲ್ಲಿ ಗ್ರಾಮೀಣ ವಿದ್ಯುದೀಕರಣ ಯೋಜನೆಯ ಯಶಸ್ವಿ ಪೂರ್ಣಗೊಂಡ ಬಗ್ಗೆ ದಿ ಹಿಂದೂ ವರದಿ ಮಾಡಿದೆ. ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಬೆಂಬಲಿತ ಈ ಯೋಜನೆಯು ಈ ಹಿಂದೆ ಗ್ರಿಡ್‌ನಿಂದ ಹೊರಗಿದ್ದ ಪ್ರದೇಶಗಳಿಗೆ ವಿದ್ಯುತ್ ಒದಗಿಸಲು ಸೌರ ಮೈಕ್ರೋ-ಗ್ರಿಡ್‌ಗಳನ್ನು ಬಳಸುತ್ತದೆ.</p>
-                                <p>ವಿದ್ಯುತ್ ತಮ್ಮ ದೈನಂದಿನ ಜೀವನವನ್ನು ಬದಲಾಯಿಸಿರುವುದರಿಂದ ನಿವಾಸಿಗಳು ತಮ್ಮ ಸಂತೋಷವನ್ನು ವ್ಯಕ್ತಪಡಿಸಿದರು, ವಿಶೇಷವಾಗಿ ರಾತ್ರಿ ಓದುವ ಮಕ್ಕಳಿಗೆ ಇದು ತುಂಬಾ ಸಹಕಾರಿಯಾಗಿದೆ.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಭಟ್ಕಳ ಆಸ್ಪತ್ರೆಯಲ್ಲಿ ತಜ್ಞ ವೈದ್ಯರ ತುರ್ತು ಬೇಡಿಕೆ</h3>
+                                <p>ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಭಟ್ಕಳ ತಾಲೂಕು ಸರ್ಕಾರಿ ಆಸ್ಪತ್ರೆಯಲ್ಲಿ ತಜ್ಞ ವೈದ್ಯರನ್ನು ತಕ್ಷಣ ನೇಮಕ ಮಾಡಬೇಕೆಂದು ಬಲವಾಗಿ ಒತ್ತಾಯಿಸಿದ್ದಾರೆ. ವೈದ್ಯಕೀಯ ಸಿಬ್ಬಂದಿಯ ತೀವ್ರ ಕೊರತೆ ಮತ್ತು ಇದರಿಂದ ಸ್ಥಳೀಯ ಜನತೆ ಎದುರಿಸುತ್ತಿರುವ ತೊಂದರೆಗಳನ್ನು ಅವರು ಎತ್ತಿ ತೋರಿಸಿದರು. ಭಟ್ಕಳದ ಜನರಿಗೆ ಗುಣಮಟ್ಟದ ಆರೋಗ್ಯ ಸೇವೆಗಳು ಲಭ್ಯವಾಗುವಂತೆ ಸರ್ಕಾರವು ತ್ವರಿತ ಕ್ರಮ ಕೈಗೊಳ್ಳಬೇಕೆಂದು ಅವರು ಆಗ್ರಹಿಸಿದರು.</p>
                             </div>
                         </div>
                     `
@@ -3162,7 +2819,7 @@
             },
             'news-15': {
                 en: {
-                    title: 'Udayavani: Clean Water Initiative',
+                    title: 'Legal Action Against Illegal Land Sanction in Honnavar',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
@@ -3181,15 +2838,14 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">Safe Drinking Water for All</h3>
-                                <p>Udayavani reports on the installation of advanced water purification plants in several villages. This initiative, led by Mastappa Naik, aims to tackle water-borne diseases by providing clean and safe drinking water.</p>
-                                <p>The project includes community-managed maintenance systems to ensure long-term sustainability.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Legal Action Against Illegal Land Sanction</h3>
+                                <p>Masthappa Naik has decided to take legal action against the illegal 'Benami' sanction of government land in Honnavar. He alleged that valuable government land has been misappropriated through fraudulent means and vowed to fight for its recovery. He emphasized that he will not tolerate such illegal activities and will pursue the matter in court to ensure justice is served.</p>
                             </div>
                         </div>
                     `
                 },
                 kn: {
-                    title: 'ಉದಯವಾಣಿ: ಶುದ್ಧ ನೀರಿನ ಉಪಕ್ರಮ',
+                    title: 'ಹೊನ್ನಾವರದಲ್ಲಿ ಅಕ್ರಮ ಭೂ ಮಂಜೂರಾತಿ ವಿರುದ್ಧ ಕಾನೂನು ಕ್ರಮ',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
@@ -3208,9 +2864,8 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಎಲ್ಲರಿಗೂ ಸುರಕ್ಷಿತ ಕುಡಿಯುವ ನೀರು</h3>
-                                <p>ಹಲವಾರು ಗ್ರಾಮಗಳಲ್ಲಿ ಸುಧಾರಿತ ನೀರು ಶುದ್ಧೀಕರಣ ಘಟಕಗಳ ಸ್ಥಾಪನೆಯ ಬಗ್ಗೆ ಉದಯವಾಣಿ ವರದಿ ಮಾಡಿದೆ. ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ನೇತೃತ್ವದ ಈ ಉಪಕ್ರಮವು ಶುದ್ಧ ಮತ್ತು ಸುರಕ್ಷಿತ ಕುಡಿಯುವ ನೀರನ್ನು ಒದಗಿಸುವ ಮೂಲಕ ನೀರಿನಿಂದ ಹರಡುವ ಕಾಯಿಲೆಗಳನ್ನು ಎದುರಿಸುವ ಗುರಿಯನ್ನು ಹೊಂದಿದೆ.</p>
-                                <p>ದೀರ್ಘಕಾಲೀನ ಸುಸ್ಥಿರತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ಯೋಜನೆಯು ಸಮುದಾಯ-ನಿರ್ವಹಣೆಯ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆಗಳನ್ನು ಒಳಗೊಂಡಿದೆ.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಹೊನ್ನಾವರದಲ್ಲಿ ಅಕ್ರಮ ಭೂ ಮಂಜೂರಾತಿ ವಿರುದ್ಧ ಕಾನೂನು ಕ್ರಮ</h3>
+                                <p>ಹೊನ್ನಾವರದಲ್ಲಿ ಸರ್ಕಾರಿ ಭೂಮಿಯ ಅಕ್ರಮ 'ಬಿನಾಮಿ' ಮಂಜೂರಾತಿ ವಿರುದ್ಧ ಕಾನೂನು ಕ್ರಮ ಕೈಗೊಳ್ಳಲು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ನಿರ್ಧರಿಸಿದ್ದಾರೆ. ಅಮೂಲ್ಯವಾದ ಸರ್ಕಾರಿ ಭೂಮಿಯನ್ನು ಮೋಸದ ಮಾರ್ಗಗಳ ಮೂಲಕ ದುರುಪಯೋಗಪಡಿಸಿಕೊಳ್ಳಲಾಗಿದೆ ಎಂದು ಅವರು ಆರೋಪಿಸಿದ್ದಾರೆ ಮತ್ತು ಅದನ್ನು ಮರಳಿ ಪಡೆಯಲು ಹೋರಾಡುವುದಾಗಿ ಪ್ರತಿಜ್ಞೆ ಮಾಡಿದ್ದಾರೆ. ಇಂತಹ ಅಕ್ರಮ ಚಟುವಟಿಕೆಗಳನ್ನು ತಾನು ಸಹಿಸುವುದಿಲ್ಲ ಮತ್ತು ನ್ಯಾಯ ಸಿಗುವಂತೆ ಮಾಡಲು ನ್ಯಾಯಾಲಯದಲ್ಲಿ ಈ ವಿಷಯವನ್ನು ಮುಂದುವರಿಸುವುದಾಗಿ ಅವರು ಒತ್ತಿ ಹೇಳಿದರು.</p>
                             </div>
                         </div>
                     `
@@ -3218,7 +2873,7 @@
             },
             'news-16': {
                 en: {
-                    title: 'Prajavani: Cultural Festival Patronage',
+                    title: 'Appeal to Police Against Ganja Sale and Cattle Theft in Bhatkal/Murdeshwar',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
@@ -3237,15 +2892,14 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">Preserving Local Heritage</h3>
-                                <p>Prajavani highlights the support provided by Mastappa Naik to local cultural festivals in Bhatkal. These festivals are vital for preserving the unique traditions and art forms of the region.</p>
-                                <p>The patronage includes financial assistance for artists and the organization of large-scale community events.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">Appeal to Police Against Ganja Sale and Cattle Theft</h3>
+                                <p>Masthappa Naik has appealed to the police authorities to take stringent action against the rising incidents of illegal Ganja sale and cattle theft in Bhatkal and Murdeshwar. He expressed concern over the impact of these criminal activities on the safety and security of the local community. He urged the police to increase patrolling and take decisive steps to curb these illegal operations.</p>
                             </div>
                         </div>
                     `
                 },
                 kn: {
-                    title: 'ಪ್ರಜಾವಾಣಿ: ಸಾಂಸ್ಕೃತಿಕ ಹಬ್ಬದ ಪ್ರೋತ್ಸಾಹ',
+                    title: 'ಭಟ್ಕಳ/ಮೂರ್ಡೇಶ್ವರದಲ್ಲಿ ಗಾಂಜಾ ಮಾರಾಟ ಮತ್ತು ಜಾನುವಾರು ಕಳ್ಳತನದ ವಿರುದ್ಧ ಪೊಲೀಸರಿಗೆ ಮನವಿ',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
@@ -3264,9 +2918,8 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಸ್ಥಳೀಯ ಪರಂಪರೆಯನ್ನು ಸಂರಕ್ಷಿಸುವುದು</h3>
-                                <p>ಭಟ್ಕಳದ ಸ್ಥಳೀಯ ಸಾಂಸ್ಕೃತಿಕ ಹಬ್ಬಗಳಿಗೆ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ನೀಡಿದ ಬೆಂಬಲವನ್ನು ಪ್ರಜಾವಾಣಿ ಎತ್ತಿ ತೋರಿಸುತ್ತದೆ. ಈ ಹಬ್ಬಗಳು ಪ್ರದೇಶದ ವಿಶಿಷ್ಟ ಸಂಪ್ರದಾಯಗಳು ಮತ್ತು ಕಲಾ ಪ್ರಕಾರಗಳನ್ನು ಸಂರಕ್ಷಿಸಲು ಪ್ರಮುಖವಾಗಿವೆ.</p>
-                                <p>ಕಲಾವಿದರಿಗೆ ಆರ್ಥಿಕ ನೆರವು ಮತ್ತು ಬೃಹತ್ ಪ್ರಮಾಣದ ಸಮುದಾಯ ಕಾರ್ಯಕ್ರಮಗಳ ಆಯೋಜನೆಯನ್ನು ಈ ಪ್ರೋತ್ಸಾಹ ಒಳಗೊಂಡಿದೆ.</p>
+                                <h3 class="text-3xl font-black text-slate-900 mb-6">ಭಟ್ಕಳ/ಮೂರ್ಡೇಶ್ವರದಲ್ಲಿ ಗಾಂಜಾ ಮಾರಾಟ ಮತ್ತು ಜಾನುವಾರು ಕಳ್ಳತನದ ವಿರುದ್ಧ ಪೊಲೀಸರಿಗೆ ಮನವಿ</h3>
+                                <p>ಭಟ್ಕಳ ಮತ್ತು ಮೂರ್ಡೇಶ್ವರದಲ್ಲಿ ಹೆಚ್ಚುತ್ತಿರುವ ಅಕ್ರಮ ಗಾಂಜಾ ಮಾರಾಟ ಮತ್ತು ಜಾನುವಾರು ಕಳ್ಳತನದ ವಿರುದ್ಧ ಕಠಿಣ ಕ್ರಮ ಕೈಗೊಳ್ಳುವಂತೆ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಪೊಲೀಸ್ ಅಧಿಕಾರಿಗಳಿಗೆ ಮನವಿ ಮಾಡಿದ್ದಾರೆ. ಈ ಕ್ರಿಮಿನಲ್ ಚಟುವಟಿಕೆಗಳು ಸ್ಥಳೀಯ ಸಮುದಾಯದ ಸುರಕ್ಷತೆ ಮತ್ತು ಭದ್ರತೆಯ ಮೇಲೆ ಬೀರುತ್ತಿರುವ ಪರಿಣಾಮದ ಬಗ್ಗೆ ಅವರು ಕಳವಳ ವ್ಯಕ್ತಪಡಿಸಿದ್ದಾರೆ. ಗಸ್ತು ಹೆಚ್ಚಿಸಲು ಮತ್ತು ಈ ಅಕ್ರಮ ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ತಡೆಯಲು ನಿರ್ಣಾಯಕ ಕ್ರಮಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುವಂತೆ ಅವರು ಪೊಲೀಸರನ್ನು ಒತ್ತಾಯಿಸಿದ್ದಾರೆ.</p>
                             </div>
                         </div>
                     `
@@ -4338,7 +3991,34 @@
         let autoSlideInterval;
 
         function openDetail(id) {
-            const content = details[id][currentLang];
+            let content;
+            if (id.startsWith('news-') && !isNaN(parseInt(id.split('-')[1]))) {
+                const newsId = parseInt(id.split('-')[1]);
+                const newsItem = typeof newsItems !== 'undefined' ? newsItems.find(item => item.id === newsId) : null;
+                if (newsItem) {
+                    content = {
+                        title: currentLang === 'en' ? newsItem.titleEn : newsItem.titleKn,
+                        content: `
+                            <div class="space-y-8">
+                                <div class="relative group">
+                                    <div class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                        <img src="${newsItem.url}" class="w-full flex-shrink-0 snap-center object-contain" alt="News Clipping">
+                                    </div>
+                                </div>
+                                <div class="prose prose-xl max-w-none text-slate-600">
+                                    <h3 class="text-3xl font-black text-slate-900 mb-6">${currentLang === 'en' ? newsItem.titleEn : newsItem.titleKn}</h3>
+                                    <div class="text-slate-600 space-y-4 whitespace-pre-wrap">${currentLang === 'en' ? newsItem.contentEn : newsItem.contentKn}</div>
+                                </div>
+                            </div>
+                        `
+                    };
+                }
+            }
+            
+            if (!content) {
+                content = details[id][currentLang];
+            }
+
             document.getElementById('detailContent').innerHTML = `
                 <h2 class="text-5xl font-black text-slate-900 mb-12">${content.title}</h2>
                 ${content.content}
@@ -4547,6 +4227,189 @@
                 });
             }
         }
+
+        // Gallery Carousel Logic
+        let galleryCurrentSlide = 0;
+        const galleryContainer = document.getElementById('gallery-carousel-container');
+        let galleryTotalSlides = 0;
+        let galleryAutoSlideInterval;
+        let galleryProgressInterval;
+        const GALLERY_AUTO_SCROLL_TIME = 5000;
+
+        function renderNewsMarquee() {
+            const container = document.getElementById('news-marquee-container');
+            if (!container || typeof newsItems === 'undefined') return;
+            
+            let html = '';
+            const itemsToRender = [...newsItems].reverse().slice(0, 16);
+            
+            const renderItem = (item) => `
+                <div onclick="openDetail('news-${item.id}')" class="w-[350px] md:w-[450px] mx-6 bg-[#FFF8DC] border border-[#DEB887] rounded-[2.5rem] overflow-hidden cursor-pointer hover:bg-[#FFF0C2] hover:shadow-2xl transition-all duration-500 group/item hover:border-orange-500 flex-shrink-0">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="${item.url}" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000 " alt="News Clipping ${item.id}">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-6">
+                            <span class="bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">${item.category || 'News'}</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-amber-800 text-xs font-bold">2026</span>
+                            <div class="flex gap-1">
+                                <div class="w-1 h-1 rounded-full bg-orange-500"></div>
+                                <div class="w-1 h-1 rounded-full bg-orange-500/50"></div>
+                                <div class="w-1 h-1 rounded-full bg-orange-500/20"></div>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-amber-950 group-hover/item:text-orange-600 transition-colors mb-3 leading-tight">
+                            <span class="en">${item.titleEn}</span>
+                            <span class="kn">${item.titleKn}</span>
+                        </h4>
+                        <p class="text-amber-900 text-sm line-clamp-2 mb-4">
+                            <span class="en">${item.shortDescEn}</span>
+                            <span class="kn">${item.shortDescKn}</span>
+                        </p>
+                        <div class="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-wider">
+                            <span class="en">Click for more details</span>
+                            <span class="kn">ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ</span>
+                            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            itemsToRender.forEach(item => {
+                html += renderItem(item);
+            });
+            
+            // Duplicate for seamless loop
+            html += html;
+            
+            container.innerHTML = html;
+        }
+
+        function initGalleryCarousel() {
+            if (!galleryContainer) return;
+            
+            // Use newsItems from news_data.js
+            const news = typeof newsItems !== 'undefined' ? newsItems : [];
+            
+            // Add personal photos
+            const personalPhotos = Array.from({length: 26}, (_, i) => ({
+                url: `https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo${i + 1}.jpg`,
+                titleEn: "Personal Journey",
+                titleKn: "ವೈಯಕ್ತಿಕ ಪ್ರಯಾಣ",
+                category: "Personal"
+            }));
+
+            // Combine and shuffle or interleave
+            const items = [];
+            const maxLen = Math.max(news.length, personalPhotos.length);
+            for (let i = 0; i < maxLen; i++) {
+                if (news[i]) items.push(news[i]);
+                if (personalPhotos[i]) items.push(personalPhotos[i]);
+            }
+
+            galleryTotalSlides = items.length;
+            
+            items.forEach((item, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'slide-3d preserve-3d';
+                slide.onclick = () => {
+                    if (index !== galleryCurrentSlide) {
+                        galleryCurrentSlide = index;
+                        updateGalleryCarousel();
+                        resetGalleryInterval();
+                    }
+                };
+                
+                slide.innerHTML = `
+                    <div class="w-full h-full bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100">
+                        <img src="${item.url}" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                    </div>
+                `;
+                galleryContainer.appendChild(slide);
+            });
+            
+            updateGalleryCarousel();
+            lucide.createIcons();
+        }
+
+        function updateGalleryCarousel() {
+            if (!galleryContainer || galleryTotalSlides === 0) return;
+            
+            const slides = galleryContainer.children;
+
+            for (let i = 0; i < slides.length; i++) {
+                const slide = slides[i];
+                let offset = i - galleryCurrentSlide;
+                
+                // Handle circular offset
+                if (offset > galleryTotalSlides / 2) offset -= galleryTotalSlides;
+                if (offset < -galleryTotalSlides / 2) offset += galleryTotalSlides;
+
+                const absOffset = Math.abs(offset);
+                
+                // 3D Transform Logic
+                let translateX = offset * 60; // Base spacing
+                let translateZ = -absOffset * 200; // Push back non-active slides
+                let rotateY = offset * -15; // Rotate side slides
+                let opacity = 1 - (absOffset * 0.3);
+                let zIndex = 100 - absOffset;
+                let scale = 1 - (absOffset * 0.1);
+
+                // Hide slides that are too far
+                if (absOffset > 2) {
+                    opacity = 0;
+                    slide.style.pointerEvents = 'none';
+                } else {
+                    slide.style.pointerEvents = 'auto';
+                }
+
+                slide.style.transform = `translateX(${translateX}%) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+                slide.style.opacity = opacity;
+                slide.style.zIndex = zIndex;
+            }
+        }
+
+        function resetGalleryInterval() {
+            clearInterval(galleryAutoSlideInterval);
+            clearInterval(galleryProgressInterval);
+            
+            const progressBar = document.getElementById('gallery-progress-bar');
+            if (progressBar) progressBar.style.width = '0%';
+            
+            let startTime = Date.now();
+            
+            galleryProgressInterval = setInterval(() => {
+                let elapsed = Date.now() - startTime;
+                let progress = (elapsed / GALLERY_AUTO_SCROLL_TIME) * 100;
+                if (progressBar) progressBar.style.width = `${Math.min(progress, 100)}%`;
+                
+                if (progress >= 100) {
+                    nextGallerySlide();
+                }
+            }, 50);
+        }
+
+        function nextGallerySlide() {
+            if (galleryTotalSlides === 0) return;
+            galleryCurrentSlide = (galleryCurrentSlide + 1) % galleryTotalSlides;
+            updateGalleryCarousel();
+            resetGalleryInterval();
+        }
+
+        function prevGallerySlide() {
+            if (galleryTotalSlides === 0) return;
+            galleryCurrentSlide = (galleryCurrentSlide - 1 + galleryTotalSlides) % galleryTotalSlides;
+            updateGalleryCarousel();
+            resetGalleryInterval();
+        }
+
+        // Initial call
+        renderNewsMarquee();
+        initGalleryCarousel();
+        resetGalleryInterval();
     </script>
 </body>
 </html>
