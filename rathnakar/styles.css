@@ -2212,7 +2212,7 @@ section[id] {
     }
 
     .nav-menu.active {
-        max-height: auto;
+        max-height: 600px;
         overscroll-behavior-y: contain;
     }
 
