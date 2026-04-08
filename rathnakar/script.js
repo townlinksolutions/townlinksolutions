@@ -56,8 +56,10 @@ class LanguageSwitcher {
             btn.addEventListener('click', (e) => this.switchLanguage(e.target.dataset.lang));
         });
         
-        // Load saved language preference
-        const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        // Load language from URL (for SEO hreflang) or session preference
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = urlLang || sessionStorage.getItem('preferredLanguage') || 'en';
         this.switchLanguage(savedLanguage);
     }
 
@@ -75,8 +77,8 @@ class LanguageSwitcher {
         // Update all translatable elements
         this.updatePageContent(language);
 
-        // Save preference
-        localStorage.setItem('preferredLanguage', language);
+        // Save preference for current session only
+        sessionStorage.setItem('preferredLanguage', language);
 
         // Emit event for other modules
         window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language } }));
