@@ -581,13 +581,17 @@
             const reason = formData.get('reason');
 
             try {
-                await fetch('/api/campaign', {
+                const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKFMwXzqRXJOrV_v2KgDpKlV2zKKgdigjXlFq7pGam21Y4fWO1vVOVqTdagRh85OjL/exec'; 
+
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, age, place, gender, phone, email, reason, category: movement })
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({ type: 'campaign', name, age, place, gender, phone, email, reason, category: movement })
                 });
             } catch (error) {
                 console.error('Failed to log join movement to sheets:', error);
+                alert(currentLang === 'en' ? "Failed to join campaign. Please try again." : "ಅಭಿಯಾನಕ್ಕೆ ಸೇರಲು ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.");
+                return;
             }
 
             document.getElementById('modal-form').classList.add('hidden');

@@ -4250,10 +4250,12 @@
             status.innerText = currentLang === 'en' ? 'Sending...' : 'ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ...';
 
             try {
-                const response = await fetch('/api/contact', {
+                const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKFMwXzqRXJOrV_v2KgDpKlV2zKKgdigjXlFq7pGam21Y4fWO1vVOVqTdagRh85OjL/exec'; 
+
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, message, source: 'Contact Form' })
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({ type: 'contact', name, email, message, source: 'Contact Form' })
                 });
 
                 const result = await response.json();
@@ -4287,14 +4289,18 @@
             const reason = formData.get('reason');
 
             try {
+                const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKFMwXzqRXJOrV_v2KgDpKlV2zKKgdigjXlFq7pGam21Y4fWO1vVOVqTdagRh85OjL/exec'; 
+
                 // Also save Join Movement to Google Sheets
-                await fetch('/api/campaign', {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, age, place, gender, phone, email, reason, category: movement })
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({ type: 'campaign', name, age, place, gender, phone, email, reason, category: movement })
                 });
             } catch (error) {
                 console.error('Failed to log join movement to sheets:', error);
+                alert(currentLang === 'en' ? "Failed to join campaign. The backend server might not be running." : "ಅಭಿಯಾನಕ್ಕೆ ಸೇರಲು ವಿಫಲವಾಗಿದೆ. ಬ್ಯಾಕೆಂಡ್ ಸರ್ವರ್ ಚಾಲನೆಯಲ್ಲಿಲ್ಲದಿರಬಹುದು.");
+                return;
             }
 
             document.getElementById('modal-content').classList.add('hidden');
