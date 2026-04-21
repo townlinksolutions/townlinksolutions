@@ -232,6 +232,63 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+
+        /* Testimonial Carousel Styles */
+        .testimonial-carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .testimonial-viewport {
+            overflow: hidden;
+            border-radius: 24px;
+        }
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            gap: 2rem;
+        }
+        .testimonial-slide {
+            flex: 0 0 100%;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        @media (min-width: 768px) {
+            .testimonial-slide {
+                flex: 0 0 calc(50% - 1rem);
+                width: calc(50% - 1rem);
+            }
+        }
+        .testimonial-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: white;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #B8860B;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .testimonial-nav:hover {
+            background: #B8860B;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+        .testimonial-prev { left: -10px; }
+        .testimonial-next { right: -10px; }
+        @media (max-width: 640px) {
+            .testimonial-carousel-container { padding: 0 10px; }
+            .testimonial-nav { display: none; }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden font-kannada" id="app-body">
@@ -286,7 +343,7 @@
     <!-- Hero -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden bg-theme-ink">
         <div class="absolute inset-0">
-            <img src="https://i.pinimg.com/736x/65/6e/55/656e55dc64b1052f62b239d138779344.jpg" alt="Catering" class="w-full h-full object-cover opacity-50 scale-105" referrerpolicy="no-referrer">
+            <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo1.jpg" alt="Catering" class="w-full h-full object-cover opacity-50 scale-105" referrerpolicy="no-referrer">
             <div class="absolute inset-0 bg-gradient-to-b from-theme-ink/80 via-theme-ink/20 to-theme-ink/90"></div>
         </div>
         <div class="relative z-10 text-center px-6 max-w-5xl mx-auto animate-fade-in">
@@ -311,7 +368,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative">
                     <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative z-10 border border-theme-accent/10">
-                        <img src="https://i.pinimg.com/736x/65/6e/55/656e55dc64b1052f62b239d138779344.jpg" alt="Our Uniformed Team" class="w-full h-full object-cover" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo2.jpg" alt="Our Uniformed Team" class="w-full h-full object-cover" referrerpolicy="no-referrer" loading="lazy" decoding="async">
                     </div>
                     <div class="absolute -bottom-8 -right-8 w-64 h-64 border-8 border-theme-accent/5 rounded-full"></div>
                 </div>
@@ -348,7 +405,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="events-grid">
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://loremflickr.com/800/600/indian,wedding,function,ai/all" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo3.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Wedding</span></div>
                     </div>
@@ -365,7 +422,7 @@
                 <!-- Engagement -->
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://loremflickr.com/800/600/indian,engagement,ai/all" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo4.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Engagement</span></div>
                     </div>
@@ -382,7 +439,7 @@
                 <!-- Baby Shower -->
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://loremflickr.com/800/600/indian,babyshower,ai/all" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo5.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Baby Shower</span></div>
                     </div>
@@ -399,7 +456,7 @@
                 <!-- Birthday -->
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://loremflickr.com/800/600/birthday,party,ai/all" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo6.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Birthdays</span></div>
                     </div>
@@ -416,7 +473,7 @@
                 <!-- Housewarming -->
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://loremflickr.com/800/600/indian,housewarming,ai/all" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo7.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Graha Pravesha</span></div>
                     </div>
@@ -433,7 +490,7 @@
                 <!-- Opening -->
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://loremflickr.com/800/600/opening,ceremony,ai/all" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo8.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Opening Ceremony</span></div>
                     </div>
@@ -450,7 +507,7 @@
                 <!-- Office -->
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://loremflickr.com/800/600/office,catering,ai/all" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo9.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Office Events</span></div>
                     </div>
@@ -467,7 +524,7 @@
                 <!-- Corporate -->
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://loremflickr.com/800/600/corporate,event,ai/all" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo10.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Corporate</span></div>
                     </div>
@@ -519,7 +576,7 @@
                 </div>
                 <div class="relative">
                     <div class="aspect-square rounded-[3rem] overflow-hidden border-4 border-theme-accent/20">
-                        <img src="https://loremflickr.com/1000/1000/women,empowerment,serving,ai/all" class="w-full h-full object-cover grayscale-0 hover:grayscale transition-all duration-700" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo11.jpg" class="w-full h-full object-cover grayscale-0 hover:grayscale transition-all duration-700" referrerpolicy="no-referrer" loading="lazy" decoding="async">
                     </div>
                     <div class="absolute -top-10 -left-10 bg-theme-accent p-10 rounded-full flex flex-col items-center justify-center shadow-2xl animate-pulse">
                         <span class="text-4xl font-black">100%</span>
@@ -604,7 +661,7 @@
                     <!-- Main Player Area -->
                     <div class="lg:col-span-7">
                         <div class="aspect-video bg-white/5 rounded-3xl overflow-hidden relative group">
-                            <img id="main-hub-video-img" src="https://loremflickr.com/1280/720/woman,serving,food,ai/all" class="w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <img id="main-hub-video-img" src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo12.jpg" class="w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" loading="lazy" referrerpolicy="no-referrer">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <button onclick="openReelsMode()" class="w-20 h-20 bg-theme-accent text-white rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
                                     <i data-lucide="play" class="w-10 h-10 fill-current"></i>
@@ -663,7 +720,7 @@
                 </div>
                 <div class="flex justify-center">
                     <div class="relative p-2 rounded-full border border-theme-accent/30 glass">
-                        <img src="https://i.pinimg.com/736x/65/6e/55/656e55dc64b1052f62b239d138779344.jpg" alt="Map" class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-4 border-theme-accent" loading="lazy" decoding="async">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo13.jpg" alt="Map" class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-4 border-theme-accent" loading="lazy" decoding="async" referrerpolicy="no-referrer">
                     </div>
                 </div>
             </div>
@@ -724,8 +781,24 @@
                 <div class="tag mb-4" data-key="nav.reviews">ಅಭಿಪ್ರಾಯಗಳು</div>
                 <h2 class="text-4xl md:text-5xl font-serif font-black text-theme-ink" data-key="reviews.title">ಗ್ರಾಹಕರ ಅನಿಸಿಕೆಗಳು</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="reviews-container">
-                <!-- Dynamic Content via JS -->
+            <div class="testimonial-carousel-container">
+                <button onclick="prevReview()" class="testimonial-nav testimonial-prev">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <button onclick="nextReview()" class="testimonial-nav testimonial-next">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+                
+                <div class="testimonial-viewport">
+                    <div id="reviews-container" class="testimonial-track">
+                        <!-- Dynamic Content via JS -->
+                    </div>
+                </div>
+
+                <!-- Dots Indicators -->
+                <div id="review-dots" class="flex justify-center gap-2 mt-8">
+                    <!-- Dots will be injected here -->
+                </div>
             </div>
         </div>
     </section>
@@ -986,39 +1059,98 @@
         }
 
         // Render functions
+        let currentReviewIndex = 0;
+        const reviewData = [
+            { name_en: "Shivappa H.", name_kn: "ಶಿವಪ್ಪ ಎಚ್.", text_en: "Excellent service! The women's team was professional and served with a heart. Best in Bhatkal.", text_kn: "ಅತ್ಯುತ್ತಮ ಸೇವೆ! ಮಹಿಳಾ ತಂಡವು ತುಂಬಾ ವೃತ್ತಿಪರವಾಗಿದೆ ಮತ್ತು ಹೃದಯದಿಂದ ಸೇವೆ ಸಲ್ಲಿಸಿದೆ.", rating: 5 },
+            { name_en: "Mamata Nayak", name_kn: "ಮಮತಾ ನಾಯಕ್", text_en: "Cleanliness and punctuality are their highlights. Every guest was impressed.", text_kn: "ಶುಚಿತ್ವ ಮತ್ತು ಸಮಯಪಾಲನೆ ಇವರ ವಿಶೇಷತೆ. ಪ್ರತಿಯೊಬ್ಬ ಅತಿಥಿಯೂ ಪ್ರಭಾವಿತರಾಗಿದ್ದರು.", rating: 5 },
+            { name_en: "Raghavendra Hegde", name_kn: "ರಾಘವೇಂದ್ರ ಹೆಗ್ಡೆ", text_en: "The taste was authentic Uttara Kannada style. Great attention to traditional norms.", text_kn: "ರುಚಿಯು ಸಂಪೂರ್ಣ ಉತ್ತರ ಕನ್ನಡದ ಶೈಲಿಯಲ್ಲಿದೆ. ಸಾಂಪ್ರದಾಯಿಕ ಪದ್ಧತಿಗಳಿಗೆ ಹೆಚ್ಚಿನ ಗಮನ ನೀಡಿದ್ದಾರೆ.", rating: 4 },
+            { name_en: "Anjali Rao", name_kn: "ಅಂಜಲಿ ರಾವ್", text_en: "They handled our engagement ceremony so well. Highly recommended for food serving.", text_kn: "ನಮ್ಮ ನಿಶ್ಚಿತಾರ್ಥದ ಕಾರ್ಯಕ್ರಮವನ್ನು ಅದ್ಭುತವಾಗಿ ನಿರ್ವಹಿಸಿದರು. ಬಡಿಸುವಿಕೆಗೆ ಇವರೇ ಸಾಟಿ.", rating: 5 },
+            { name_en: "Ganesh Bhat", name_kn: "ಗಣೇಶ್ ಭಟ್", text_en: "Professional and very clean. The team was on time and very respectful to elders.", text_kn: "ವೃತ್ತಿಪರ ಮತ್ತು ಅತ್ಯಂತ ಸ್ವಚ್ಛವಾದ ಸೇವೆ. ತಂಡ ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ಬಂದಿತ್ತು ಮತ್ತು ಹಿರಿಯರಿಗೆ ತುಂಬಾ ಗೌರವ ನೀಡಿತು.", rating: 5 },
+            { name_en: "Sudha K.", name_kn: "ಸುಧಾ ಕೆ.", text_en: "Perfect for office events. Dignified and respectful serving. Will book again.", text_kn: "ಕಚೇರಿ ಸಮಾರಂಭಗಳಿಗೆ ಸೂಕ್ತ. ಗೌರವಯುತವಾದ ಬಡಿಸುವಿಕೆ. ಮತ್ತೆ ಬುಕ್ ಮಾಡುತ್ತೇವೆ.", rating: 4 }
+        ];
+
         function renderReviews() {
             const container = document.getElementById('reviews-container');
-            const data = [
-                { name_en: "Shivappa H.", name_kn: "ಶಿವಪ್ಪ ಎಚ್.", text_en: "Excellent service! The women's team was professional.", text_kn: "ಅತ್ಯುತ್ತಮ ಸೇವೆ! ಮಹಿಳಾ ತಂಡವು ತುಂಬಾ ವೃತ್ತಿಪರವಾಗಿದೆ." },
-                { name_en: "Mamata Nayak", name_kn: "ಮಮತಾ ನಾಯಕ್", text_en: "Cleanliness and punctuality are their highlights.", text_kn: "ಶುಚಿತ್ವ ಮತ್ತು ಸಮಯಪಾಲನೆ ಇವರ ವಿಶೇಷತೆ." },
-                { name_en: "Raghavendra Hegde", name_kn: "ರಾಘವೇಂದ್ರ ಹೆಗ್ಡೆ", text_en: "The taste was authentic Uttara Kannada style.", text_kn: "ರುಚಿಯು ಸಂಪೂರ್ಣ ಉತ್ತರ ಕನ್ನಡದ ಶೈಲಿಯಲ್ಲಿದೆ." },
-                { name_en: "Anjali Rao", name_kn: "ಅಂಜಲಿ ರಾವ್", text_en: "They handled our engagement ceremony so well. Highly recommended for food serving.", text_kn: "ನಮ್ಮ ನಿಶ್ಚಿತಾರ್ಥದ ಕಾರ್ಯಕ್ರಮವನ್ನು ಅದ್ಭುತವಾಗಿ ನಿರ್ವಹಿಸಿದರು. ಬಡಿಸುವಿಕೆಗೆ ಇವರೇ ಸಾಟಿ." },
-                { name_en: "Ganesh Bhat", name_kn: "ಗಣೇಶ್ ಭಟ್", text_en: "Professional and very clean. The team was on time.", text_kn: "ವೃತ್ತಿಪರ ಮತ್ತು ಅತ್ಯಂತ ಸ್ವಚ್ಛವಾದ ಸೇವೆ. ತಂಡ ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ಬಂದಿತ್ತು." },
-                { name_en: "Sudha K.", name_kn: "ಸುಧಾ ಕೆ.", text_en: "Perfect for office events. Dignified and respectful serving.", text_kn: "ಕಚೇರಿ ಸಮಾರಂಭಗಳಿಗೆ ಸೂಕ್ತ. ಗೌರವಯುತವಾದ ಬಡಿಸುವಿಕೆ." }
-            ];
-            container.innerHTML = data.map(r => `
-                <div class="glass-card p-10 hover:-translate-y-2 transition-all duration-300">
-                    <div class="flex gap-1 mb-6 text-theme-accent">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-700 italic mb-8 font-serif leading-relaxed h-24 overflow-hidden">"${currentLang === 'en' ? r.text_en : r.text_kn}"</p>
-                    <div class="flex items-center gap-4 border-t border-theme-accent/10 pt-6">
-                        <div class="w-10 h-10 bg-theme-tag-bg text-theme-tag-text rounded-full flex items-center justify-center font-bold text-xs">
-                            ${(currentLang === 'en' ? r.name_en : r.name_kn).charAt(0)}
+            const dotsContainer = document.getElementById('review-dots');
+            
+            container.innerHTML = reviewData.map(r => `
+                <div class="testimonial-slide">
+                    <div class="glass-card p-10 h-full border border-theme-accent/5 hover:border-theme-accent/20 transition-all duration-300">
+                        <div class="flex gap-1 mb-6 text-theme-accent">
+                            ${Array.from({length: 5}).map((_, i) => `
+                                <i data-lucide="star" class="w-4 h-4 ${i < r.rating ? 'fill-current' : 'text-gray-200'}"></i>
+                            `).join('')}
                         </div>
-                        <div>
-                            <h4 class="font-bold text-theme-ink text-sm uppercase tracking-tight">${currentLang === 'en' ? r.name_en : r.name_kn}</h4>
-                            <span class="text-[10px] text-gray-400 uppercase tracking-widest leading-none">Verified Client</span>
+                        <p class="text-gray-700 italic mb-8 font-serif leading-relaxed h-32 overflow-y-auto custom-scrollbar pr-2">"${currentLang === 'en' ? r.text_en : r.text_kn}"</p>
+                        <div class="flex items-center gap-4 border-t border-theme-accent/10 pt-6">
+                            <div class="w-10 h-10 bg-theme-tag-bg text-theme-tag-text rounded-full flex items-center justify-center font-bold text-xs">
+                                ${(currentLang === 'en' ? r.name_en : r.name_kn).charAt(0)}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-theme-ink text-sm uppercase tracking-tight">${currentLang === 'en' ? r.name_en : r.name_kn}</h4>
+                                <span class="text-[10px] text-gray-400 uppercase tracking-widest leading-none">Verified Client</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             `).join('');
+
+            // Render dots
+            dotsContainer.innerHTML = reviewData.map((_, i) => `
+                <div onclick="goToReview(${i})" class="w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${i === currentReviewIndex ? 'bg-theme-accent w-6' : 'bg-gray-200'}"></div>
+            `).join('');
+
             lucide.createIcons();
+            updateCarouselPosition();
         }
+
+        function updateCarouselPosition() {
+            const container = document.getElementById('reviews-container');
+            const dots = document.querySelectorAll('#review-dots div');
+            const itemWidth = container.querySelector('.testimonial-slide').offsetWidth;
+            const gap = parseFloat(getComputedStyle(container).gap);
+            
+            // Adjust index to prevent overflow
+            const itemsPerPage = window.innerWidth >= 768 ? 2 : 1;
+            const maxIndex = reviewData.length - itemsPerPage;
+            if (currentReviewIndex > maxIndex) currentReviewIndex = maxIndex;
+            if (currentReviewIndex < 0) currentReviewIndex = 0;
+
+            const offset = (itemWidth + gap) * currentReviewIndex;
+            container.style.transform = `translateX(-${offset}px)`;
+
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.className = `w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${i === currentReviewIndex ? 'bg-theme-accent w-6' : 'bg-gray-200'}`;
+            });
+        }
+
+        function nextReview() {
+            const itemsPerPage = window.innerWidth >= 768 ? 2 : 1;
+            if (currentReviewIndex < reviewData.length - itemsPerPage) {
+                currentReviewIndex++;
+            } else {
+                currentReviewIndex = 0; // Loop back
+            }
+            updateCarouselPosition();
+        }
+
+        function prevReview() {
+            const itemsPerPage = window.innerWidth >= 768 ? 2 : 1;
+            if (currentReviewIndex > 0) {
+                currentReviewIndex--;
+            } else {
+                currentReviewIndex = reviewData.length - itemsPerPage; // Go to end
+            }
+            updateCarouselPosition();
+        }
+
+        function goToReview(index) {
+            currentReviewIndex = index;
+            updateCarouselPosition();
+        }
+
+        window.addEventListener('resize', updateCarouselPosition);
 
         function renderPlaces() {
             const list = document.getElementById('places-list');
@@ -1033,24 +1165,26 @@
         }
 
         const galleryImages = [
-            "https://i.pinimg.com/736x/65/6e/55/656e55dc64b1052f62b239d138779344.jpg",
-            "https://loremflickr.com/800/800/woman,serving,food,ai/all?lock=1",
-            "https://loremflickr.com/800/800/indian,catering,uniform,saree,ai/all?lock=2",
-            "https://i.pinimg.com/736x/65/6e/55/656e55dc64b1052f62b239d138779344.jpg",
-            "https://loremflickr.com/800/800/women,empowerment,group,ai/all?lock=3",
-            "https://loremflickr.com/800/800/indian,wedding,function,ai/all?lock=4",
-            "https://i.pinimg.com/736x/65/6e/55/656e55dc64b1052f62b239d138779344.jpg",
-            "https://loremflickr.com/800/800/catering,staff,serving,ai/all?lock=5",
-            "https://loremflickr.com/800/800/indian,party,hosting,ai/all?lock=6",
-            "https://i.pinimg.com/736x/65/6e/55/656e55dc64b1052f62b239d138779344.jpg",
-            "https://loremflickr.com/800/800/engagement,ceremony,staff,ai/all?lock=7",
-            "https://loremflickr.com/800/800/hospitality,women,uniform,ai/all?lock=8",
-            "https://i.pinimg.com/736x/65/6e/55/656e55dc64b1052f62b239d138779344.jpg",
-            "https://loremflickr.com/800/800/banquet,hall,group,ai/all?lock=9",
-            "https://loremflickr.com/800/800/food,presentation,catering,ai/all?lock=10",
-            "https://i.pinimg.com/736x/65/6e/55/656e55dc64b1052f62b239d138779344.jpg",
-            "https://loremflickr.com/800/800/event,management,women,ai/all?lock=11",
-            "https://loremflickr.com/800/800/female,empowerment,catering,ai/all?lock=12"
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo1.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo2.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo3.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo4.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo5.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo6.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo7.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo8.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo9.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo10.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo11.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo12.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo13.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo14.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo15.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo16.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo17.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo18.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo19.jpg",
+            "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo20.jpg"
         ];
 
         let visibleImagesCount = 4;
@@ -1067,7 +1201,7 @@
             const sliderImages = galleryImages.slice(0, 5);
             wrapper.innerHTML = sliderImages.map((img, i) => `
                 <div class="slide ${i === currentSlide ? 'active' : ''}">
-                    <img src="${img}" class="w-full h-full object-cover" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">
+                    <img src="${img}" class="w-full h-full object-cover" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async" referrerpolicy="no-referrer">
                 </div>
             `).join('');
             
@@ -1102,7 +1236,7 @@
             const toShow = galleryImages.slice(0, visibleImagesCount);
             grid.innerHTML = toShow.map((img, i) => `
                 <div class="aspect-square rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group animate-fade-in" style="animation-delay: ${i * 0.1}s">
-                    <img src="${img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
+                    <img src="${img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" referrerpolicy="no-referrer">
                 </div>
             `).join('');
 
@@ -1147,7 +1281,8 @@
         let activeHubSeed = 'wedding';
         function updateHubVideo(seed, title) {
             activeHubSeed = seed;
-            document.getElementById('main-hub-video-img').src = `https://picsum.photos/seed/${seed}/1280/720`;
+            const index = reelData.findIndex(r => r.seed === seed) % 20;
+            document.getElementById('main-hub-video-img').src = `https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo${index + 1}.jpg`;
             document.getElementById('main-hub-title').innerText = title;
             // Add animation feel
             const img = document.getElementById('main-hub-video-img');
@@ -1174,10 +1309,10 @@
             list.innerHTML = `
                 <h4 class="text-xs font-bold text-theme-accent uppercase tracking-widest mb-2 sticky top-0 bg-[#000]/60 backdrop-blur-sm py-2">Up Next</h4>
                 <div class="space-y-3">
-                    ${reelData.map(reel => `
+                    ${reelData.map((reel, i) => `
                         <div class="video-rec-item group cursor-pointer flex gap-4 items-center ${activeHubSeed === reel.seed ? 'bg-white/15' : 'bg-white/5 hover:bg-white/10'} p-3 rounded-2xl transition-all" onclick="updateHubVideo('${reel.seed}', '${reel.title}')">
                             <div class="w-24 h-16 rounded-xl overflow-hidden shrink-0 border border-white/5">
-                                <img src="https://picsum.photos/seed/${reel.seed}/300/200" class="w-full h-full object-cover">
+                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo${(i % 20) + 1}.jpg" class="w-full h-full object-cover" referrerpolicy="no-referrer">
                             </div>
                             <div class="flex-1">
                                 <h5 class="text-white text-[11px] font-bold leading-tight line-clamp-2">${currentLang === 'kn' ? 'ವೀಡಿಯೊ: ' + reel.title : reel.title}</h5>
@@ -1195,14 +1330,15 @@
             overlay.style.display = 'flex';
             document.body.style.overflow = 'hidden';
             
-            container.innerHTML = reelData.map(reel => `
+            container.innerHTML = reelData.map((reel, i) => `
                 <div class="reel-item" id="reel-${reel.seed}">
                     <video 
                         class="reel-video w-full h-full object-cover transition-opacity duration-1000" 
-                        poster="https://picsum.photos/seed/${reel.seed}/1080/1920"
+                        poster="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/queen/images/photo${(i % 20) + 1}.jpg"
                         loop 
                         muted 
                         playsinline
+                        referrerpolicy="no-referrer"
                         src="${reel.video}"
                     ></video>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 pointer-events-none"></div>
