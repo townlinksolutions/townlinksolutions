@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;700&display=swap');
+@import "tailwindcss";
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-kannada: "Noto Sans Kannada", sans-serif;
+  --color-solar-blue: #041221;
+  --color-solar-gold: #D96A13;
+  --color-solar-accent: #00D4FF;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-950 font-sans antialiased;
+  }
+}
+
+.glass {
+  @apply bg-white/90 backdrop-blur-xl border border-white/20;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-solar-blue via-solar-gold to-solar-accent;
+}
+
+.kannada {
+  @apply font-kannada leading-relaxed;
+}
+
+.text-navy {
+  @apply text-[#041221];
+}
+
+.section-padding {
+  @apply py-16 md:py-32 px-6;
+}
+
+.nav-link {
+  @apply text-solar-blue font-black uppercase tracking-widest text-[11px] hover:text-solar-gold transition-colors;
+}
