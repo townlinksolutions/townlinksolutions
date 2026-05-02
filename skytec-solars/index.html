@@ -1,13 +1,636 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SKYTEC SOLAR</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYTEC SOLARS - Solar Energy Solutions for Uttara Kannada</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CDN (v3 for stability in single file) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        kannada: ['Noto Sans Kannada', 'sans-serif'],
+                    },
+                    colors: {
+                        solar: {
+                            blue: '#041221',
+                            gold: '#D96A13',
+                            accent: '#00D4FF',
+                        }
+                    },
+                    boxShadow: {
+                        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+                        '4xl': '0 50px 100px -20px rgba(0, 0, 0, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .nav-link {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+            color: #041221;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 11px;
+        }
+        .nav-link:hover {
+            color: #D96A13;
+        }
+        .glass {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .kannada {
+            font-family: 'Noto Sans Kannada', sans-serif;
+            line-height: 1.625;
+        }
+        .section-padding {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+            }
+        }
+        /* Custom animations */
+        @keyframes pulse-custom {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        .animate-pulse-custom {
+            animation: pulse-custom 3s infinite ease-in-out;
+        }
+
+        .leaflet-container {
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-[100] p-4 md:p-6 translate-y-0 transition-transform duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto flex items-center justify-between glass px-8 py-3 rounded-[32px] border border-slate-100 shadow-xl">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <div class="w-10 h-10 bg-solar-gold rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <i data-lucide="sun"></i>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-xl text-solar-blue tracking-tighter leading-none">SKYTEC SOLARS</h1>
+                    <p class="text-[10px] uppercase tracking-widest text-solar-gold font-black">Proprietorship</p>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="#" class="nav-link">Home / ಮುಖಪುಟ</a>
+                <a href="#products" class="nav-link">Products / ಉತ್ಪನ್ನಗಳು</a>
+                <a href="#projects" class="nav-link">Photos / ಗ್ಯಾಲರಿ</a>
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="bg-solar-blue text-white px-8 py-3.5 rounded-[20px] font-black text-[11px] uppercase tracking-widest hover:bg-solar-gold transition-all">
+                    Contact / ಸಂಪರ್ಕಿಸಿ
+                </button>
+            </div>
+
+            <button class="lg:hidden text-solar-blue p-3" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-white p-10 hidden flex flex-col items-center justify-center gap-10 lg:hidden">
+        <button id="close-menu-btn" class="absolute top-10 right-10 p-4 bg-slate-50 rounded-3xl">
+            <i data-lucide="x" class="w-8 h-8 text-solar-blue"></i>
+        </button>
+        <div class="text-center space-y-12">
+            <a href="#" class="block text-4xl font-display font-bold text-solar-blue menu-link">Home <br> <span class="kannada text-solar-gold text-2xl">ಮುಖಪುಟ</span></a>
+            <a href="#products" class="block text-4xl font-display font-bold text-solar-blue menu-link">Products <br> <span class="kannada text-solar-gold text-2xl">ಉತ್ಪನ್ನಗಳು</span></a>
+            <a href="#projects" class="block text-4xl font-display font-bold text-solar-blue menu-link">Gallery <br> <span class="kannada text-solar-gold text-2xl">ಗ್ಯಾಲರಿ</span></a>
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); document.getElementById('close-menu-btn').click();" class="w-full bg-solar-gold text-white py-8 rounded-[40px] font-black text-lg uppercase tracking-widest">
+                Contact / ಸಂಪರ್ಕಿಸಿ
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 pb-20 bg-slate-950 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-40 contrast-125" alt="Residential Solar">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-5xl">
+                <div class="inline-flex items-center gap-3 px-6 py-2.5 bg-white/10 backdrop-blur-3xl rounded-full border border-white/10 mb-8 md:mb-12">
+                    <span class="w-2.5 h-2.5 bg-solar-gold rounded-full animate-pulse"></span>
+                    <span class="text-white text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em]">Proprietor: Rathnakar Ambig</span>
+                </div>
+                
+                <h2 class="text-6xl md:text-[130px] font-display font-bold text-white leading-[0.95] md:leading-[0.9] mb-8 md:mb-12 tracking-tighter uppercase">
+                    Skytec <br class="hidden md:block">
+                    <span class="text-solar-gold italic">Solars</span> <br class="md:hidden"> ಸೌರ ಶಕ್ತಿ
+                </h2>
+                
+                <p class="text-slate-300 text-lg md:text-2xl font-medium max-w-2xl mb-12 md:mr-16 leading-relaxed">
+                    Coastal Karnataka's Trusted Solar Partner. Convert your roof into a power plant with Sunlight Energy systems.
+                </p>
+
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-8">
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="w-full sm:w-auto bg-solar-gold text-white px-8 md:px-12 py-5 md:py-7 rounded-[24px] md:rounded-[32px] font-black text-xs md:text-sm uppercase tracking-[0.2em] shadow-2xl flex items-center justify-center gap-4 hover:scale-105 transition-all">
+                        Go Solar / ಸೌರ ಶಕ್ತಿ
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                    <div class="w-full sm:w-auto flex items-center gap-6 px-8 md:px-10 py-5 md:py-7 rounded-[24px] md:rounded-[32px] bg-white/5 border border-white/10 backdrop-blur-xl group cursor-pointer hover:bg-white/10 transition-all">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-solar-gold rounded-2xl flex items-center justify-center text-white">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div>
+                           <p class="text-white/50 text-[9px] font-black uppercase tracking-widest mb-1">Direct Line</p>
+                           <a href="tel:+918073698789" class="text-white text-xl md:text-2xl font-black font-display tracking-tight">8073 698 789</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="bg-white py-12 md:py-16 container mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 -mt-10 md:-mt-20 relative z-20">
+        <div class="bg-white p-6 md:p-10 rounded-[32px] md:rounded-[48px] shadow-xl border border-slate-50 flex flex-col items-center text-center group hover:border-solar-gold transition-all duration-500">
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-slate-50 rounded-xl md:rounded-2xl flex items-center justify-center text-solar-blue mb-4 md:mb-8 group-hover:bg-solar-blue group-hover:text-white transition-all transform group-hover:rotate-6">
+                <i data-lucide="users" class="w-6 h-6 md:w-8 md:h-8"></i>
+            </div>
+            <h4 class="text-2xl md:text-4xl font-display font-bold text-solar-blue tracking-tighter mb-1">500+</h4>
+            <p class="text-[9px] font-black uppercase tracking-[0.2em] text-solar-gold mb-2">Saved Costs</p>
+            <p class="kannada text-slate-500 font-bold text-[10px] md:text-sm leading-none">ಉಳಿತಾಯ</p>
+        </div>
+        <div class="bg-white p-6 md:p-10 rounded-[32px] md:rounded-[48px] shadow-xl border border-slate-50 flex flex-col items-center text-center group hover:border-solar-gold transition-all duration-500">
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-slate-50 rounded-xl md:rounded-2xl flex items-center justify-center text-solar-blue mb-4 md:mb-8 group-hover:bg-solar-blue group-hover:text-white transition-all transform group-hover:rotate-6">
+                <i data-lucide="zap" class="w-6 h-6 md:w-8 md:h-8"></i>
+            </div>
+            <h4 class="text-2xl md:text-4xl font-display font-bold text-solar-blue tracking-tighter mb-1">5.2 MW+</h4>
+            <p class="text-[9px] font-black uppercase tracking-[0.2em] text-solar-gold mb-2">Installations</p>
+            <p class="kannada text-slate-500 font-bold text-[10px] md:text-sm leading-none">ಅಳವಡಿಕೆ</p>
+        </div>
+        <div class="bg-white p-6 md:p-10 rounded-[32px] md:rounded-[48px] shadow-xl border border-slate-50 flex flex-col items-center text-center group hover:border-solar-gold transition-all duration-500">
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-slate-50 rounded-xl md:rounded-2xl flex items-center justify-center text-solar-blue mb-4 md:mb-8 group-hover:bg-solar-blue group-hover:text-white transition-all transform group-hover:rotate-6">
+                <i data-lucide="trophy" class="w-6 h-6 md:w-8 md:h-8"></i>
+            </div>
+            <h4 class="text-2xl md:text-4xl font-display font-bold text-solar-blue tracking-tighter mb-1">15 Yrs</h4>
+            <p class="text-[9px] font-black uppercase tracking-[0.2em] text-solar-gold mb-2">Reliability</p>
+            <p class="kannada text-slate-500 font-bold text-[10px] md:text-sm leading-none">ಸೇವೆ</p>
+        </div>
+        <div class="bg-white p-6 md:p-10 rounded-[32px] md:rounded-[48px] shadow-xl border border-slate-50 flex flex-col items-center text-center group hover:border-solar-gold transition-all duration-500">
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-slate-50 rounded-xl md:rounded-2xl flex items-center justify-center text-solar-blue mb-4 md:mb-8 group-hover:bg-solar-blue group-hover:text-white transition-all transform group-hover:rotate-6 animate-pulse-custom">
+                <i data-lucide="shield-check" class="w-6 h-6 md:w-8 md:h-8"></i>
+            </div>
+            <h4 class="text-2xl md:text-4xl font-display font-bold text-solar-blue tracking-tighter mb-1">24/7</h4>
+            <p class="text-[9px] font-black uppercase tracking-[0.2em] text-solar-gold mb-2">Support</p>
+            <p class="kannada text-slate-500 font-bold text-[10px] md:text-sm leading-none">ಬೆಂಬಲ</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section-padding bg-slate-50">
+        <div class="container mx-auto">
+            <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 md:gap-20 items-center">
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <p class="text-solar-gold font-black uppercase tracking-[0.5em] text-[10px] mb-4">Investment Predictor</p>
+                    <h2 class="text-4xl md:text-[80px] font-display font-bold text-solar-blue tracking-tighter mb-6 leading-[0.9]">Savings <br class="hidden md:block"> Calculator</h2>
+                    <p class="kannada text-solar-gold text-xl md:text-2xl font-bold mb-8">ಸೌರ ಉಳಿತಾಯ ಲೆಕ್ಕಾಚಾರ</p>
+                    <div class="flex flex-col sm:flex-row gap-6 p-6 md:p-8 bg-white rounded-[24px] md:rounded-[32px] shadow-xl border border-slate-100 items-center">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 shrink-0">
+                            <i data-lucide="trending-down"></i>
+                        </div>
+                        <div>
+                           <p class="text-slate-400 text-[9px] font-black uppercase tracking-widest mb-1">Average ROI / ಕಾಲಾವಧಿ</p>
+                           <p class="text-solar-blue text-xl md:text-2xl font-black font-display tracking-tight">3.5 - 4 Years</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 w-full">
+                    <div class="bg-white p-6 md:p-12 rounded-[40px] md:rounded-[56px] shadow-2xl border border-slate-50">
+                        <div class="space-y-8 md:space-y-10">
+                            <div class="space-y-6">
+                                <div class="flex justify-between items-end">
+                                    <div>
+                                        <p class="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Monthly Bill / ಬಿಲ್</p>
+                                        <p class="text-2xl font-bold text-solar-blue" id="bill-display">₹2,000</p>
+                                    </div>
+                                </div>
+                                <input type="range" min="500" max="20000" step="500" value="2000" id="bill-input" class="w-full h-1.5 bg-slate-100 rounded-full appearance-none cursor-pointer accent-solar-gold">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 border-t border-slate-50">
+                                <div class="p-6 bg-emerald-50 rounded-[28px] border border-emerald-100/50 text-center">
+                                    <p class="text-[9px] font-black uppercase text-emerald-600 tracking-widest mb-2 leading-tight">Monthly Savings <br> ಉಳಿತಾಯ</p>
+                                    <p class="text-2xl md:text-3xl font-display font-bold text-solar-blue" id="monthly-savings">₹1,800</p>
+                                </div>
+                                <div class="p-6 bg-solar-gold/5 rounded-[28px] border border-solar-gold/10 text-center">
+                                    <p class="text-[9px] font-black uppercase text-solar-gold tracking-widest mb-2 leading-tight">Yearly Savings <br> ವಾರ್ಷಿಕ ಉಳಿತಾಯ</p>
+                                    <p class="text-2xl md:text-3xl font-display font-bold text-solar-blue" id="yearly-savings">₹21,600</p>
+                                </div>
+                            </div>
+
+                            <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="w-full py-5 md:py-6 bg-solar-blue text-white rounded-[20px] md:rounded-[28px] font-black uppercase tracking-[0.3em] text-[10px] shadow-lg hover:bg-solar-gold transition-all">
+                                Get Subsidy Info / ಸಬ್ಸಿಡಿ ಮಾಹಿತಿ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="section-padding container mx-auto">
+        <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-12 mb-16 md:mb-24 text-center lg:text-left">
+            <div class="max-w-3xl">
+                <p class="text-solar-gold font-black uppercase tracking-[0.5em] text-[10px] mb-4">Elite Energy Partners</p>
+                <h2 class="text-4xl md:text-8xl font-display font-bold text-solar-blue tracking-tighter mb-4 md:mb-8 leading-none">Our Range <br class="hidden md:block"> ಉತ್ಪನ್ನ ಶ್ರೇಣಿ</h2>
+                <p class="text-slate-500 font-medium text-base md:text-lg leading-relaxed">
+                    We provide only certified Grade-A technology for the coastal climate of Karnataka.
+                </p>
+            </div>
+            <div class="flex gap-4">
+                 <div class="p-4 md:p-8 bg-slate-50 rounded-[28px] md:rounded-[40px] text-center border border-slate-100 flex flex-col items-center">
+                    <i data-lucide="leaf" class="text-emerald-500 w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4"></i>
+                    <span class="text-[8px] md:text-[10px] font-black uppercase tracking-widest leading-none">Eco Friendly <br> ಪರಿಸರ ಸ್ನೇಹಿ</span>
+                 </div>
+                 <div class="p-4 md:p-8 bg-slate-50 rounded-[28px] md:rounded-[40px] text-center border border-slate-100 flex flex-col items-center">
+                    <i data-lucide="trending-down" class="text-solar-gold w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4"></i>
+                    <span class="text-[8px] md:text-[10px] font-black uppercase tracking-widest leading-none">Low Cost <br> ಕಡಿಮೆ ವೆಚ್ಚ</span>
+                 </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            <!-- Product Card 1 -->
+            <div class="group bg-white rounded-[40px] md:rounded-[56px] overflow-hidden shadow-2xl border border-slate-50 flex flex-col hover:-translate-y-2 transition-all duration-500">
+                <div class="relative h-60 md:h-72 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1509391366360-feaffa602160?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" alt="On-Grid">
+                    <div class="absolute top-6 left-6 md:top-8 md:left-8 bg-white/95 px-4 py-2 rounded-full text-[9px] font-black uppercase text-solar-blue tracking-widest">Sunlight Energy</div>
+                </div>
+                <div class="p-8 md:p-10 flex-1 flex flex-col">
+                    <h3 class="text-2xl md:text-3xl font-display font-bold text-solar-blue tracking-tighter mb-1 uppercase">Solar On-Grid</h3>
+                    <p class="kannada text-solar-gold font-bold text-base md:text-lg mb-6 md:mb-8">ಸೌರ ಆನ್-ಗ್ರಿಡ್</p>
+                    <div class="space-y-3 mb-8 md:mb-10">
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 md:w-5 md:h-5 text-emerald-500 shrink-0"></i>
+                            <span class="text-slate-700 font-bold text-[11px] uppercase tracking-tight">95% Bill Savings</span>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 md:w-5 md:h-5 text-emerald-500 shrink-0"></i>
+                            <span class="text-slate-700 font-bold text-[11px] uppercase tracking-tight">Govt Subsidy Support</span>
+                        </div>
+                    </div>
+                    <button class="w-full py-4 rounded-[20px] bg-solar-blue text-white font-black uppercase tracking-[0.2em] text-[10px] shadow-xl hover:bg-solar-gold transition-all">
+                        Details / ಮಾಹಿತಿ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="group bg-white rounded-[40px] md:rounded-[56px] overflow-hidden shadow-2xl border border-slate-50 flex flex-col hover:-translate-y-2 transition-all duration-500">
+                <div class="relative h-60 md:h-72 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" alt="Hybrid">
+                    <div class="absolute top-6 left-6 md:top-8 md:left-8 bg-white/95 px-4 py-2 rounded-full text-[9px] font-black uppercase text-solar-blue tracking-widest">Sunlight Energy</div>
+                </div>
+                <div class="p-8 md:p-10 flex-1 flex flex-col">
+                    <h3 class="text-2xl md:text-3xl font-display font-bold text-solar-blue tracking-tighter mb-1 uppercase">Solar Hybrid</h3>
+                    <p class="kannada text-solar-gold font-bold text-base md:text-lg mb-6 md:mb-8">ಹೈಬ್ರಿಡ್ ಸೌರ</p>
+                    <div class="space-y-3 mb-8 md:mb-10">
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 md:w-5 md:h-5 text-emerald-500 shrink-0"></i>
+                            <span class="text-slate-700 font-bold text-[11px] uppercase tracking-tight">24/7 Power Backup</span>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 md:w-5 md:h-5 text-emerald-500 shrink-0"></i>
+                            <span class="text-slate-700 font-bold text-[11px] uppercase tracking-tight">Lithium Storage</span>
+                        </div>
+                    </div>
+                    <button class="w-full py-4 rounded-[20px] bg-solar-blue text-white font-black uppercase tracking-[0.2em] text-[10px] shadow-xl hover:bg-solar-gold transition-all">
+                        Details / ಮಾಹಿತಿ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="group bg-white rounded-[40px] md:rounded-[56px] overflow-hidden shadow-2xl border border-slate-50 flex flex-col hover:-translate-y-2 transition-all duration-500">
+                <div class="relative h-60 md:h-72 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" alt="Heat Pump">
+                    <div class="absolute top-6 left-6 md:top-8 md:left-8 bg-white/95 px-4 py-2 rounded-full text-[9px] font-black uppercase text-solar-blue tracking-widest">V-Guard Partner</div>
+                </div>
+                <div class="p-8 md:p-10 flex-1 flex flex-col">
+                    <h3 class="text-2xl md:text-3xl font-display font-bold text-solar-blue tracking-tighter mb-1 uppercase">Heat Pumps</h3>
+                    <p class="kannada text-solar-gold font-bold text-base md:text-lg mb-6 md:mb-8">ಹೀಟ್ ಪಂಪ್</p>
+                    <div class="space-y-3 mb-8 md:mb-10">
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 md:w-5 md:h-5 text-emerald-500 shrink-0"></i>
+                            <span class="text-slate-700 font-bold text-[11px] uppercase tracking-tight">75% Less Wattage</span>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 md:w-5 md:h-5 text-emerald-500 shrink-0"></i>
+                            <span class="text-slate-700 font-bold text-[11px] uppercase tracking-tight">Digital Control</span>
+                        </div>
+                    </div>
+                    <button class="w-full py-4 rounded-[20px] bg-solar-blue text-white font-black uppercase tracking-[0.2em] text-[10px] shadow-xl hover:bg-solar-gold transition-all">
+                        Details / ಮಾಹಿತಿ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP Section -->
+    <section class="section-padding overflow-hidden">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row gap-20 items-center">
+                <div class="lg:w-1/2">
+                    <p class="text-solar-gold font-black uppercase tracking-[0.5em] text-[10px] mb-4">Why Choose Us</p>
+                    <h2 class="text-5xl md:text-8xl font-display font-bold text-solar-blue tracking-tighter mb-6 leading-none">The Skytec <br> Standard</h2>
+                    <p class="kannada text-solar-gold text-2xl font-bold mb-10">ನಮ್ಮ ಗುಣಮಟ್ಟದ ಭರವಸೆ</p>
+                </div>
+                <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+                    <div class="p-8 md:p-10 bg-slate-50 rounded-[32px] md:rounded-[40px] border border-slate-100 group transition-all hover:-translate-y-2">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl flex items-center justify-center text-solar-blue mb-6 md:mb-8 shadow-md group-hover:bg-solar-gold group-hover:text-white transition-all">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h4 class="text-xl md:text-2xl font-display font-bold text-solar-blue mb-1 uppercase tracking-tight">Coast-Specific</h4>
+                        <p class="kannada text-solar-gold font-bold text-sm mb-4">ಪ್ರಾಂತೀಯ ಪರಿಣತಿ</p>
+                        <p class="text-slate-500 text-[11px] md:text-xs font-medium">Expert design for heavy winds & salt-air of the coast.</p>
+                    </div>
+                    <div class="p-8 md:p-10 bg-slate-50 rounded-[32px] md:rounded-[40px] border border-slate-100 group transition-all hover:-translate-y-2">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl flex items-center justify-center text-solar-blue mb-6 md:mb-8 shadow-md group-hover:bg-solar-gold group-hover:text-white transition-all">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <h4 class="text-xl md:text-2xl font-display font-bold text-solar-blue mb-1 uppercase tracking-tight">Grade-A Gear</h4>
+                        <p class="kannada text-solar-gold font-bold text-sm mb-4">ಉತ್ತಮ ಪರಿಕರಗಳು</p>
+                        <p class="text-slate-500 text-[11px] md:text-xs font-medium">Using only premium, certified solar hardware.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rural Benefits -->
+    <section class="section-padding bg-slate-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-24">
+                <p class="text-solar-gold font-black uppercase tracking-[0.5em] text-[10px] mb-4">Why Go Solar Today</p>
+                <h2 class="text-5xl md:text-8xl font-display font-bold text-solar-blue tracking-tighter mb-4 leading-none uppercase">ಸೌರ ಶಕ್ತಿಯ ಲಾಭಗಳು</h2>
+                <p class="text-slate-500 font-bold text-xl uppercase tracking-widest">Simple Solar. Big Benefits for Your Family.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-12 rounded-[56px] shadow-xl border border-slate-100 flex flex-col items-center text-center group hover:bg-solar-blue transition-all duration-500">
+                    <div class="w-20 h-20 bg-slate-50 rounded-[24px] flex items-center justify-center text-solar-gold mb-8 group-hover:bg-white/10 group-hover:text-white transition-all">
+                        <i data-lucide="trending-down" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-solar-blue mb-2 group-hover:text-white uppercase">Zero Bill</h4>
+                    <p class="kannada text-solar-gold font-bold text-lg mb-6 group-hover:text-white/80">ಕರೆಂಟ್ ಬಿಲ್ ಇಲ್ಲ</p>
+                    <p class="text-slate-500 font-medium text-sm group-hover:text-slate-300">Don't pay HESCOM anymore. Save money for your family.</p>
+                </div>
+                <div class="bg-white p-12 rounded-[56px] shadow-xl border border-slate-100 flex flex-col items-center text-center group hover:bg-solar-blue transition-all duration-500">
+                    <div class="w-20 h-20 bg-slate-50 rounded-[24px] flex items-center justify-center text-solar-gold mb-8 group-hover:bg-white/10 group-hover:text-white transition-all">
+                        <i data-lucide="zap" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-solar-blue mb-2 group-hover:text-white uppercase">Power Backup</h4>
+                    <p class="kannada text-solar-gold font-bold text-lg mb-6 group-hover:text-white/80">ಮಳೆಯಲ್ಲಿಯೂ ಬೆಳಕು</p>
+                    <p class="text-slate-500 font-medium text-sm group-hover:text-slate-300">Lights stay ON even during heavy coastal monsoons.</p>
+                </div>
+                <div class="bg-white p-12 rounded-[56px] shadow-xl border border-slate-100 flex flex-col items-center text-center group hover:bg-solar-blue transition-all duration-500">
+                    <div class="w-20 h-20 bg-slate-50 rounded-[24px] flex items-center justify-center text-solar-gold mb-8 group-hover:bg-white/10 group-hover:text-white transition-all">
+                        <i data-lucide="leaf" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-solar-blue mb-2 group-hover:text-white uppercase">Clean Energy</h4>
+                    <p class="kannada text-solar-gold font-bold text-lg mb-6 group-hover:text-white/80">ಶುದ್ಧ ಗಾಳಿ</p>
+                    <p class="text-slate-500 font-medium text-sm group-hover:text-slate-300">Safe, smoke-free energy for your home and health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Hub -->
+    <section class="section-padding bg-solar-blue relative overflow-hidden">
+        <div class="container mx-auto relative z-10 px-4">
+            <div class="grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
+                <div>
+                   <h2 class="text-4xl md:text-8xl font-display font-bold text-white tracking-tighter mb-8 md:mb-12 uppercase leading-none text-center lg:text-left">Local Service <br> Hub</h2>
+                   <div id="map" class="w-full h-[300px] md:h-[400px] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl border-4 border-white mb-12"></div>
+                </div>
+
+                <div class="bg-white rounded-[40px] md:rounded-[72px] p-6 md:p-20 shadow-2xl">
+                    <h3 class="text-2xl md:text-4xl font-display font-bold text-solar-blue mb-2 md:mb-4 tracking-tighter leading-none text-center lg:text-left uppercase">Service Areas</h3>
+                    <p class="kannada text-solar-gold font-bold text-lg md:text-2xl mb-8 md:mb-12 italic text-center lg:text-left">ನಿಮ್ಮೂರಿನಲ್ಲಿ ನಮ್ಮ ಸೇವೆ ಸಿದ್ದವಿದೆ</p>
+                    
+                    <div class="grid grid-cols-2 gap-3 md:gap-4 mb-8 md:mb-12">
+                        <div class="p-4 md:p-6 bg-slate-50 rounded-xl md:rounded-2xl border border-slate-100 flex items-center gap-3 md:gap-4 group hover:border-solar-gold transition-colors">
+                            <i data-lucide="map-pin" class="text-solar-gold w-4 h-4 md:w-5 md:h-5"></i>
+                            <div><p class="text-solar-blue font-bold text-xs md:text-base">Honavara</p><p class="kannada text-[8px] md:text-[10px] text-slate-400">ಹೊನ್ನಾವರ</p></div>
+                        </div>
+                        <div class="p-4 md:p-6 bg-slate-50 rounded-xl md:rounded-2xl border border-slate-100 flex items-center gap-3 md:gap-4 group hover:border-solar-gold transition-colors">
+                            <i data-lucide="map-pin" class="text-solar-gold w-4 h-4 md:w-5 md:h-5"></i>
+                            <div><p class="text-solar-blue font-bold text-xs md:text-base">Kumta</p><p class="kannada text-[8px] md:text-[10px] text-slate-400">ಕುಮಟಾ</p></div>
+                        </div>
+                        <div class="p-4 md:p-6 bg-slate-50 rounded-xl md:rounded-2xl border border-slate-100 flex items-center gap-3 md:gap-4 group hover:border-solar-gold transition-colors">
+                            <i data-lucide="map-pin" class="text-solar-gold w-4 h-4 md:w-5 md:h-5"></i>
+                            <div><p class="text-solar-blue font-bold text-xs md:text-base">Bhatkal</p><p class="kannada text-[8px] md:text-[10px] text-slate-400">ಭಟ್ಕಳ</p></div>
+                        </div>
+                        <div class="p-4 md:p-6 bg-slate-50 rounded-xl md:rounded-2xl border border-slate-100 flex items-center gap-3 md:gap-4 group hover:border-solar-gold transition-colors">
+                            <i data-lucide="map-pin" class="text-solar-gold w-4 h-4 md:w-5 md:h-5"></i>
+                            <div><p class="text-solar-blue font-bold text-xs md:text-base">Karwar</p><p class="kannada text-[8px] md:text-[10px] text-slate-400">ಕಾರವಾರ</p></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6 md:gap-8 p-6 md:p-10 bg-solar-blue text-white rounded-[32px] md:rounded-[40px] shadow-xl group cursor-pointer hover:bg-solar-gold transition-all duration-500">
+                            <i data-lucide="phone" class="w-8 h-8 md:w-10 md:h-10 text-white group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <p class="text-[8px] md:text-[10px] uppercase tracking-widest text-white/50 mb-1">Direct Sales</p>
+                                <a href="tel:+918073698789" class="text-xl md:text-3xl font-display font-bold block">8073 698 789</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos/Gallery (Simplified) -->
+    <section id="projects" class="section-padding bg-slate-50 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 md:mb-24">
+                <h2 class="text-4xl md:text-8xl font-display font-bold text-solar-blue tracking-tighter mb-4 uppercase">ನಮ್ಮ ಗ್ಯಾಲರಿ</h2>
+                <p class="text-slate-500 font-bold text-lg md:text-xl uppercase tracking-widest leading-tight">Recent Installations / ಗ್ಯಾಲರಿ</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="h-[350px] md:h-[500px] rounded-[40px] md:rounded-[56px] overflow-hidden shadow-2xl relative group">
+                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Gallery 1">
+                    <div class="absolute inset-x-0 bottom-0 p-6 md:p-10 bg-gradient-to-t from-black via-black/40 to-transparent">
+                        <h4 class="text-white text-2xl md:text-3xl font-display font-bold uppercase">Coastal Commercial</h4>
+                        <p class="kannada text-solar-gold font-bold">ವಾಣಿಜ್ಯ ಸೌರ ಘಟಕ</p>
+                    </div>
+                </div>
+                <div class="h-[350px] md:h-[500px] rounded-[40px] md:rounded-[56px] overflow-hidden shadow-2xl relative group">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Gallery 2">
+                    <div class="absolute inset-x-0 bottom-0 p-6 md:p-10 bg-gradient-to-t from-black via-black/40 to-transparent">
+                        <h4 class="text-white text-2xl md:text-3xl font-display font-bold uppercase">Residential Rooftop</h4>
+                        <p class="kannada text-solar-gold font-bold">ಮನೆಯ ಸೌರ ವ್ಯವಸ್ಥೆ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="contact" class="section-padding container mx-auto px-4">
+        <div class="max-w-4xl mx-auto p-8 md:p-24 bg-white rounded-[40px] md:rounded-[80px] border border-slate-100 shadow-4xl text-center">
+            <h2 class="text-4xl md:text-8xl font-display font-bold text-solar-blue tracking-tighter mb-4 leading-none uppercase">ಸಂಪರ್ಕಿಸಿ</h2>
+            <p class="text-slate-500 font-bold text-base md:text-xl uppercase tracking-widest mb-10 md:mb-16 underline decoration-solar-gold decoration-2 md:decoration-4 underline-offset-8">Book your site survey today.</p>
+            
+            <form id="contact-form" class="space-y-6 md:space-y-8">
+                <div class="grid md:grid-cols-2 gap-4 md:gap-8">
+                    <input type="text" placeholder="ನಿಮ್ಮ ಹೆಸರು / Name" class="w-full bg-slate-50 rounded-[20px] md:rounded-[28px] px-6 md:px-8 py-5 md:py-6 focus:ring-4 focus:ring-solar-gold/20 outline-none font-bold text-base md:text-lg" required>
+                    <input type="tel" placeholder="ಫೋನ್ ಸಂಖ್ಯೆ / Phone" class="w-full bg-slate-50 rounded-[20px] md:rounded-[28px] px-6 md:px-8 py-5 md:py-6 focus:ring-4 focus:ring-solar-gold/20 outline-none font-bold text-base md:text-lg" required>
+                </div>
+                <input type="text" placeholder="ಸ್ಥಳ / Place" class="w-full bg-slate-50 rounded-[20px] md:rounded-[28px] px-6 md:px-8 py-5 md:py-6 focus:ring-4 focus:ring-solar-gold/20 outline-none font-bold text-base md:text-lg" required>
+                <button type="submit" class="w-full bg-solar-blue text-white py-6 md:py-10 rounded-[24px] md:rounded-[36px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-xs md:text-sm shadow-2xl hover:bg-solar-gold transition-all duration-500">
+                    Submit Inquiry / ಮಾಹಿತಿ ಕಳುಹಿಸಿ
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-32 text-slate-500 relative">
+        <div class="absolute top-0 left-0 w-full h-1.5 bg-solar-gold"></div>
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-20 mb-20">
+                <div class="max-w-sm">
+                    <div class="flex items-center gap-4 mb-10 text-white">
+                        <i data-lucide="sun" class="w-10 h-10 text-solar-gold"></i>
+                        <h3 class="font-display font-bold text-3xl tracking-tighter uppercase leading-none">SKYTEC SOLARS</h3>
+                    </div>
+                    <p class="text-lg font-bold italic text-slate-400">"Quality power for every home and business on the coast."</p>
+                </div>
+                
+                <div class="flex gap-24">
+                    <div>
+                        <h5 class="text-white font-black uppercase text-[10px] tracking-[0.5em] mb-10">Areas</h5>
+                        <ul class="space-y-4 text-xs font-bold uppercase tracking-widest">
+                            <li>Honavara</li>
+                            <li>Kumta</li>
+                            <li>Karwar</li>
+                            <li>Bhatkal</li>
+                            <li>Ankola</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-black uppercase text-[10px] tracking-[0.5em] mb-10">Contact</h5>
+                        <p class="text-sm font-bold text-slate-300">8073 698 789</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-20 border-t border-white/5 text-[10px] font-black uppercase tracking-[0.8em] text-center">
+                © 2024 SKYTEC SOLARS. POWERED BY RATHNAKAR AMBIG & TEAM.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('-translate-y-2');
+            } else {
+                nav.classList.remove('-translate-y-2');
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.onclick = () => mobileMenu.classList.remove('hidden');
+        closeMenuBtn.onclick = () => mobileMenu.classList.add('hidden');
+
+        // Calculator Logic
+        const billInput = document.getElementById('bill-input');
+        const billDisplay = document.getElementById('bill-display');
+        const monthlySavings = document.getElementById('monthly-savings');
+        const yearlySavings = document.getElementById('yearly-savings');
+
+        billInput.oninput = (e) => {
+            const val = parseInt(e.target.value);
+            billDisplay.innerText = '₹' + val.toLocaleString();
+            const monthly = Math.round(val * 0.9);
+            const yearly = monthly * 12;
+            monthlySavings.innerText = '₹' + monthly.toLocaleString();
+            yearlySavings.innerText = '₹' + yearly.toLocaleString();
+        }
+
+        // Form Submit
+        document.getElementById('contact-form').onsubmit = (e) => {
+            e.preventDefault();
+            alert('Your inquiry was sent! Rathnakar & team will contact you soon. \nನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ಸ್ವೀಕರಿಸಿದ್ದೇವೆ!');
+            e.target.reset();
+        };
+
+        // Map Initialization
+        const map = L.map('map', { scrollWheelZoom: false }).setView([14.42, 74.41], 9);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(map);
+        
+        const spots = [
+            { name: 'Kumta', coords: [14.42, 74.41] },
+            { name: 'Honavara', coords: [14.28, 74.44] },
+            { name: 'Karwar', coords: [14.82, 74.13] },
+            { name: 'Bhatkal', coords: [13.97, 74.55] },
+            { name: 'Ankola', coords: [14.66, 74.30] }
+        ];
+
+        spots.forEach(s => {
+            L.marker(s.coords).addTo(map).bindPopup(`<b class="font-display">${s.name}</b><br>Skytec Service Hub`);
+        });
+    </script>
+</body>
+</html>
