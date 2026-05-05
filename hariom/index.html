@@ -3,8 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hari Om | ಹರಿ ಓಂ</title>
-    <meta name="description" content="High-quality, hygienic catering service in Uttara Kannada and Udupi. Specializing in weddings, corporate events, and traditional occasions.">
+    <title>Hari Om Catering Bhatkal | 15+ Years of Professional Food Serving</title>
+    <meta name="description" content="Hari Om Catering Bhatkal: 15+ years of excellence in catering and food serving services across Uttara Kannada and Udupi. Professional women-led team specializing in hygienic food serving for weddings, engagements, and corporate events. Best catering service in Bhatkal.">
+    <meta name="keywords" content="15 years experience catering, Catering services Bhatkal, Women caterers Bhatkal, Catering Bhatkal, Best food serving team Bhatkal, Wedding caterers Uttara Kannada, Hygienic catering Udupi, Traditional food serving Karnataka">
+    
+    <!-- Structured Data (JSON-LD) for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CateringService",
+      "name": "Hari Om Catering Services Bhatkal",
+      "logo": "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/real/photo1.jpg",
+      "image": "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo1.jpg",
+      "description": "Professional women-led food serving and catering team in Bhatkal, specializing in weddings and traditional events. Serving hygienic and tasty food for all religious and family functions.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Main Road",
+        "addressLocality": "Bhatkal",
+        "addressRegion": "Karnataka",
+        "postalCode": "581320",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "13.9787",
+        "longitude": "74.5502"
+      },
+      "url": "https://ais-dev-5dal3cxmrhhddwquozsdau-570824106419.asia-southeast1.run.app",
+      "telephone": "+91-8310832577",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-8310832577",
+        "contactType": "Customer Service",
+        "availableLanguage": ["Kannada", "English", "Hindi"]
+      },
+      "areaServed": ["Bhatkal", "Honnavar", "Murudeshwar", "Kumta", "Kundapura", "Udupi", "Karwar", "Uttara Kannada"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Catering & Serving Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wedding Catering",
+              "description": "Complete food catering and serving solution for weddings with traditional touch."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Engagement Party Catering",
+              "description": "High-quality food serving for engagement ceremonies."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Corporate Event Meals",
+              "description": "Hygienic and professional catering for corporate gatherings."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Religious Functions",
+              "description": "Specialized food serving for housewarming, puja and religious events."
+            }
+          }
+        ]
+      },
+      "dietaryCanAccommodate": ["Vegetarian", "Non-Vegetarian", "Jain Food"],
+      "priceRange": "$$",
+      "openingHours": "Mo-Su 08:00-22:00"
+    }
+    </script>
     
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,12 +100,14 @@
                     colors: {
                         'theme-bg': '#FDFCFB',
                         'theme-ink': '#2D241E',
-                        'theme-accent': '#B8860B',
-                        'theme-tag-bg': '#F3EFE0',
-                        'theme-tag-text': '#8B6914',
-                        'royal-maroon': '#2D241E', /* Mapping existing classes to theme */
-                        'royal-gold': '#B8860B',
-                        'royal-pink': '#8B6914',
+                        'theme-accent': '#EAB308',
+                        'theme-yellow': '#FACC15',
+                        'theme-yellow-soft': '#FEF9C3',
+                        'theme-tag-bg': '#FEF08A',
+                        'theme-tag-text': '#854D0E',
+                        'royal-maroon': '#2D241E',
+                        'royal-gold': '#EAB308',
+                        'royal-pink': '#A16207',
                     },
                     fontFamily: {
                         sans: ["Helvetica Neue", "Arial", "sans-serif"],
@@ -65,9 +143,9 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            background: #F3EFE0;
-            color: #8B6914;
-            border: 1px solid rgba(139, 105, 20, 0.1);
+            background: #FEF08A;
+            color: #854D0E;
+            border: 1px solid rgba(234, 179, 8, 0.4);
             display: inline-block;
         }
         .accent-text { color: #B8860B; }
@@ -296,8 +374,8 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i data-lucide="crown" class="w-8 h-8 text-royal-gold" id="nav-logo-icon"></i>
+            <div class="flex items-center gap-3">
+                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/real/photo1.jpg" alt="Hari Om Logo" class="w-10 h-10 rounded-full object-cover border border-white/20 shadow-lg" id="nav-logo-icon">
                 <span class="font-serif font-bold text-xl tracking-tight text-white transition-colors" id="nav-logo-text">
                     Hari Om
                 </span>
@@ -308,8 +386,6 @@
                 <a href="#about" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.about">ನಮ್ಮ ಬಗ್ಗೆ</a>
                 <a href="#events" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.events">ಸಂಭ್ರಮಗಳು</a>
                 <a href="#process" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.process">ವಿಧಾನ</a>
-                <a href="#gallery" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.gallery">ಗ್ಯಾಲರಿ</a>
-                <a href="#videos" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.videos">ವೀಡಿಯೊಗಳು</a>
                 
                 <div class="flex items-center gap-2 bg-white/10 p-1 rounded-full border border-white/20 glass ml-4">
                     <button onclick="toggleLanguage()" class="px-3 py-1 bg-white text-theme-ink shadow-sm rounded-full text-[10px] font-bold uppercase transition-all" id="lang-btn-text">KN</button>
@@ -330,8 +406,6 @@
             <a href="#about" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.about" onclick="toggleMobileMenu()">ನಮ್ಮ ಬಗ್ಗೆ</a>
             <a href="#events" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.events" onclick="toggleMobileMenu()">ಸಂಭ್ರಮಗಳು</a>
             <a href="#process" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.process" onclick="toggleMobileMenu()">ವಿಧಾನ</a>
-            <a href="#gallery" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.gallery" onclick="toggleMobileMenu()">ಗ್ಯಾಲರಿ</a>
-            <a href="#videos" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.videos" onclick="toggleMobileMenu()">ವೀಡಿಯೊಗಳು</a>
             <a href="#contact" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.contact" onclick="toggleMobileMenu()">ಸಂಪರ್ಕಿಸಿ</a>
             <button onclick="toggleLanguage(); toggleMobileMenu()" class="flex items-center gap-2 text-royal-maroon font-bold pt-2 uppercase text-sm">
                 <i data-lucide="globe" class="w-4 h-4"></i>
@@ -343,21 +417,33 @@
     <!-- Hero -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden bg-theme-ink">
         <div class="absolute inset-0">
-            <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo1.jpg" alt="Catering" class="w-full h-full object-cover opacity-50 scale-105" referrerpolicy="no-referrer">
+            <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo1.jpg" alt="Hari Om Ladies Catering Bhatkal - Professional Food Serving Team" class="w-full h-full object-cover opacity-50 scale-105" referrerpolicy="no-referrer">
             <div class="absolute inset-0 bg-gradient-to-b from-theme-ink/80 via-theme-ink/20 to-theme-ink/90"></div>
         </div>
         <div class="relative z-10 text-center px-6 max-w-5xl mx-auto animate-fade-in">
-            <div class="tag mb-8" data-key="hero.tagline">ಮಹಿಳಾ ಸಬಲೀಕರಣ, ರುಚಿಯಾದ ಸೌಂದರ್ಯ.</div>
+            <div class="mb-6 flex flex-col items-center justify-center gap-6">
+                <div class="relative group">
+                    <div class="p-2 bg-theme-yellow/10 backdrop-blur-md rounded-full border border-theme-yellow/20 shadow-inner">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/real/photo1.jpg" alt="Hari Om Catering Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover shadow-2xl border-4 border-theme-yellow/30">
+                    </div>
+                    <!-- Experience Badge -->
+                    <div class="absolute -bottom-2 -right-2 md:-right-4 bg-theme-yellow text-theme-ink px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg border-2 border-theme-ink font-black text-[10px] md:text-xs uppercase tracking-tighter transform rotate-3 flex flex-col items-center leading-none">
+                        <span class="text-xs md:text-sm">15+</span>
+                        <span>Years</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tag mb-8" data-key="hero.tagline">15+ ವರ್ಷಗಳ ಸೇವೆ | ಮಹಿಳಾ ಸಬಲೀಕರಣ, ರುಚಿಯಾದ ಸೌಂದರ್ಯ.</div>
             <h1 class="text-5xl md:text-8xl font-serif font-black text-white leading-tight mb-6 drop-shadow-2xl" id="hero-title">
                 <span data-key="hero.title">ಹರಿ ಓಂ</span>
             </h1>
             <p class="text-xl md:text-2xl font-light text-gray-300 mb-10 max-w-2xl mx-auto italic" data-key="hero.subtitle">"ಭಟ್ಕಳದ ಪ್ರಮುಖ ಕ್ಯಾಟರಿಂಗ್ ತಂಡ"</p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#services" class="px-8 py-4 bg-theme-accent text-white font-bold rounded-full shadow-xl hover:shadow-theme-accent/20 transition-all transform hover:scale-105 hover:-translate-y-1" data-key="hero.cta">ನಮ್ಮ ರುಚಿಯನ್ನು ಸವಿಯಿರಿ</a>
-                <a href="#contact" class="px-8 py-4 border border-theme-accent text-theme-accent rounded-full hover:bg-theme-accent hover:text-white transition-all transform hover:scale-105" data-key="nav.callback">ಈಗಲೇ ಕಾಯ್ದಿರಿಸಿ</a>
+                <a href="#events" class="px-8 py-4 bg-theme-yellow text-theme-ink font-bold rounded-full shadow-xl hover:shadow-theme-yellow/20 transition-all transform hover:scale-105 hover:-translate-y-1" data-key="hero.cta">ನಮ್ಮ ರುಚಿಯನ್ನು ಸವಿಯಿರಿ</a>
+                <a href="#contact" class="px-8 py-4 border border-theme-yellow text-theme-yellow rounded-full hover:bg-theme-yellow hover:text-theme-ink transition-all transform hover:scale-105" data-key="nav.callback">ಈಗಲೇ ಕಾಯ್ದಿರಿಸಿ</a>
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 cursor-pointer animate-bounce">
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-theme-yellow/70 cursor-pointer animate-bounce">
             <i data-lucide="chevron-down" size="32"></i>
         </div>
     </section>
@@ -368,7 +454,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative">
                     <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative z-10 border border-theme-accent/10">
-                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo2.jpg" alt="Our Uniformed Team" class="w-full h-full object-cover" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo2.jpg" alt="Our Uniformed Women Catering Team in Bhatkal" class="w-full h-full object-cover" referrerpolicy="no-referrer" loading="lazy" decoding="async">
                     </div>
                     <div class="absolute -bottom-8 -right-8 w-64 h-64 border-8 border-theme-accent/5 rounded-full"></div>
                 </div>
@@ -380,12 +466,12 @@
                     <p class="text-lg text-gray-600 leading-relaxed mb-10" data-key="about.description">ಹರಿ ಓಂ ಕೇವಲ ಆಹಾರ ಸೇವೆಯಲ್ಲ; ಇದೊಂದು ಚಳುವಳಿ. ಭಟ್ಕಳದಲ್ಲಿ ಸ್ಥಾಪಿತವಾದ ನಮ್ಮ ತಂಡವು ಸಬಲೀಕರಣ, ನೈರ್ಮಲ್ಯ ಮತ್ತು ಸಾಂಪ್ರದಾಯಿಕ ಬಡಿಸುವಿಕೆಯಲ್ಲಿ ನಂಬಿಕೆ ಹೊಂದಿದ್ದೇವೆ.</p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="flex flex-col gap-4 p-6 glass-card border border-transparent hover:border-theme-accent/20 transition-all">
-                            <div class="bg-orange-300 w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm italic text-lg">👩🍳</div>
-                            <h3 class="font-bold text-theme-ink text-sm uppercase tracking-wider" data-key="about.highlights.empowerment">ಮಹಿಳಾ ಸಬಲೀಕರಣ</h3>
+                            <div class="bg-theme-ink w-12 h-12 rounded-xl flex items-center justify-center text-theme-yellow shadow-sm font-bold text-lg">15+</div>
+                            <h3 class="font-bold text-theme-ink text-sm uppercase tracking-wider" data-key="about.highlights.years">ವರ್ಷಗಳ ಅನುಭವ</h3>
                         </div>
                         <div class="flex flex-col gap-4 p-6 glass-card border border-transparent hover:border-theme-accent/20 transition-all">
-                            <div class="bg-theme-accent w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm italic text-lg">✨</div>
-                            <h3 class="font-bold text-theme-ink text-sm uppercase tracking-wider" data-key="about.highlights.traditional">ಸಾಂಪ್ರದಾಯಿಕ ರುಚಿ</h3>
+                            <div class="bg-orange-300 w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm italic text-lg">👩🍳</div>
+                            <h3 class="font-bold text-theme-ink text-sm uppercase tracking-wider" data-key="about.highlights.empowerment">ಮಹಿಳಾ ತಂಡ</h3>
                         </div>
                     </div>
                 </div>
@@ -405,7 +491,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="events-grid">
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo3.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo3.jpg" alt="Traditional Wedding Catering Bhatkal - Food Serving" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Wedding</span></div>
                     </div>
@@ -422,16 +508,16 @@
                 <!-- Engagement -->
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo4.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo4.jpg" alt="Engagement Ceremony Ladies Catering Bhatkal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Engagement</span></div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-theme-ink mb-3" data-key="event.engagement.title">ನಿಶ್ಚಿತಾರ್ಥ</h3>
                         <p class="text-gray-500 text-xs leading-relaxed mb-4" data-key="event.engagement.desc">ನಿಮ್ಮ ಹೊಸ ಜೀವನದ ಆರಂಭದ ಸಂಭ್ರಮದಲ್ಲಿ ನಮ್ಮ ತಂಡದ ಅಚ್ಚುಕಟ್ಟಾದ ಸೇವೆ ಲಭ್ಯವಿದೆ.</p>
-                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-accent uppercase tracking-tighter">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Elegant Service</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Ring Ceremony</li>
+                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-yellow uppercase tracking-tighter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Elegant Service</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Ring Ceremony</li>
                         </ul>
                     </div>
                 </div>
@@ -439,16 +525,16 @@
                 <!-- Baby Shower -->
                 <div class="glass-card group overflow-hidden">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo5.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo5.jpg" alt="Traditional Baby Shower Catering Services Bhatkal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer" loading="lazy">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                         <div class="absolute bottom-4 left-4"><span class="tag !bg-white !text-theme-ink uppercase tracking-tighter text-[10px]">Baby Shower</span></div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-theme-ink mb-3" data-key="event.babyshower.title">ಸೀಮಂತ ಶಾಸ್ತ್ರ</h3>
                         <p class="text-gray-500 text-xs leading-relaxed mb-4" data-key="event.babyshower.desc">ಮನೆಯ ಹೊಸ ಅತಿಥಿಯ ಆಗಮನದ ಸಂಭ್ರಮಕ್ಕೆ ನಮ್ಮ ಪ್ರೀತಿಯ ಆತಿಥ್ಯ.</p>
-                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-accent uppercase tracking-tighter">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Warm Hospitality</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Traditional Rituals</li>
+                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-yellow uppercase tracking-tighter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Warm Hospitality</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Traditional Rituals</li>
                         </ul>
                     </div>
                 </div>
@@ -463,9 +549,9 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-theme-ink mb-3" data-key="event.birthday.title">ಹುಟ್ಟುಹಬ್ಬದ ಪಾರ್ಟಿಗಳು</h3>
                         <p class="text-gray-500 text-xs leading-relaxed mb-4" data-key="event.birthday.desc">ಮಕ್ಕಳ ಸಂಭ್ರಮವೇ ಇರಲಿ ಅಥವಾ ದೊಡ್ಡ ಹಬ್ಬವೇ ಇರಲಿ, ನಮ್ಮ ಬಡಿಸುವಿಕೆ ಸದಾ ಸಿದ್ಧ.</p>
-                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-accent uppercase tracking-tighter">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Fun Serving Style</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Quick Service</li>
+                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-yellow uppercase tracking-tighter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Fun Serving Style</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Quick Service</li>
                         </ul>
                     </div>
                 </div>
@@ -480,9 +566,9 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-theme-ink mb-3" data-key="event.housewarming.title">ಗೃಹ ಪ್ರವೇಶ</h3>
                         <p class="text-gray-500 text-xs leading-relaxed mb-4" data-key="event.housewarming.desc">ಹೊಸ ಮನೆಗೆ ಕಾಲಿಡುವ ಶುಭ ಸಂದರ್ಭದಲ್ಲಿ ಸಾಂಪ್ರದಾಯಿಕ ಮತ್ತು ಗೌರವಯುತ ಆಹಾರ ಸೇವೆ.</p>
-                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-accent uppercase tracking-tighter">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Ritual Honoring</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Family Focus</li>
+                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-yellow uppercase tracking-tighter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Ritual Honoring</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Family Focus</li>
                         </ul>
                     </div>
                 </div>
@@ -497,9 +583,9 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-theme-ink mb-3" data-key="event.opening.title">ಉದ್ಘಾಟನಾ ಸಮಾರಂಭ</h3>
                         <p class="text-gray-500 text-xs leading-relaxed mb-4" data-key="event.opening.desc">ಉದ್ಯಮದ ಶುಭಾರಂಭದಂದು ಬರುವ ಅತಿಥಿಗಳಿಗೆ ವೃತ್ತಿಪರ ಆತಿಥ್ಯದ ಮೆರಗು ನೀಡುತ್ತೇವೆ.</p>
-                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-accent uppercase tracking-tighter">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Grand Launch</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Professional Decor</li>
+                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-yellow uppercase tracking-tighter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Grand Launch</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Professional Decor</li>
                         </ul>
                     </div>
                 </div>
@@ -514,9 +600,9 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-theme-ink mb-3" data-key="event.office.title">ಕಚೇರಿ ಕಾರ್ಯಕ್ರಮಗಳು</h3>
                         <p class="text-gray-500 text-xs leading-relaxed mb-4" data-key="event.office.desc">ಕಚೇರಿಯ ಸಭೆಗಳು ಮತ್ತು ಮಿಲನಗಳಿಗೆ ಸಮಯಪ್ರಜ್ಞೆಯ ಹಾಗೂ ವ್ಯವಸ್ಥಿತ ಬಡಿಸುವಿಕೆ.</p>
-                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-accent uppercase tracking-tighter">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Team Assemblies</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Punctual Service</li>
+                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-yellow uppercase tracking-tighter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Team Assemblies</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Punctual Service</li>
                         </ul>
                     </div>
                 </div>
@@ -531,9 +617,9 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-theme-ink mb-3" data-key="event.corporate.title">ಕಾರ್ಪೊರೇಟ್ ಪಾರ್ಟಿಗಳು</h3>
                         <p class="text-gray-500 text-xs leading-relaxed mb-4" data-key="event.corporate.desc">ದೊಡ್ಡ ಮಟ್ಟದ ವಾಣಿಜ್ಯ ಸಮಾರಂಭಗಳಿಗೆ ಭವ್ಯವಾದ ಮತ್ತು ವೃತ್ತಿಪರ ಆಹಾರ ಸೇವೆ.</p>
-                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-accent uppercase tracking-tighter">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Annual Galas</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3"></i> Elite Standards</li>
+                        <ul class="space-y-1.5 text-[10px] font-bold text-theme-yellow uppercase tracking-tighter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Annual Galas</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-theme-yellow"></i> Elite Standards</li>
                         </ul>
                     </div>
                 </div>
@@ -543,7 +629,7 @@
 
     <!-- Why Choose Us -->
     <section class="py-24 bg-theme-ink text-white overflow-hidden relative">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-theme-accent/10 blur-[100px] rounded-full"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-theme-yellow/10 blur-[100px] rounded-full"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div>
@@ -552,14 +638,14 @@
                     
                     <div class="space-y-8">
                         <div class="flex gap-6">
-                            <div class="w-16 h-16 shrink-0 rounded-2xl bg-theme-accent flex items-center justify-center shadow-lg"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
+                            <div class="w-16 h-16 shrink-0 rounded-2xl bg-theme-yellow text-theme-ink flex items-center justify-center shadow-lg hover:rotate-3 transition-transform"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
                             <div>
                                 <h4 class="text-xl font-bold mb-2" data-key="why.hygiene.title">ಸಂಪೂರ್ಣ ನೈರ್ಮಲ್ಯ</h4>
                                 <p class="text-gray-400 text-sm" data-key="why.hygiene.desc">ಪ್ರತಿ ಹಂತದಲ್ಲೂ ಸ್ವಚ್ಛತೆಯನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳುವುದು ನಮ್ಮ ಮೊದಲ ಆದ್ಯತೆ.</p>
                             </div>
                         </div>
                         <div class="flex gap-6">
-                            <div class="w-16 h-16 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20"><i data-lucide="clock" class="w-8 h-8 text-theme-accent"></i></div>
+                            <div class="w-16 h-16 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 hover:border-theme-yellow/50 transition-all"><i data-lucide="clock" class="w-8 h-8 text-theme-yellow"></i></div>
                             <div>
                                 <h4 class="text-xl font-bold mb-2" data-key="why.time.title">ಸರಿಯಾದ ಸಮಯ</h4>
                                 <p class="text-gray-400 text-sm" data-key="why.time.desc">ನಿಮ್ಮ ಸಮಾರಂಭದ ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ಆಹಾರ ಬಡಿಸಲು ನಾವು ಬದ್ಧರಾಗಿದ್ದೇವೆ.</p>
@@ -620,92 +706,8 @@
         </div>
     </section>
 
-    <!-- Video Hub -->
-    <section id="videos" class="py-24 bg-theme-ink relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-tr from-theme-accent/5 via-transparent to-theme-accent/5"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <div class="tag !bg-white/10 !text-white !border-white/20 mb-4" data-key="nav.videos">ವೀಡಿಯೊಗಳು</div>
-                <h2 class="text-4xl md:text-5xl font-serif font-black text-white mb-6 uppercase tracking-tight" data-key="videos.title">ನಮ್ಮ ಸೇವೆಯ ಹಿನ್ನೋಟ</h2>
-                <div class="flex justify-center">
-                    <button onclick="openReelsMode()" class="flex items-center gap-2 px-6 py-3 bg-theme-accent text-white rounded-full font-bold shadow-lg hover:scale-105 transition-all text-xs uppercase tracking-widest">
-                        <i data-lucide="play-circle" class="w-4 h-4"></i>
-                        WATCH REELS MODE
-                    </button>
-                </div>
-            </div>
-            
-            <div class="glass-card !bg-black/40 !border-white/10 p-4 md:p-8 rounded-[2.5rem] overflow-hidden">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                    <!-- Sidebar (Dashboard Style) -->
-                    <div class="hidden lg:flex lg:col-span-2 flex-col gap-6 py-4 border-r border-white/5">
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3 text-theme-accent font-bold text-sm px-4">
-                                <i data-lucide="home" class="w-4 h-4"></i> Hub
-                            </div>
-                            <div class="flex items-center gap-3 text-white/50 hover:text-white transition-colors text-sm px-4 cursor-pointer">
-                                <i data-lucide="compass" class="w-4 h-4"></i> Explore
-                            </div>
-                            <div class="flex items-center gap-3 text-white/50 hover:text-white transition-colors text-sm px-4 cursor-pointer">
-                                <i data-lucide="library" class="w-4 h-4"></i> Library
-                            </div>
-                        </div>
-                        <div class="mt-auto">
-                            <div class="flex items-center gap-3 text-white/30 text-xs px-4">
-                                <i data-lucide="settings" class="w-3 h-3"></i> Settings
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Main Player Area -->
-                    <div class="lg:col-span-7">
-                        <div class="aspect-video bg-white/5 rounded-3xl overflow-hidden relative group">
-                            <img id="main-hub-video-img" src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo12.jpg" class="w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" loading="lazy" referrerpolicy="no-referrer">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <button onclick="openReelsMode()" class="w-20 h-20 bg-theme-accent text-white rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
-                                    <i data-lucide="play" class="w-10 h-10 fill-current"></i>
-                                </button>
-                            </div>
-                            <div class="absolute bottom-6 left-6 right-6 flex items-center gap-4 bg-black/40 backdrop-blur-md p-4 rounded-2xl border border-white/10">
-                                <div class="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
-                                    <div class="w-1/3 h-full bg-theme-accent"></div>
-                                </div>
-                                <span class="text-[10px] text-white font-mono">04:12 / 12:45</span>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <h3 id="main-hub-title" class="text-2xl font-bold text-white mb-2">Grand Wedding Serving Highlights</h3>
-                            <p class="text-white/40 text-sm">Experience the professionalism of our all-women serving team in real-time.</p>
-                        </div>
-                    </div>
-
-                    <!-- Recommended Sidebar -->
-                    <div class="lg:col-span-3 flex flex-col gap-4 overflow-y-auto max-h-[400px] md:max-h-[500px] pr-2 custom-scrollbar" id="hub-recommended-list">
-                        <!-- Dynamic Recommended Items -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reels Mode Overlay -->
-    <div id="reels-overlay" class="reels-overlay overflow-hidden">
-        <div class="absolute top-6 left-6 z-50">
-            <h2 class="text-white font-serif font-black text-xl flex items-center gap-2">
-                <i data-lucide="crown" class="text-theme-accent"></i>
-                Hari Om Reels
-            </h2>
-        </div>
-        <button onclick="closeReelsMode()" class="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-all backdrop-blur-md">
-            <i data-lucide="x"></i>
-        </button>
-
-        <div class="reels-container" id="reels-container">
-            <!-- Reels will be injected here -->
-        </div>
-    </div>
-
+    <!-- Video Hub, Reels Mode, Gallery, and Full-Gallery Sections are temporarily removed as per user request -->
+    
     <!-- Locations -->
     <section id="locations" class="py-24 bg-theme-ink text-white relative overflow-hidden text-center lg:text-left">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -720,59 +722,14 @@
                 </div>
                 <div class="flex justify-center">
                     <div class="relative p-2 rounded-full border border-theme-accent/30 glass">
-                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo13.jpg" alt="Map" class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-4 border-theme-accent" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo13.jpg" alt="Service areas for Hari Om Catering - Bhatkal, Honnavar, Murudeshwar" class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-4 border-theme-accent" loading="lazy" decoding="async" referrerpolicy="no-referrer">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="py-24 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="tag mb-4" data-key="nav.gallery">ಗ್ಯಾಲರಿ</div>
-                <h2 class="text-4xl md:text-5xl font-serif font-black text-theme-ink mb-6" data-key="gallery.title">ನಮ್ಮ ಸಂಭ್ರಮಗಳು</h2>
-                <div class="w-16 h-1 bg-theme-accent mx-auto rounded-full"></div>
-            </div>
-
-            <!-- Rich Slider Top -->
-            <div class="slider-container mb-12 animate-fade-in" id="main-slider">
-                <div class="slider-prev slider-nav"><i data-lucide="chevron-left"></i></div>
-                <div class="slider-next slider-nav"><i data-lucide="chevron-right"></i></div>
-                <div id="slides-wrapper" class="w-full h-full"></div>
-            </div>
-
-            <!-- Interactive Grid Bottom -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12" id="gallery-grid">
-                <!-- Items load here 4 at a time -->
-            </div>
-
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <button id="load-more-btn" class="px-8 py-4 bg-theme-tag-bg text-theme-tag-text font-bold rounded-full hover:bg-theme-accent hover:text-white transition-all transform hover:scale-105">
-                    LOAD MORE +
-                </button>
-                <button onclick="toggleFullGallery(true)" class="px-8 py-4 border border-theme-accent text-theme-accent font-bold rounded-full hover:bg-theme-accent hover:text-white transition-all transform hover:scale-105" data-key="gallery.view_all">
-                    VIEW MAIN GALLERY
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fullscreen Gallery Overlay -->
-    <div id="full-gallery" class="full-gallery-overlay">
-        <div class="sticky top-0 z-50 p-6 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-theme-accent/10">
-            <h2 class="text-2xl font-serif font-black text-theme-ink" data-key="gallery.title">ನಮ್ಮ ಸಂಭ್ರಮಗಳು</h2>
-            <button onclick="toggleFullGallery(false)" class="w-12 h-12 rounded-full bg-theme-ink text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                <i data-lucide="x"></i>
-            </button>
-        </div>
-        <div class="max-w-7xl mx-auto p-6 md:p-12">
-            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6" id="full-gallery-grid">
-                <!-- All images render here -->
-            </div>
-        </div>
-    </div>
+    <!-- Gallery and Full Gallery Overlay are temporarily removed -->
 
     <!-- Reviews -->
     <section id="reviews" class="py-24 bg-theme-bg overflow-hidden">
@@ -804,39 +761,96 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-24 bg-gray-50/50">
+    <section id="contact" class="py-24 bg-theme-yellow-soft/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div>
+                <div class="space-y-6">
                     <h2 class="text-4xl md:text-5xl font-serif font-black text-theme-ink mb-8" data-key="booking.title">ನಿಮ್ಮ ಸಮಾರಂಭವನ್ನು ಯೋಜಿಸಿ</h2>
                     <div class="space-y-8 mb-12 font-sans">
                         <div class="flex items-center gap-6">
-                            <div class="w-14 h-14 rounded-2xl bg-theme-accent/10 flex items-center justify-center text-theme-accent"><i data-lucide="phone"></i></div>
+                            <div class="w-14 h-14 rounded-2xl bg-theme-yellow/20 flex items-center justify-center text-theme-ink"><i data-lucide="phone"></i></div>
                             <div>
                                 <p class="text-[10px] font-bold uppercase text-gray-400 mb-1 tracking-widest">Inquiry Hotline</p>
-                                <p class="text-xl font-bold text-theme-ink tracking-tight">+91 8553728401</p>
+                                <p class="text-xl font-bold text-theme-ink tracking-tight flex flex-col gap-1">
+                                    <span>+91 8310832577</span>
+                                    <span>+91 9480086889</span>
+                                    <span class="text-sm font-medium text-gray-500">08385-295234 (Office)</span>
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-center gap-6">
-                            <div class="w-14 h-14 rounded-2xl bg-theme-accent/10 flex items-center justify-center text-theme-accent"><i data-lucide="map-pin"></i></div>
+                            <div class="w-14 h-14 rounded-2xl bg-theme-yellow/20 flex items-center justify-center text-theme-ink"><i data-lucide="map-pin"></i></div>
                             <div>
                                 <p class="text-[10px] font-bold uppercase text-gray-400 mb-1 tracking-widest">Base Location</p>
                                 <p class="text-xl font-bold text-theme-ink tracking-tight" data-key="footer.address">ಭಟ್ಕಳ, ಉತ್ತರ ಕನ್ನಡ, ಕರ್ನಾಟಕ</p>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Business Identity Image (T-shirt backside) -->
+                    <div class="mt-8 rounded-3xl overflow-hidden border-2 border-theme-accent/20 shadow-xl group">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/real/photo3.jpg" alt="Hari Om Catering Contact Details" class="w-full h-auto grayscale-0 group-hover:scale-105 transition-transform duration-700">
+                    </div>
                 </div>
                 <div class="glass-card p-10 shadow-2xl">
-                    <form class="space-y-6">
-                        <div class="space-y-1">
-                            <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Full Name</label>
-                            <input type="text" placeholder="Name" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" data-placeholder-key="booking.name">
+                    <form id="enquiry-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1" data-key="booking.label.name">Full Name</label>
+                                <input type="text" id="enq-name" placeholder="Name" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" data-placeholder-key="booking.name" required>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1" data-key="booking.label.phone">Contact Number</label>
+                                <input type="tel" id="enq-phone" placeholder="Phone" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" data-placeholder-key="booking.phone" required>
+                            </div>
                         </div>
-                        <div class="space-y-1">
-                            <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Contact Number</label>
-                            <input type="tel" placeholder="Phone" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" data-placeholder-key="booking.phone">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1" data-key="booking.label.date_from">Date From</label>
+                                <input type="date" id="enq-date-from" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" required>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1" data-key="booking.label.date_to">Date To</label>
+                                <input type="date" id="enq-date-to" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" required>
+                            </div>
                         </div>
-                        <button type="button" class="w-full py-5 bg-theme-ink text-white font-bold rounded-2xl shadow-xl hover:bg-theme-accent transition-all uppercase tracking-widest text-xs" data-key="booking.submit">ವಿಚಾರಿಸಿ</button>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1" data-key="booking.label.function">Type of Function</label>
+                                <input type="text" id="enq-function" placeholder="e.g. Wedding" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" data-placeholder-key="booking.placeholder.function">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1" data-key="booking.label.guests">Expected Guests</label>
+                                <input type="number" id="enq-guests" placeholder="No. of Guests" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" data-placeholder-key="booking.placeholder.guests">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1" data-key="booking.label.diet">Food Preference</label>
+                            <select id="enq-diet" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm appearance-none cursor-pointer">
+                                <option value="" disabled selected data-key="booking.diet.default">Select preference</option>
+                                <option value="Veg" data-key="booking.diet.veg">Veg Only</option>
+                                <option value="Non-Veg" data-key="booking.diet.nonveg">Non-Veg</option>
+                                <option value="Both" data-key="booking.diet.both">Both</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1" data-key="booking.label.address">Place / Address</label>
+                            <input type="text" id="enq-address" placeholder="Function Location" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" data-placeholder-key="booking.placeholder.address">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1" data-key="booking.label.comments">Comments</label>
+                            <textarea id="enq-comments" rows="3" placeholder="Any special requests?" class="w-full px-6 py-4 rounded-2xl bg-theme-bg border border-theme-accent/10 focus:outline-none focus:border-theme-accent transition-all text-sm" data-placeholder-key="booking.placeholder.comments"></textarea>
+                        </div>
+
+                        <button type="button" onclick="sendWhatsAppEnquiry()" class="w-full py-5 bg-theme-ink text-white font-bold rounded-2xl shadow-xl hover:bg-theme-accent transition-all uppercase tracking-widest text-xs flex items-center justify-center gap-2">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span data-key="booking.submit">ವಿಚಾರಿಸಿ</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -847,18 +861,13 @@
     <footer class="py-16 bg-theme-bg text-theme-ink border-t border-theme-accent/10">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex items-center justify-center gap-3 mb-8">
-                <div class="w-10 h-10 bg-theme-accent rounded-full flex items-center justify-center text-white font-bold text-xl">H</div>
+                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/real/photo1.jpg" alt="Hari Om Logo" class="w-16 h-16 rounded-full object-cover shadow-xl border-2 border-theme-accent/20">
                 <div class="text-left">
                     <span class="font-bold text-xl tracking-tight block leading-none">ಹರಿ ಓಂ</span>
                     <span class="text-[10px] font-normal text-gray-400 uppercase tracking-widest">HARI OM BHATKAL</span>
                 </div>
             </div>
-            <p class="text-gray-400 text-[10px] uppercase tracking-[0.2em] mb-4" data-key="footer.rights">© 2024 ಹರಿ ಓಂ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.</p>
-            <div class="flex justify-center gap-4 mt-6">
-                <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-[10px] text-gray-400 hover:bg-theme-accent hover:text-white transition-all cursor-pointer">FB</div>
-                <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-[10px] text-gray-400 hover:bg-theme-accent hover:text-white transition-all cursor-pointer">IG</div>
-                <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-[10px] text-gray-400 hover:bg-theme-accent hover:text-white transition-all cursor-pointer">WA</div>
-            </div>
+            <p class="text-gray-400 text-[10px] uppercase tracking-[0.2em] mb-4" data-key="footer.rights"></p>
         </div>
     </footer>
 
@@ -881,17 +890,18 @@
                 "nav.events": "Occasions",
                 "nav.process": "Process",
                 "nav.videos": "Videos",
-                "hero.title": "Hari Om",
-                "hero.subtitle": "Bhatkal's Premier Food Serving Team",
-                "hero.tagline": "Specializing in Professional Food Serving.",
+                "hero.title": "Hari Om Catering Bhatkal",
+                "hero.subtitle": "Bhatkal's Most Trusted Team with 15+ Years of Excellence",
+                "hero.tagline": "15+ Years of Experience | Empowering Women, Serving Taste.",
                 "hero.cta": "Plan Your Catering",
-                "about.title": "Our Focus",
-                "about.description": "At Hari Om, we specialize exclusively in the art of food serving. We believe that how food is served is as important as how it's cooked. Our professional team ensures your guests receive warm, hygienic, and respectful hospitality.",
-                "about.highlights.empowerment": "Pure Service",
-                "about.highlights.traditional": "Hygienic Care",
-                "services.title": "Excellence in Food Serving",
-                "locations.title": "Service Areas",
-                "locations.description": "Reliable food serving teams for Uttara Kannada & Udupi.",
+                "about.title": "15+ Years of Legacy",
+                "about.description": "With over 15 years of dedicated experience in the field, Hari Om Catering Bhatkal specializes exclusively in the art of food serving with an all-women team. We believe that how food is served is as important as how it's cooked. Our professional catering team ensures your guests receive warm, hygienic, and respectful hospitality across Uttara Kannada and Udupi.",
+                "about.highlights.years": "15+ Years Experience",
+                "about.highlights.empowerment": "Women-Led Service",
+                "about.highlights.traditional": "Hygienic Traditional Care",
+                "services.title": "Professional Women-Led Food Serving",
+                "locations.title": "Our Service Coverage",
+                "locations.description": "Reliable catering and food serving teams for Bhatkal, Honnavar, Murudeshwar, Kumta, Kundapura, & Udupi.",
                 "reviews.title": "What Clients Say",
                 "gallery.title": "Visual Glimpses",
                 "gallery.view_all": "VIEW MAIN GALLERY",
@@ -933,9 +943,26 @@
                 "booking.title": "Book Our Team",
                 "booking.name": "Your Name",
                 "booking.phone": "Phone Number",
-                "booking.submit": "Inquire Now",
+                "booking.submit": "Inquire via WhatsApp",
+                "booking.label.name": "Full Name",
+                "booking.label.phone": "Contact Number",
+                "booking.label.date_from": "Date From",
+                "booking.label.date_to": "Date To",
+                "booking.label.function": "Type of Function",
+                "booking.label.guests": "Expected Guests",
+                "booking.label.diet": "Food Preference",
+                "booking.label.address": "Place / Address",
+                "booking.label.comments": "Comments",
+                "booking.placeholder.function": "e.g. Wedding",
+                "booking.placeholder.guests": "No. of Guests",
+                "booking.placeholder.address": "Function Location",
+                "booking.placeholder.comments": "Any special requests?",
+                "booking.diet.default": "Select preference",
+                "booking.diet.veg": "Veg Only",
+                "booking.diet.nonveg": "Non-Veg",
+                "booking.diet.both": "Both (Veg/Non-Veg)",
                 "footer.address": "Bhatkal, Uttara Kannada, Karnataka",
-                "footer.rights": "© 2024 Hari Om. All rights reserved.",
+                "footer.rights": "© Hari Om. All rights reserved. | Design and Developed by <a href='https://townlinksolutions.com/' target='_blank' class='hover:text-theme-accent transition-colors underline decoration-theme-accent/30'>TownLink Solutions</a>",
                 "lang_label": "ಕನ್ನಡ"
             },
             kn: {
@@ -949,17 +976,18 @@
                 "nav.events": "ಸಂಭ್ರಮಗಳು",
                 "nav.process": "ವಿಧಾನ",
                 "nav.videos": "ವೀಡಿಯೊಗಳು",
-                "hero.title": "ಹರಿ ಓಂ",
-                "hero.subtitle": "ಭಟ್ಕಳದ ಪ್ರಮುಖ ಆಹಾರ ಬಡಿಸುವ ತಂಡ",
-                "hero.tagline": "ಪರಿಶುದ್ಧ ಸೇವೆ.",
+                "hero.title": "ಹರಿ ಓಂ ಕ್ಯಾಟರಿಂಗ್",
+                "hero.subtitle": "15+ ವರ್ಷಗಳ ಸುದೀರ್ಘ ಅನುಭವ ಹೊಂದಿರುವ ಭಟ್ಕಳದ ಅತ್ಯುತ್ತಮ ಕ್ಯಾಟರಿಂಗ್ ತಂಡ",
+                "hero.tagline": "15+ ವರ್ಷಗಳ ಸೇವೆ | ಮಹಿಳಾ ಸಬಲೀಕರಣ, ಪರಿಶುದ್ಧ ಸೇವೆ ಮತ್ತು ಸಾಂಪ್ರದಾಯಿಕ ರುಚಿ.",
                 "hero.cta": "ಈಗಲೇ ಸಂಪರ್ಕಿಸಿ",
-                "about.title": "ನಮ್ಮ ಗುರಿ",
-                "about.description": "ಹರಿ ಓಂನಲ್ಲಿ, ನಾವು ಕೇವಲ ಆಹಾರ ಬಡಿಸುವಲ್ಲಿ ಪರಿಣಿತರಾಗಿದ್ದೇವೆ. ನಮ್ಮ ವೃತ್ತಿಪರ ತಂಡವು ನಿಮ್ಮ ಅತಿಥಿಗಳಿಗೆ ಅತ್ಯಂತ ನೈರ್ಮಲ್ಯ ಮತ್ತು ಗೌರವದಿಂದ ಬಡಿಸುವುದನ್ನು ಖಚಿತಪಡಿಸುತ್ತದೆ.",
-                "about.highlights.empowerment": "ಶುದ್ಧ ಸೇವೆ",
-                "about.highlights.traditional": "ನೈರ್ಮಲ್ಯದ ಕಾಳಜಿ",
-                "services.title": "ಆಹಾರ ಬಡಿಸುವಿಕೆಯಲ್ಲಿ ಶ್ರೇಷ್ಠತೆ",
-                "locations.title": "ನಮ್ಮ ಸೇವಾ ಸ್ಥಳಗಳು",
-                "locations.description": "ಉತ್ತರ ಕನ್ನಡ ಮತ್ತು ಉಡುಪಿಯಾದ್ಯಂತ ನಮ್ಮ ತಂಡ ಲಭ್ಯವಿದೆ.",
+                "about.title": "15+ ವರ್ಷಗಳ ಇತಿಹಾಸ",
+                "about.description": "ಈ ಕ್ಷೇತ್ರದಲ್ಲಿ 15ಕ್ಕೂ ಹೆಚ್ಚು ವರ್ಷಗಳ ಅಪಾರ ಅನುಭವ ಹೊಂದಿರುವ ಹರಿ ಓಂ ಕ್ಯಾಟರಿಂಗ್‌ನಲ್ಲಿ, ನಾವು ಕೇವಲ ಆಹಾರ ಬಡಿಸುವಲ್ಲಿ ಪರಿಣಿತರಾಗಿದ್ದೇವೆ. ನಮ್ಮ ವೃತ್ತಿಪರ ಮಹಿಳಾ ತಂಡವು ಭಟ್ಕಳ, ಹೊನ್ನಾವರ, ಮುರುಡೇಶ್ವರ ಮತ್ತು ಕುಂದಾಪುರದಾದ್ಯಂತ ನಿಮ್ಮ ಅತಿಥಿಗಳಿಗೆ ಅತ್ಯಂತ ನೈರ್ಮಲ್ಯ ಮತ್ತು ಗೌರವದಿಂದ ಬಡಿಸುವುದನ್ನು ಖಚಿತಪಡಿಸುತ್ತದೆ.",
+                "about.highlights.years": "15+ ವರ್ಷಗಳ ಅನುಭವ",
+                "about.highlights.empowerment": "ಮಹಿಳಾ ತಂಡ",
+                "about.highlights.traditional": "ನೈರ್ಮಲ್ಯ ಮತ್ತು ಕಾಳಜಿ",
+                "services.title": "ಮಹಿಳಾ ತಂಡದಿಂದ ಅಚ್ಚುಕಟ್ಟಾದ ಆಹಾರ ಬಡಿಸುವಿಕೆ",
+                "locations.title": "ನಮ್ಮ ಸೇವಾ ವ್ಯಾಪ್ತಿ",
+                "locations.description": "ಭಟ್ಕಳ, ಹೊನ್ನಾವರ, ಕುಮಟಾ, ಮುರುಡೇಶ್ವರ, ಕುಂದಾಪುರ ಮತ್ತು ಉಡುಪಿಯಾದ್ಯಂತ ನಮ್ಮ ಮಹಿಳಾ ತಂಡ ಲಭ್ಯವಿದೆ.",
                 "reviews.title": "ಗ್ರಾಹಕರ ಅನಿಸಿಕೆಗಳು",
                 "gallery.title": "ನಮ್ಮ ಸಂಭ್ರಮಗಳು",
                 "gallery.view_all": "ಗ್ಯಾಲರಿ ವೀಕ್ಷಿಸಿ",
@@ -1002,8 +1030,25 @@
                 "booking.name": "ನಿಮ್ಮ ಹೆಸರು",
                 "booking.phone": "ಫೋನ್ ಸಂಖ್ಯೆ",
                 "booking.submit": "ಈಗಲೇ ವಿಚಾರಿಸಿ",
+                "booking.label.name": "ಪೂರ್ಣ ಹೆಸರು",
+                "booking.label.phone": "ಫೋನ್ ಸಂಖ್ಯೆ",
+                "booking.label.date_from": "ಆರಂಭ ದಿನಾಂಕ",
+                "booking.label.date_to": "ಅಂತ್ಯ ದಿನಾಂಕ",
+                "booking.label.function": "ಕಾರ್ಯಕ್ರಮದ ವಿಧ",
+                "booking.label.guests": "ಅತಿಥಿಗಳ ಸಂಖ್ಯೆ",
+                "booking.label.diet": "ಆಹಾರದ ಆಯ್ಕೆ",
+                "booking.label.address": "ಸ್ಥಳ / ವಿಳಾಸ",
+                "booking.label.comments": "ಹೆಚ್ಚಿನ ವಿವರ",
+                "booking.placeholder.function": "ಉದಾ: ಮದುವೆ",
+                "booking.placeholder.guests": "ಅತಿಥಿಗಳ ಅಂದಾಜು ಸಂಖ್ಯೆ",
+                "booking.placeholder.address": "ಕಾರ್ಯಕ್ರಮದ ವಿಳಾಸ",
+                "booking.placeholder.comments": "ಯಾವುದೇ ವಿಶೇಷ ಬೇಡಿಕೆಗಳಿದ್ದರೆ ತಿಳಿಸಿ",
+                "booking.diet.default": "ಆಯ್ಕೆ ಮಾಡಿ",
+                "booking.diet.veg": "ಸಸ್ಯಾಹಾರ ಮಾತ್ರ",
+                "booking.diet.nonveg": "ಮಾಂಸಾಹಾರ",
+                "booking.diet.both": "ಎರಡೂ (ಸಸ್ಯ/ಮಾಂಸ)",
                 "footer.address": "ಭಟ್ಕಳ, ಉತ್ತರ ಕನ್ನಡ, ಕರ್ನಾಟಕ",
-                "footer.rights": "© 2024 ಹರಿ ಓಂ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+                "footer.rights": "© ಹರಿ ಓಂ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ. | ವಿನ್ಯಾಸ ಮತ್ತು ಅಭಿವೃದ್ಧಿ <a href='https://townlinksolutions.com/' target='_blank' class='hover:text-theme-accent transition-colors underline decoration-theme-accent/30'>TownLink Solutions</a>",
                 "lang_label": "English"
             }
         };
@@ -1020,7 +1065,12 @@
             
             setTimeout(() => {
                 document.querySelectorAll('[data-key]').forEach(el => {
-                    el.innerText = t[el.getAttribute('data-key')];
+                    const key = el.getAttribute('data-key');
+                    if (key === 'footer.rights') {
+                        el.innerHTML = t[key];
+                    } else {
+                        el.innerText = t[key];
+                    }
                 });
                 document.querySelectorAll('[data-placeholder-key]').forEach(el => {
                     el.placeholder = t[el.getAttribute('data-placeholder-key')];
@@ -1454,6 +1504,38 @@
             }
         }
 
+        function sendWhatsAppEnquiry() {
+            const name = document.getElementById('enq-name').value;
+            const phone = document.getElementById('enq-phone').value;
+            const dateFrom = document.getElementById('enq-date-from').value;
+            const dateTo = document.getElementById('enq-date-to').value;
+            const func = document.getElementById('enq-function').value;
+            const guests = document.getElementById('enq-guests').value;
+            const diet = document.getElementById('enq-diet').value;
+            const address = document.getElementById('enq-address').value;
+            const comments = document.getElementById('enq-comments').value;
+
+            if (!name || !phone || !dateFrom || !dateTo || !diet) {
+                alert(currentLang === 'kn' ? 'ದಯವಿಟ್ಟು ಅಗತ್ಯವಿರುವ ಎಲ್ಲಾ ವಿವರಗಳನ್ನು (ಹೆಸರು, ಫೋನ್, ದಿನಾಂಕ ಮತ್ತು ಆಹಾರದ ಆಯ್ಕೆ) ಭರ್ತಿ ಮಾಡಿ.' : 'Please fill all required fields (Name, Phone, Dates, and Food Preference).');
+                return;
+            }
+
+            const message = `*Hari Om Catering Enquiry*\n\n` +
+                          `*Name:* ${name}\n` +
+                          `*Phone:* ${phone}\n` +
+                          `*Date:* ${dateFrom} to ${dateTo}\n` +
+                          `*Function:* ${func || 'Not specified'}\n` +
+                          `*Guests:* ${guests || 'Not specified'}\n` +
+                          `*Diet:* ${diet}\n` +
+                          `*Location:* ${address || 'Not specified'}\n` +
+                          `*Comments:* ${comments || 'None'}\n\n` +
+                          `_Sent from Hari Om Website_`;
+
+            const encodedMsg = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/918310832577?text=${encodedMsg}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
         function closeReelsMode() {
             document.getElementById('reels-overlay').style.display = 'none';
             document.body.style.overflow = '';
@@ -1468,8 +1550,10 @@
             
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled-nav');
-                icon.classList.add('text-theme-accent');
-                icon.classList.remove('text-royal-gold');
+                if (icon) {
+                    icon.classList.add('border-theme-accent/20');
+                    icon.classList.remove('border-white/20');
+                }
                 text.classList.add('text-theme-ink');
                 text.classList.remove('text-white');
                 toggle.classList.add('text-theme-ink');
@@ -1480,8 +1564,10 @@
                 });
             } else {
                 nav.classList.remove('scrolled-nav');
-                icon.classList.add('text-royal-gold');
-                icon.classList.remove('text-theme-accent');
+                if (icon) {
+                    icon.classList.add('border-white/20');
+                    icon.classList.remove('border-theme-accent/20');
+                }
                 text.classList.add('text-white');
                 text.classList.remove('text-theme-ink');
                 toggle.classList.add('text-white');
@@ -1499,8 +1585,8 @@
             updateContent();
             renderPlaces();
             renderReviews();
-            renderGallery();
-            renderRecommended();
+            // renderGallery(); // Disabled
+            // renderRecommended(); // Disabled
         };
     </script>
 </body>
