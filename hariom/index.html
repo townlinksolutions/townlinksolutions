@@ -385,6 +385,8 @@
             <div class="hidden md:flex items-center gap-8">
                 <a href="#about" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.about">ನಮ್ಮ ಬಗ್ಗೆ</a>
                 <a href="#events" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.events">ಸಂಭ್ರಮಗಳು</a>
+                <a href="#gallery" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.gallery">ಗ್ಯಾಲರಿ</a>
+                <a href="#videos" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.videos">ವೀಡಿಯೊಗಳು</a>
                 <a href="#process" class="text-sm font-medium text-white hover:text-theme-accent transition-colors nav-link" data-key="nav.process">ವಿಧಾನ</a>
                 
                 <div class="flex items-center gap-2 bg-white/10 p-1 rounded-full border border-white/20 glass ml-4">
@@ -405,6 +407,8 @@
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl py-6 px-8 flex flex-col gap-4 md:hidden">
             <a href="#about" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.about" onclick="toggleMobileMenu()">ನಮ್ಮ ಬಗ್ಗೆ</a>
             <a href="#events" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.events" onclick="toggleMobileMenu()">ಸಂಭ್ರಮಗಳು</a>
+            <a href="#gallery" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.gallery" onclick="toggleMobileMenu()">ಗ್ಯಾಲರಿ</a>
+            <a href="#videos" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.videos" onclick="toggleMobileMenu()">ವೀಡಿಯೊಗಳು</a>
             <a href="#process" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.process" onclick="toggleMobileMenu()">ವಿಧಾನ</a>
             <a href="#contact" class="text-lg font-medium text-gray-800 border-b border-gray-100 pb-2 nav-link" data-key="nav.contact" onclick="toggleMobileMenu()">ಸಂಪರ್ಕಿಸಿ</a>
             <button onclick="toggleLanguage(); toggleMobileMenu()" class="flex items-center gap-2 text-royal-maroon font-bold pt-2 uppercase text-sm">
@@ -706,7 +710,48 @@
         </div>
     </section>
 
-    <!-- Video Hub, Reels Mode, Gallery, and Full-Gallery Sections are temporarily removed as per user request -->
+    <!-- Video Hub -->
+    <section id="videos" class="py-24 bg-[#050505] text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Main Player Area -->
+                <div class="flex-1">
+                    <div class="tag !bg-theme-accent !text-theme-ink !border-none mb-4" data-key="nav.videos">Videos</div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-black mb-8" data-key="videos.title">Highlights</h2>
+                    
+                    <div class="relative aspect-video rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-3xl bg-theme-ink border border-white/5" onclick="openReelsMode()">
+                        <img id="main-hub-video-img" src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/hariom/images/photo1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-60" referrerpolicy="no-referrer">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-24 h-24 rounded-full bg-theme-yellow text-theme-ink flex items-center justify-center pl-1 shadow-2xl scale-90 group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" fill="currentColor" size="40"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-8 left-8 right-8 text-left">
+                            <h3 id="main-hub-title" class="text-2xl md:text-3xl font-bold text-white mb-2 truncate">Wedding Serving Excellence</h3>
+                            <p class="text-white/60 text-sm font-medium">Click to watch in Reels Mode</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recommended Column -->
+                <div class="lg:w-80 h-[500px] flex flex-col text-left">
+                    <div id="hub-recommended-list" class="flex-1 overflow-y-auto custom-scrollbar pr-2">
+                        <!-- Recommended items injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reels Mode Overlay -->
+    <div id="reels-overlay" class="reels-overlay">
+        <button onclick="closeReelsMode()" class="absolute top-6 right-6 z-[110] w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white flex items-center justify-center hover:bg-theme-accent transition-all border border-white/20">
+            <i data-lucide="x"></i>
+        </button>
+        <div id="reels-container" class="reels-container">
+            <!-- Reels go here -->
+        </div>
+    </div>
     
     <!-- Locations -->
     <section id="locations" class="py-24 bg-theme-ink text-white relative overflow-hidden text-center lg:text-left">
@@ -729,7 +774,41 @@
         </div>
     </section>
 
-    <!-- Gallery and Full Gallery Overlay are temporarily removed -->
+    <!-- Gallery -->
+    <section id="gallery" class="py-24 bg-theme-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="tag mb-4" data-key="nav.gallery">ಗ್ಯಾಲರಿ</div>
+                <h2 class="text-4xl md:text-5xl font-serif font-black text-theme-ink mb-6" data-key="gallery.title">ನಮ್ಮ ಕೆಲವು ಕೆಲಸಗಳು</h2>
+            </div>
+            
+            <div class="slider-container mb-12">
+                <div id="slides-wrapper"></div>
+                <div class="slider-nav slider-prev"><i data-lucide="chevron-left"></i></div>
+                <div class="slider-nav slider-next"><i data-lucide="chevron-right"></i></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12" id="gallery-grid"></div>
+
+            <div class="text-center">
+                <button id="load-more-btn" class="px-8 py-4 bg-theme-ink text-white font-bold rounded-full hover:bg-theme-accent transition-all uppercase tracking-widest text-xs" data-key="gallery.view_all">View All</button>
+                <button onclick="toggleFullGallery(true)" class="px-8 py-4 border border-theme-ink text-theme-ink font-bold rounded-full hover:bg-theme-ink hover:text-white transition-all uppercase tracking-widest text-xs ml-4">Full Screen Gallery</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Gallery Overlay -->
+    <div id="full-gallery" class="full-gallery-overlay">
+        <div class="p-8 sticky top-0 bg-[#FDFCFB]/80 backdrop-blur-md z-10 flex justify-between items-center border-b border-theme-accent/10">
+            <h2 class="text-2xl font-serif font-black text-theme-ink">Hari Om Gallery</h2>
+            <button onclick="toggleFullGallery(false)" class="w-12 h-12 rounded-full bg-theme-ink text-white flex items-center justify-center hover:bg-theme-accent transition-all">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="max-w-7xl mx-auto p-8">
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8" id="full-gallery-grid"></div>
+        </div>
+    </div>
 
     <!-- Reviews -->
     <section id="reviews" class="py-24 bg-theme-bg overflow-hidden">
@@ -1585,8 +1664,8 @@
             updateContent();
             renderPlaces();
             renderReviews();
-            // renderGallery(); // Disabled
-            // renderRecommended(); // Disabled
+            renderGallery();
+            renderRecommended();
         };
     </script>
 </body>
