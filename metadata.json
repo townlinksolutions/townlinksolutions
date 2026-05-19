@@ -1,0 +1,6 @@
+{
+  "name": "TownLink Solutions",
+  "description": "Your Local Digital Partner. We give life to your ideas and build your unique identity with smart technology that solves real business problems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
