@@ -218,6 +218,12 @@ class SmoothScroller {
         const href = e.currentTarget.getAttribute('href');
         if (href === '#') return;
 
+        // Prevent default scrolling for appointment modal links
+        if (href === '#appointment') {
+            e.preventDefault();
+            return;
+        }
+
         e.preventDefault();
         const target = document.querySelector(href);
         
@@ -227,11 +233,12 @@ class SmoothScroller {
     }
 
     scrollToElement(element) {
-        const offset = 80; // Header height
-        const targetPosition = element.offsetTop - offset;
+        const offset = 90; // Header height fixed
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
         
         window.scrollTo({
-            top: targetPosition,
+            top: offsetPosition,
             behavior: 'smooth'
         });
     }
@@ -335,10 +342,10 @@ class ContactFormHandler {
                 formData.message.trim() ? `📝 Message: ${formData.message}` : null
             ].filter(Boolean).join('\n');
 
-            const waNumber = '919XXXXXXXXX'; // ⚠️ Replace with real number e.g. 919876543210
+            const waNumber = '919591020072'; // Main contact number
             const waURL = `https://wa.me/${waNumber}?text=${encodeURIComponent(lines)}`;
 
-            this.showMessage('✅ Request received! Opening WhatsApp to connect you with Rathnakar…', 'success');
+            this.showMessage('✅ Request received! Opening WhatsApp to connect you…', 'success');
             domCache.contactForm.reset();
 
             // Open WhatsApp after short delay
@@ -391,29 +398,8 @@ class PerformanceOptimizer {
     }
 
     init() {
-        // Lazy load images if needed
-        if ('IntersectionObserver' in window) {
-            this.setupLazyLoading();
-        }
-
         // Preconnect to external resources
         this.addResourceHints();
-    }
-
-    setupLazyLoading() {
-        const images = document.querySelectorAll('img[data-src]');
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-
-        images.forEach(img => imageObserver.observe(img));
     }
 
     addResourceHints() {
@@ -568,12 +554,12 @@ class WebsiteApp {
         this.contactFormHandler = new ContactFormHandler();
         this.performanceOptimizer = new PerformanceOptimizer();
         this.analyticsTracker = new AnalyticsTracker();
-        this.articleModal = new ArticleModal();
         this.counterAnimator = new CounterAnimator();
         this.faqAccordion = new FaqAccordion();
         this.smartFormPrefill = new SmartFormPrefill();
         this.achievementSlideshow = new AchievementSlideshow();
         this.photoGallery = new PhotoGallery();
+        this.appointmentModal = new AppointmentModal();
 
         console.log('✅ All modules initialized successfully');
     }
@@ -618,188 +604,6 @@ if (window.performance && window.performance.timing) {
         const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
         console.log(`⏱️ Page Load Time: ${pageLoadTime}ms`);
     });
-}
-
-// ========================================
-// 13. ARTICLE MODAL (KNOWLEDGE HUB)
-// ========================================
-
-const ARTICLES = {
-    'term-insurance': {
-        category: { en: 'Insurance', kn: 'ವಿಮೆ' },
-        title: {
-            en: 'Understanding Term Insurance: A Comprehensive Guide',
-            kn: 'ಅವಧಿ ವಿಮೆ ಅರ್ಥ: ಸಮಗ್ರ ಮಾರ್ಗದರ್ಶನ'
-        },
-        body: {
-            en: `
-                <h3>What is Term Insurance?</h3>
-                <p>Term insurance is the simplest and purest form of life insurance. It provides financial protection to your family for a fixed period (the "term") — typically 20 to 40 years. If you pass away during this period, your nominees receive a tax-free lump sum (the sum assured). If you survive the term, the policy simply ends — there is no maturity payout.</p>
-                <h3>Why is it the Most Recommended?</h3>
-                <ul>
-                    <li><strong>Affordable:</strong> For ₹10–15 lakh annual income earners, a ₹1 crore cover typically costs only ₹700–1,200/month.</li>
-                    <li><strong>High coverage:</strong> You get the most coverage per rupee of premium — unlike traditional endowment or ULIP plans.</li>
-                    <li><strong>Tax benefit:</strong> Premiums are deductible under Section 80C; the payout is tax-free under Section 10(10D).</li>
-                    <li><strong>Pure protection:</strong> No complex investment components — just straightforward, honest coverage.</li>
-                </ul>
-                <h3>How Much Cover Do You Need?</h3>
-                <p>A common rule of thumb: <strong>10–15 times your annual income</strong>, plus any outstanding loans (home loan, car loan, etc.). For example, if you earn ₹8 lakh/year and have a ₹20 lakh home loan, aim for at least ₹1 crore cover.</p>
-                <h3>Key Things to Check Before Buying</h3>
-                <ul>
-                    <li>Claim Settlement Ratio of the insurer (look for 95%+)</li>
-                    <li>Policy term — should ideally cover until retirement age (60–65)</li>
-                    <li>Riders — consider accidental death benefit and critical illness riders</li>
-                    <li>Declaration accuracy — always disclose medical history honestly to avoid claim rejection</li>
-                </ul>
-                <p style="background:#eff6ff;padding:14px 18px;border-radius:8px;border-left:3px solid #3b82f6;"><strong>Need personal guidance?</strong> Every family's situation is different. Contact Rathnakar for a free, no-pressure consultation to find the right plan for you.</p>
-            `,
-            kn: `
-                <h3>ಟರ್ಮ್ ವಿಮೆ ಎಂದರೇನು?</h3>
-                <p>ಟರ್ಮ್ ವಿಮೆ ಅತ್ಯಂತ ಸರಳ ಮತ್ತು ಶುದ್ಧ ಜೀವನ ವಿಮೆ. ನೀವು ನಿಗದಿತ ಅವಧಿಯಲ್ಲಿ (ಸಾಮಾನ್ಯವಾಗಿ 20–40 ವರ್ಷ) ನಿಧನರಾದರೆ, ನಿಮ್ಮ ಕುಟುಂಬಕ್ಕೆ ತೆರಿಗೆ-ಮುಕ್ತ ಮೊತ್ತ ನೀಡಲಾಗುತ್ತದೆ. ನೀವು ಬದುಕಿ ಉಳಿದರೆ, ಪಾಲಿಸಿ ಮುಗಿಯುತ್ತದೆ — ಯಾವ ಮರಳುವ ಮೊತ್ತವೂ ಇಲ್ಲ.</p>
-                <h3>ಏಕೆ ಶಿಫಾರಸು?</h3>
-                <ul>
-                    <li><strong>ಅಗ್ಗ:</strong> ₹1 ಕೋಟಿ ಕವರ್‌ಗೆ ತಿಂಗಳಿಗೆ ಕೇವಲ ₹700–1,200 ಸಾಕು.</li>
-                    <li><strong>ಹೆಚ್ಚಿನ ರಕ್ಷಣೆ:</strong> ಪ್ರತಿ ರೂಪಾಯಿ ಪ್ರೀಮಿಯಂಗೆ ಅತ್ಯಧಿಕ ಕವರ್.</li>
-                    <li><strong>ತೆರಿಗೆ ಪ್ರಯೋಜನ:</strong> 80C ಅಡಿ ಪ್ರೀಮಿಯಂ ಕಡಿತ; 10(10D) ಅಡಿ ಮೊತ್ತ ತೆರಿಗೆ-ಮುಕ್ತ.</li>
-                </ul>
-                <h3>ಎಷ್ಟು ಕವರ್ ಬೇಕು?</h3>
-                <p>ನಿಮ್ಮ ವಾರ್ಷಿಕ ಆದಾಯದ <strong>10–15 ಪಟ್ಟು</strong>, ಜೊತೆಗೆ ಬಾಕಿ ಸಾಲ (ಗೃಹ ಸಾಲ ಇತ್ಯಾದಿ). ₹8 ಲಕ್ಷ ಆದಾಯ ಮತ್ತು ₹20 ಲಕ್ಷ ಸಾಲ ಇದ್ದರೆ, ಕನಿಷ್ಠ ₹1 ಕೋಟಿ ಕವರ್ ತೆಗೆದುಕೊಳ್ಳಿ.</p>
-                <p style="background:#eff6ff;padding:14px 18px;border-radius:8px;border-left:3px solid #3b82f6;"><strong>ವೈಯಕ್ತಿಕ ಮಾರ್ಗದರ್ಶನ ಬೇಕೇ?</strong> ರತ್ನಾಕರ ಅವರನ್ನು ಉಚಿತ ಸಲಹೆಗಾಗಿ ಸಂಪರ್ಕಿಸಿ.</p>
-            `
-        }
-    },
-    'health-myths': {
-        category: { en: 'Health', kn: 'ಆರೋಗ್ಯ' },
-        title: {
-            en: 'Health Insurance Myths Debunked',
-            kn: 'ಆರೋಗ್ಯ ವಿಮೆ ತಪ್ಪು ಕಲ್ಪನೆಗಳು — ಸತ್ಯ ತಿಳಿಯಿರಿ'
-        },
-        body: {
-            en: `
-                <h3>Myth 1: "My employer's group insurance is enough"</h3>
-                <p><strong>Reality:</strong> Group policies typically cover only ₹2–5 lakh — barely enough for a major surgery. Coverage ends the day you leave the job. It doesn't cover your parents. And it doesn't follow you into retirement. A personal health plan is essential alongside any group cover.</p>
-                <h3>Myth 2: "I'm young and healthy — I'll buy later"</h3>
-                <p><strong>Reality:</strong> Buying early locks in lower premiums for life. Waiting means higher premiums, stricter health checks, and risk of pre-existing conditions making you uninsurable. The best time to buy health insurance is when you don't need it.</p>
-                <h3>Myth 3: "All health insurance plans are the same"</h3>
-                <p><strong>Reality:</strong> Plans differ significantly in: waiting periods for pre-existing diseases (2–4 years), room rent limits, sub-limits on specific treatments, co-payment clauses, and network hospital coverage. Reading the fine print — or getting guidance — matters a lot.</p>
-                <h3>Myth 4: "Cashless means I pay nothing"</h3>
-                <p><strong>Reality:</strong> Cashless means the hospital bills the insurer directly — but you may still pay co-payments, non-covered items, room upgrade costs, or amounts exceeding sub-limits.</p>
-                <h3>Myth 5: "Claims always get rejected"</h3>
-                <p><strong>Reality:</strong> Most claim rejections are due to: non-disclosure during purchase, claiming before waiting periods end, or choosing a non-network hospital. With correct documentation and guidance, most valid claims are settled.</p>
-                <p style="background:#eff6ff;padding:14px 18px;border-radius:8px;border-left:3px solid #3b82f6;"><strong>Have a claim issue?</strong> Rathnakar provides free, independent claim guidance — whether you bought your policy through him or not.</p>
-            `,
-            kn: `
-                <h3>ತಪ್ಪು ಕಲ್ಪನೆ 1: "ನಮ್ಮ ಕಂಪನಿ ವಿಮೆ ಸಾಕು"</h3>
-                <p><strong>ಸತ್ಯ:</strong> ಗ್ರೂಪ್ ಪಾಲಿಸಿ ಸಾಮಾನ್ಯವಾಗಿ ₹2–5 ಲಕ್ಷ — ದೊಡ್ಡ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗೆ ಸಾಲದು. ಕೆಲಸ ಬಿಟ್ಟ ದಿನ ಕವರ್ ಮುಗಿಯುತ್ತದೆ. ಪೋಷಕರಿಗೆ ಕವರ್ ಇಲ್ಲ. ಖಾಸಗಿ ಆರೋಗ್ಯ ಪಾಲಿಸಿ ಅಗತ್ಯ.</p>
-                <h3>ತಪ್ಪು ಕಲ್ಪನೆ 2: "ಈಗ ಆರೋಗ್ಯವಾಗಿದ್ದೇನೆ — ನಂತರ ತೆಗೆದುಕೊಳ್ಳುತ್ತೇನೆ"</h3>
-                <p><strong>ಸತ್ಯ:</strong> ಬೇಗ ತೆಗೆದುಕೊಂಡಷ್ಟೂ ಕಡಿಮೆ ಪ್ರೀಮಿಯಂ. ತಡ ಮಾಡಿದರೆ ಹೆಚ್ಚಿನ ಪ್ರೀಮಿಯಂ, ಕಠಿಣ ಆರೋಗ್ಯ ತಪಾಸಣೆ, ಮತ್ತು ಈಗಾಗಲೇ ಇರುವ ಕಾಯಿಲೆ ನಿರಾಕರಣೆ ಸಾಧ್ಯತೆ.</p>
-                <h3>ತಪ್ಪು ಕಲ್ಪನೆ 3: "ಎಲ್ಲ ಆರೋಗ್ಯ ವಿಮೆ ಒಂದೇ"</h3>
-                <p><strong>ಸತ್ಯ:</strong> ನಿರೀಕ್ಷಣ ಅವಧಿ (2–4 ವರ್ಷ), ರೂಮ್ ಬಾಡಿಗೆ ಮಿತಿ, ನಿರ್ದಿಷ್ಟ ಚಿಕಿತ್ಸೆ ಮಿತಿ, ಕೋ-ಪೇಮೆಂಟ್ — ಎಲ್ಲ ಪ್ಲ್ಯಾನ್‌ಗಳು ಬೇರೆ ಬೇರೆ. ಸರಿಯಾದ ಮಾರ್ಗದರ್ಶನ ಅಗತ್ಯ.</p>
-                <p style="background:#eff6ff;padding:14px 18px;border-radius:8px;border-left:3px solid #3b82f6;"><strong>ಕ್ಲೇಮ್ ಸಮಸ್ಯೆ ಇದೆಯೇ?</strong> ರತ್ನಾಕರ ಅವರು ಉಚಿತ ಸ್ವತಂತ್ರ ಕ್ಲೇಮ್ ಮಾರ್ಗದರ್ಶನ ನೀಡುತ್ತಾರೆ.</p>
-            `
-        }
-    },
-    'sip-guide': {
-        category: { en: 'Investment', kn: 'ವಿನಿಯೋಗ' },
-        title: {
-            en: 'Getting Started with SIP: Your Guide to Disciplined Investing',
-            kn: 'SIP ಪ್ರಾರಂಭ: ಶಿಸ್ತಬದ್ಧ ವಿನಿಯೋಗ ಮಾರ್ಗದರ್ಶನ'
-        },
-        body: {
-            en: `
-                <h3>What is a SIP?</h3>
-                <p>A Systematic Investment Plan (SIP) lets you invest a fixed amount — as little as ₹500/month — into a mutual fund at regular intervals (usually monthly). You don't need a lump sum to start, and you don't need to time the market.</p>
-                <h3>How Does It Work?</h3>
-                <p>Each month, a fixed amount is debited from your bank and used to purchase mutual fund units at that day's price (NAV). Over time, you buy more units when prices are low and fewer when prices are high — this is called <strong>Rupee Cost Averaging</strong>, which reduces your average cost per unit naturally.</p>
-                <h3>The Power of Compounding</h3>
-                <p>Starting early makes a dramatic difference. For example:</p>
-                <ul>
-                    <li>₹5,000/month for 20 years at 12% returns = approx. <strong>₹49.9 lakh</strong></li>
-                    <li>₹5,000/month for 30 years at 12% returns = approx. <strong>₹1.76 crore</strong></li>
-                </ul>
-                <p>The extra 10 years more than triples the result — this is the compounding effect.</p>
-                <h3>Which Type of Mutual Fund for SIP?</h3>
-                <ul>
-                    <li><strong>Long-term (10+ years):</strong> Large-cap or index funds — stable, lower risk</li>
-                    <li><strong>Medium-term (5–10 years):</strong> Hybrid/balanced funds</li>
-                    <li><strong>Short-term (3–5 years):</strong> Debt funds</li>
-                </ul>
-                <h3>Common Mistakes to Avoid</h3>
-                <ul>
-                    <li>Stopping SIP during market downturns (this is actually the best time to invest)</li>
-                    <li>Investing without a goal — always link SIP to a specific target</li>
-                    <li>Not reviewing your portfolio annually</li>
-                </ul>
-                <p style="background:#eff6ff;padding:14px 18px;border-radius:8px;border-left:3px solid #3b82f6;"><strong>Want to start a SIP?</strong> Contact Rathnakar for free guidance on choosing the right fund and amount for your goals.</p>
-            `,
-            kn: `
-                <h3>SIP ಎಂದರೇನು?</h3>
-                <p>SIP (ವ್ಯವಸ್ಥಿತ ವಿನಿಯೋಗ ಯೋಜನೆ) ಮೂಲಕ ಪ್ರತಿ ತಿಂಗಳು ₹500 ರಿಂದ ಮ್ಯೂಚುವಲ್ ಫಂಡ್‌ನಲ್ಲಿ ಹಣ ಹೂಡಬಹುದು. ದೊಡ್ಡ ಮೊತ್ತ ಬೇಡ, ಮಾರ್ಕೆಟ್ ಟೈಮಿಂಗ್ ಬೇಡ.</p>
-                <h3>ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ?</h3>
-                <p>ಪ್ರತಿ ತಿಂಗಳು ಬ್ಯಾಂಕ್‌ನಿಂದ ನಿಗದಿತ ಹಣ ಕಟ್ ಆಗಿ ಫಂಡ್ ಯೂನಿಟ್‌ಗಳು ಖರೀದಿಯಾಗುತ್ತವೆ. ಬೆಲೆ ಕಡಿಮೆ ಇದ್ದಾಗ ಹೆಚ್ಚು ಯೂನಿಟ್, ಹೆಚ್ಚು ಇದ್ದಾಗ ಕಡಿಮೆ — ಇದನ್ನು <strong>ರೂಪಾಯಿ ಕಾಸ್ಟ್ ಆವರೇಜಿಂಗ್</strong> ಎನ್ನುತ್ತಾರೆ.</p>
-                <h3>ಚಕ್ರಬಡ್ಡಿ ಪ್ರಯೋಜನ</h3>
-                <ul>
-                    <li>₹5,000/ತಿಂಗಳು × 20 ವರ್ಷ × 12% = ಅಂದಾಜು <strong>₹49.9 ಲಕ್ಷ</strong></li>
-                    <li>₹5,000/ತಿಂಗಳು × 30 ವರ್ಷ × 12% = ಅಂದಾಜು <strong>₹1.76 ಕೋಟಿ</strong></li>
-                </ul>
-                <p>10 ವರ್ಷ ಹೆಚ್ಚು ಹೂಡಿದರೆ ಮೂರು ಪಟ್ಟು ಹೆಚ್ಚು ಆದಾಯ!</p>
-                <p style="background:#eff6ff;padding:14px 18px;border-radius:8px;border-left:3px solid #3b82f6;"><strong>SIP ಪ್ರಾರಂಭಿಸಲು ಬಯಸುವಿರಾ?</strong> ರತ್ನಾಕರ ಅವರನ್ನು ಉಚಿತ ಮಾರ್ಗದರ್ಶನಕ್ಕಾಗಿ ಸಂಪರ್ಕಿಸಿ.</p>
-            `
-        }
-    }
-};
-
-class ArticleModal {
-    constructor() {
-        this.overlay = document.getElementById('articleModalOverlay');
-        this.closeBtn = document.getElementById('modalClose');
-        this.modalCta = document.getElementById('modalCta');
-        this.currentLang = () => document.documentElement.lang || 'en';
-        this.init();
-    }
-
-    init() {
-        // Open on Read More button click
-        document.querySelectorAll('.blog-read-more[data-article]').forEach(btn => {
-            btn.addEventListener('click', () => this.open(btn.dataset.article));
-        });
-
-        // Close on X button
-        this.closeBtn?.addEventListener('click', () => this.close());
-
-        // Close on overlay backdrop click
-        this.overlay?.addEventListener('click', (e) => {
-            if (e.target === this.overlay) this.close();
-        });
-
-        // Close on ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !this.overlay.hidden) this.close();
-        });
-
-        // Close modal before navigating to contact
-        this.modalCta?.addEventListener('click', () => this.close());
-    }
-
-    open(articleId) {
-        const lang = this.currentLang();
-        const article = ARTICLES[articleId];
-        if (!article || !this.overlay) return;
-
-        document.getElementById('modalCategory').textContent = article.category[lang] || article.category.en;
-        document.getElementById('modalTitle').textContent   = article.title[lang]    || article.title.en;
-        document.getElementById('modalBody').innerHTML      = article.body[lang]     || article.body.en;
-
-        this.overlay.hidden = false;
-        document.body.style.overflow = 'hidden';
-        this.closeBtn.focus();
-    }
-
-    close() {
-        if (!this.overlay) return;
-        this.overlay.hidden = true;
-        document.body.style.overflow = '';
-    }
 }
 
 // ========================================
@@ -1084,6 +888,54 @@ class PhotoGallery {
 }
 
 // ========================================
+// 19. APPOINTMENT MODAL
+// ========================================
+
+class AppointmentModal {
+    constructor() {
+        this.overlay = document.getElementById('appointmentModalOverlay');
+        this.closeBtn = document.getElementById('appointmentModalClose');
+        this.init();
+    }
+
+    init() {
+        // Open on Book Appointment click
+        document.querySelectorAll('a[href="#appointment"]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.open();
+            });
+        });
+
+        // Close on X button
+        this.closeBtn?.addEventListener('click', () => this.close());
+
+        // Close on overlay backdrop click
+        this.overlay?.addEventListener('click', (e) => {
+            if (e.target === this.overlay) this.close();
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !this.overlay?.hidden) this.close();
+        });
+    }
+
+    open() {
+        if (!this.overlay) return;
+        this.overlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+        this.closeBtn.focus();
+    }
+
+    close() {
+        if (!this.overlay) return;
+        this.overlay.hidden = true;
+        document.body.style.overflow = '';
+    }
+}
+
+// ========================================
 // 16. START APPLICATION
 // ========================================
 
@@ -1124,6 +976,7 @@ if (typeof module !== 'undefined' && module.exports) {
         PerformanceOptimizer,
         AnalyticsTracker,
         Utilities,
-        WebsiteApp
+        WebsiteApp,
+        AppointmentModal
     };
 }

@@ -1,6 +1,6 @@
-# 🌟 Rathnakar Ambiga - Premium Professional Website
+# 🌟 Finmox - Premium Professional Website
 
-A production-grade, high-end bilingual professional website built with modern HTML5, CSS3, and ES6+ JavaScript.
+A production-grade, high-end bilingual professional website for Finmox, built with modern HTML5, CSS3, and ES6+ JavaScript.
 
 ---
 
@@ -77,8 +77,8 @@ premium-website/
 - Professional image placeholder
 
 ### 3. **Trust Metrics**
-- 17+ Years of Experience
-- 6th Rank in Karnataka (2023)
+- 15+ Years of Experience
+- 6th Rank in Karnataka (2024-25) at SBI Life Insurance (among 104 branches & 20,000+ advisors)
 - 7 International Achievements
 - 100% Independent & Unbiased
 
@@ -389,7 +389,7 @@ if (window.gtag) {
 
 ## 📄 License
 
-This website is created for Rathnakar Ambiga's professional use.
+This website is created for Finmox's professional use.
 
 ---
 
@@ -397,7 +397,7 @@ This website is created for Rathnakar Ambiga's professional use.
 
 **Name**: Rathnakar Ambiga
 **Qualification**: MBA in Finance
-**Experience**: 17+ years in Banking & Insurance
+**Experience**: 15+ years in Banking & Insurance
 **Current Role**: SBI Life Insurance (High Performance Career since 2022)
 **Location**: Karwar, Karnataka, India
 
@@ -414,9 +414,9 @@ For any questions or customizations needed:
 
 ## 🎉 Website Mission Statement
 
-**"High-integrity guidance, independent claim support, and social responsibility—delivered with experience, transparency, and modern technology."**
+**"Your Health, Wealth, Life, and Investments Covered—delivered with experience, transparency, and modern technology."**
 
 ---
 
 **Built with ❤️ for trust, transparency, and professional excellence.**
-**© 2024 Rathnakar Ambiga. All rights reserved.**
+**© 2024 Finmox. All rights reserved.**
