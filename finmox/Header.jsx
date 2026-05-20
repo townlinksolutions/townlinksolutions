@@ -33,10 +33,10 @@ const Header = () => {
                 <nav className="navbar">
                     <div className="logo" onClick={() => window.scrollTo(0,0)}>
                         <span className="logo-icon" aria-hidden="true">
-                        <img src="images/company_logo/logo.jpeg" alt="Finmox Logo" width="38" height="38" style={{ objectFit: 'contain' }} />
+                        <img src="images/company_logo/logo.jpeg" alt=" FinMox Logo" width="38" height="38" style={{ objectFit: 'contain' }} />
                         </span>
                         <div className="logo-brand">
-                            <span className="logo-name">{language === 'en' ? 'Finmox' : 'ಫಿನ್ಮಾಕ್ಸ್'}</span>
+                            <span className="logo-name">{language === 'en' ? ' FinMox' : 'ಫಿನ್ಮಾಕ್ಸ್'}</span>
                             <span className="logo-tagline">
                                 {language === 'en' ? 'Your Health, Wealth, Life, and Investments Covered' : 'ನಿಮ್ಮ ಆರೋಗ್ಯ, ಸಂಪತ್ತು, ಜೀವನ ಮತ್ತು ಹೂಡಿಕೆಗಳು ಆವರಿಸಿದೆ'}
                             </span>

@@ -1,6 +1,6 @@
-# 🌟 Finmox - Premium Professional Website
+# 🌟  FinMox - Premium Professional Website
 
-A production-grade, high-end bilingual professional website for Finmox, built with modern HTML5, CSS3, and ES6+ JavaScript.
+A production-grade, high-end bilingual professional website for  FinMox, built with modern HTML5, CSS3, and ES6+ JavaScript.
 
 ---
 
@@ -389,7 +389,7 @@ if (window.gtag) {
 
 ## 📄 License
 
-This website is created for Finmox's professional use.
+This website is created for  FinMox's professional use.
 
 ---
 
@@ -419,4 +419,4 @@ For any questions or customizations needed:
 ---
 
 **Built with ❤️ for trust, transparency, and professional excellence.**
-**© 2024 Finmox. All rights reserved.**
+**© 2024  FinMox. All rights reserved.**
