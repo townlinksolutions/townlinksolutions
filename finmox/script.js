@@ -1,4 +1,4 @@
-// ========================================
+﻿// ========================================
 // PREMIUM PROFESSIONAL WEBSITE - JavaScript
 // Modern ES6+, Production-Grade
 // ========================================
@@ -102,9 +102,8 @@ class LanguageSwitcher {
         });
 
         // Handle form inputs/textareas using data-placeholder-en / data-placeholder-kn
-        const placeholderKey = `placeholder-${language}`;
         document.querySelectorAll('[data-placeholder-en][data-placeholder-kn]').forEach(element => {
-            const text = element.dataset[placeholderKey];
+            const text = element.getAttribute(`data-placeholder-${language}`);
             if (text) element.placeholder = text;
         });
 
@@ -333,16 +332,16 @@ class ContactFormHandler {
         try {
             // Build WhatsApp message with lead details
             const lines = [
-                `Hi Bharosa Fin! I found your website and need guidance.`,
+                `Hi FinMox! I found your website and need guidance.`,
                 ``,
                 `👤 Name: ${formData.name}`,
                 `📞 Phone: ${formData.phone}`,
                 formData.email ? `📧 Email: ${formData.email}` : null,
-                `📌 Service: ${formData.service}`,
+                `📌 Topic: ${formData.service}`,
                 formData.message.trim() ? `📝 Message: ${formData.message}` : null
             ].filter(Boolean).join('\n');
 
-            const waNumber = '919591020072'; // Main contact number
+            const waNumber = '918073698789'; // Main contact number
             const waURL = `https://wa.me/${waNumber}?text=${encodeURIComponent(lines)}`;
 
             this.showMessage('✅ Request received! Opening WhatsApp to connect you…', 'success');
@@ -558,7 +557,10 @@ class WebsiteApp {
         this.faqAccordion = new FaqAccordion();
         this.smartFormPrefill = new SmartFormPrefill();
         this.achievementSlideshow = new AchievementSlideshow();
-        this.photoGallery = new PhotoGallery();
+        // PhotoGallery: only init if the gallery element exists on the page
+        if (document.getElementById('gallerySlideshow')) {
+            this.photoGallery = new PhotoGallery();
+        }
         this.appointmentModal = new AppointmentModal();
 
         console.log('✅ All modules initialized successfully');
@@ -607,7 +609,7 @@ if (window.performance && window.performance.timing) {
 }
 
 // ========================================
-// 14. ANIMATED COUNTERS
+// 13. ANIMATED COUNTERS
 // ========================================
 
 class CounterAnimator {
@@ -923,6 +925,7 @@ class AppointmentModal {
 
     open() {
         if (!this.overlay) return;
+
         this.overlay.hidden = false;
         document.body.style.overflow = 'hidden';
         this.closeBtn.focus();
@@ -962,7 +965,82 @@ if ('serviceWorker' in navigator) {
 }
 
 // ========================================
-// 15. EXPORT FOR TESTING
+// 16. LOCAL RECOGNITION PHOTO GRID
+// ========================================
+(function () {
+    function renderLocalRecognition() {
+        const grid = document.getElementById('localRecognitionGrid');
+        if (!grid) return;
+        const photos = window.LOCAL_RECOGNITION_PHOTOS;
+        if (!photos || photos.length === 0) {
+            grid.style.display = 'none';
+            return;
+        }
+        // Build URL safely
+        function makeUrl(file) {
+            return 'images/Local%20%26%20National%20Recognition/' +
+                file.replace(/ /g, '%20').replace(/\(/g, '%28').replace(/\)/g, '%29');
+        }
+
+        grid.innerHTML = photos.map(function (p, i) {
+            return `<div class="rec-slide" data-index="${i}">
+                <img src="${makeUrl(p.file)}" alt="${p.caption}" loading="lazy">
+                <div class="rec-slide-caption">${p.caption}</div>
+            </div>`;
+        }).join('');
+
+        const slides = Array.from(grid.querySelectorAll('.rec-slide'));
+        let current = 0;
+
+        function updateCarousel() {
+            slides.forEach(function(slide, i) {
+                slide.classList.remove('rec-active', 'rec-prev', 'rec-next', 'rec-far-prev', 'rec-far-next', 'rec-far');
+                const diff = ((i - current) % slides.length + slides.length) % slides.length;
+                const normalized = diff <= slides.length / 2 ? diff : diff - slides.length;
+                if      (normalized === 0)  slide.classList.add('rec-active');
+                else if (normalized === -1) slide.classList.add('rec-prev');
+                else if (normalized === 1)  slide.classList.add('rec-next');
+                else if (normalized === -2) slide.classList.add('rec-far-prev');
+                else if (normalized === 2)  slide.classList.add('rec-far-next');
+                else                        slide.classList.add('rec-far');
+            });
+        }
+        updateCarousel();
+
+        document.getElementById('recPrev').addEventListener('click', function() {
+            current = (current - 1 + slides.length) % slides.length;
+            updateCarousel();
+        });
+        document.getElementById('recNext').addEventListener('click', function() {
+            current = (current + 1) % slides.length;
+            updateCarousel();
+        });
+
+        // Touch swipe
+        let tx = 0;
+        grid.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+        grid.addEventListener('touchend', e => {
+            const diff = tx - e.changedTouches[0].clientX;
+            if (diff > 50)       { current = (current + 1) % slides.length; updateCarousel(); }
+            else if (diff < -50) { current = (current - 1 + slides.length) % slides.length; updateCarousel(); }
+        }, { passive: true });
+
+        // Click side cards to navigate
+        slides.forEach(function(slide, i) {
+            slide.addEventListener('click', function() {
+                if (slide.classList.contains('rec-active')) return;
+                current = i; updateCarousel();
+            });
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderLocalRecognition);
+    } else {
+        renderLocalRecognition();
+    }
+}());
+
+// 17. EXPORT FOR TESTING
 // ========================================
 
 if (typeof module !== 'undefined' && module.exports) {
