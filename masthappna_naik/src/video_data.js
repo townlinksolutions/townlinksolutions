@@ -1,0 +1,93 @@
+export const videoData = [
+    {
+        id: "video_call_to_change",
+        videoUrl: "https://drive.google.com/uc?id=1v_FN1U9htYFyIEqkZ0cE8RGIiCslW92Z&export=download",
+        titleEn: "A Clarion Call for Change!",
+        titleKn: "ಬದಲಾವಣೆಗಾಗಿ ಸ್ಪಷ್ಟ ಕರೆ!",
+        descriptionEn: "A clarion call for change! 📢 Masthappa Naik speaks out against the systemic hurdles holding our children back. From securing education rights to fighting corruption, the message is clear: Unity is our greatest weapon. 🤝📚 In this stirring video, leader Masthappa Naik addresses a gathered crowd with a focus on the future of the next generation. He points out that many children are being deprived of their right to higher education due to administrative challenges, specifically mentioning the importance of caste certificates in securing a career.",
+        descriptionKn: "ಬದಲಾವಣೆಗಾಗಿ ಸ್ಪಷ್ಟ ಕರೆ! 📢 ನಮ್ಮ ಮಕ್ಕಳ ಭವಿಷ್ಯವನ್ನು ಕುಂಠಿತಗೊಳಿಸುತ್ತಿರುವ ವ್ಯವಸ್ಥಿತ ಅಡೆತಡೆಗಳ ವಿರುದ್ಧ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಧ್ವನಿ ಎತ್ತಿದ್ದಾರೆ. ಶಿಕ್ಷಣದ ಹಕ್ಕುಗಳನ್ನು ಪಡೆಯುವುದರಿಂದ ಹಿಡಿದು ಭ್ರಷ್ಟಾಚಾರದ ವಿರುದ್ಧ ಹೋರಾಡುವವರೆಗೆ ಸಂದೇಶವು ಸ್ಪಷ್ಟವಾಗಿದೆ: ಏಕತೆಯೇ ನಮ್ಮ ದೊಡ್ಡ ಆಯುಧ. 🤝📚 ಈ ವೀಡಿಯೊದಲ್ಲಿ, ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಮುಂದಿನ ಪೀಳಿಗೆಯ ಭವಿಷ್ಯದತ್ತ ಗಮನ ಹರಿಸುವ ಮೂಲಕ ಸೇರಿದ್ದ ಜನಸಮೂಹವನ್ನು ಉದ್ದೇಶಿಸಿ ಮಾತನಾಡಿದ್ದಾರೆ.",
+        duration: "02:45",
+        views: "5.2k",
+        thumbnail: "https://drive.google.com/thumbnail?id=1v_FN1U9htYFyIEqkZ0cE8RGIiCslW92Z&sz=w800",
+        dateEn: "May 2024",
+        dateKn: "ಮೇ 2024"
+    },
+    {
+        id: "video_no_more_promises",
+        videoUrl: "https://drive.google.com/uc?id=1sg8dMgOnpzm5Nd2QCt4ZLRtZaMpZiQOM&export=download",
+        titleEn: "No More Empty Promises!",
+        titleKn: "ಇನ್ನು ಸಾಕು ಸುಳ್ಳು ಭರವಸೆಗಳು!",
+        descriptionEn: "No more empty promises! 🚫 Masthappa Naik calls out the leaders who failed to deliver and urges the youth to lead a new movement for justice. The time for a Janandolana is now! ✊🔥 In this second clip, Masthappa Naik takes a harder stance against political inaction. He directly addresses the 'Janandolana' (People's Movement) that is being organized against officials and ministers who have ignored the people's problems.",
+        descriptionKn: "ಇನ್ನು ಸಾಕು ಸುಳ್ಳು ಭರವಸೆಗಳು! 🚫 ನೀಡಿದ ಭರವಸೆಗಳನ್ನು ಈಡೇರಿಸಲು ವಿಫಲರಾದ ನಾಯಕರನ್ನು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಪ್ರಶ್ನಿಸಿದ್ದಾರೆ ಮತ್ತು ನ್ಯಾಯಕ್ಕಾಗಿ ಹೊಸ ಚಳುವಳಿಯ ನೇತೃತ್ವ ವಹಿಸಲು ಯುವಜನತೆಗೆ ಕರೆ ನೀಡಿದ್ದಾರೆ. ಜನದೋಲನದ ಸಮಯ ಈಗ ಬಂದಿದೆ! ✊🔥 ಈ ಕ್ಲಿಪ್‌ನಲ್ಲಿ, ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ರಾಜಕೀಯ ನಿಷ್ಕ್ರಿಯತೆಯ ವಿರುದ್ಧ ಕಠಿಣ ನಿಲುವು ತಳೆದಿದ್ದಾರೆ.",
+        duration: "03:15",
+        views: "4.8k",
+        thumbnail: "https://drive.google.com/thumbnail?id=1sg8dMgOnpzm5Nd2QCt4ZLRtZaMpZiQOM&sz=w800",
+        dateEn: "May 2024",
+        dateKn: "ಮೇ 2024"
+    },
+    {
+        id: "video_action_is_way",
+        videoUrl: "https://drive.google.com/uc?id=1HGvJqAyKWp2DxVVkchw-pAE565RnoYSc&export=download",
+        titleEn: "Promises won't suffice—action is the only way!",
+        titleKn: "ಭರವಸೆಗಳು ಸಾಲದು - ಕ್ರಿಯೆಯೇ ಏಕೈಕ ಮಾರ್ಗ!",
+        descriptionEn: "Promises won't suffice—action is the only way! ✊📢 Masthappa Naik pledges his full support, both physically and financially, for a large-scale struggle to secure the community's rights. The time to stand up for our certificates is now! In this concluding video, Masthappa Naik delivers his most powerful ultimatum yet. He argues that to truly claim one's rights, one must be prepared to fight on the streets.",
+        descriptionKn: "ಭರವಸೆಗಳು ಸಾಲದು - ಕ್ರಿಯೆಯೇ ಏಕೈಕ ಮಾರ್ಗ! ✊📢 ಸಮುದಾಯದ ಹಕ್ಕುಗಳನ್ನು ಪಡೆಯಲು ಬೃಹತ್ ಮಟ್ಟದ ಹೋರಾಟಕ್ಕಾಗಿ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ದೈಹಿಕವಾಗಿ ಮತ್ತು ಆರ್ಥಿಕವಾಗಿ ತಮ್ಮ ಸಂಪೂರ್ಣ ಬೆಂಬಲವನ್ನು ಘೋಷಿಸಿದ್ದಾರೆ. ನಮ್ಮ ಪ್ರಮಾಣಪತ್ರಗಳಿಗಾಗಿ ಧ್ವನಿ ಎತ್ತಲು ಇದು ಸಕಾಲ!",
+        duration: "02:55",
+        views: "6.1k",
+        thumbnail: "https://drive.google.com/thumbnail?id=1HGvJqAyKWp2DxVVkchw-pAE565RnoYSc&sz=w800",
+        dateEn: "May 2024",
+        dateKn: "ಮೇ 2024"
+    },
+    {
+        id: "video_gita_distribution",
+        videoUrl: "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappa_naik/videos/VID-20260509-WA0045.mp4",
+        titleEn: "Empowering the mind and future!",
+        titleKn: "ಮನಸ್ಸು ಮತ್ತು ಭವಿಷ್ಯದ ಸಬಲೀಕರಣ!",
+        descriptionEn: "Empowering the mind, as well as the future! 📖✨ Masthappa Naik distributes the Bhagavad Gita, calling on the youth to seek wisdom and strength in their pursuit of justice. It’s not just a struggle for rights, but a journey of character and duty. 🙏✊ In this video, Masthappa Naik emphasizes that a true movement requires more than just physical presence—it requires a strong moral foundation.",
+        descriptionKn: "ಮನಸ್ಸು ಮತ್ತು ಭವಿಷ್ಯದ ಸಬಲೀಕರಣ! 📖✨ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಅವರು ಭಗವದ್ಗೀತೆಯನ್ನು ವಿತರಿಸುತ್ತಾ, ನ್ಯಾಯದ ಅನ್ವೇಷಣೆಯಲ್ಲಿ ಬುದ್ಧಿವಂತಿಕೆ ಮತ್ತು ಶಕ್ತಿಯನ್ನು ಪಡೆಯಲು ಯುವಕರಿಗೆ ಕರೆ ನೀಡಿದರು. ಇದು ಕೇವಲ ಹಕ್ಕುಗಳ ಹೋರಾಟವಲ್ಲ, ಗುಣ ಮತ್ತು ಕರ್ತವ್ಯದ ಪ್ರಯಾಣವಾಗಿದೆ. 🙏✊",
+        duration: "04:10",
+        views: "7.3k",
+        thumbnail: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+        dateEn: "May 2024",
+        dateKn: "ಮೇ 2024"
+    },
+    {
+        id: "video1",
+        youtubeId: "VAFvBgCTIvc", 
+        titleEn: "Launching Blood-Letter Postcard Campaign",
+        titleKn: "ರಕ್ತದಲ್ಲಿ ಪತ್ರ ಬರೆಯುವ ಚಳುವಳಿ ಚಾಲನೆ",
+        descriptionEn: "Mastappa Naik Balase launches a massive public struggle, writing to the CM in blood to demand better healthcare.",
+        descriptionKn: "ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಬಲಸೆ ಅವರು ಉತ್ತಮ ಆರೋಗ್ಯ ಸೌಲಭ್ಯಕ್ಕಾಗಿ ಸಿಎಂ ಅವರಿಗೆ ರಕ್ತದಲ್ಲಿ ಪತ್ರ ಬರೆಯುವ ಮೂಲಕ ಬೃಹತ್ ಜನಹೋರಾಟವನ್ನು ಪ್ರಾರಂಭಿಸಿದರು.",
+        duration: "03:45",
+        views: "12k",
+        thumbnail: "https://img.youtube.com/vi/VAFvBgCTIvc/maxresdefault.jpg",
+        dateEn: "May 2024",
+        dateKn: "ಮೇ 2024"
+    },
+    {
+        id: "video2",
+        youtubeId: "F0-V9_Hj2Cg",
+        titleEn: "Fearless Opposition to Sharavathi Project",
+        titleKn: "ಶರಾವತಿ ಯೋಜನೆಯ ವಿರುದ್ಧ ಧ್ವನಿ",
+        descriptionEn: "A detailed speech highlighting the ecological risks to 16,000 trees and the impact on the local community.",
+        descriptionKn: "16,000 ಮರಗಳಿಗೆ ಆಗುವ ಪರಿಸರ ಹಾನಿ ಮತ್ತು ಸ್ಥಳೀಯ ಸಮುದಾಯದ ಮೇಲೆ ಆಗುವ ಪರಿಣಾಮಗಳ ಕುರಿತು ವಿವರವಾದ ಭಾಷಣ.",
+        duration: "05:20",
+        views: "8.5k",
+        thumbnail: "https://img.youtube.com/vi/F0-V9_Hj2Cg/maxresdefault.jpg",
+        dateEn: "April 2024",
+        dateKn: "ಏಪ್ರಿಲ್ 2024"
+    },
+    {
+        id: "compromise-tragedies",
+        videoUrl: "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappa_naik/videos/VID-20260509-WA0045.mp4",
+        titleEn: "Alvegodi Tragedy Action",
+        titleKn: "ಅಳ್ವೆಕೋಡಿ ದುರಂತ ತನಿಖೆ",
+        descriptionEn: "The Tragedy of 'Unscientific Construction': Allegations and findings surrounding the Alvegodi bridge project negligence leading to tragic loss of lives and community protests.",
+        descriptionKn: "ಅವೈಜ್ಞಾನಿಕ ಕಾಮಗಾರಿಯ ದುರಂತ: ಅಳ್ವೆಕೋಡಿ ಸೇತುವೆ ನಿರ್ಮಾಣದ ಅನಾಹುತಗಳ ಬಗ್ಗೆ ಜಾಗೃತಿ ಮತ್ತು ತನಿಖೆಗೆ ಒತ್ತಾಯ.",
+        duration: "04:30",
+        views: "10.4k",
+        thumbnail: "https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo2.jpeg",
+        dateEn: "June 2026",
+        dateKn: "ಜೂನ್ 2026"
+    }
+];

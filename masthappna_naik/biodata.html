@@ -1073,8 +1073,18 @@
     <script>
         lucide.createIcons();
 
+        let currentLang = localStorage.getItem('preferredLang') || localStorage.getItem('lang') || 'kn';
+        if (currentLang === 'en') {
+            document.body.classList.add('lang-en');
+        } else {
+            document.body.classList.remove('lang-en');
+        }
+
         function toggleLanguage() {
-            document.body.classList.toggle('lang-en');
+            currentLang = currentLang === 'en' ? 'kn' : 'en';
+            localStorage.setItem('preferredLang', currentLang);
+            localStorage.setItem('lang', currentLang);
+            document.body.classList.toggle('lang-en', currentLang === 'en');
         }
 
         // Carousel Logic

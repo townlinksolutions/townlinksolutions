@@ -1811,26 +1811,46 @@
         lucide.createIcons();
 
         // Language Toggle Logic
-        let currentLang = 'kn';
-        function toggleLanguage() {
-            currentLang = currentLang === 'kn' ? 'en' : 'kn';
-            document.body.classList.toggle('lang-en');
-            
-            // Update placeholders
+        let currentLang = localStorage.getItem('preferredLang') || localStorage.getItem('lang') || 'kn';
+        if (currentLang === 'en') {
+            document.body.classList.add('lang-en');
+        } else {
+            document.body.classList.remove('lang-en');
+        }
+
+        function updatePlaceholders() {
             const nameInput = document.getElementById('form-name');
             const emailInput = document.getElementById('form-email');
             const msgInput = document.getElementById('form-msg');
-            
-            if (currentLang === 'kn') {
-                nameInput.placeholder = 'ಹೆಸರು';
-                emailInput.placeholder = 'ಇಮೇಲ್';
-                msgInput.placeholder = 'ಸಂದೇಶ';
-            } else {
-                nameInput.placeholder = 'Name';
-                emailInput.placeholder = 'Email';
-                msgInput.placeholder = 'Message';
+            if (nameInput && emailInput && msgInput) {
+                if (currentLang === 'kn') {
+                    nameInput.placeholder = 'ಹೆಸರು';
+                    emailInput.placeholder = 'ಇಮೇಲ್';
+                    msgInput.placeholder = 'ಸಂದೇಶ';
+                } else {
+                    nameInput.placeholder = 'Name';
+                    emailInput.placeholder = 'Email';
+                    msgInput.placeholder = 'Message';
+                }
             }
         }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'kn' ? 'en' : 'kn';
+            localStorage.setItem('preferredLang', currentLang);
+            localStorage.setItem('lang', currentLang);
+            document.body.classList.toggle('lang-en', currentLang === 'en');
+            
+            updatePlaceholders();
+
+            // Re-render news links if they are visible
+            if (typeof newsLinksContainer !== 'undefined' && newsLinksContainer && !newsLinksContainer.classList.contains('hidden')) {
+                renderNewsLinks();
+            }
+        }
+
+        // Initialize placeholders on load
+        updatePlaceholders();
 
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {

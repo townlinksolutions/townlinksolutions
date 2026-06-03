@@ -241,6 +241,10 @@
                     <span class="en">News</span>
                     <span class="kn">ಸುದ್ದಿ</span>
                 </a>
+                <a href="videos.html" class="font-bold text-sm uppercase tracking-widest text-white/80 hover:text-white transition-colors nav-link">
+                    <span class="en">Videos</span>
+                    <span class="kn">ವೀಡಿಯೊಗಳು</span>
+                </a>
                 <button onclick="toggleLanguage()" class="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg font-bold text-xs transition-all flex items-center gap-2 nav-btn">
                     <i data-lucide="languages" class="w-4 h-4"></i>
                     <span class="en">ಕನ್ನಡ</span>
@@ -469,6 +473,94 @@
         </div>
     </section>
 
+    <!-- Videos Section -->
+    <section class="py-24 bg-[#0a0a0a] text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left: Featured Video -->
+                <div class="lg:col-span-8">
+                    <div class="mb-12">
+                        <span class="bg-orange-500 text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 inline-block">ವೀಡಿಯೊಗಳು</span>
+                        <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-tight">
+                            <span class="en">Service Videos</span>
+                            <span class="kn">ಸೇವೆಯ ವೀಡಿಯೊಗಳು</span>
+                        </h2>
+                    </div>
+
+                    <a href="videos.html?video=0" class="relative block aspect-video rounded-[3rem] overflow-hidden group cursor-pointer shadow-2xl border border-white/10">
+                        <img src="https://drive.google.com/thumbnail?id=1v_FN1U9htYFyIEqkZ0cE8RGIiCslW92Z&sz=w1200" alt="Featured Service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                        
+                        <!-- Play Button Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-20 h-20 md:w-24 md:h-24 bg-orange-500 text-black rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                                <i data-lucide="play" class="w-10 h-10 fill-current ml-1"></i>
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-10 left-10 right-10">
+                            <h3 class="text-2xl md:text-3xl font-black tracking-tighter mb-2">
+                                <span class="en">A Clarion Call for Change!</span>
+                                <span class="kn">ಬದಲಾವಣೆಗಾಗಿ ಸ್ಪಷ್ಟ ಕರೆ!</span>
+                            </h3>
+                            <div class="text-white/60 font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+                                <span class="en">Watch in Reels Mode</span>
+                                <span class="kn">ರೀಲ್ಸ್ ಮೋಡ್‌ನಲ್ಲಿ ವೀಕ್ಷಿಸಿ</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Right: Up Next List (Desktop Only/Scroll on Mobile) -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-orange-500">Up Next</h3>
+                        <a href="videos.html" class="text-[10px] font-black uppercase text-white/40 hover:text-orange-500 transition-colors">View All</a>
+                    </div>
+
+                    <div class="space-y-4">
+                        <a href="videos.html?video=1" class="flex gap-4 p-3 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-all cursor-pointer group">
+                            <div class="w-32 h-20 rounded-xl overflow-hidden flex-shrink-0 relative">
+                                <img src="https://drive.google.com/thumbnail?id=1sg8dMgOnpzm5Nd2QCt4ZLRtZaMpZiQOM&sz=w400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i data-lucide="play" class="w-6 h-6 text-orange-500 fill-current"></i>
+                                </div>
+                            </div>
+                            <div class="flex flex-col justify-center gap-1">
+                                <h4 class="font-bold text-sm leading-tight">
+                                    <span class="en">No More Empty Promises!</span>
+                                    <span class="kn">ಇನ್ನು ಸಾಕು ಸುಳ್ಳು ಭರವಸೆಗಳು!</span>
+                                </h4>
+                                <div class="text-[10px] font-black uppercase text-slate-500">Video • 4.8k Views</div>
+                            </div>
+                        </a>
+
+                        <a href="videos.html?video=2" class="flex gap-4 p-3 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-all cursor-pointer group">
+                            <div class="w-32 h-20 rounded-xl overflow-hidden flex-shrink-0 relative">
+                                <img src="https://drive.google.com/thumbnail?id=1HGvJqAyKWp2DxVVkchw-pAE565RnoYSc&sz=w400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i data-lucide="play" class="w-6 h-6 text-orange-500 fill-current"></i>
+                                </div>
+                            </div>
+                            <div class="flex flex-col justify-center gap-1">
+                                <h4 class="font-bold text-sm leading-tight">
+                                    <span class="en">Promises won't suffice!</span>
+                                    <span class="kn">ಭರವಸೆಗಳು ಸಾಲದು!</span>
+                                </h4>
+                                <div class="text-[10px] font-black uppercase text-slate-500">Video • 6.1k Views</div>
+                            </div>
+                        </a>
+                        
+                        <a href="videos.html" class="block w-full text-center py-4 rounded-2xl border border-white/10 hover:border-orange-500 hover:text-orange-500 transition-all font-black uppercase text-[10px] tracking-widest mt-8">
+                            Explore All Service Videos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Major Areas of Work Section -->
     <section class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
@@ -595,7 +687,7 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Postcard Campaign: Hospital -->
                 <div class="relative group">
                     <div class="absolute inset-0 bg-orange-600 rounded-[3rem] translate-x-3 translate-y-3 -z-10 opacity-0 group-hover:opacity-10 transition-all"></div>
@@ -650,6 +742,28 @@
                             <span class="kn">ಪರಿಸರ ಸಂರಕ್ಷಣೆಯ ಬಗ್ಗೆ ಜಾಗೃತಿ ಮೂಡಿಸಲು 100+ ಹಳ್ಳಿಗಳ ಮೂಲಕ ಐತಿಹಾಸಿಕ ಪಾದಯಾತ್ರೆ.</span>
                         </p>
                         <div class="text-green-600 font-black text-sm uppercase tracking-widest">36km March</div>
+                    </div>
+                </div>
+
+                <!-- The Cost of Compromise Campaign -->
+                <div class="relative group cursor-pointer" onclick="window.location.href='compromise-tragedies.html'">
+                    <div class="absolute inset-0 bg-red-600 rounded-[3rem] translate-x-3 translate-y-3 -z-10 opacity-0 group-hover:opacity-10 transition-all"></div>
+                    <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 h-full flex flex-col hover:border-red-600/30 transition-all">
+                        <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+                            <i data-lucide="shield-alert" class="text-red-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4 animate-pulse">
+                            <span class="en text-red-600">Alvegodi Tragedy Action</span>
+                            <span class="kn text-red-600">ಅಳ್ವೆಕೋಡಿ ದುರಂತ ತನಿಖೆ</span>
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed mb-8 flex-grow">
+                            <span class="en">Investigating the Alvegodi tragedy to demand justice for the 11 victims of unscientific construction.</span>
+                            <span class="kn">ಅವೈಜ್ಞಾನಿಕ ಕಾಮಗಾರಿಯ ಪರಿಣಾಮ 11 ಜೀವಗಳನ್ನು ಬಲಿತೆಗೆದುಕೊಂಡ ಅಳ್ವೆಕೋಡಿ ದುರಂತದ ಸಮಗ್ರ ತನಿಖೆಗೆ ಒತ್ತಾಯ.</span>
+                        </p>
+                        <div class="text-red-600 font-black text-sm uppercase tracking-widest flex items-center gap-2">
+                            <span>Safety & Investigation</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1220,7 +1334,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
                 <!-- Campaign 1 -->
                 <div class="bg-white rounded-[3rem] overflow-hidden shadow-xl border border-slate-100 group">
                     <div class="h-64 overflow-hidden">
@@ -1271,6 +1385,34 @@
                             <button onclick="openJoinModal('Sharavathi Pumped Storage Project')" class="bg-orange-50 text-orange-600 py-4 rounded-2xl font-bold hover:bg-orange-600 hover:text-white transition-all">
                                 <span class="en">Join Community</span>
                                 <span class="kn">ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Campaign 3 -->
+                <div class="bg-white rounded-[3rem] overflow-hidden shadow-xl border border-slate-100 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Investigate tragedies">
+                        <div class="absolute top-6 left-6 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Urgent</div>
+                    </div>
+                    <div class="p-6 md:p-10">
+                        <h3 class="text-2xl font-black text-slate-900 mb-4 text-red-600">
+                            <span class="en">Investigate the Alvegodi Tragedy: Demand Justice for the 11 Victims</span>
+                            <span class="kn">ಅಳ್ವೆಕೋಡಿ ದುರಂತದ ತನಿಖೆಗೆ ಆಗ್ರಹ</span>
+                        </h3>
+                        <p class="text-slate-500 mb-8 line-clamp-2">
+                            <span class="en">Demanding a full investigation and accountability into the tragic Alvegodi incident to prevent further losses.</span>
+                            <span class="kn">ಅವೈಜ್ಞಾನಿಕ ಕಾಮಗಾರಿಯಿಂದ 11 ಜೀವಗಳನ್ನು ಕಳೆದುಕೊಂಡ ಭಟ್ಕಳದ ಅಳ್ವೆಕೋಡಿ ದುರಂತದ ಆಳವಾದ ತನಿಖೆ ಹಾಗೂ ನ್ಯಾಯಕ್ಕಾಗಿ ಒತ್ತಾಯ.</span>
+                        </p>
+                        <div class="flex flex-col gap-4">
+                            <button onclick="openDetail('compromise-tragedies')" class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-red-600 text-white font-bold rounded-2xl hover:bg-red-700 transition-all shadow-lg hover:shadow-red-500/20 group">
+                                <span class="en">Know More</span>
+                                <span class="kn">ಹೆಚ್ಚಿನ ಮಾಹಿತಿ</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <button onclick="openJoinModal('Alvegodi Tragedy Campaign')" class="bg-red-50 text-red-600 py-4 rounded-2xl font-bold hover:bg-red-600 hover:text-white transition-all">
+                                <span class="en">Join Movement</span>
+                                <span class="kn">ಈ ಚಳುವಳಿಗೆ ಸೇರಿ</span>
                             </button>
                         </div>
                     </div>
@@ -1772,24 +1914,6 @@
         </div>
     </section>
 
-    <!-- Visual Media Section -->
-    <section id="visual-media" class="py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-black mb-16 text-center">
-                <span class="en">Visual Media</span>
-                <span class="kn">ದೃಶ್ಯ ಮಾಧ್ಯಮ</span>
-            </h2>
-            <div class="text-center mb-12">
-                <button id="toggle-videos-btn" class="bg-orange-600 text-white px-8 py-4 rounded-full font-bold hover:bg-orange-700 transition-all shadow-lg">
-                    <span class="en">View YouTube Videos</span>
-                    <span class="kn">ಯೂಟ್ಯೂಬ್ ವೀಡಿಯೊಗಳನ್ನು ವೀಕ್ಷಿಸಿ</span>
-                </button>
-            </div>
-            <div id="videos-container" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Videos will be injected here -->
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-32 bg-white">
@@ -1857,6 +1981,7 @@
                         <a href="timeline.html" class="hover:text-orange-400 transition-colors">Timeline</a>
                         <a href="events.html" class="hover:text-orange-400 transition-colors">Events</a>
                         <a href="#contact" class="hover:text-orange-400 transition-colors">Contact</a>
+                        <a href="admin.html" class="hover:text-orange-400 transition-colors"><i data-lucide="shield" class="w-4 h-4 inline-block -mt-1 mr-1"></i>Admin</a>
                     </div>
                 </div>
             </div>
@@ -1981,31 +2106,46 @@
         lucide.createIcons();
 
         // Language Toggle Logic
-        let currentLang = 'kn';
-        function toggleLanguage() {
-            currentLang = currentLang === 'kn' ? 'en' : 'kn';
-            document.body.classList.toggle('lang-en');
-            
-            // Update placeholders
+        let currentLang = localStorage.getItem('preferredLang') || localStorage.getItem('lang') || 'kn';
+        if (currentLang === 'en') {
+            document.body.classList.add('lang-en');
+        } else {
+            document.body.classList.remove('lang-en');
+        }
+
+        function updatePlaceholders() {
             const nameInput = document.getElementById('form-name');
             const emailInput = document.getElementById('form-email');
             const msgInput = document.getElementById('form-msg');
-            
-            if (currentLang === 'kn') {
-                nameInput.placeholder = 'ಹೆಸರು';
-                emailInput.placeholder = 'ಇಮೇಲ್';
-                msgInput.placeholder = 'ಸಂದೇಶ';
-            } else {
-                nameInput.placeholder = 'Name';
-                emailInput.placeholder = 'Email';
-                msgInput.placeholder = 'Message';
+            if (nameInput && emailInput && msgInput) {
+                if (currentLang === 'kn') {
+                    nameInput.placeholder = 'ಹೆಸರು';
+                    emailInput.placeholder = 'ಇಮೇಲ್';
+                    msgInput.placeholder = 'ಸಂದೇಶ';
+                } else {
+                    nameInput.placeholder = 'Name';
+                    emailInput.placeholder = 'Email';
+                    msgInput.placeholder = 'Message';
+                }
             }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'kn' ? 'en' : 'kn';
+            localStorage.setItem('preferredLang', currentLang);
+            localStorage.setItem('lang', currentLang);
+            document.body.classList.toggle('lang-en', currentLang === 'en');
+            
+            updatePlaceholders();
 
             // Re-render news links if they are visible
-            if (newsLinksContainer && !newsLinksContainer.classList.contains('hidden')) {
+            if (typeof newsLinksContainer !== 'undefined' && newsLinksContainer && !newsLinksContainer.classList.contains('hidden')) {
                 renderNewsLinks();
             }
         }
+
+        // Initialize placeholders on load
+        updatePlaceholders();
 
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
@@ -2058,38 +2198,6 @@
             }, 3000);
         }
 
-        const visualMediaVideos = [
-            {
-                title: "Launching the Blood-Letter Postcard Campaign for a Multi-Specialty Hospital",
-                description: "Mastappa Naik Balase launches a massive public struggle, writing to the CM in blood to demand better healthcare infrastructure for Uttara Kannada.",
-                url: "https://www.youtube.com/watch?v=VAFvBgCTIvc"
-            },
-            {
-                title: "Fearless Opposition to the Sharavathi Pumped Storage Project",
-                description: "A detailed speech highlighting the ecological risks to 16,000 trees and the impact on the local community's water and heritage.",
-                url: "https://www.youtube.com/watch?v=F0-V9_Hj2Cg"
-            },
-            {
-                title: "ಪ್ರಭಾವಿ ರಾಜಕಾರಣಿ ಯಾರು......?",
-                description: "ಈ ವಿಡಿಯೋದಲ್ಲಿ ಹೊನ್ನಾವರ–ಭಟ್ಕಳ ಪ್ರದೇಶದಲ್ಲಿ ಭೂ ಮಾಫಿಯಾ ಮತ್ತು ರಾಜಕೀಯ ಪ್ರಭಾವ ಕುರಿತು ಚರ್ಚೆ ಮಾಡಲಾಗಿದೆ.",
-                url: "https://www.youtube.com/watch?v=fk2VDQK8fzI"
-            },
-            {
-                title: "ಪ್ರಭಾವಿ ರಾಜಕಾರಣಿಯ ಬಗ್ಗೆ ಪ್ರಶ್ನೆ ಮತ್ತು ಚರ್ಚೆ",
-                description: "ಪ್ರಭಾವಿ ರಾಜಕಾರಣಿಯ ಬಗ್ಗೆ ಪ್ರಶ್ನೆ ಮತ್ತು ಚರ್ಚೆ ಮಾಡುವ ನ್ಯೂಸ್ ವಿಡಿಯೋ.",
-                url: "https://www.youtube.com/watch?v=8f1tGS-WBgU"
-            },
-            {
-                title: "MASTAPPANAIK | ಯುವ ಮುಖಂಡ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಬಲಸೆಗೆ ಭಾರತೀಯ ಕೈಗಾರಿಕಾ ಪ್ರಶಸ್ತಿ",
-                description: "A Kannada news video highlighting young leader Mastappa Naik Balase receiving an Indian industrial award.",
-                url: "https://www.youtube.com/watch?v=n9J59vr5fAA"
-            },
-            {
-                title: "ದಾಖಲೆ ಇಟ್ಟು ಮಾತಾಡಬೇಕು, ಸಚಿವ ಮಾಂಕಾಳು ವೈದ್ಯರಿಗೆ ಪರಿಜ್ಞಾನ ಇಲ್ಲವಾ...!",
-                description: "A Kannada news discussion criticizing a minister (Mankalu Vaidya), suggesting lack of proper knowledge and emphasizing speaking with evidence.",
-                url: "https://www.youtube.com/watch?v=YB4y1Df9W_E"
-            }
-        ];
 
         const newsLinksData = [
             {
@@ -4592,63 +4700,7 @@
 
         let autoSlideInterval;
 
-        function openDetail(id) {
-            let content;
-            if (id.startsWith('news-') && !isNaN(parseInt(id.split('-')[1]))) {
-                const newsId = parseInt(id.split('-')[1]);
-                const newsItem = typeof newsItems !== 'undefined' ? newsItems.find(item => item.id === newsId) : null;
-                if (newsItem) {
-                    content = {
-                        title: currentLang === 'en' ? newsItem.titleEn : newsItem.titleKn,
-                        content: `
-                            <div class="space-y-8">
-                                <div class="relative group">
-                                    <div class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
-                                        <img src="${newsItem.url}" class="w-full flex-shrink-0 snap-center object-contain" alt="News Clipping">
-                                    </div>
-                                </div>
-                                <div class="prose prose-xl max-w-none text-slate-600">
-                                    <h3 class="text-3xl font-black text-slate-900 mb-6">${currentLang === 'en' ? newsItem.titleEn : newsItem.titleKn}</h3>
-                                    <div class="text-slate-600 space-y-4 whitespace-pre-wrap">${currentLang === 'en' ? newsItem.contentEn : newsItem.contentKn}</div>
-                                </div>
-                            </div>
-                        `
-                    };
-                }
-            }
-            
-            if (!content) {
-                if (!details[id]) {
-                    console.error('Event not found:', id);
-                    return;
-                }
-                content = details[id][currentLang];
-            }
-
-            document.getElementById('detailContent').innerHTML = `
-                <h2 class="text-5xl font-black text-slate-900 mb-12">${content.title}</h2>
-                ${content.content}
-            `;
-            document.getElementById('detailView').classList.remove('translate-y-full');
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
-
-            clearInterval(autoSlideInterval);
-            if (id === 'river' || id === 'postcard') {
-                const containerId = currentLang === 'en' ? `carousel-container-${id}-en` : `carousel-container-${id}-kn`;
-                autoSlideInterval = setInterval(() => {
-                    const container = document.getElementById(containerId);
-                    if (container) {
-                        const scrollAmount = container.clientWidth;
-                        if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
-                            container.scrollTo({ left: 0, behavior: 'smooth' });
-                        } else {
-                            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                        }
-                    }
-                }, 3000);
-            }
-        }
+        function openDetail(id) { window.location.href = id + '.html'; }
 
         function closeDetail() {
             document.getElementById('detailView').classList.add('translate-y-full');
@@ -4721,47 +4773,6 @@
             });
         }
 
-        // Visual Media Section Logic
-        const toggleVideosBtn = document.getElementById('toggle-videos-btn');
-        const videosContainer = document.getElementById('videos-container');
-
-        if (toggleVideosBtn && videosContainer) {
-            toggleVideosBtn.addEventListener('click', () => {
-                if (videosContainer.classList.contains('hidden')) {
-                    videosContainer.classList.remove('hidden');
-                    toggleVideosBtn.querySelector('.en').innerText = 'Hide YouTube Videos';
-                    toggleVideosBtn.querySelector('.kn').innerText = 'ಯೂಟ್ಯೂಬ್ ವೀಡಿಯೊಗಳನ್ನು ಮರೆಮಾಡಿ';
-                    
-                    // Populate videos if empty
-                    if (videosContainer.children.length === 0) {
-                        visualMediaVideos.forEach(video => {
-                            const urlParams = new URLSearchParams(new URL(video.url).search);
-                            const videoId = urlParams.get('v');
-                            const videoCard = document.createElement('div');
-                            videoCard.className = 'bg-white rounded-3xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2';
-                            videoCard.innerHTML = `
-                                <a href="${video.url}" target="_blank" class="block group">
-                                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                                        <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="${video.title}" class="w-full transition-transform duration-500 group-hover:scale-110">
-                                        <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
-                                            <i data-lucide="play-circle" class="w-16 h-16 text-white opacity-80"></i>
-                                        </div>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-slate-900 mb-2 line-clamp-2">${video.title}</h3>
-                                    <p class="text-slate-600 text-sm line-clamp-3">${video.description}</p>
-                                </a>
-                            `;
-                            videosContainer.appendChild(videoCard);
-                        });
-                        lucide.createIcons();
-                    }
-                } else {
-                    videosContainer.classList.add('hidden');
-                    toggleVideosBtn.querySelector('.en').innerText = 'View YouTube Videos';
-                    toggleVideosBtn.querySelector('.kn').innerText = 'ಯೂಟ್ಯೂಬ್ ವೀಡಿಯೊಗಳನ್ನು ವೀಕ್ಷಿಸಿ';
-                }
-            });
-        }
 
         // Modal Logic
         function openJoinModal(movement) {

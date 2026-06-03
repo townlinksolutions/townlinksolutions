@@ -212,12 +212,13 @@
 
     <script>
         // Language Logic
-        let currentLang = localStorage.getItem('lang') || 'en';
-        if (currentLang !== 'en' && currentLang !== 'kn') currentLang = 'en';
+        let currentLang = localStorage.getItem('preferredLang') || localStorage.getItem('lang') || 'kn';
+        if (currentLang !== 'en' && currentLang !== 'kn') currentLang = 'kn';
         if (currentLang === 'kn') document.documentElement.classList.add('kn-active');
 
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'kn' : 'en';
+            localStorage.setItem('preferredLang', currentLang);
             localStorage.setItem('lang', currentLang);
             if (currentLang === 'kn') {
                 document.documentElement.classList.add('kn-active');
@@ -1381,64 +1382,7 @@
             }
         };
 
-        function openDetail(id) {
-            console.log('Opening detail for:', id);
-            let data;
-            if (id.startsWith('news-') && !isNaN(parseInt(id.split('-')[1]))) {
-                const newsId = parseInt(id.split('-')[1]);
-                const newsItem = typeof newsItems !== 'undefined' ? newsItems.find(item => item.id === newsId) : null;
-                if (newsItem) {
-                    data = {
-                        title: currentLang === 'en' ? newsItem.titleEn : newsItem.titleKn,
-                        content: `
-                            <div class="space-y-8">
-                                <div class="relative group">
-                                    <div class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-800 aspect-video">
-                                        <img src="${newsItem.url}" class="w-full flex-shrink-0 snap-center object-contain" alt="News Clipping">
-                                    </div>
-                                </div>
-                                <div class="prose prose-xl max-w-none text-slate-400">
-                                    <h3 class="text-3xl font-black text-white mb-6">${currentLang === 'en' ? newsItem.titleEn : newsItem.titleKn}</h3>
-                                    <div class="text-slate-400 space-y-4 whitespace-pre-wrap">${currentLang === 'en' ? newsItem.contentEn : newsItem.contentKn}</div>
-                                </div>
-                            </div>
-                        `
-                    };
-                }
-            }
-            
-            if (!data) {
-                if (!details[id]) {
-                    console.error('No details found for ID:', id);
-                    return;
-                }
-                data = details[id][currentLang];
-                if (!data) {
-                    console.warn('No data found for language:', currentLang, 'falling back to en');
-                    data = details[id]['en'];
-                }
-            }
-
-            if (!data) {
-                console.error('No data found for ID:', id);
-                return;
-            }
-            
-            const titleEl = document.getElementById('detailTitle');
-            const contentEl = document.getElementById('detailContent');
-            const overlayEl = document.getElementById('detailOverlay');
-            
-            if (titleEl) titleEl.innerText = data.title;
-            if (contentEl) contentEl.innerHTML = data.content;
-            if (overlayEl) {
-                overlayEl.classList.remove('translate-y-full');
-                document.body.style.overflow = 'hidden';
-            }
-            
-            if (window.lucide) {
-                lucide.createIcons();
-            }
-        }
+        function openDetail(id) { window.location.href = id + '.html'; }
 
         function closeDetail() {
             document.getElementById('detailOverlay').classList.add('translate-y-full');

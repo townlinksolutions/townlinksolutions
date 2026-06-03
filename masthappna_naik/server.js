@@ -3,7 +3,10 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
+import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
+import fs from 'fs';
+import path from 'path';
 
 dotenv.config();
 
@@ -172,6 +175,51 @@ if (typeof module !== 'undefined' && module.exports) {
   } catch (error) {
     console.error('Error updating news data:', error);
     res.status(500).json({ success: false, error: 'Failed to update news data' });
+  }
+});
+
+// AI Agent Endpoint for Admin
+app.post('/api/ask-ai', async (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || (authHeader !== 'Bearer masthappa' && authHeader !== 'Bearer admin123')) {
+    return res.status(403).json({ success: false, error: 'Unauthorized access' });
+  }
+
+  const prompt = req.body.prompt;
+  if (!prompt) {
+    return res.status(400).json({ success: false, error: 'No prompt provided' });
+  }
+
+  try {
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+    
+    let context = '';
+    const knowlegePath = path.join(__dirname, 'website_knowledge.txt');
+    if (fs.existsSync(knowlegePath)) {
+      context = fs.readFileSync(knowlegePath, 'utf-8');
+    }
+
+    const mainPrompt = `You are a helpful and intelligent AI system integrated into the admin dashboard of Mr. Mastappa Naik Balase's website. 
+He uses you to search for information about his work, events, life, and timeline. 
+Use the website context provided below to answer his queries accurately and concisely. Also act as a helpful drafting assistant if he needs emails or speeches based on this context. 
+Format your responses cleanly in Markdown.
+
+--- WEBSITE CONTEXT ---
+${context.substring(0, 40000)}
+
+--- ADMIN USER QUERY ---
+${prompt}
+`;
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-3.1-pro-preview',
+      contents: mainPrompt,
+    });
+
+    res.json({ success: true, reply: response.text });
+  } catch (error) {
+    console.error('Gemini AI error:', error);
+    res.status(500).json({ success: false, error: 'AI processing failed' });
   }
 });
 

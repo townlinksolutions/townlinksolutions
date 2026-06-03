@@ -1,24 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Development Timeline - Mastappa Naik Balase</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-        .en { display: block; }
-        .kn { display: none; }
-        .lang-kn .en { display: none; }
-        .lang-kn .kn { display: block; }
-    </style>
-</head>
-<body class="bg-slate-50">
-    
+const fs = require('fs');
+const path = require('path');
+
+const eventsHtml = fs.readFileSync('events.html', 'utf8');
+const newsDataJs = fs.readFileSync('src/news_data.js', 'utf8');
+
+// Extract the details object content
+const detailsStart = eventsHtml.indexOf('const details = {');
+const detailsEnd = eventsHtml.indexOf('};', detailsStart) + 2;
+
+if (detailsStart === -1 || detailsEnd === -1) {
+    console.error('Could not find details object in events.html');
+    process.exit(1);
+}
+
+const detailsStr = eventsHtml.substring(detailsStart, detailsEnd).trim();
+const detailsObjWithPotentiallyTrailingSemi = detailsStr.replace('const details = ', '');
+const detailsObjStr = detailsObjWithPotentiallyTrailingSemi.endsWith(';') ? detailsObjWithPotentiallyTrailingSemi.slice(0, -1) : detailsObjWithPotentiallyTrailingSemi;
+const details = eval('(' + detailsObjStr + ')');
+
+// Extract newsItems from news_data.js
+const newsItemsStart = newsDataJs.indexOf('const newsItems = [');
+const newsItemsEnd = newsDataJs.lastIndexOf('];') + 2;
+const newsItemsStr = newsDataJs.substring(newsItemsStart, newsItemsEnd).trim();
+const newsItemsObjStr = newsItemsStr.replace('const newsItems = ', '').replace(/;$/, '');
+const newsItems = eval('(' + newsItemsObjStr + ')');
+
+const headerHtml = `
     <!-- Header -->
     <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <nav class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
@@ -46,120 +53,9 @@
             </div>
         </nav>
     </header>
+`;
 
-
-    <main class="pt-32 pb-20">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="flex items-center justify-between mb-8">
-                <a href="events.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-orange-600 transition-colors font-bold group">
-                    <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
-                    <span class="en">Back to Events</span>
-                    <span class="kn">ಕಾರ್ಯಕ್ರಮಗಳಿಗೆ ಹಿಂತಿರುಗಿ</span>
-                </a>
-                
-                <button onclick="copyToClipboard(this)" class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-orange-600 hover:text-orange-600 transition-all shadow-sm">
-                    <i data-lucide="link" class="w-4 h-4"></i>
-                    <span class="en">Copy Link</span>
-                    <span class="kn">ಲಿಂಕ್ ನಕಲಿಸಿ</span>
-                </button>
-            </div>
-
-            <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tighter leading-tight">
-                <span class="en">Development Timeline</span>
-                <span class="kn">ಅಭಿವೃದ್ಧಿ ಟೈಮ್‌ಲೈನ್</span>
-            </h1>
-
-            <div class="en space-y-6">
-                
-                        <div class="space-y-8">
-                            <div class="relative group">
-                                <div id="carousel-timeline" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
-                                    <img src="https://picsum.photos/seed/time1/1200/600" class="w-full flex-shrink-0 snap-center object-cover" alt="Timeline 1">
-                                    <img src="https://picsum.photos/seed/time2/1200/600" class="w-full flex-shrink-0 snap-center object-cover" alt="Timeline 2">
-                                </div>
-                                <div class="absolute inset-y-0 left-4 flex items-center">
-                                    <button onclick="document.getElementById('carousel-timeline').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
-                                        <i data-lucide="chevron-left"></i>
-                                    </button>
-                                </div>
-                                <div class="absolute inset-y-0 right-4 flex items-center">
-                                    <button onclick="document.getElementById('carousel-timeline').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
-                                        <i data-lucide="chevron-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="prose prose-xl max-w-none text-slate-600">
-                                <p>A comprehensive roadmap for the infrastructure and social development of our district over the next decade.</p>
-                                <button onclick="openJoinModal('Development Roadmap')" class="bg-orange-600 text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-orange-700 transition-all mt-8">JOIN THIS MOVEMENT</button>
-                            </div>
-                        </div>
-                    
-            </div>
-            <div class="kn hidden space-y-6">
-                
-                        <div class="space-y-8">
-                            <div class="relative group">
-                                <div id="carousel-timeline-kn" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
-                                    <img src="https://picsum.photos/seed/time1/1200/600" class="w-full flex-shrink-0 snap-center object-cover" alt="Timeline 1">
-                                    <img src="https://picsum.photos/seed/time2/1200/600" class="w-full flex-shrink-0 snap-center object-cover" alt="Timeline 2">
-                                </div>
-                                <div class="absolute inset-y-0 left-4 flex items-center">
-                                    <button onclick="document.getElementById('carousel-timeline-kn').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
-                                        <i data-lucide="chevron-left"></i>
-                                    </button>
-                                </div>
-                                <div class="absolute inset-y-0 right-4 flex items-center">
-                                    <button onclick="document.getElementById('carousel-timeline-kn').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
-                                        <i data-lucide="chevron-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="prose prose-xl max-w-none text-slate-600">
-                                <p>ಮುಂದಿನ ದಶಕದಲ್ಲಿ ನಮ್ಮ ಜಿಲ್ಲೆಯ ಮೂಲಸೌಕರ್ಯ ಮತ್ತು ಸಾಮಾಜಿಕ ಅಭಿವೃದ್ಧಿಗಾಗಿ ಸಮಗ್ರ ಮಾರ್ಗಸೂಚಿ.</p>
-                                <button onclick="openJoinModal('ಅಭಿವೃದ್ಧಿ ಮಾರ್ಗಸೂಚಿ')" class="bg-orange-600 text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-orange-700 transition-all mt-8">ಈ ಚಳುವಳಿಗೆ ಸೇರಿ</button>
-                            </div>
-                        </div>
-                    
-            </div>
-        </div>
-    </main>
-
-    
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-20 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-center md:text-left mb-16">
-                <!-- Brand -->
-                <div>
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden shadow-xl mb-6 mx-auto md:mx-0">
-                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo23.jpg" alt="MN" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Mastappa Naik Balase</h3>
-                    <p class="text-slate-400 text-sm">
-                        Dedicated to the holistic development of Uttara Kannada through social service, entrepreneurship, and community leadership.
-                    </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="flex flex-col items-center md:items-end">
-                    <h4 class="text-xs font-black uppercase tracking-widest text-orange-500 mb-6">Quick Links</h4>
-                    <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-sm font-bold text-slate-400">
-                        <a href="index.html" class="hover:text-orange-400 transition-colors">Home</a>
-                        <a href="biodata.html" class="hover:text-orange-400 transition-colors">Biography</a>
-                        <a href="timeline.html" class="hover:text-orange-400 transition-colors">Timeline</a>
-                        <a href="events.html" class="hover:text-orange-400 transition-colors text-white">Events</a>
-                        <a href="videos.html" class="hover:text-orange-400 transition-colors">Videos</a>
-                        <a href="index.html#contact" class="hover:text-orange-400 transition-colors">Contact</a>
-                    </div>
-                </div>
-            </div>
-            <div class="pt-12 border-t border-white/5 text-center">
-                <p class="text-slate-500 text-xs">© 2026 Mastappa Naik Balase. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    
+const joinModalHtml = `
     <!-- Join Modal -->
     <div id="join-modal" class="fixed inset-0 z-[150] bg-slate-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-500 overflow-y-auto">
         <div class="bg-white w-full max-w-xl rounded-[3rem] overflow-hidden shadow-2xl relative my-auto">
@@ -220,8 +116,45 @@
             </div>
         </div>
     </div>
+`;
 
-    
+const footerHtml = `
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-center md:text-left mb-16">
+                <!-- Brand -->
+                <div>
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden shadow-xl mb-6 mx-auto md:mx-0">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo23.jpg" alt="MN" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Mastappa Naik Balase</h3>
+                    <p class="text-slate-400 text-sm">
+                        Dedicated to the holistic development of Uttara Kannada through social service, entrepreneurship, and community leadership.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-col items-center md:items-end">
+                    <h4 class="text-xs font-black uppercase tracking-widest text-orange-500 mb-6">Quick Links</h4>
+                    <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-sm font-bold text-slate-400">
+                        <a href="index.html" class="hover:text-orange-400 transition-colors">Home</a>
+                        <a href="biodata.html" class="hover:text-orange-400 transition-colors">Biography</a>
+                        <a href="timeline.html" class="hover:text-orange-400 transition-colors">Timeline</a>
+                        <a href="events.html" class="hover:text-orange-400 transition-colors text-white">Events</a>
+                        <a href="videos.html" class="hover:text-orange-400 transition-colors">Videos</a>
+                        <a href="index.html#contact" class="hover:text-orange-400 transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 text-center">
+                <p class="text-slate-500 text-xs">© 2026 Mastappa Naik Balase. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+`;
+
+const scripts = `
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
@@ -308,11 +241,11 @@
             try {
                 await navigator.clipboard.writeText(url);
                 const originalContent = btn.innerHTML;
-                btn.innerHTML = `
+                btn.innerHTML = \`
                     <i data-lucide="check" class="w-4 h-4"></i>
                     <span class="en">Copied!</span>
                     <span class="kn">ನಕಲಿಸಲಾಗಿದೆ!</span>
-                `.trim();
+                \`.trim();
                 btn.classList.add('bg-green-100', 'text-green-600');
                 btn.classList.remove('bg-white', 'text-slate-600');
                 lucide.createIcons();
@@ -330,6 +263,128 @@
 
         updateUI();
     </script>
+`;
 
+const generatePage = (id, event) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${event.en.title} - Mastappa Naik Balase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .en { display: block; }
+        .kn { display: none; }
+        .lang-kn .en { display: none; }
+        .lang-kn .kn { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50">
+    ${headerHtml}
+
+    <main class="pt-32 pb-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-8">
+                <a href="events.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-orange-600 transition-colors font-bold group">
+                    <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+                    <span class="en">Back to Events</span>
+                    <span class="kn">ಕಾರ್ಯಕ್ರಮಗಳಿಗೆ ಹಿಂತಿರುಗಿ</span>
+                </a>
+                
+                <button onclick="copyToClipboard(this)" class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-orange-600 hover:text-orange-600 transition-all shadow-sm">
+                    <i data-lucide="link" class="w-4 h-4"></i>
+                    <span class="en">Copy Link</span>
+                    <span class="kn">ಲಿಂಕ್ ನಕಲಿಸಿ</span>
+                </button>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tighter leading-tight">
+                <span class="en">${event.en.title}</span>
+                <span class="kn">${event.kn.title}</span>
+            </h1>
+
+            <div class="en space-y-6">
+                ${event.en.content}
+            </div>
+            <div class="kn hidden space-y-6">
+                ${event.kn.content}
+            </div>
+        </div>
+    </main>
+
+    ${footerHtml}
+    ${joinModalHtml}
+    ${scripts}
 </body>
-</html>
+</html>`;
+
+for (const id in details) {
+    const event = details[id];
+    const pageHtml = generatePage(id, event);
+    fs.writeFileSync(`${id}.html`, pageHtml);
+    console.log(`Generated ${id}.html`);
+}
+
+for (const item of newsItems) {
+    const id = `news-${item.id}`;
+    const event = {
+        en: {
+            title: item.titleEn,
+            content: `
+                <div class="mb-8 rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="${item.url}" alt="${item.titleEn}" class="w-full">
+                </div>
+                <div class="prose prose-slate max-w-none">
+                    <p class="text-xl font-bold text-slate-900 mb-4">${item.shortDescEn}</p>
+                    <div class="text-slate-600 leading-relaxed space-y-4">
+                        ${item.contentEn}
+                    </div>
+                </div>
+            `
+        },
+        kn: {
+            title: item.titleKn,
+            content: `
+                <div class="mb-8 rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="${item.url}" alt="${item.titleKn}" class="w-full">
+                </div>
+                <div class="prose prose-slate max-w-none">
+                    <p class="text-xl font-bold text-slate-900 mb-4">${item.shortDescKn}</p>
+                    <div class="text-slate-600 leading-relaxed space-y-4">
+                        ${item.contentKn}
+                    </div>
+                </div>
+            `
+        }
+    };
+    const pageHtml = generatePage(id, event);
+    fs.writeFileSync(`${id}.html`, pageHtml);
+    console.log(`Generated ${id}.html`);
+}
+
+function patchFile(filename) {
+    let content = fs.readFileSync(filename, 'utf8');
+    const newFunc = `function openDetail(id) { window.location.href = id + '.html'; }`;
+    // Find the openDetail function and closeDetail function to replace everything in between
+    const openDetailStart = content.indexOf('function openDetail(');
+    const closeDetailStart = content.indexOf('function closeDetail(');
+    
+    if (openDetailStart !== -1 && closeDetailStart !== -1 && closeDetailStart > openDetailStart) {
+        content = content.substring(0, openDetailStart) + newFunc + '\n\n        ' + content.substring(closeDetailStart);
+        fs.writeFileSync(filename, content);
+        console.log(`Patched ${filename}`);
+    } else {
+        console.log(`Could not find functions in ${filename}`);
+    }
+}
+
+patchFile('events.html');
+patchFile('index.html');
+patchFile('news_clippings.html');
+patchFile('timeline.html');
+patchFile('videos.html');

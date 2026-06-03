@@ -48,6 +48,10 @@
                     <span class="en">Events</span>
                     <span class="kn">ಕಾರ್ಯಕ್ರಮಗಳು</span>
                 </a>
+                <a href="videos.html" class="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">
+                    <span class="en">Videos</span>
+                    <span class="kn">ವೀಡಿಯೊಗಳು</span>
+                </a>
                 <a href="index.html#news" class="text-sm font-bold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-widest">
                     <span class="en">Media</span>
                     <span class="kn">ಮಾಧ್ಯಮ</span>
@@ -114,7 +118,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <!-- Postcard Campaign for Hospital -->
-                <div onclick="openDetail('postcard')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border-4 border-orange-600 shadow-2xl hover:shadow-orange-200 transition-all duration-500">
+                <a href="#postcard" class="block group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border-4 border-orange-600 shadow-2xl hover:shadow-orange-200 transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Postcard Campaign">
                         <div class="absolute top-6 left-6 bg-orange-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Major Movement</div>
@@ -134,10 +138,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Postcard Campaign against Sharavathi -->
-                <div onclick="openDetail('river')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border-4 border-orange-600 shadow-2xl hover:shadow-orange-200 transition-all duration-500">
+                <a href="#river" class="block group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border-4 border-orange-600 shadow-2xl hover:shadow-orange-200 transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Sharavathi Protection">
                         <div class="absolute top-6 left-6 bg-orange-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Environmental Advocacy</div>
@@ -157,10 +161,33 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
+
+                <!-- Campaign: Cost of Compromise -->
+                <a href="#compromise-tragedies" class="block group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border-4 border-red-600 shadow-2xl hover:shadow-red-200 transition-all duration-500">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Alvegodi River Tragedy">
+                        <div class="absolute top-6 left-6 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Active Investigation</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-red-700 transition-colors">
+                            <span class="en">Investigate the Alvegodi Tragedy: Demand Justice for the 11 Victims</span>
+                            <span class="kn">ಅಳ್ವೆಕೋಡಿ ದುರಂತಗಳ ತನಿಖೆಗೆ ಆಗ್ರಹ</span>
+                        </h3>
+                        <p class="text-slate-600 mb-6 line-clamp-3">
+                            <span class="en">An urgent demand for inquiry and accountability regarding the tragic loss of 11 lives due to unscientific construction in Bhatkal.</span>
+                            <span class="kn">ಅವೈಜ್ಞಾನಿಕ ಕಾಮಗಾರಿಯಿಂದ 11 ಜೀವಗಳನ್ನು ಕಳೆದುಕೊಂಡ ಭಟ್ಕಳದ ಅಳ್ವೆಕೋಡಿ ದುರಂತದ ಆಳವಾದ ತನಿಖೆ ಹಾಗೂ ನ್ಯಾಯಕ್ಕಾಗಿ ಒತ್ತಾಯ.</span>
+                        </p>
+                        <div class="flex items-center text-red-600 font-black gap-2 group-hover:gap-4 transition-all">
+                            <span class="en">Know More</span>
+                            <span class="kn">ಹೆಚ್ಚಿನ ಮಾಹಿತಿ</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- Event: Hospital Visit -->
-                <div onclick="openDetail('venkatappa-hospital-visit')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#venkatappa-hospital-visit" class="block group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Hospital Visit">
                         <div class="absolute top-6 left-6 bg-orange-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Social Service</div>
@@ -180,10 +207,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event: Gita Distribution -->
-                <div onclick="openDetail('gita-distribution')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#gita-distribution" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Bhagavad Gita Distribution">
                         <div class="absolute top-6 left-6 bg-orange-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Recent</div>
@@ -203,22 +230,22 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event 1: Gunavanthe -->
-                <div onclick="openDetail('gunavanthe')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#gunavanthe" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
-                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo1.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gunavanthe Event">
-                        <div class="absolute top-6 left-6 bg-orange-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">April 10-18</div>
+                        <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo2.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Gunavanthe Event">
+                        <div class="absolute top-6 left-6 bg-orange-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">April 25, 2026</div>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors">
-                            <span class="en">Shri Shambulingeshwara Temple, Gunavante</span>
-                            <span class="kn">ಶ್ರೀ ಶಂಭುಲಿಂಗೇಶ್ವರ ದೇವಸ್ಥಾನ, ಗುಣವಂತೆ</span>
+                            <span class="en">Visit to Shri Shambulingeshwara Temple, Gunavante</span>
+                            <span class="kn">ಶ್ರೀ ಶಂಭುಲಿಂಗೇಶ್ವರ ದೇವಸ್ಥಾನದ ದರ್ಶನ, ಗುಣವಂತೆ</span>
                         </h3>
                         <p class="text-slate-600 mb-6 line-clamp-3">
-                            <span class="en">Ashtabandha, Brahma Kalasha, and Jatra Mahotsava rituals at Shri Shambulingeshwara Temple, Gunavante.</span>
-                            <span class="kn">ಶ್ರೀ ಕ್ಷೇತ್ರ ಗುಣವಂತೆ ಶ್ರೀ ಶಂಭುಲಿಂಗೇಶ್ವರ ದೇವಸ್ಥಾನದಲ್ಲಿ ಅಷ್ಟಬಂಧ, ಬ್ರಹ್ಮ ಕಲಶ ಹಾಗೂ ಜಾತ್ರಾ ಮಹೋತ್ಸವ.</span>
+                            <span class="en">Today, I had the privilege of seeking the blessings of the deity at the sacred Shambhulingeshwara Temple, Gunavante.</span>
+                            <span class="kn">ಇಂದು ಪವಿತ್ರವಾದ ಶಂಭುಲಿಂಗೇಶ್ವರ ದೇವಸ್ಥಾನದಲ್ಲಿ ದೇವರ ದರ್ಶನ ಪಡೆಯುವ ಭಾಗ್ಯ ದೊರಕಿತು.</span>
                         </p>
                         <div class="flex items-center text-orange-600 font-black gap-2 group-hover:gap-4 transition-all">
                             <span class="en">Know More</span>
@@ -226,10 +253,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event 2: Sharadahole -->
-                <div onclick="openDetail('sharadahole')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#sharadahole" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Sharadahole Event">
                         <div class="absolute top-6 left-6 bg-orange-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Recent</div>
@@ -249,10 +276,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event 3: Alvekodi -->
-                <div onclick="openDetail('alvikodi')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#alvikodi" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo1.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Alvekodi Event">
                     </div>
@@ -271,10 +298,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event 4: Bhatkal Kudure Birappa -->
-                <div onclick="openDetail('bhatkal-kudure-birappa')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#bhatkal-kudure-birappa" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo1.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Bhatkal Event">
                     </div>
@@ -293,10 +320,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event 5: Balkur Jatre -->
-                <div onclick="openDetail('balkur-jatre')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#balkur-jatre" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo1.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Balkur Event">
                     </div>
@@ -315,10 +342,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event 6: Manki Ganesh -->
-                <div onclick="openDetail('manki-ganesh')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#manki-ganesh" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo1.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Ganesh Naik Event">
                     </div>
@@ -337,10 +364,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event 7: Balkur Shrikanth -->
-                <div onclick="openDetail('balkur-shrikanth')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#balkur-shrikanth" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Shrikanth Naik Event">
                     </div>
@@ -359,10 +386,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event 8: Bangaramakki -->
-                <div onclick="openDetail('bangaramakki')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#bangaramakki" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo1.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Bangaramakki Event">
                     </div>
@@ -381,10 +408,10 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Event 9: Allanki -->
-                <div onclick="openDetail('allanki')" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <a href="#allanki" class="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/allanki/photo1.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Allanki Event">
                     </div>
@@ -403,7 +430,7 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
-                </div>
+                </a>
 
             </div>
         </div>
@@ -437,6 +464,7 @@
                         <a href="timeline.html" class="hover:text-orange-400 transition-colors">Timeline</a>
                         <a href="events.html" class="hover:text-orange-400 transition-colors text-white">Events</a>
                         <a href="index.html#contact" class="hover:text-orange-400 transition-colors">Contact</a>
+                        <a href="admin.html" class="hover:text-orange-400 transition-colors"><i data-lucide="shield" class="w-4 h-4 inline-block -mt-1 mr-1"></i>Admin</a>
                     </div>
                 </div>
             </div>
@@ -529,10 +557,26 @@
     <script>
         lucide.createIcons();
 
-        let currentLang = 'kn';
+        let currentLang = localStorage.getItem('preferredLang') || localStorage.getItem('lang') || 'kn';
+        document.documentElement.setAttribute('lang', currentLang);
+
+        // URL Social Hash Handling
+        function handleHashChange() {
+            const hash = window.location.hash.substring(1);
+            if (hash && details[hash]) {
+                openDetail(hash, false);
+            } else {
+                closeDetail(false);
+            }
+        }
+
+        window.addEventListener('hashchange', handleHashChange);
+        window.addEventListener('load', handleHashChange);
 
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'kn' : 'en';
+            localStorage.setItem('preferredLang', currentLang);
+            localStorage.setItem('lang', currentLang);
             document.documentElement.setAttribute('lang', currentLang);
             lucide.createIcons();
         }
@@ -606,7 +650,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo1.jpg" class="w-full rounded-3xl shadow-2xl" alt="Hospital Visit">
+                                
+                                <div id="car_btpmvs" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo1.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo2.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo3.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo4.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_btpmvs').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_btpmvs').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Compassion in Action</p>
@@ -621,7 +682,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo1.jpg" class="w-full rounded-3xl shadow-2xl" alt="Hospital Visit">
+                                
+                                <div id="car_ri0loo" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo1.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo2.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo3.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/venkappa/photo4.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_ri0loo').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_ri0loo').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ಮಾನವೀಯ ಕಾರ್ಯ</p>
@@ -638,7 +716,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo1.jpg" class="w-full rounded-3xl shadow-2xl" alt="Bhagavad Gita Distribution">
+                                
+                                <div id="car_ctee01" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo1.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo2.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo3.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo4.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_ctee01').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_ctee01').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Instilling Moral Values</p>
@@ -653,7 +748,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo1.jpg" class="w-full rounded-3xl shadow-2xl" alt="Bhagavad Gita Distribution">
+                                
+                                <div id="car_tpni01" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo1.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo2.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo3.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gita/photo4.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_tpni01').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_tpni01').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ನೈತಿಕ ಮೌಲ್ಯಗಳ ಬೆಳವಣಿಗೆ</p>
@@ -665,45 +777,30 @@
                     `
                 }
             },
-            'postcard': {
-                en: {
-                    title: 'Postcard Campaign for Multi-Specialty Hospital',
-                    content: `
-                        <div class="space-y-8">
-                            <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo2.jpg" class="w-full rounded-3xl shadow-2xl" alt="Postcard Campaign">
-                            </div>
-                            <div class="prose prose-xl max-w-none text-slate-600">
-                                <p class="text-2xl font-bold text-slate-900">Demanding Healthcare Rights</p>
-                                <p>The Postcard Campaign for a Multi-Specialty Hospital in Uttara Kannada is one of the most significant movements led by Masthappa Naik Balase. Over 200,000 postcards were sent to the government to highlight the urgent need for advanced healthcare infrastructure in the district.</p>
-                                <p>This campaign aimed to prevent <strong>'Savin Savari'</strong> (rides of death) where patients often lose their lives while being transported to hospitals in distant cities like Mangalore, Udupi, or Manipal. The movement successfully united the people of Uttara Kannada in a common cause for their fundamental right to health.</p>
-                            </div>
-                        </div>
-                    `
-                },
-                kn: {
-                    title: 'ಆರೋಗ್ಯಕ್ಕಾಗಿ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಚಳುವಳಿ',
-                    content: `
-                        <div class="space-y-8">
-                            <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo2.jpg" class="w-full rounded-3xl shadow-2xl" alt="Postcard Campaign">
-                            </div>
-                            <div class="prose prose-xl max-w-none text-slate-600">
-                                <p class="text-2xl font-bold text-slate-900">ಆರೋಗ್ಯ ಹಕ್ಕುಗಳಿಗಾಗಿ ಒತ್ತಾಯ</p>
-                                <p>ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಬಹುವಿಶೇಷ ಆಸ್ಪತ್ರೆಗಾಗಿ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನವು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಬಲಸೆ ಅವರ ನೇತೃತ್ವದ ಪ್ರಮುಖ ಚಳುವಳಿಗಳಲ್ಲಿ ಒಂದಾಗಿದೆ. ಜಿಲ್ಲೆಯಲ್ಲಿ ಸುಧಾರಿತ ಆರೋಗ್ಯ ಮೂಲಸೌಕರ್ಯಗಳ ತುರ್ತು ಅಗತ್ಯವನ್ನು ಎತ್ತಿ ತೋರಿಸಲು ಸರ್ಕಾರಕ್ಕೆ 200,000 ಕ್ಕೂ ಹೆಚ್ಚು ಪೋಸ್ಟ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಕಳುಹಿಸಲಾಗಿದೆ.</p>
-                                <p>ಮಂಗಳೂರು, ಉಡುಪಿ ಅಥವಾ ಮಣಿಪಾಲದಂತಹ ದೂರದ ನಗರಗಳ ಆಸ್ಪತ್ರೆಗಳಿಗೆ ಸಾಗಿಸುವಾಗ ರೋಗಿಗಳು ಪ್ರಾಣ ಕಳೆದುಕೊಳ್ಳುವ <strong>'ಸಾವಿನ ಸವಾರಿ'</strong>ಯನ್ನು ತಡೆಗಟ್ಟುವುದು ಈ ಅಭಿಯಾನದ ಉದ್ದೇಶವಾಗಿತ್ತು. ಈ ಚಳುವಳಿಯು ಉತ್ತರ ಕನ್ನಡದ ಜನರನ್ನು ತಮ್ಮ ಮೂಲಭೂತ ಆರೋಗ್ಯ ಹಕ್ಕಿಗಾಗಿ ಒಂದುಗೂಡಿಸುವಲ್ಲಿ ಯಶಸ್ವಿಯಾಗಿದೆ.</p>
-                            </div>
-                        </div>
-                    `
-                }
-            },
             'river': {
                 en: {
                     title: 'Postcard Campaign against Sharavathi Project',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo2.jpg" class="w-full rounded-3xl shadow-2xl" alt="Sharavathi Protection">
+                                
+                                <div id="car_p1in7x" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo1.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo2.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo3.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo4.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_p1in7x').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_p1in7x').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Protecting the Western Ghats</p>
@@ -718,7 +815,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo2.jpg" class="w-full rounded-3xl shadow-2xl" alt="Sharavathi Protection">
+                                
+                                <div id="car_h9pdsa" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo1.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo2.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo3.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/masthappa/photo4.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_h9pdsa').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_h9pdsa').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ಸಂರಕ್ಷಣೆ</p>
@@ -851,7 +965,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Shri Hariseve Program">
+                                
+                                <div id="car_387rul" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_387rul').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_387rul').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Spiritual Celebration at Alvekodi</p>
@@ -866,7 +997,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Shri Hariseve Program">
+                                
+                                <div id="car_i5o0va" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_i5o0va').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_i5o0va').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ಅಳ್ವೆಕೊಡಿಯಲ್ಲಿ ಆಧ್ಯಾತ್ಮಿಕ ಸಂಭ್ರಮ</p>
@@ -883,7 +1031,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="42nd Vardhanti Mahotsava">
+                                
+                                <div id="car_lnpb4h" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_lnpb4h').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_lnpb4h').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">42nd Vardhanti Mahotsava</p>
@@ -898,7 +1063,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="42nd Vardhanti Mahotsava">
+                                
+                                <div id="car_sk3ecv" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_sk3ecv').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_sk3ecv').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">42ನೇ ವರ್ಷದ ವರ್ಧಂತಿ ಮಹೋತ್ಸವ</p>
@@ -915,7 +1097,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Balkur Jatre Event">
+                                
+                                <div id="car_k3he3z" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_k3he3z').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_k3he3z').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Supporting Local Drama</p>
@@ -930,7 +1129,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Balkur Jatre Event">
+                                
+                                <div id="car_kxm7cg" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_kxm7cg').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_kxm7cg').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ಸ್ಥಳೀಯ ನಾಟಕಕ್ಕೆ ಬೆಂಬಲ</p>
@@ -946,7 +1162,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Ganesh Naik Event">
+                                
+                                <div id="car_77vpph" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_77vpph').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_77vpph').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Encouraging Young Talent</p>
@@ -961,7 +1194,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Ganesh Naik Event">
+                                
+                                <div id="car_jzf9mv" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/manki_ganesh/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_jzf9mv').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_jzf9mv').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ಯುವ ಪ್ರತಿಭೆಗೆ ಪ್ರೋತ್ಸಾಹ</p>
@@ -977,7 +1227,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Shrikanth Naik Event">
+                                
+                                <div id="car_lgdxne" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_lgdxne').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_lgdxne').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Housewarming Celebration</p>
@@ -991,7 +1258,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Shrikanth Naik Event">
+                                
+                                <div id="car_eusfm7" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_shrikanth/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_eusfm7').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_eusfm7').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ಗೃಹಪ್ರವೇಶ ಸಮಾರಂಭ</p>
@@ -1007,7 +1291,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Bangaramakki Event 1">
+                                
+                                <div id="car_qeogak" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_qeogak').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_qeogak').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                                 <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo2.jpeg" class="w-full rounded-3xl shadow-2xl mt-4" alt="Bangaramakki Event 2">
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
@@ -1023,7 +1324,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Bangaramakki Event 1">
+                                
+                                <div id="car_bm1056" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_bm1056').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_bm1056').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                                 <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/photo2.jpeg" class="w-full rounded-3xl shadow-2xl mt-4" alt="Bangaramakki Event 2">
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
@@ -1041,7 +1359,22 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/allanki.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Allanki Event">
+                                
+                                <div id="car_0njesk" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/allanki.jpeg" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Allanki Event">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/allanki2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Allanki Event">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_0njesk').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_0njesk').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Providing Solace to Accident Victims</p>
@@ -1056,7 +1389,22 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/allanki.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Allanki Event">
+                                
+                                <div id="car_wlwfnv" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/allanki.jpeg" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Allanki Event">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bangaramakki/allanki2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Allanki Event">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_wlwfnv').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_wlwfnv').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ಸಂತ್ರಸ್ತರಿಗೆ ಸಾಂತ್ವನ</p>
@@ -1126,13 +1474,15 @@
             },
             'postcard': {
                 en: {
-                    title: 'Postcard Campaign',
+                    title: 'Postcard Campaign for Multi-Specialty Hospital',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
                                 <div id="carousel-postcard" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
-                                    <img src="https://picsum.photos/seed/post1/1200/600" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 1">
-                                    <img src="https://picsum.photos/seed/post2/1200/600" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/postcard/photo1.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/postcard/photo2.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/postcard/photo3.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/postcard/photo4.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 4">
                                 </div>
                                 <div class="absolute inset-y-0 left-4 flex items-center">
                                     <button onclick="document.getElementById('carousel-postcard').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
@@ -1146,20 +1496,24 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <p>Thousands of postcards were sent to the government highlighting the urgent need for a multi-specialty hospital in Uttara Kannada.</p>
+                                <p class="text-2xl font-bold text-slate-900">Demanding Healthcare Rights</p>
+                                <p>The Postcard Campaign for a Multi-Specialty Hospital in Uttara Kannada is one of the most significant movements led by Masthappa Naik Balase. Over 200,000 postcards were sent to the government to highlight the urgent need for advanced healthcare infrastructure in the district.</p>
+                                <p>This campaign aimed to prevent <strong>'Savin Savari'</strong> (rides of death) where patients often lose their lives while being transported to hospitals in distant cities like Mangalore, Udupi, or Manipal. The movement successfully united the people of Uttara Kannada in a common cause for their fundamental right to health.</p>
                                 <button onclick="openJoinModal('Postcard Campaign')" class="bg-orange-600 text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-orange-700 transition-all mt-8">JOIN THIS MOVEMENT</button>
                             </div>
                         </div>
                     `
                 },
                 kn: {
-                    title: 'ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ',
+                    title: 'ಆರೋಗ್ಯಕ್ಕಾಗಿ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಚಳುವಳಿ',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
                                 <div id="carousel-postcard-kn" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
-                                    <img src="https://picsum.photos/seed/post1/1200/600" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 1">
-                                    <img src="https://picsum.photos/seed/post2/1200/600" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/postcard/photo1.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/postcard/photo2.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/postcard/photo3.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/postcard/photo4.jpg" class="w-full flex-shrink-0 snap-center object-cover" alt="Postcard 4">
                                 </div>
                                 <div class="absolute inset-y-0 left-4 flex items-center">
                                     <button onclick="document.getElementById('carousel-postcard-kn').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all">
@@ -1173,7 +1527,9 @@
                                 </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <p>ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಮಲ್ಟಿ-ಸ್ಪೆಷಾಲಿಟಿ ಆಸ್ಪತ್ರೆಯ ತುರ್ತು ಅಗತ್ಯವನ್ನು ಎತ್ತಿ ತೋರಿಸುವ ಸಾವಿರಾರು ಪೋಸ್ಟ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಸರ್ಕಾರಕ್ಕೆ ಕಳುಹಿಸಲಾಗಿದೆ.</p>
+                                <p class="text-2xl font-bold text-slate-900">ಆರೋಗ್ಯ ಹಕ್ಕುಗಳಿಗಾಗಿ ಒತ್ತಾಯ</p>
+                                <p>ಉತ್ತರ ಕನ್ನಡದಲ್ಲಿ ಬಹುವಿಶೇಷ ಆಸ್ಪತ್ರೆಗಾಗಿ ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನವು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ ಬಲಸೆ ಅವರ ನೇತೃತ್ವದ ಪ್ರಮುಖ ಚಳುವಳಿಗಳಲ್ಲಿ ಒಂದಾಗಿದೆ. ಜಿಲ್ಲೆಯಲ್ಲಿ ಸುಧಾರಿತ ಆರೋಗ್ಯ ಮೂಲಸೌಕರ್ಯಗಳ ತುರ್ತು ಅಗತ್ಯವನ್ನು ಎತ್ತಿ ತೋರಿಸಲು ಸರ್ಕಾರಕ್ಕೆ 200,000 ಕ್ಕೂ ಹೆಚ್ಚು ಪೋಸ್ಟ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಕಳುಹಿಸಲಾಗಿದೆ.</p>
+                                <p>ಮಂಗಳೂರು, ಉಡುಪಿ ಅಥವಾ ಮಣಿಪಾಲದಂತಹ ದೂರದ ನಗರಗಳ ಆಸ್ಪತ್ರೆಗಳಿಗೆ ಸಾಗಿಸುವಾಗ ರೋಗಿಗಳು ಪ್ರಾಣ ಕಳೆದುಕೊಳ್ಳುವ <strong>'ಸಾವಿನ ಸವಾರಿ'</strong>ಯನ್ನು ತಡೆಗಟ್ಟುವುದು ಈ ಅಭಿಯಾನದ ಉದ್ದೇಶವಾಗಿತ್ತು. ಈ ಚಳುವಳಿಯು ಉತ್ತರ ಕನ್ನಡದ ಜನರನ್ನು ತಮ್ಮ ಮೂಲಭೂತ ಆರೋಗ್ಯ ಹಕ್ಕಿಗಾಗಿ ಒಂದುಗೂಡಿಸುವಲ್ಲಿ ಯಶಸ್ವಿಯಾಗಿದೆ.</p>
                                 <button onclick="openJoinModal('ಪೋಸ್ಟ್‌ಕಾರ್ಡ್ ಅಭಿಯಾನ')" class="bg-orange-600 text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-orange-700 transition-all mt-8">ಈ ಚಳುವಳಿಗೆ ಸೇರಿ</button>
                             </div>
                         </div>
@@ -1298,12 +1654,29 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Gunavanthe Event">
+                                
+                                <div id="car_9asrwt" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_9asrwt').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_9asrwt').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <p class="text-2xl font-bold text-slate-900">Religious Rituals & Celebrations (April 10–18)</p>
-                                <p>We invite all devotees to join us for the grand religious rituals and celebrations at Shri Shambulingeshwara Temple, Shri Kshetra Gunavante. This significant event highlights the temple's spiritual importance and promotes community participation.</p>
-                                <p>The rituals include <strong>Ashtabandha</strong>, <strong>Brahma Kalasha</strong>, and the grand <strong>Jatra Mahotsava</strong>. We are honored to have the support of Shri Masthappa Naik, Balli, as a well-wisher for these auspicious ceremonies.</p>
+                                <p class="text-2xl font-bold text-slate-900">Visit to Shri Shambulingeshwara Temple (April 25, 2026)</p>
+                                <p>Today, I had the privilege of seeking the blessings of the deity at the sacred Shambhulingeshwara Temple. In this auspicious moment, I experienced immense peace, self-satisfaction, and a renewed sense of energy.</p>
+                                <p>This visit, along with young entrepreneur Masthappa Naik, was special, and prayers were offered for the well-being, peace, and success of everyone with the blessings of the Lord.</p>
                             </div>
                         </div>
                     `
@@ -1313,12 +1686,29 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Gunavanthe Event">
+                                
+                                <div id="car_85s0qy" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/gunavanthe/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_85s0qy').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_85s0qy').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
-                                <p class="text-2xl font-bold text-slate-900">ಧಾರ್ಮಿಕ ಆಚರಣೆಗಳು ಮತ್ತು ಸಂಭ್ರಮ (ಏಪ್ರಿಲ್ 10–18)</p>
-                                <p>ಶ್ರೀ ಕ್ಷೇತ್ರ ಗುಣವಂತೆಯ ಶ್ರೀ ಶಂಭುಲಿಂಗೇಶ್ವರ ದೇವಸ್ಥಾನದಲ್ಲಿ ನಡೆಯುವ ಧಾರ್ಮಿಕ ಆಚರಣೆಗಳು ಮತ್ತು ಸಂಭ್ರಮಕ್ಕೆ ಎಲ್ಲಾ ಭಕ್ತಾದಿಗಳನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಈ ಕಾರ್ಯಕ್ರಮವು ದೇವಸ್ಥಾನದ ಮಹತ್ವವನ್ನು ಸಾರುತ್ತದೆ ಮತ್ತು ಸಮುದಾಯದ ಭಾಗವಹಿಸುವಿಕೆಯನ್ನು ಉತ್ತೇಜಿಸುತ್ತದೆ.</p>
-                                <p>ಕಾರ್ಯಕ್ರಮದಲ್ಲಿ <strong>ಅಷ್ಟಬಂಧ</strong>, <strong>ಬ್ರಹ್ಮ ಕಲಶ</strong> ಹಾಗೂ <strong>ಜಾತ್ರಾ ಮಹೋತ್ಸವ</strong> ನಡೆಯಲಿದೆ. ಈ ಪವಿತ್ರ ಕಾರ್ಯಕ್ರಮಕ್ಕೆ ಶ್ರೀ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ, ಬಳ್ಳಿ ಅವರು ಶುಭ ಹಾರೈಸಿದ್ದಾರೆ.</p>
+                                <p class="text-2xl font-bold text-slate-900">ದೇವಸ್ಥಾನದ ದರ್ಶನ (ಏಪ್ರಿಲ್ 25, 2026)</p>
+                                <p>ಇಂದು ಪವಿತ್ರವಾದ ಶಂಭುಲಿಂಗೇಶ್ವರ ದೇವಸ್ಥಾನದಲ್ಲಿ ದೇವರ ದರ್ಶನ ಪಡೆಯುವ ಭಾಗ್ಯ ದೊರಕಿತು. ಈ ಶುಭ ಕ್ಷಣದಲ್ಲಿ ಮನಸ್ಸಿಗೆ ಅಪಾರ ಶಾಂತಿ, ಆತ್ಮತೃಪ್ತಿ ಹಾಗೂ ಹೊಸ ಚೈತನ್ಯ ಲಭಿಸಿತು.</p>
+                                <p>ಯುವ ಉದ್ಯಮಿ ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ್ ಅವರೊಂದಿಗೆ ನಡೆದ ಈ ದರ್ಶನ ವಿಶೇಷವಾಗಿದ್ದು, ಭಗವಂತನ ಕೃಪೆಯಿಂದ ನಮ್ಮ ಎಲ್ಲರ ಜೀವನದಲ್ಲಿ ಸುಖ, ಶಾಂತಿ ಮತ್ತು ಯಶಸ್ಸು ಸದಾ ಇರಲಿ ಎಂದು ಪ್ರಾರ್ಥಿಸಲಾಯಿತು.</p>
                             </div>
                         </div>
                     `
@@ -1330,7 +1720,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo1.jpg" class="w-full rounded-3xl shadow-2xl" alt="Sharadahole Event">
+                                
+                                <div id="car_q9mmsy" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo1.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo2.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo3.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo4.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_q9mmsy').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_q9mmsy').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Vardhanti Mahotsava</p>
@@ -1345,7 +1752,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo1.jpg" class="w-full rounded-3xl shadow-2xl" alt="Sharadahole Event">
+                                
+                                <div id="car_wlk4az" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo1.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo2.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo3.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/sharadahole/photo4.jpg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_wlk4az').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_wlk4az').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ವರ್ಧಂತಿ ಮಹೋತ್ಸವ</p>
@@ -1362,7 +1786,24 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Alvikodi Event">
+                                
+                                <div id="car_4xyjts" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_4xyjts').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_4xyjts').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Spiritual Celebration</p>
@@ -1377,7 +1818,22 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Alvikodi Event">
+                                <div id="car_l0ey4y" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/alvikodi/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_l0ey4y').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_l0ey4y').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ಆಧ್ಯಾತ್ಮಿಕ ಹಬ್ಬ</p>
@@ -1389,13 +1845,490 @@
                     `
                 }
             },
+            'compromise-tragedies': {
+                en: {
+                    title: 'The Voice for Bhatkal: Mathappa Naik Demands Justice for the Alvegodi 11 and an Investigation into River Negligence',
+                    content: `
+                        <div class="space-y-8">
+                            <!-- Advanced Dark KMPlayer-style Video Player -->
+                            <div class="bg-slate-950 p-4 md:p-6 rounded-[2.5rem] border border-slate-800 shadow-2xl relative overflow-hidden">
+                                <!-- Background Glow -->
+                                <div class="absolute -top-40 -left-40 w-96 h-96 bg-red-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+                                <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                                <!-- Player Header Title Bar -->
+                                <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4 relative z-10 shrink-0">
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex gap-1.5">
+                                            <span class="w-3.5 h-3.5 rounded-full bg-red-500 border border-red-600 hover:opacity-85 cursor-pointer"></span>
+                                            <span class="w-3.5 h-3.5 rounded-full bg-amber-500 border border-amber-600 hover:opacity-85 cursor-pointer"></span>
+                                            <span class="w-3.5 h-3.5 rounded-full bg-green-500 border border-green-600 hover:opacity-85 cursor-pointer"></span>
+                                        </div>
+                                        <div class="h-4 w-px bg-slate-800 mx-1"></div>
+                                        <span class="text-xs font-mono font-black tracking-wider text-slate-400 uppercase flex items-center gap-1.5">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse"></span>
+                                            KMP MEDIA HUB - CAMPAIGN VIDEOS
+                                        </span>
+                                    </div>
+                                    <div class="text-[10px] font-mono text-slate-500 flex items-center gap-4">
+                                        <span>4K RESOLUTION</span>
+                                        <span class="text-orange-500 font-bold bg-orange-950/40 px-2 py-0.5 rounded border border-orange-900/30">H.264 ENCODED</span>
+                                    </div>
+                                </div>
+
+                                <!-- Player Grid -->
+                                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 relative z-10">
+                                    <!-- Main Video Canvas -->
+                                    <div class="lg:col-span-3 aspect-video bg-black rounded-3xl overflow-hidden relative flex flex-col justify-between border border-slate-800 p-1 group/player shadow-inner">
+                                        <video id="alvegodi-video-player-en" class="w-full h-full object-contain rounded-2xl bg-slate-950" controls poster="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg">
+                                            <source id="alvegodi-video-source-en" src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0003.mp4" type="video/mp4">
+                                            Your browser does not support HTML5 video player.
+                                        </video>
+                                    </div>
+
+                                    <!-- Sidebar Playlist -->
+                                    <div class="lg:col-span-1 bg-slate-900/95 rounded-3xl border border-slate-800/80 flex flex-col h-[340px] lg:h-auto overflow-hidden">
+                                        <!-- Playlist Header -->
+                                        <div class="bg-slate-950/80 text-slate-300 px-5 py-4 text-xs font-mono font-black border-b border-slate-800 uppercase tracking-widest flex justify-between items-center shrink-0">
+                                            <div class="flex items-center gap-2">
+                                                <i data-lucide="folder-open" class="w-3.5 h-3.5 text-red-500"></i>
+                                                <span>PLAYLIST (4)</span>
+                                            </div>
+                                            <span id="playing-prog-en" class="text-[10px] text-slate-500">1 / 4 SELECTED</span>
+                                        </div>
+
+                                        <!-- Scrollable Playlist Items -->
+                                        <div class="overflow-y-auto flex-1 divide-y divide-slate-800/40 p-2 space-y-2 scrollbar-none" id="playlist-container-en">
+                                            <!-- Video Item 1 (Active on load) -->
+                                            <button onclick="playAlvegodiVideoEn('https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0003.mp4', 'Alvegodi Tragedy Video 1 - Ground Investigation', this, 1)" class="w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all bg-slate-800/90 border border-slate-700/60 shadow-lg text-white font-bold group">
+                                                <div class="w-16 h-11 bg-black rounded-xl overflow-hidden shrink-0 relative border border-slate-700 shadow-sm">
+                                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover opacity-80 select-none">
+                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/50">
+                                                        <i data-lucide="play" class="w-3.5 h-3.5 text-white fill-white transition-transform group-hover:scale-110"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-[11px] leading-tight text-slate-100 truncate group-hover:text-red-400 transition-colors">Video 1: Ground Investigation</p>
+                                                    <span class="text-[9px] font-mono text-slate-400 mt-1 block flex items-center gap-1"><i data-lucide="clock" class="w-2.5 h-2.5"></i> ACTIVE FEED</span>
+                                                </div>
+                                            </button>
+
+                                            <!-- Video Item 2 -->
+                                            <button onclick="playAlvegodiVideoEn('https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0004.mp4', 'Alvegodi Tragedy Video 2 - Public Outraged & Testimonies', this, 2)" class="w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all text-slate-400 border border-transparent group">
+                                                <div class="w-16 h-11 bg-black rounded-xl overflow-hidden shrink-0 relative border border-slate-800 shadow-sm">
+                                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover opacity-60 select-none">
+                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                                                        <i data-lucide="play" class="w-3.5 h-3.5 text-slate-300"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-[11px] leading-tight text-slate-300 truncate group-hover:text-amber-500 transition-colors">Video 2: Public Outrage</p>
+                                                    <span class="text-[9px] font-mono text-slate-500 mt-1 block">HD CLIPPINGS</span>
+                                                </div>
+                                            </button>
+
+                                            <!-- Video Item 3 -->
+                                            <button onclick="playAlvegodiVideoEn('https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0005.mp4', 'Alvegodi Tragedy Video 3 - Local Administration Challenged', this, 3)" class="w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all text-slate-400 border border-transparent group">
+                                                <div class="w-16 h-11 bg-black rounded-xl overflow-hidden shrink-0 relative border border-slate-800 shadow-sm">
+                                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover opacity-60 select-none">
+                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                                                        <i data-lucide="play" class="w-3.5 h-3.5 text-slate-300"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-[11px] leading-tight text-slate-300 truncate group-hover:text-amber-500 transition-colors">Video 3: Official Challenge</p>
+                                                    <span class="text-[9px] font-mono text-slate-500 mt-1 block">HD CLIPPINGS</span>
+                                                </div>
+                                            </button>
+
+                                            <!-- Video Item 4 -->
+                                            <button onclick="playAlvegodiVideoEn('https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0006.mp4', 'Alvegodi Tragedy Video 4 - Mathappa Naik’s Appeal', this, 4)" class="w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all text-slate-400 border border-transparent group">
+                                                <div class="w-16 h-11 bg-black rounded-xl overflow-hidden shrink-0 relative border border-slate-800 shadow-sm">
+                                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover opacity-60 select-none">
+                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                                                        <i data-lucide="play" class="w-3.5 h-3.5 text-slate-300"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-[11px] leading-tight text-slate-300 truncate group-hover:text-amber-500 transition-colors">Video 4: Public Appeal</p>
+                                                    <span class="text-[9px] font-mono text-slate-500 mt-1 block">HD CLIPPINGS</span>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        \x3Cscript>
+                        window.playAlvegodiVideoEn = function(url, title, element, index) {
+                            var player = document.getElementById("alvegodi-video-player-en");
+                            var source = document.getElementById("alvegodi-video-source-en");
+                            var titleEl = document.getElementById("video-now-playing-title-en");
+                            var progEl = document.getElementById("playing-prog-en");
+                            
+                            if (player && source) {
+                                source.src = url;
+                                player.load();
+                                player.play().catch(function(e) { console.log("Video autoplay blocked"); });
+                                if (titleEl) titleEl.textContent = title;
+                                if (progEl) progEl.textContent = index + " / 4 SELECTED";
+                                
+                                var parent = document.getElementById("playlist-container-en");
+                                if (parent) {
+                                    var buttons = parent.getElementsByTagName("button");
+                                    for (var i = 0; i < buttons.length; i++) {
+                                        buttons[i].className = "w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all text-slate-400 border border-transparent group";
+                                        var otherSvg = buttons[i].querySelector("svg");
+                                        if (otherSvg) {
+                                            otherSvg.classList.remove("text-white", "fill-white");
+                                            otherSvg.classList.add("text-slate-300");
+                                        }
+                                        var otherBadge = buttons[i].querySelector("span");
+                                        if (otherBadge && otherBadge.textContent.indexOf("ACTIVE FEED") !== -1) {
+                                            otherBadge.innerHTML = "HD CLIPPINGS";
+                                            otherBadge.className = "text-[9px] font-mono text-slate-500 mt-1 block";
+                                        }
+                                    }
+                                }
+                                element.className = "w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all bg-slate-800/90 border border-slate-700/60 shadow-lg text-white font-bold group";
+                                var activeSvg = element.querySelector("svg");
+                                if (activeSvg) {
+                                    activeSvg.classList.add("text-white", "fill-white");
+                                }
+                                var badge = element.querySelector("span");
+                                if (badge) {
+                                    badge.innerHTML = '<i data-lucide="clock" class="w-2.5 h-2.5 inline mr-1"></i> ACTIVE FEED';
+                                    badge.className = "text-[9px] font-mono text-slate-400 mt-1 block flex items-center gap-1";
+                                }
+                                if (window.lucide) { window.lucide.createIcons(); }
+                            }
+                        }
+                        \x3C/script>
+                            <div class="prose prose-xl max-w-none text-slate-600 space-y-6">
+                                <h2 class="text-3xl font-black text-slate-950">The Voice for Bhatkal: Mathappa Naik Demands Justice for the Alvegodi 11 and an Investigation into River Negligence</h2>
+                                <p class="text-lg leading-relaxed">The coastal community of Uttara Kannada is reeling from a profound human tragedy. At the center of this storm is <strong>Mathappa Naik</strong>, a prominent local voice who has stepped forward to break the silence surrounding the devastating events in Bhatkal. Through a series of hard-hitting testimonies, Naik has directly challenged the local administration and District In-charge Minister Mankal Vaidya, linking systemic political ego and "unscientific" infrastructure development to the preventable loss of 11 human lives.</p>
+                                
+                                <h3 class="text-2xl font-bold text-slate-900 mt-6">1. The Alvegodi River Tragedy: A Timeline of Negligence</h3>
+                                <p>On Sunday, June 24, 2026, a routine livelihood activity turned into one of the darkest days in the history of Shirali. Mathappa Naik has painstakingly documented the timeline of a disaster that wiped out nearly an entire family:</p>
+                                <div class="border-l-4 border-red-600 pl-6 space-y-4 bg-slate-50 p-6 rounded-3xl">
+                                    <p><strong>10:00 AM – The Search for Livelihood:</strong> A group of 14 residents from a vulnerable, low-income family in Shirali set out toward the Venkatapura River (also known as the Tatte Hakkalu or Alvegodi River). Their goal was traditional Gippi Kallu (shellfish/crab) collection—a grueling daily task necessary to sustain their household.</p>
+                                    <p><strong>12:00 PM – Deep Water Trap:</strong> While returning, the group was caught as an abnormal surge of sea water rushed inland, altering the river dynamics instantly. Actually, they had gone by walk into the riverbed to pick the chipppikkallu (shellfish), and got swept away as the water levels rose violently under the sudden pressure.</p>
+                                    <p><strong>The Grim Aftermath:</strong> Despite desperate local rescue efforts, 11 of the 14 family members drowned. Rows of white-sheeted bodies laid on stretchers left an indelible scar on the community, leaving an entire generation of young children completely orphaned.</p>
+                                </div>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">2. The Smoking Gun: Mathappa Naik’s Hydraulic Analysis</h3>
+                                <p>While authorities initially sought to write off the tragedy as an unavoidable natural disaster, Mathappa Naik’s ground inspection of the Kukkanir area tells a much more damning story. Naik points to a massive, ongoing bridge construction project spearheaded by Minister Mankal Vaidya, which he characterizes as a project driven by "private luxury and political ego" rather than public utility.</p>
+                                
+                                <h4 class="text-xl font-bold text-slate-900">The Bottleneck Effect</h4>
+                                <p>According to Naik, engineers constructed a massive retaining wall directly inside the active riverbed to facilitate the bridge build. This barrier severely choked the natural outward flow of the river, completely eliminating its hydraulic discharge capacity on the right side.</p>
+                                <p>When the high tide surged inward from the sea, the constricted river lacked the natural outbound current required to push the saltwater back. This caused the sea water to bottleneck and violently erupt upward at Alvegodi. Elders of the Bhatkal region have confirmed to Naik that in generations of fishing along the Venkatapura River, an erratic, fatal surge of this nature has never occurred—proving that the disaster was directly correlated with the altered river topography.</p>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">3. Past Unresolved Justice in Bhatkal</h3>
+                                <p>To demonstrate that this negligence is part of a systemic pattern, Mathappa Naik has courageously invoked the names of past local figures whose tragic deaths never saw proper closure or administrative justice:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Dr. Chittaranjan</strong></li>
+                                    <li><strong>Timmappa Naik</strong></li>
+                                    <li><strong>Sister Yamuna Naik</strong></li>
+                                </ul>
+                                <p>Naik warns the administration that the community will no longer allow major corporate or political blunders to be swept under the rug. The historical pattern of shielding the powerful at the expense of the public ends with the Alvegodi 11.</p>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">4. Campaign Manifesto & Public Appeal (ಸಾರ್ವಜನಿಕ ಪ್ರಕಟಣೆ ಮತ್ತು ಮನವಿ)</h3>
+                                <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-2xl italic space-y-4">
+                                    <p>"ಭಟ್ಕಳ ತಾಲೂಕಿನ ಶಿರಾಲಿ–ಅಳ್ವೆಕೋಡಿ ನದಿ ತೀರದಲ್ಲಿ ಕಪ್ಪೆಚಿಪ್ಪಿನ ಮೀನುಗಾರಿಕೆ ವೇಳೆ 11 ಅಮೂಲ್ಯ ಜೀವಗಳು ದುರ್ಘಟನೆಯಲ್ಲಿ ಸಾವನ್ನಪ್ಪಿರುವ ಘಟನೆ ಅತ್ಯಂತ ದುಃಖಕರ ಮತ್ತು ಮನಕಲಕುವಂತಾಗಿದೆ."</p>
+                                    <p>"ಈ ಘಟನೆಕ್ಕೆ ಸಂಬಂಧಿಸಿ ಸ್ಥಳೀಯರಲ್ಲಿ ಹಲವಾರು ಅನುಮಾನಗಳು ವ್ಯಕ್ತವಾಗುತ್ತಿದ್ದು, ವೆಂಕಟಾಪುರ ಭಾಗದಲ್ಲಿ ನಿರ್ಮಾಣವಾಗುತ್ತಿರುವ ಅವೈಜ್ಞಾನಿಕ ಸೇತುವೆ ಹಾಗೂ ಅದರ ಅಡ್ಡವಾಗಿ ನಿರ್ಮಿಸಿದ ತಡೆಗೋಡೆಯ ಪರಿಣಾಮವಾಗಿ ನದಿಯ ನೀರಿನ ಸ್ವಾಭಾವಿಕ ಹರಿವು ಕಡಿಮೆಯಾಗಿ, ಸಮುದ್ರದ ನೀರಿನ ಮಟ್ಟದಲ್ಲಿ ಏಕಾಏಕಿ ಉಂಟಾದ ವ್ಯತ್ಯಾಸದಿಂದ ಅಳ್ವೆಕೋಡಿ ಭಾಗದಲ್ಲಿ ನೀರು ಒಂದೇ ಸಮನೆ ತುಂಬಿ ಹರಿದಿರುವ ಸಾಧ್ಯತೆಗಳ ಬಗ್ಗೆ ಗಂಭೀರ ಪ್ರಶ್ನೆಗಳು ಕೇಳಿಬರುತ್ತಿವೆ."</p>
+                                    <p>"ಇತಿಹಾಸದಲ್ಲೇ ಈ ರೀತಿಯ ದುರ್ಘಟನೆ ನಡೆದ ಬಗ್ಗೆ ಸ್ಪಷ್ಟ ಉಲ್ಲೇಖಗಳಿಲ್ಲದ ಹಿನ್ನೆಲೆ, ಕುಕ್ಕನೀರ್ ಭಾಗದಲ್ಲಿ ನಿರ್ಮಾಣಗೊಂಡ ತಡೆಗೋಡೆ ಹಾಗೂ ಸಂಬಂಧಿತ ಕಾಮಗಾರಿಗಳ ಬಗ್ಗೆ ಸಮಗ್ರ ತನಿಖೆ ನಡೆಯಬೇಕು ಎಂಬುದು ಸಾರ್ವಜನಿಕರ ಒತ್ತಾಯವಾಗಿದೆ."</p>
+                                    <p>"ಆದ್ದರಿಂದ ಸಂಬಂಧಪಟ್ಟ ಅಧಿಕಾರಿಗಳು, ಹೆಬಳೆ ಗ್ರಾಮ ಪಂಚಾಯತ್, ಮೀನುಗಾರಿಕೆ ಇಲಾಖೆ ಹಾಗೂ CRZ ಅನುಮತಿ ನೀಡಿದ ಪ್ರಾಧಿಕಾರಗಳು ಈ ಕಾಮಗಾರಿಗಳಿಗೆ ನೀಡಿರುವ ಅನುಮತಿ, ತಾಂತ್ರಿಕ ಮಾನದಂಡಗಳು ಹಾಗೂ ಪರಿಸರದ ಮೇಲೆ ಆಗಿರುವ ಪರಿಣಾಮಗಳ ಬಗ್ಗೆ ಪಾರದರ್ಶಕ ತನಿಖೆ ನಡೆಸುವುದು ಅತ್ಯಂತ ಅಗತ್ಯವಾಗಿದೆ."</p>
+                                    <p>"ಅಮೂಲ್ಯ ಜೀವಗಳನ್ನು ಕಳೆದುಕೊಂಡ ಕುಟುಂಬಗಳಿಗೆ ನ್ಯಾಯ ದೊರಕಬೇಕು. ಮುಂದಿನ ದಿನಗಳಲ್ಲಿ ಇಂತಹ ದುರ್ಘಟನೆಗಳು ಮರುಕಳಿಸದಂತೆ ನದಿ ತೀರ ಪ್ರದೇಶಗಳ ಅಭಿವೃದ್ಧಿ ಕಾಮಗಾರಿಗಳ ಬಗ್ಗೆ ವೈಜ್ಞಾನಿಕ ಪರಿಶೀಲನೆ ಹಾಗೂ ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತೆಗೆ ಆದ್ಯತೆ ನೀಡಬೇಕು."</p>
+                                    <p>"ದೇವರು ಅಗಲಿದ ಆತ್ಮಗಳಿಗೆ ಚಿರಶಾಂತಿ ನೀಡಲಿ, ಕುಟುಂಬಗಳಿಗೆ ಈ ದುಃಖ ಭರಿಸುವ ಶಕ್ತಿ ನೀಡಲಿ. 🙏"</p>
+                                </div>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">5. Official Demands of the Campaign</h3>
+                                <p>Mathappa Naik, alongside the unified citizens of Bhatkal, has submitted an official petition to the Uttara Kannada District Collector (DC) outlining the following non-negotiable demands:</p>
+                                <ul class="list-disc pl-6 space-y-3">
+                                    <li><strong>Independent Technical Audit:</strong> A complete forensic and hydraulic engineering investigation into the bridge construction at Kukkanir and its impact on the Venkatapura River flow.</li>
+                                    <li><strong>Regulatory Accountability:</strong> Full public disclosure of the permits granted (or bypassed) by the Heble Panchayat and the Coastal Regulation Zone (CRZ) authorities.</li>
+                                    <li><strong>Criminal Liability:</strong> If unscientific layout alterations are proven to have caused the bottleneck flood, strict legal prosecution must be brought against the contractors and state departments involved.</li>
+                                    <li><strong>Rehabilitation for Orphans:</strong> Complete state-sponsored welfare, education, and long-term financial security for the children left behind by the tragedy.</li>
+                                </ul>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">Join the Movement: Share Our Voice</h3>
+                                <p>We must stand together to ensure that infrastructure serves the people rather than endangering them. Use our official campaign tags to spread awareness and ensure the truth cannot be hidden.</p>
+                                
+                                <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100">
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ಭಟ್ಕಳದುರಂತ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ShiraliTragedy</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#Alvekodi</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#JusticeForFishermen</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#11ಜನರಅಗಲುವಿಕೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ವೆಂಕಟಾಪುರದುರಂತ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ನದಿದುರ್ಘಟನೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#CRZತನಿಖೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ತಡೆಗೋಡೆತನಿಖೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ಅವೈಜ್ಞಾನಿಕಸೇತುವೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#SaveBhatkal</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#BhatkalNews</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#UttaraKannada</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#PublicSafetyFirst</span>
+                                </div>
+                                <button onclick="openJoinModal('Alvegodi Tragedy Campaign')" class="bg-red-600 text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-red-700 transition-all mt-8">JOIN THIS MOVEMENT</button>
+                            </div>
+                        </div>
+                    `
+                },
+                kn: {
+                    title: 'ಅಳ್ವೆಕೋಡಿ ದುರಂತದ ತನಿಖೆಗೆ ಆಗ್ರಹ',
+                    content: `
+                        <div class="space-y-8">
+                            <!-- Advanced Dark KMPlayer-style Video Player for Kannada -->
+                            <div class="bg-slate-950 p-4 md:p-6 rounded-[2.5rem] border border-slate-800 shadow-2xl relative overflow-hidden">
+                                <!-- Background Glow -->
+                                <div class="absolute -top-40 -left-40 w-96 h-96 bg-red-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+                                <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                                <!-- Player Header Title Bar -->
+                                <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4 relative z-10 shrink-0">
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex gap-1.5">
+                                            <span class="w-3.5 h-3.5 rounded-full bg-red-500 border border-red-600 hover:opacity-85 cursor-pointer"></span>
+                                            <span class="w-3.5 h-3.5 rounded-full bg-amber-500 border border-amber-600 hover:opacity-85 cursor-pointer"></span>
+                                            <span class="w-3.5 h-3.5 rounded-full bg-green-500 border border-green-600 hover:opacity-85 cursor-pointer"></span>
+                                        </div>
+                                        <div class="h-4 w-px bg-slate-800 mx-1"></div>
+                                        <span class="text-xs font-mono font-black tracking-wider text-slate-400 uppercase flex items-center gap-1.5">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse"></span>
+                                            KMP ಮೀಡಿಯಾ ಹಬ್ - ಚಳುವಳಿ ವೀಡಿಯೊಗಳು
+                                        </span>
+                                    </div>
+                                    <div class="text-[10px] font-mono text-slate-500 flex items-center gap-4 text-slate-400">
+                                        <span>4K ರೆಸಲ್ಯೂಶನ್</span>
+                                        <span class="text-orange-500 font-bold bg-orange-950/40 px-2 py-0.5 rounded border border-orange-900/30">H.264 ಎನ್‌ಕೋಡೆಡ್</span>
+                                    </div>
+                                </div>
+
+                                <!-- Player Grid -->
+                                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 relative z-10">
+                                    <!-- Main Video Canvas -->
+                                    <div class="lg:col-span-3 aspect-video bg-black rounded-3xl overflow-hidden relative flex flex-col justify-between border border-slate-800 p-1 group/player shadow-inner">
+                                        <video id="alvegodi-video-player-kn" class="w-full h-full object-contain rounded-2xl bg-slate-950" controls poster="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg">
+                                            <source id="alvegodi-video-source-kn" src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0003.mp4" type="video/mp4">
+                                            Your browser does not support HTML5 video player.
+                                        </video>
+                                    </div>
+
+                                    <!-- Sidebar Playlist -->
+                                    <div class="lg:col-span-1 bg-slate-900/95 rounded-3xl border border-slate-800/80 flex flex-col h-[340px] lg:h-auto overflow-hidden">
+                                        <!-- Playlist Header -->
+                                        <div class="bg-slate-950/80 text-slate-300 px-5 py-4 text-xs font-mono font-black border-b border-slate-800 uppercase tracking-widest flex justify-between items-center shrink-0">
+                                            <div class="flex items-center gap-2">
+                                                <i data-lucide="folder-open" class="w-3.5 h-3.5 text-red-500"></i>
+                                                <span>ಪ್ಲೇಲಿಸ್ಟ್ (4)</span>
+                                            </div>
+                                            <span id="playing-prog-kn" class="text-[10px] text-slate-500">1 / 4 ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ</span>
+                                        </div>
+
+                                        <!-- Scrollable Playlist Items -->
+                                        <div class="overflow-y-auto flex-1 divide-y divide-slate-800/40 p-2 space-y-2 scrollbar-none" id="playlist-container-kn">
+                                            <!-- Video Item 1 (Active on load) -->
+                                            <button onclick="playAlvegodiVideoKn('https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0003.mp4', 'ಅಳ್ವೆಕೋಡಿ ದುರಂತ ವೀಡಿಯೊ 1 - ಸ್ಥಳ ಪರಿಶೀಲನೆ', this, 1)" class="w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all bg-slate-800/90 border border-slate-700/60 shadow-lg text-white font-bold group">
+                                                <div class="w-16 h-11 bg-black rounded-xl overflow-hidden shrink-0 relative border border-slate-700 shadow-sm">
+                                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover opacity-80 select-none">
+                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/50">
+                                                        <i data-lucide="play" class="w-3.5 h-3.5 text-white fill-white transition-transform group-hover:scale-110"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-[11px] leading-tight text-slate-100 truncate group-hover:text-red-400 transition-colors">ವೀಡಿಯೊ 1: ಸ್ಥಳ ಪರಿಶೀಲನೆ</p>
+                                                    <span class="text-[9px] font-mono text-slate-400 mt-1 block flex items-center gap-1"><i data-lucide="clock" class="w-2.5 h-2.5"></i> ಸಕ್ರಿಯ ವೀಕ್ಷಣೆ</span>
+                                                </div>
+                                            </button>
+
+                                            <!-- Video Item 2 -->
+                                            <button onclick="playAlvegodiVideoKn('https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0004.mp4', 'ಅಳ್ವೆಕೋಡಿ ದುರಂತ ವೀಡಿಯೊ 2 - ಸಾರ್ವಜನಿಕ ಆಕ್ರೋಶ ಮತ್ತು ಸತ್ಯಾಂಶಗಳು', this, 2)" class="w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all text-slate-400 border border-transparent group">
+                                                <div class="w-16 h-11 bg-black rounded-xl overflow-hidden shrink-0 relative border border-slate-800 shadow-sm">
+                                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover opacity-60 select-none">
+                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                                                        <i data-lucide="play" class="w-3.5 h-3.5 text-slate-300"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-[11px] leading-tight text-slate-300 truncate group-hover:text-amber-500 transition-colors">ವೀಡಿಯೊ 2: ಸಾರ್ವಜನಿಕ ಆಕ್ರೋಶ</p>
+                                                    <span class="text-[9px] font-mono text-slate-500 mt-1 block">HD ಕ್ಲಿಪ್ಪಿಂಗ್ಸ್</span>
+                                                </div>
+                                            </button>
+
+                                            <!-- Video Item 3 -->
+                                            <button onclick="playAlvegodiVideoKn('https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0005.mp4', 'ಅಳ್ವೆಕೋಡಿ ದುರಂತ ವೀಡಿಯೊ 3 - ಅಧಿಕಾರಿಗಳಿಗೆ ಮತ್ತು ಆಡಳಿತಕ್ಕೆ ಸವಾಲು', this, 3)" class="w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all text-slate-400 border border-transparent group">
+                                                <div class="w-16 h-11 bg-black rounded-xl overflow-hidden shrink-0 relative border border-slate-800 shadow-sm">
+                                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover opacity-60 select-none">
+                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                                                        <i data-lucide="play" class="w-3.5 h-3.5 text-slate-300"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-[11px] leading-tight text-slate-300 truncate group-hover:text-amber-500 transition-colors">ವೀಡಿಯೊ 3: ಆಡಳಿತಕ್ಕೆ ಸವಾಲು</p>
+                                                    <span class="text-[9px] font-mono text-slate-500 mt-1 block">HD ಕ್ಲಿಪ್ಪಿಂಗ್ಸ್</span>
+                                                </div>
+                                            </button>
+
+                                            <!-- Video Item 4 -->
+                                            <button onclick="playAlvegodiVideoKn('https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/videos/VID-20260601-WA0006.mp4', 'ಅಳ್ವೆಕೋಡಿ ದುರಂತ ವೀಡಿಯೊ 4 - ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕರ ಜಾಗೃತಿ ಮನವಿ', this, 4)" class="w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all text-slate-400 border border-transparent group">
+                                                <div class="w-16 h-11 bg-black rounded-xl overflow-hidden shrink-0 relative border border-slate-800 shadow-sm">
+                                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/images/river.jpg" class="w-full h-full object-cover opacity-60 select-none">
+                                                    <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                                                        <i data-lucide="play" class="w-3.5 h-3.5 text-slate-300"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-[11px] leading-tight text-slate-300 truncate group-hover:text-amber-500 transition-colors">ವೀಡಿಯೊ 4: ಜಾಗೃತಿ ಮನವಿ</p>
+                                                    <span class="text-[9px] font-mono text-slate-500 mt-1 block">HD ಕ್ಲಿಪ್ಪಿಂಗ್ಸ್</span>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        \x3Cscript>
+                        window.playAlvegodiVideoKn = function(url, title, element, index) {
+                            var player = document.getElementById("alvegodi-video-player-kn");
+                            var source = document.getElementById("alvegodi-video-source-kn");
+                            var titleEl = document.getElementById("video-now-playing-title-kn");
+                            var progEl = document.getElementById("playing-prog-kn");
+                            
+                            if (player && source) {
+                                source.src = url;
+                                player.load();
+                                player.play().catch(function(e) { console.log("Video autoplay blocked"); });
+                                if (titleEl) titleEl.textContent = title;
+                                if (progEl) progEl.textContent = index + " / 4 ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ";
+                                
+                                var parent = document.getElementById("playlist-container-kn");
+                                if (parent) {
+                                    var buttons = parent.getElementsByTagName("button");
+                                    for (var i = 0; i < buttons.length; i++) {
+                                        buttons[i].className = "w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all text-slate-400 border border-transparent group";
+                                        var otherSvg = buttons[i].querySelector("svg");
+                                        if (otherSvg) {
+                                            otherSvg.classList.remove("text-white", "fill-white");
+                                            otherSvg.classList.add("text-slate-300");
+                                        }
+                                        var otherBadge = buttons[i].querySelector("span");
+                                        if (otherBadge && otherBadge.textContent.indexOf("ಸಕ್ರಿಯ ವೀಕ್ಷಣೆ") !== -1) {
+                                            otherBadge.innerHTML = "HD ಕ್ಲಿಪ್ಪಿಂಗ್ಸ್";
+                                            otherBadge.className = "text-[9px] font-mono text-slate-500 mt-1 block";
+                                        }
+                                    }
+                                }
+                                element.className = "w-full p-2.5 rounded-2xl flex gap-3 text-left items-center hover:bg-slate-800/60 transition-all bg-slate-800/90 border border-slate-700/60 shadow-lg text-white font-bold group";
+                                var activeSvg = element.querySelector("svg");
+                                if (activeSvg) {
+                                    activeSvg.classList.add("text-white", "fill-white");
+                                }
+                                var badge = element.querySelector("span");
+                                if (badge) {
+                                    badge.innerHTML = '<i data-lucide="clock" class="w-2.5 h-2.5 inline mr-1"></i> ಸಕ್ರಿಯ ವೀಕ್ಷಣೆ';
+                                    badge.className = "text-[9px] font-mono text-slate-400 mt-1 block flex items-center gap-1";
+                                }
+                                if (window.lucide) { window.lucide.createIcons(); }
+                            }
+                        }
+                        \x3C/script>
+                            <div class="prose prose-xl max-w-none text-slate-600 space-y-6">
+                                <h2 class="text-3xl font-black text-slate-950">ಭಟ್ಕಳದ ಧ್ವನಿ: ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕರಿಂದ ಅಳ್ವೆಕೋಡಿ 11 ಜನರ ಜೀವಕ್ಕೆ ನ್ಯಾಯ ಮತ್ತು ನದಿಯ ನಿರ್ಲಕ್ಷ್ಯದ ತನಿಖೆಗೆ ಒತ್ತಾಯ</h2>
+                                <p class="text-lg leading-relaxed">ಉತ್ತರ ಕನ್ನಡದ ಕರಾವಳಿ ಸಮುದಾಯವು ತೀವ್ರವಾದ ಮಾನವ ದುರಂತದಿಂದ ಕಂಗೆಟ್ಟಿದೆ. ಈ ಬಿರುಗಾಳಿಯ ಮಧ್ಯದಲ್ಲಿ ನಿಂತಿರುವವರು <strong>ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ್</strong> ಬಲಸೆ, ಇವರು ಭಟ್ಕಳದ ಈ ಭೀಕರ ದುರಂತದ ಸುತ್ತಲಿನ ಮೌನವನ್ನು ಮುರಿಯಲು ಧೈರ್ಯದಿಂದ ಮುನ್ನಡೆದ ಬಲಿಷ್ಠ ಸ್ಥಳೀಯ ಧ್ವನಿಯಾಗಿದ್ದಾರೆ. ಸರಣಿ ಕಟುವಾದ ಸತ್ಯಾಂಶಗಳ ಮೂಲಕ ನಾಯ್ಕ್ ಅವರು ಸ್ಥಳೀಯ ಆಡಳಿತ ಮತ್ತು ಜಿಲ್ಲಾ ಉಸ್ತುವಾರಿ ಸಚಿವ ಮಂಕಾಳ ವೈದ್ಯ ಅವರಿಗೆ ನೇರ ಸವಾಲು ಹಾಕಿದ್ದು, ವ್ಯವಸ್ಥಿತ ರಾಜಕೀಯ ಅಹಂಕಾರ ಮತ್ತು "ಅವೈಜ್ಞಾನಿಕ" ಮೂಲಸೌಕರ್ಯ ಅಭಿವೃದ್ಧಿಯೇ ಈ 11 ಅಮಾಯಕ ಜೀವಗಳ ನಿವಾರಿಸಬಹುದಾಗಿದ್ದ ಸಾವಿಗೆ ನೇರ ಕಾರಣ ಎಂದು ಬೆಟ್ಟುಮಾಡಿದ್ದಾರೆ.</p>
+                                
+                                <h3 class="text-2xl font-bold text-slate-900 mt-6">1. ಅಳ್ವೆಕೋಡಿ ನದಿ ದುರಂತ: ನಿರ್ಲಕ್ಷ್ಯದ ಘಟನಾವಳಿಗಳು</h3>
+                                <p>ಭಾನುವಾರ, ಜೂನ್ 24, 2026 ರಂದು, ದೈನಂದಿನ ಜೀವನೋಪಾಯದ ಸಾಮಾನ್ಯ ಚಟುವಟಿಕೆಯು ಶಿರಾಲಿಯ ಇತಿಹಾಸದಲ್ಲೇ ಅತ್ಯಂತ ಕರಾಳ ದಿನವಾಗಿ ಮಾರ್ಪಟ್ಟಿತು. ಇಡೀ ಕುಟುಂಬವನ್ನೇ ಬಲಿಪಡೆದ ಈ ದುರಂತದ ಸಮಯದ ವಿವರಗಳನ್ನು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ್ ಈ ಕೆಳಗಿನಂತೆ ದಾಖಲಿಸಿದ್ದಾರೆ:</p>
+                                <div class="border-l-4 border-red-600 pl-6 space-y-4 bg-slate-50 p-6 rounded-3xl">
+                                    <p><strong>ಬೆಳಿಗ್ಗೆ 10:00 - ಜೀವನೋಪಾಯದ ಹುಡುಕಾಟ:</strong> ಶಿರಾಲಿಯ ಅತ್ಯಂತ ಬಡ ಮತ್ತು ದುರ್ಬಲ ಕುಟುಂಬದ 14 ನಿವಾಸಿಗಳ ತಂಡ ವೆಂಕಟಾಪುರ ನದಿಗೆ (ತಟ್ಟೆ ಹಕ್ಕಲು ಅಥವಾ ಅಳ್ವೆಕೋಡಿ ನದಿ ಎಂದೂ ಕರೆಯಲ್ಪಡುವ) ಹೊರಟಿತು. ಅವರ ಉದ್ದೇಶ ಸಾಂಪ್ರದಾಯಿಕ ಚಿಪ್ಪಿಕಲ್ಲು ಸಂಗ್ರಹಿಸುವುದಾಗಿತ್ತು - ಇದು ಅವರ ಕುಟುಂಬದ ತುತ್ತಿನ ಚೀಲ ತುಂಬಿಸಲು ಅತ್ಯಗತ್ಯವಾಗಿದ್ದ ದೈನಂದಿನ ಕಠಿಣ ಕೆಲಸವಾಗಿತ್ತು.</p>
+                                    <p><strong>ಮಧ್ಯಾಹ್ನ 12:00 - ನೀರಿನ ಹಠಾತ್ ಏರಿಕೆ:</strong> ಕೆಲಸ ಮುಗಿಸಿ ಹಿಂತಿರುಗಲು ಸಿದ್ಧರಾಗುತ್ತಿದ್ದಾಗ, ಸಮುದ್ರದಿಂದ ಏಕಾಏಕಿ ಭಾರಿ ಪ್ರಮಾಣದ ಹಿನ್ನೀರು ನದಿಗೆ ನುಗ್ಗಿ ನೀರಿನ ಒಟ್ಟಾರೆ ವೇಗ ಮತ್ತು ದಿಕ್ಕನ್ನು ಬದಲಾಯಿಸಿತು. ಆದರೆ ವಾಸ್ತವವಾಗಿ ಅವರು ಚಿಪ್ಪಿಕಲ್ಲು ಆರಿಸಲು ಕಾಲ್ನಡಿಗೆಯಲ್ಲೇ ನದಿಗೆ ಹೋಗಿದ್ದರು, ಸಮುದ್ರದ ಹಠಾತ್ ಹಿನ್ನೀರಿನ ಭೀಕರ ಒತ್ತಡ ಮತ್ತು ನದಿಯ ಮಾರುತಗಳಿಂದ ನೀರಿನ ಮಟ್ಟ ದಿಢೀರನೆ ಏರಿಕೆಯಾದ ಕಾರಣ ಇಡೀ ಕುಟುಂಬವು ನೀರಿನ ಸೆಳತಕ್ಕೆ ಸಿಲುಕಿತು.</p>
+                                    <p><strong>ಭೀಕರ ಪರಿಣಾಮ:</strong> ಸ್ಥಳೀಯರ ತುರ್ತು ರಕ್ಷಣಾ ಪ್ರಯತ್ನಗಳ ಹೊರತಾಗಿಯೂ, 14 ಜನರಲ್ಲಿ 11 ಕುಟುಂಬಸ್ಥರು ನೀರಿನಲ್ಲಿ ಮುಳುಗಿ ಜಲಸಮಾಧಿಯಾದರು. ಸಾಲು ಸಾಲಾಗಿ ಬಿಳಿ ಬಟ್ಟೆ ಹೊದಿಸಿದ ಮೃತದೇಹಗಳನ್ನು ಸ್ಟ್ರೆಚರ್‌ಗಳ ಮೇಲಿಟ್ಟ ದೃಶ್ಯ ಇಡೀ ಕರಾವಳಿಯ ಎದೆ ಸೀಳುವಂತಿತ್ತು. ಈ ದುರಂತವು ಇಡೀ ತಲೆಮಾರಿನ ಪುಟ್ಟ ಮಕ್ಕಳನ್ನು ಸಂಪೂರ್ಣ ಅನಾಥರನ್ನಾಗಿ ಮಾಡಿದೆ.</p>
+                                </div>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">2. ಪ್ರಮುಖ ಸಾಕ್ಷ್ಯ: ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕರ ಜಲ ಚಲನಶಾಸ್ತ್ರದ ವಿಶ್ಲೇಷಣೆ</h3>
+                                <p>ಅಧಿಕಾರಿಗಳು ಮತ್ತು ಆಡಳಿತ ವರ್ಗದವರು ಈ ಘಟನೆಯನ್ನು ಕೇವಲ "ನೈಸರ್ಗಿಕ ವಿಕೋಪ" ಎಂದು ಬಿಂಬಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದ್ದ ಸಂದರ್ಭದಲ್ಲಿ, ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ್ ಅವರು ಕುಕ್ಕನೀರ್ ಭಾಗದ ಸ್ಥಳ ತಪಾಸಣೆ ನಡೆಸಿ ಕಣ್ಣಿಗೆ ಕಟ್ಟುವಂತಹ ನೈಜ ಸಾಕ್ಷ್ಯಗಳನ್ನು ಹೊರತಂದಿದ್ದಾರೆ. ಮಂತ್ರಿ ಮಂಕಾಳ ವೈದ್ಯ ಮುನ್ನಡೆಸುತ್ತಿರುವ ಬೃಹತ್ ಸೇತುವೆ ಕಾಮಗಾರಿಯನ್ನು ಸಾರ್ವಜನಿಕ ಹಿತಾಸಕ್ತಿಗಿಂತ ಹೆಚ್ಚಾಗಿ "ಖಾಸಗಿ ವೈಭವ ಮತ್ತು ರಾಜಕೀಯ ಪ್ರತಿಷ್ಠೆಗಾಗಿ" ನಡೆಸಲಾಗುತ್ತಿರುವ ಅವೈಜ್ಞಾನಿಕ ಯೋಜನೆ ಎಂದು ನಾಯ್ಕ್ ಕರೆದಿದ್ದಾರೆ.</p>
+                                
+                                <h4 class="text-xl font-bold text-slate-900">ನೀರನ್ನು ನಿರ್ಬಂಧಿಸಿದ ಪರಿಣಾಮ (Bottleneck Effect)</h4>
+                                <p>ನಾಯ್ಕ್ ಅವರ ಪ್ರಕಾರ, ಸೇತುವೆ ನಿರ್ಮಾಣದ ಸುಲಭಕ್ಕಾಗಿ ನದಿಯ ಹರಿವಿನ ಜಲಮಾರ್ಗದ ಒಳಭಾಗದಲ್ಲೇ ಬೃಹತ್ ತಡೆಗೋಡೆಯನ್ನು ನಿರ್ಮಿಸಲಾಗಿದೆ. ಈ ಕೃತಕ ತಡೆಗೋಡೆಯು ನದಿಯ ಸ್ವಾಭಾವಿಕ ಹೊರಹರಿವನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಹತ್ತಿಕ್ಕಿದ್ದು, ನದಿಯ ಬಲಭಾಗದ ಜಲ ವಿಸರ್ಜನೆ ಸಾಮರ್ಥ್ಯವನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ನಾಶಪಡಿಸಿದೆ.</p>
+                                <p>ಸಮುದ್ರದಿಂದ ಭಾರಿ ಉಬ್ಬರವಿಳಿತದ ನೀರು ನದಿಯ ಕಡೆಗೆ ನುಗ್ಗಿದಾಗ, ಕಿರಿದಾದ ನದಿಯಲ್ಲಿ ಆ ನೀರನ್ನು ಹಿಂದಕ್ಕೆ ನೂಕಲು ಅಗತ್ಯವಿದ್ದ ಸ್ವಾಭಾವಿಕ ನದಿಯ ಹೊರಹರಿವಿನ ಶಕ್ತಿ ಇರಲಿಲ್ಲ. ಇದು ಸಮುದ್ರದ ಬಲವಾದ ನೀರನ್ನು ಒಟ್ಟಾಗಿ ತಡೆದು ಅಳ್ವೆಕೋಡಿ ಭಾಗದಲ್ಲಿ ಭೀಕರ ಜಲಸ್ಫೋಟಕ್ಕೆ ಕಾರಣವಾಯಿತು. ವೆಂಕಟಾಪುರ ನದಿಯಲ್ಲಿ ತಲೆಮಾರುಗಳಿಂದ ಮೀನುಗಾರಿಕೆ ನಡೆಸುತ್ತಿರುವ ಭಟ್ಕಳದ ಹಿರಿಯರು ನಾಯ್ಕರಿಗೆ ಧೃಢಪಡಿಸಿದಂತೆ - ಇತಿಹಾಸದಲ್ಲಿ ಹಿಂದೆಂದೂ ಇಂತಹ ಅನಿರೀಕ್ಷಿತ ಮತ್ತು ಮಾರಣಾಂತಿಕ ನೀರಿನ ಏರಿಳಿತ ಸಂಭವಿಸಿಲ್ಲ - ಇದು ನದಿಯ ಹರಿವಿನ ಬದಲಾವಣೆಗೂ ಮತ್ತು ಈ ಅವೈಜ್ಞಾನಿಕ ಕಾಮಗಾರಿಗೂ ನೇರ ಲಿಂಕ್ ಇರುವುದಕ್ಕೆ ಜೀವಂತ ಸಾಕ್ಷಿಯಾಗಿದೆ.</p>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">3. ಭಟ್ಕಳದಲ್ಲಿ ಮುಚ್ಚಿಹೋದ ಹಳೆಯ ನ್ಯಾಯದ ಧ್ವನಿಗಳು</h3>
+                                <p>ಆಡಳಿತದ ಈ ನಿರ್ಲಕ್ಷ್ಯವು ಕೇವಲ ಆಕಸ್ಮಿಕವಲ್ಲ, ಇದು ಮೊದಲಿನಿಂದಲೂ ನಡೆದು ಬಂದಿರುವ ವ್ಯವಸ್ಥಿತ ಮಾದರಿಯಾಗಿದೆ ಎಂದು ಸಾಬೀತುಪಡಿಸಲು ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ್ ಅವರು ಹಿಂದೆ ಭಟ್ಕಳದಲ್ಲಿ ನಿಗೂಢ ಅಥವಾ ಅನಿರೀಕ್ಷಿತವಾಗಿ ಸಾವನ್ನಪ್ಪಿದ ಪ್ರಮುಖ ಸ್ಥಳೀಯ ನಾಯಕರನ್ನು ನೆನಪಿಸಿಕೊಂಡಿದ್ದಾರೆ:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>ಡಾ. ಚಿತ್ತರಂಜನ್</strong></li>
+                                    <li><strong>ತಿಮ್ಮಪ್ಪ ನಾಯ್ಕ್</strong></li>
+                                    <li><strong>ಸಹೋದರಿ ಯಮುನಾ ನಾಯ್ಕ್</strong></li>
+                                </ul>
+                                <p>ಶ್ರೀಮಂತರು ಅಥವಾ ರಾಜಕೀಯ ಶಕ್ತಿಗಳ ಬೃಹತ್ ತಪ್ಪುಗಳನ್ನು ಜನರ ಪ್ರಾಣಕ್ಕೆ ಹೋಲಿಸಿ ಇನ್ನು ಮುಂದೆ ಮುಚ್ಚಿಹಾಕಲು ಬಿಡುವುದಿಲ್ಲ ಎಂದು ನಾಯ್ಕ್ ಆಡಳಿತಕ್ಕೆ ಎಚ್ಚರಿಕೆ ನೀಡಿದ್ದಾರೆ. ಜನಸಾಮಾನ್ಯರ ಬಲಿ ಪಡೆದು ಪ್ರಭಾವಿಗಳನ್ನು ರಕ್ಷಿಸುವ ಇತಿಹಾಸ ಇಲ್ಲಿಗೆ ಕೊನೆಗೊಳ್ಳಬೇಕು.</p>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">4. ಪ್ರಚಾರ ತತ್ವ ಪ್ರಣಾಳಿಕೆ ಮತ್ತು ಸಾರ್ವಜನಿಕ ಅಪೀಲು (Campaign Manifesto & Public Appeal)</h3>
+                                <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-2xl italic space-y-4">
+                                    <p>"ಭಟ್ಕಳ ತಾಲೂಕಿನ ಶಿರಾಲಿ–ಅಳ್ವೆಕೋಡಿ ನದಿ ತೀರದಲ್ಲಿ ಕಪ್ಪೆಚಿಪ್ಪಿನ ಮೀನುಗಾರಿಕೆ ವೇಳೆ 11 ಅಮೂಲ್ಯ ಜೀವಗಳು ದುರ್ಘಟನೆಯಲ್ಲಿ ಸಾವನ್ನಪ್ಪಿರುವ ಘಟನೆ ಅತ್ಯಂತ ದುಃಖಕರ ಮತ್ತು ಮನಕಲಕುವಂತಾಗಿದೆ."</p>
+                                    <p>"ಈ ಘಟನೆಕ್ಕೆ ಸಂಬಂಧಿಸಿ ಸ್ಥಳೀಯರಲ್ಲಿ ಹಲವಾರು ಅನುಮಾನಗಳು ವ್ಯಕ್ತವಾಗುತ್ತಿದ್ದು, ವೆಂಕಟಾಪುರ ಭಾಗದಲ್ಲಿ ನಿರ್ಮಾಣವಾಗುತ್ತಿರುವ ಅವೈಜ್ಞಾನಿಕ ಸೇತುವೆ ಹಾಗೂ ಅದರ ಅಡ್ಡವಾಗಿ ನಿರ್ಮಿಸಿದ ತಡೆಗೋಡೆಯ ಪರಿಣಾಮವಾಗಿ ನದಿಯ ನೀರಿನ ಸ್ವಾಭಾವಿಕ ಹರಿವು ಕಡಿಮೆಯಾಗಿ, ಸಮುದ್ರದ ನೀರಿನ ಮಟ್ಟದಲ್ಲಿ ಏಕಾಏಕಿ ಉಂಟಾದ ವ್ಯತ್ಯಾಸದಿಂದ ಅಳ್ವೆಕೋಡಿ ಭಾಗದಲ್ಲಿ ನೀರು ಒಂದೇ ಸಮನೆ ತುಂಬಿ ಹರಿದಿರುವ ಸಾಧ್ಯತೆಗಳ ಬಗ್ಗೆ ಗಂಭೀರ ಪ್ರಶ್ನೆಗಳು ಕೇಳಿಬರುತ್ತಿವೆ."</p>
+                                    <p>"ಇತಿಹಾಸದಲ್ಲೇ ಈ ರೀತಿಯ ದುರ್ಘಟನೆ ನಡೆದ ಬಗ್ಗೆ ಸ್ಪಷ್ಟ ಉಲ್ಲೇಖಗಳಿಲ್ಲದ ಹಿನ್ನೆಲೆ, ಕುಕ್ಕನೀರ್ ಭಾಗದಲ್ಲಿ ನಿರ್ಮಾಣಗೊಂಡ ತಡೆಗೋಡೆ ಹಾಗೂ ಸಂಬಂಧಿತ ಕಾಮಗಾರಿಗಳ ಬಗ್ಗೆ ಸಮಗ್ರ تನಿಖೆ ನಡೆಯಬೇಕು ಎಂಬುದು ಸಾರ್ವಜನಿಕರ ಒತ್ತಾಯವಾಗಿದೆ."</p>
+                                    <p>"ಆದ್ದರಿಂದ ಸಂಬಂಧಪಟ್ಟ ಅಧಿಕಾರಿಗಳು, ಹೆಬಳೆ ಗ್ರಾಮ ಪಂಚಾಯತ್, ಮೀನುಗಾರಿಕೆ ಇಲಾಖೆ ಹಾಗೂ CRZ ಅನುಮತಿ ನೀಡಿದ ಪ್ರಾಧಿಕಾರಗಳು ಈ ಕಾಮಗಾರಿಗಳಿಗೆ ನೀಡಿರುವ ಅನುಮತಿ, ತಾಂತ್ರಿಕ ಮಾನದಂಡಗಳು ಹಾಗೂ ಪರಿಸರದ ಮೇಲೆ ಆಗಿರುವ ಪರಿಣಾಮಗಳ ಬಗ್ಗೆ ಪಾರದರ್ಶಕ ತನಿಖೆ ನಡೆಸುವುದು ಅತ್ಯಂತ ಅಗತ್ಯವಾಗಿದೆ."</p>
+                                    <p>"ಅಮೂಲ್ಯ ಜೀವಗಳನ್ನು ಕಳೆದುಕೊಂಡ ಕುಟುಂಬಗಳಿಗೆ ನ್ಯಾಯ ದೊರಕಬೇಕು. ಮುಂದಿನ ದಿನಗಳಲ್ಲಿ ಇಂತಹ ದುರ್ಘಟನೆಗಳು ಮರುಕಳಿಸದಂತೆ ನದಿ ತೀರ ಪ್ರದೇಶಗಳ ಅಭಿವೃದ್ಧಿ ಕಾಮಗಾರಿಗಳ ಬಗ್ಗೆ ವೈಜ್ಞಾನಿಕ ಪರಿಶೀಲನೆ ಹಾಗೂ ಸಾರ್ವಜನಿಕ ಸುರಕ್ಷತೆಗೆ ಆದ್ಯತೆ ನೀಡಬೇಕು."</p>
+                                    <p>"ದೇವರು ಅಗಲಿದ ಆತ್ಮಗಳಿಗೆ ಚಿರಶಾಂತಿ ನೀಡಲಿ, ಕುಟುಂಬಗಳಿಗೆ ಈ ದುಃಖ ಭರಿಸುವ ಶಕ್ತಿ ನೀಡಲಿ. 🙏"</p>
+                                </div>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">5. ನಮ್ಮ ಅಧಿಕೃತ ಬೇಡಿಕೆಗಳು</h3>
+                                <p>ಮಾಸ್ತಪ್ಪ ನಾಯ್ಕ್ ಮತ್ತು ಭಟ್ಕಳದ ನಾಗರಿಕ ಒಕ್ಕೂಟ ಒಟ್ಟಾಗಿ ಉತ್ತರ ಕನ್ನಡ ಜಿಲ್ಲಾಧಿಕಾರಿಗಳಿಗೆ (DC) ಈ ಕೆಳಗಿನ ಪ್ರಮುಖ ಬೇಡಿಕೆಗಳ ಅಧಿಕೃತ ಮನವಿಯನ್ನು ಸಲ್ಲಿಸಿದ್ದಾರೆ:</p>
+                                <ul class="list-disc pl-6 space-y-3">
+                                    <li><strong>ಸ್ವತಂತ್ರ ತಾಂತ್ರಿಕ ಪರಿಶೀಲನೆ:</strong> ಕುಕ್ಕನೀರ್ ವೆಂಕಟಾಪುರ ನದಿಯಲ್ಲಿ ನಿರ್ಮಾಣ ಹಂತದಲ್ಲಿರುವ ಸೇತುವೆ ಹಾಗೂ ಅದರಿಂದ ನದಿಯ ಹರಿವಿನ ಮೇಲಾಗಿರುವ ವ್ಯತ್ಯಾಸದ ಬಗ್ಗೆ ಹೈಡ್ರಾಲಿಕ್ ಇಂಜಿನಿಯರಿಂಗ್ ನಿಪುಣರಿಂದ ಸಮಗ್ರ ವಿಧಿವಿಜ್ಞಾನ ತನಿಖೆಯಾಗಬೇಕು.</li>
+                                    <li><strong>ಅನುಮತಿಗಳ ಪಾರದರ್ಶಕತೆ:</strong> ಹೆಬಳೆ ಗ್ರಾಮ ಪಂಚಾಯತ್ ಮತ್ತು ಕರಾವಳಿ ನಿಯಂತ್ರಣ ವಲಯ (CRZ) ಪ್ರಾಧಿಕಾರಗಳು ಈ ಕಾಮಗಾರಿಗೆ ಕಾನೂನಾತ್ಮಕವಾಗಿ ನೀಡಿರುವ ಅಥವಾ ಬೈಪಾಸ್ ಮಾಡಿರುವ ಅನುಮತಿಗಳ ಸಂಪೂರ್ಣ ಸಾರ್ವಜನಿಕ ಪ್ರಕಟಣೆ ಹೊರಡಿಸಬೇಕು.</li>
+                                    <li><strong>ಕ್ರಿಮಿನಲ್ ಹೊಣೆಗಾರಿಕೆ:</strong> ಅವೈಜ್ಞಾನಿಕ ನಿರ್ಮಾಣದಿಂದಲೇ ನದಿಯ ಹರಿವು ಕಿರಿದಾಗಿ ಜಲಸೇವೆಯ ಅವಘಡ ಸಂಭವಿಸಿದೆ ಎಂದು ಸಾಬೀತಾದರೆ ಕಾಮಗಾರಿಯ ಗುತ್ತಿಗೆದಾರರು ಹಾಗೂ ಸಂಬಂಧಪಟ್ಟ ಸರ್ಕಾರಿ ಅಧಿಕಾರಿಗಳ ಮೇಲಾಗಿ ಕಠಿಣ ಕ್ರಿಮಿನಲ್ ಮೊಕದ್ದಮೆ ಹೂಡಬೇಕು.</li>
+                                    <li><strong>ಅನಾಥರ ಪುನರ್ವಸತಿ:</strong> ದುರಂತದ ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಅನಾಥರಾಗಿರುವ ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಸಂಪೂರ್ಣ ಸರ್ಕಾರಿ ಪ್ರಾಯೋಜಿತ ಉಚಿತ ಶಿಕ್ಷಣ, ಉದ್ಯೋಗಾವಕಾಶ ಹಾಗೂ ಬದುಕಿಗೆ ಅಗತ್ಯವಿರುವ ದೀರ್ಘಕಾಲದ ಆರ್ಥಿಕ ಭದ್ರತೆಯನ್ನು ಒದಗಿಸಬೇಕು.</li>
+                                </ul>
+
+                                <h3 class="text-2xl font-bold text-slate-900 mt-8">ಈ ಚಳುವಳಿಯಲ್ಲಿ ಭಾಗಿಗಳಾಗಿ: ನಮ್ಮ ಧ್ವನಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ</h3>
+                                <p>ಅಭಿವೃದ್ಧಿ ಯೋಜನೆಗಳು ಜನರ ಜೀವದ ವೆಚ್ಚದಲ್ಲಿ ನಡೆಯಬಾರದು, ಜನರಿಗಾಗಿ ಇರಬೇಕು ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಲು ನಾವೆಲ್ಲರೂ ಒಟ್ಟಾಗಿ ನಿಲ್ಲಬೇಕಾಗಿದೆ. ಇದನ್ನು ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮಗಳಲ್ಲಿ ಹಂಚಿಕೊಳ್ಳಲು ನಮ್ಮ ಅಧಿಕೃತ ಹ್ಯಾಶ್‌ಟ್ಯಾಗ್‌ಗಳನ್ನು ಬಳಸಿ ಸತ್ಯವನ್ನು ಎಲ್ಲರಿಗೂ ಮುಟ್ಟಿಸಿ:</p>
+                                
+                                <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100">
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ಭಟ್ಕಳದುರಂತ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ShiraliTragedy</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#Alvekodi</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#JusticeForFishermen</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#11ಜನರಅಗಲುವಿಕೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ವೆಂಕಟಾಪುರದುರಂತ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ನದಿದುರ್ಘಟನೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#CRZತನಿಖೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ತಡೆಗೋಡೆತನಿಖೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#ಅವೈಜ್ಞಾನಿಕಸೇತುವೆ</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#SaveBhatkal</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#BhatkalNews</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#UttaraKannada</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">#PublicSafetyFirst</span>
+                                </div>
+                                <button onclick="openJoinModal('ಅಳ್ವೆಕೋಡಿ ಚಳುವಳಿ')" class="bg-red-600 text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-red-700 transition-all mt-8">ಈ ಚಳುವಳಿಗೆ ಸೇರಿ</button>
+                            </div>
+                        </div>
+                    `
+                }
+            },
             'bhatkal-kudure-birappa': {
                 en: {
-                    title: '42nd Vardhanti Mahotsava, Sankadahole',
+                    title: 'Shri Kudure Birappa and Shri Mukhyaprana Hanumanta Temple, Sankadahole, Bhatkal',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Kudure Birappa Event">
+                                <div id="car_70rtsh" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_70rtsh').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_70rtsh').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">42nd Vardhanti Mahotsava</p>
@@ -1406,11 +2339,26 @@
                     `
                 },
                 kn: {
-                    title: '42ನೇ ವರ್ಧಂತಿ ಮಹೋತ್ಸವ, ಸಂಕದಹೊಳೆ',
+                    title: 'ಶ್ರೀ ಕುದುರೆ ಬೀರಪ್ಪ ದೇವಸ್ಥಾನ, ಸಂಕದಹೊಳೆ, ಭಟ್ಕಳ',
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Kudure Birappa Event">
+                                <div id="car_hr500n" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/bhatkal_kudure_birappa/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_hr500n').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_hr500n').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">42ನೇ ವರ್ಧಂತಿ ಮಹೋತ್ಸವ</p>
@@ -1427,7 +2375,22 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Balkur Jatre Event">
+                                <div id="car_ufo4ov" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_ufo4ov').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_ufo4ov').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">Supporting Local Drama</p>
@@ -1442,7 +2405,22 @@
                     content: `
                         <div class="space-y-8">
                             <div class="relative group">
-                                <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo1.jpeg" class="w-full rounded-3xl shadow-2xl" alt="Balkur Jatre Event">
+                                <div id="car_6ikkzi" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-3xl shadow-2xl bg-slate-100 aspect-video">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo1.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 1">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo2.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 2">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo3.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 3">
+                                    <img src="https://raw.githubusercontent.com/townlinksolutions/townlinksolutions/main/masthappna_naik/events/balkur_jatre/photo4.jpeg" onerror="this.onerror=null; this.remove();" class="w-full h-96 flex-shrink-0 snap-center object-cover" alt="Event Photo 4">
+                                </div>
+                                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_6ikkzi').scrollBy({left: -800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                    <button onclick="document.getElementById('car_6ikkzi').scrollBy({left: 800, behavior: 'smooth'})" class="w-12 h-12 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition-all pointer-events-auto">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="prose prose-xl max-w-none text-slate-600">
                                 <p class="text-2xl font-bold text-slate-900">ಸ್ಥಳೀಯ ನಾಟಕಕ್ಕೆ ಬೆಂಬಲ</p>
@@ -1454,25 +2432,14 @@
             }
         };
 
-        function openDetail(id) {
-            console.log('openDetail called with id:', id);
-            if (!details[id]) {
-                console.error('Event not found:', id);
-                return;
-            }
-            const content = details[id][currentLang];
-            document.getElementById('detailContent').innerHTML = `
-                <h2 class="text-5xl font-black text-slate-900 mb-12">${content.title}</h2>
-                ${content.content}
-            `;
-            document.getElementById('detailView').classList.remove('translate-y-full');
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
-        }
+        function openDetail(id) { window.location.href = id + '.html'; }
 
-        function closeDetail() {
+        function closeDetail(updateHash = true) {
             document.getElementById('detailView').classList.add('translate-y-full');
             document.body.style.overflow = 'auto';
+            if (updateHash) {
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
         }
     </script>
 </body>
