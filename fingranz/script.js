@@ -268,14 +268,18 @@ class SmoothScroller {
     scrollToElement(element) {
         const headerEl = domCache.header;
         const offset = (headerEl ? headerEl.getBoundingClientRect().height : 80) + 8;
-        requestAnimationFrame(() => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
+        // Use a microscopic timeout (50ms) to allow mobile browsers (such as iOS Safari) to fully lift 
+        // overflow/touch locks and process layout updates before beginning smooth scrolling. This avoids lag.
+        setTimeout(() => {
+            requestAnimationFrame(() => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             });
-        });
+        }, 50);
     }
 }
 
