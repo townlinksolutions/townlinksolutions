@@ -1,0 +1,6 @@
+{
+  "name": "Gokarna Ocean Beach View",
+  "description": "Experience Gokarna Ocean Beach View, a luxury beach resort located on Belehittal Road in Gokarna, Karnataka. Explore high-resolution galleries, beautiful interactive 360-degree virtual room tours, modern dining options, beachfront cottages, and direct WhatsApp booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

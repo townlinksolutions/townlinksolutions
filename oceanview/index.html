@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gokarna Ocean Beach View Resort</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Custom Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              natural: {
+                green: '#2C3E35', // Luxurious deep conservation green
+                cream: '#F4F1EA', // Light organic sand cream
+                tan: '#C2A383',   // Natural coast tan
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom inline helpers for animations and scroll spacing -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Prevent sections from being cut off under the fixed header */
+      *[id] {
+        scroll-margin-top: 5.5rem;
+      }
+      .font-serif {
+        font-family: 'Playfair Display', serif;
+      }
+      .font-sans {
+        font-family: 'Inter', sans-serif;
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      /* Soft enters */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-natural-cream font-sans text-natural-green min-h-screen overflow-x-hidden selection:bg-natural-tan selection:text-natural-cream">
+    
+    <!-- NAVIGATION HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-natural-cream/80 backdrop-blur-md border-b border-natural-green/5 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex flex-col select-none group transition-transform hover:scale-[1.01]">
+          <span class="font-serif italic text-lg md:text-xl font-bold text-natural-green leading-none">
+            Ocean Beach View
+          </span>
+          <span class="text-[9px] uppercase tracking-[0.3em] mt-1 font-bold text-natural-tan">
+            Gokarna Resort
+          </span>
+        </a>
+
+        <!-- Desktop Navigation links -->
+        <nav class="hidden lg:flex items-center gap-10 text-xs font-bold uppercase tracking-widest text-natural-green/80">
+          <a href="#accommodation" class="hover:text-natural-tan transition-colors">Cottages</a>
+          <a href="#amenities" class="hover:text-natural-tan transition-colors">Our Facilities</a>
+          <a href="#gallery" class="hover:text-natural-tan transition-colors">Gallery</a>
+          <a href="#reviews" class="hover:text-natural-tan transition-colors">Reviews</a>
+          <a href="#contact" class="hover:text-natural-tan transition-colors">Contact</a>
+        </nav>
+
+        <!-- CTAs -->
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="#contact" class="bg-natural-green text-natural-cream hover:bg-natural-tan text-xs uppercase tracking-wider font-extrabold px-6 py-3 rounded-full transition-all duration-300 shadow-md">
+            Inquire Now
+          </a>
+        </div>
+
+        <!-- Mobile triggers Hamburger -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 text-natural-green hover:text-natural-tan focus:outline-none transition-colors" aria-label="Toggle Mobile Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile drawer overlay -->
+      <div id="mobileDropdown" class="hidden lg:hidden bg-natural-cream border-t border-natural-green/5 py-6 px-6 space-y-4 shadow-xl">
+        <a href="#accommodation" class="mobile-nav-link block text-sm font-bold uppercase tracking-wider text-natural-green/90 py-2 hover:text-natural-tan">Cottages</a>
+        <a href="#amenities" class="mobile-nav-link block text-sm font-bold uppercase tracking-wider text-natural-green/90 py-2 hover:text-natural-tan">Our Facilities</a>
+        <a href="#gallery" class="mobile-nav-link block text-sm font-bold uppercase tracking-wider text-natural-green/90 py-2 hover:text-natural-tan">Gallery</a>
+        <a href="#reviews" class="mobile-nav-link block text-sm font-bold uppercase tracking-wider text-natural-green/90 py-2 hover:text-natural-tan">Reviews</a>
+        <a href="#contact" class="mobile-nav-link block text-sm font-bold uppercase tracking-wider text-natural-green/90 py-2 hover:text-natural-tan">Contact</a>
+        <div class="pt-4 border-t border-natural-green/5">
+          <a href="#contact" class="mobile-nav-link block text-center bg-natural-green text-natural-cream text-xs uppercase tracking-wider font-extrabold py-3.5 rounded-full">
+            Inquire Now
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="relative min-h-[92vh] lg:h-screen lg:min-h-[750px] grid grid-cols-1 lg:grid-cols-12 bg-natural-cream text-natural-green pt-20 overflow-hidden">
+      
+      <!-- Left Content -->
+      <div class="col-span-12 lg:col-span-5 p-6 md:p-12 lg:p-16 flex flex-col justify-between space-y-8 z-10 my-auto">
+        <div class="space-y-6">
+          <div class="inline-block px-3.5 py-1 border border-natural-green/20 text-natural-green text-[10px] uppercase tracking-[0.25em] rounded-full font-bold bg-white/50">
+            Ocean Beach View Gokarna
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-serif leading-[1.05] text-natural-green font-light tracking-tight">
+            Where the <br />
+            <span class="italic font-normal text-natural-tan">Arabian Sea</span> <br />
+            Meets the Beach.
+          </h1>
+          
+          <p class="text-sm leading-relaxed text-natural-green/80 max-w-md font-sans">
+            Located directly on the quiet beach of Dandebagh, our resort offers a peaceful stay right next to Gokarna's clean blue waters. Sleep to the relaxing sound of ocean waves.
+          </p>
+          
+          <div class="flex flex-wrap items-center gap-5 pt-4">
+            <a href="#contact" class="bg-natural-green text-natural-cream hover:bg-natural-tan hover:scale-[1.01] active:scale-[0.99] px-10 py-4 rounded-full text-xs uppercase tracking-[0.15em] font-extrabold shadow-lg transition-all duration-200">
+              Inquire Now
+            </a>
+            
+            <a href="#gallery" class="flex items-center gap-3 text-xs uppercase tracking-[0.15em] font-extrabold text-natural-green hover:text-natural-tan transition-colors">
+              <span class="w-10 h-10 rounded-full border border-natural-green flex items-center justify-center">
+                <span class="text-[8px] transform translate-x-0.5">&#x25B6;</span>
+              </span>
+              View Pictures
+            </a>
+          </div>
+        </div>
+
+        <!-- Exclusive Views thumbnails -->
+        <div class="space-y-3 pt-6 border-t border-natural-green/10">
+          <p class="text-[10px] uppercase tracking-[0.2em] text-natural-tan font-bold">Exclusive Views</p>
+          <div class="flex gap-3">
+            <div onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})" class="w-16 h-20 bg-cover bg-center rounded-2xl border border-natural-green/5 shadow-sm cursor-pointer hover:scale-105 transition-transform" style="background-image: url('./src/assets/images/resort_room_interior_1781337333690.jpg')"></div>
+            <div onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})" class="w-16 h-20 bg-cover bg-center rounded-2xl border border-natural-green/5 shadow-sm cursor-pointer hover:scale-105 transition-transform" style="background-image: url('./src/assets/images/resort_outdoor_dining_1781337351538.jpg')"></div>
+            <div onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})" class="w-16 h-20 bg-cover bg-center rounded-2xl border border-natural-green/5 shadow-sm cursor-pointer hover:scale-105 transition-transform" style="background-image: url('./src/assets/images/resort_beach_deck_1781337367282.jpg')"></div>
+            <button onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})" class="w-16 h-20 border border-natural-green/20 rounded-2xl flex items-center justify-center text-[10px] font-bold text-natural-green/50 hover:bg-natural-green/10 hover:border-natural-green transition-all">
+              +12
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column Backdrop and frames -->
+      <div class="col-span-12 lg:col-span-7 bg-natural-green relative flex items-center justify-center min-h-[460px] lg:h-full overflow-hidden">
+        
+        <!-- Large Artistic frame border -->
+        <div class="absolute inset-6 md:inset-12 border border-natural-cream/20 rounded-[40px] md:rounded-[60px] flex flex-col items-center justify-center overflow-hidden">
+          
+          <!-- Splash Backdrop Image -->
+          <div class="absolute inset-0 bg-cover bg-center opacity-35 mix-blend-overlay" style="background-image: url('./src/assets/images/resort_hero_beachfront_1781337316828.jpg')"></div>
+
+          <!-- Central Pulsing Circles & Serene Tag -->
+          <div class="w-full h-full relative flex items-center justify-center p-6">
+            <div class="w-4/5 h-4/5 border border-natural-cream/10 rounded-full animate-pulse absolute"></div>
+            <div class="absolute font-serif text-[90px] md:text-[180px] text-natural-cream/5 select-none pointer-events-none italic">Serene</div>
+            
+            <div class="absolute bottom-8 right-8 md:bottom-12 md:right-12 text-right">
+              <p class="text-natural-cream/80 text-[10px] uppercase tracking-[0.4em] mb-2">Virtual Holidays</p>
+              <h3 class="text-natural-tan font-serif text-2xl md:text-3xl leading-none">360° Ocean Terrace</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Polaroid frame tilted -->
+        <div class="absolute top-10 left-6 md:top-24 md:left-16 bg-natural-cream p-4 md:p-5 rounded-3xl shadow-2xl w-44 md:w-48 rotate-[-4deg] border border-natural-green/5 transition-transform hover:rotate-0 duration-300">
+          <div class="h-20 md:h-24 w-full bg-cover bg-center rounded-2xl mb-4" style="background-image: url('./src/assets/images/resort_room_interior_1781337333690.jpg')"></div>
+          <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-natural-green pb-0.5 leading-none">Stay with us</p>
+          <p class="text-[9px] text-natural-green/60 mt-1 italic font-serif leading-none">A beautiful stay in nature.</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- COTTAGES & ACCOMMODATION SECTION -->
+    <section id="accommodation" class="py-24 px-6 bg-white border-t border-natural-green/5">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <span class="text-natural-tan font-sans tracking-[0.2em] text-xs uppercase font-extrabold block mb-2">
+            OUR ROOMS
+          </span>
+          <h2 class="text-4xl md:text-5xl font-serif italic text-natural-green tracking-tight">
+            Our Beach Cottages
+          </h2>
+          <p class="mt-4 text-natural-green/80 max-w-2xl mx-auto text-sm md:text-base font-sans leading-relaxed">
+            Built using local red tiles, coconut thatch roofs, and strong wood pillars, our cottages combine local styles with modern comfort.
+          </p>
+        </div>
+
+        <!-- Grid of 3 Rooms -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Arabian Sea-View Suite -->
+          <div class="flex flex-col bg-natural-cream/35 border border-natural-green/5 rounded-[40px] overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+            <div class="h-64 relative overflow-hidden bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('./src/assets/images/resort_room_interior_1781337333690.jpg')"></div>
+              <div class="absolute top-4 left-4 bg-natural-cream text-natural-green text-[10px] font-extrabold uppercase tracking-widest px-4 py-2 rounded-full border border-natural-green/5 shadow-md">
+                Premium Sea-Front Suite
+              </div>
+            </div>
+            
+            <div class="p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-2xl font-serif italic text-natural-green leading-snug">Arabian Sea-View Suite</h3>
+                
+                <!-- Highlights attributes -->
+                <div class="flex flex-wrap gap-4 my-4 font-mono text-[10px] text-natural-green/60">
+                  <span class="flex items-center gap-1.5"><i data-lucide="compass" class="w-3.5 h-3.5"></i>420 sq. ft.</span>
+                  <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5"></i>King Bed</span>
+                  <span class="flex items-center gap-1.5"><i data-lucide="waves" class="w-3.5 h-3.5"></i>Full Ocean View</span>
+                </div>
+
+                <p class="text-xs leading-relaxed text-natural-green/75">
+                  This suite faces the Arabian Sea. It has high wood ceilings, large glass doors, comfy chairs, and a private balcony with a hammock looking at the sea.
+                </p>
+                
+                <!-- Quick amenities checklist -->
+                <h4 class="text-[10px] font-bold uppercase tracking-wider text-natural-green/50 mt-6 border-t border-natural-green/5 pt-4">Room Amenities:</h4>
+                <div class="mt-2.5 grid grid-cols-2 gap-2 text-[11px] text-natural-green/80 font-medium">
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Private Ocean Balcony</span>
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Air Conditioning</span>
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Mini Bar</span>
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Coffee Machine</span>
+                </div>
+              </div>
+
+              <div class="pt-8">
+                <button onclick="selectRoomAndScroll('suite')" class="w-full bg-natural-green text-natural-cream hover:bg-natural-tan font-bold text-[10px] uppercase tracking-widest py-3.5 rounded-full shadow-md text-center inline-block cursor-pointer transition-colors duration-200">
+                  Book Suite
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Beachfront Premium Cottage -->
+          <div class="flex flex-col bg-natural-cream/35 border border-natural-green/5 rounded-[40px] overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+            <div class="h-64 relative overflow-hidden bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('./src/assets/images/resort_hero_beachfront_1781337316828.jpg')"></div>
+              <div class="absolute top-4 left-4 bg-natural-cream text-natural-green text-[10px] font-extrabold uppercase tracking-widest px-4 py-2 rounded-full border border-natural-green/5 shadow-md">
+                Direct Beach Entry
+              </div>
+            </div>
+            
+            <div class="p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-2xl font-serif italic text-natural-green leading-snug">Beachfront Premium Cottage</h3>
+                
+                <!-- Highlights attributes -->
+                <div class="flex flex-wrap gap-4 my-4 font-mono text-[10px] text-natural-green/60">
+                  <span class="flex items-center gap-1.5"><i data-lucide="compass" class="w-3.5 h-3.5"></i>480 sq. ft.</span>
+                  <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5"></i>King Bed</span>
+                  <span class="flex items-center gap-1.5"><i data-lucide="waves" class="w-3.5 h-3.5"></i>Beach & Wave View</span>
+                </div>
+
+                <p class="text-xs leading-relaxed text-natural-green/75">
+                  A wooden eco-cottage stepping directly onto the beach. It has a private beach patio with chairs, a beautiful open-air garden shower, and neat interior designs.
+                </p>
+                
+                <!-- Quick amenities checklist -->
+                <h4 class="text-[10px] font-bold uppercase tracking-wider text-natural-green/50 mt-6 border-t border-natural-green/5 pt-4">Room Amenities:</h4>
+                <div class="mt-2.5 grid grid-cols-2 gap-2 text-[11px] text-natural-green/80 font-medium">
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Direct Beach Entrance</span>
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Open-air Garden Shower</span>
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Fresh Coconut Water</span>
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Air Conditioning</span>
+                </div>
+              </div>
+
+              <div class="pt-8">
+                <button onclick="selectRoomAndScroll('cottage')" class="w-full bg-natural-green text-natural-cream hover:bg-natural-tan font-bold text-[10px] uppercase tracking-widest py-3.5 rounded-full shadow-md text-center inline-block cursor-pointer transition-colors duration-200">
+                  Book Cottage
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Sunset View Attic Cottage -->
+          <div class="flex flex-col bg-natural-cream/35 border border-natural-green/5 rounded-[40px] overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+            <div class="h-64 relative overflow-hidden bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('./src/assets/images/resort_outdoor_dining_1781337351538.jpg')"></div>
+              <div class="absolute top-4 left-4 bg-natural-cream text-natural-green text-[10px] font-extrabold uppercase tracking-widest px-4 py-2 rounded-full border border-natural-green/5 shadow-md">
+                Scenic Sunset Balcony
+              </div>
+            </div>
+            
+            <div class="p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-2xl font-serif italic text-natural-green leading-snug">Sunset View Attic Cottage</h3>
+                
+                <!-- Highlights attributes -->
+                <div class="flex flex-wrap gap-4 my-4 font-mono text-[10px] text-natural-green/60">
+                  <span class="flex items-center gap-1.5"><i data-lucide="compass" class="w-3.5 h-3.5"></i>380 sq. ft.</span>
+                  <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5"></i>Double Bed</span>
+                  <span class="flex items-center gap-1.5"><i data-lucide="waves" class="w-3.5 h-3.5"></i>High Sunset View</span>
+                </div>
+
+                <p class="text-xs leading-relaxed text-natural-green/75">
+                  A nice attic room with big ceiling windows that bring the sunset colors into your room. It includes a private balcony.
+                </p>
+                
+                <!-- Quick amenities checklist -->
+                <h4 class="text-[10px] font-bold uppercase tracking-wider text-natural-green/50 mt-6 border-t border-natural-green/5 pt-4">Room Amenities:</h4>
+                <div class="mt-2.5 grid grid-cols-2 gap-2 text-[11px] text-natural-green/80 font-medium">
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Private Raised Patio</span>
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Ceiling Windows</span>
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Free Morning Tea</span>
+                  <span class="flex items-center gap-1.5"><span class="text-natural-tan">&#x2714;</span> Smart TV with Streaming</span>
+                </div>
+              </div>
+
+              <div class="pt-8">
+                <button onclick="selectRoomAndScroll('attic')" class="w-full bg-natural-green text-natural-cream hover:bg-natural-tan font-bold text-[10px] uppercase tracking-widest py-3.5 rounded-full shadow-md text-center inline-block cursor-pointer transition-colors duration-200">
+                  Book Attic Room
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- General Highlights Table / Free package -->
+        <div class="mt-16 bg-natural-green rounded-[32px] p-8 text-natural-cream border border-natural-green/20 shadow-xl">
+          <h3 class="text-xl font-serif italic text-white tracking-tight flex items-center gap-2.5 mb-2.5">
+            <i data-lucide="sparkles" class="w-5 h-5 text-natural-tan"></i> Free Amenities Included
+          </h3>
+          <p class="text-natural-cream/70 text-xs mb-6 max-w-xl font-sans font-medium leading-relaxed">
+            All bookings include dinner table bookings, fresh beach towels, daily room cleaning, and friendly staff assistance.
+          </p>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs border-t border-natural-cream/10 pt-6">
+            <div>
+              <span class="text-natural-tan font-bold uppercase tracking-wider block text-[10px] mb-1">Stay Security</span>
+              <p class="font-medium text-white">24/7 Gated Caretakers</p>
+            </div>
+            <div>
+              <span class="text-natural-tan font-bold uppercase tracking-wider block text-[10px] mb-1">Beach Towels</span>
+              <p class="font-medium text-white">Soft Organic Cotton</p>
+            </div>
+            <div>
+              <span class="text-natural-tan font-bold uppercase tracking-wider block text-[10px] mb-1">Housekeeping</span>
+              <p class="font-medium text-white">Complimentary Daily Cleanup</p>
+            </div>
+            <div>
+              <span class="text-natural-tan font-bold uppercase tracking-wider block text-[10px] mb-1">Bonfire Assist</span>
+              <p class="font-medium text-white font-serif italic">Cottage Fireplace / Beach Fire</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AMENITIES & FACILITIES SECTION -->
+    <section id="amenities" class="py-24 px-6 bg-natural-cream/50 scroll-mt-10 border-t border-natural-green/5">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="text-natural-tan font-sans tracking-[0.2em] text-xs uppercase block mb-2 font-bold">
+              OUR FACILITIES
+            </span>
+            <h2 class="text-4xl md:text-5xl font-serif italic tracking-tight text-natural-green">
+              Amenities at Ocean Beach View
+            </h2>
+            <p class="mt-3 text-natural-green/80 max-w-xl text-xs md:text-sm leading-relaxed font-sans">
+              Enjoy nice hotel facilities and friendly service. We are known for clean, pleasant, and relaxing beach stays in Gokarna.
+            </p>
+          </div>
+
+          <!-- Quick categories checklist tabs descriptor of layout -->
+          <div class="flex items-center gap-2 border border-natural-green/5 bg-white p-1.5 rounded-full w-fit text-[10px] font-bold uppercase tracking-wider">
+            <span class="bg-natural-green text-natural-cream py-1.5 px-4 rounded-full">Explore Highlights</span>
+          </div>
+        </div>
+
+        <!-- Amenities Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 font-sans">
+          
+          <!-- Category 1: Popular Amenities -->
+          <div class="bg-white border border-natural-green/5 p-6 rounded-[32px] shadow-sm flex flex-col space-y-4">
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-natural-tan border-b border-natural-green/5 pb-2 flex items-center gap-2">
+              <i data-lucide="star" class="w-4 h-4 text-natural-tan"></i>
+              Popular Amenities
+            </h3>
+            <ul class="space-y-2.5 text-xs text-natural-green/85 font-medium">
+              <li class="flex items-center gap-2"><i data-lucide="wifi" class="w-3.5 h-3.5 text-natural-green/60"></i> Free Wi-Fi</li>
+              <li class="flex items-center gap-2"><i data-lucide="coffee" class="w-3.5 h-3.5 text-natural-green/60"></i> Breakfast</li>
+              <li class="flex items-center gap-2"><i data-lucide="car" class="w-3.5 h-3.5 text-natural-green/60"></i> Free parking</li>
+              <li class="flex items-center gap-2"><i data-lucide="accessibility" class="w-3.5 h-3.5 text-natural-green/60"></i> Accessible</li>
+              <li class="flex items-center gap-2"><i data-lucide="wind" class="w-3.5 h-3.5 text-natural-green/60"></i> Air-conditioned</li>
+              <li class="flex items-center gap-2"><i data-lucide="shirt" class="w-3.5 h-3.5 text-natural-green/60"></i> Laundry service</li>
+              <li class="flex items-center gap-2"><i data-lucide="smile" class="w-3.5 h-3.5 text-natural-green/60"></i> Pet-friendly</li>
+              <li class="flex items-center gap-2"><i data-lucide="waves" class="w-3.5 h-3.5 text-natural-green/60"></i> Beach access</li>
+              <li class="flex items-center gap-2"><i data-lucide="hand-helping" class="w-3.5 h-3.5 text-natural-green/60"></i> Room service</li>
+              <li class="flex items-center gap-2"><i data-lucide="utensils" class="w-3.5 h-3.5 text-natural-green/60"></i> Restaurant</li>
+              <li class="flex items-center gap-2"><i data-lucide="plane" class="w-3.5 h-3.5 text-natural-green/60"></i> Airport shuttle</li>
+              <li class="flex items-center gap-2"><i data-lucide="dumbbell" class="w-3.5 h-3.5 text-natural-green/60"></i> Fitness centre</li>
+              <li class="flex items-center gap-2"><i data-lucide="glass-water" class="w-3.5 h-3.5 text-natural-green/60"></i> Bar</li>
+              <li class="flex items-center gap-2"><i data-lucide="ban" class="w-3.5 h-3.5 text-natural-green/60"></i> Smoke-free</li>
+              <li class="flex items-center gap-2"><i data-lucide="zap" class="w-3.5 h-3.5 text-natural-green/60"></i> Power Backup</li>
+              <li class="flex items-center gap-2"><i data-lucide="user-check" class="w-3.5 h-3.5 text-natural-green/60"></i> Concierge</li>
+              <li class="flex items-center gap-2"><i data-lucide="bath" class="w-3.5 h-3.5 text-natural-green/60"></i> Bathroom</li>
+            </ul>
+          </div>
+
+          <!-- Category 2: Basic & General Services -->
+          <div class="bg-white border border-natural-green/5 p-6 rounded-[32px] shadow-sm flex flex-col justify-between space-y-4">
+            <div class="space-y-4">
+              <h3 class="text-sm font-extrabold uppercase tracking-wider text-natural-tan border-b border-natural-green/5 pb-2 flex items-center gap-2">
+                <i data-lucide="sliders" class="w-4 h-4 text-natural-tan"></i>
+                Basic Facilities
+              </h3>
+              <ul class="space-y-2.5 text-xs text-natural-green/85 font-medium">
+                <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Room Service</li>
+                <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Power Backup</li>
+                <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Staff and Key Services</li>
+                <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Housekeeping</li>
+              </ul>
+            </div>
+            
+            <div class="space-y-4 pt-4 border-t border-natural-green/5">
+              <h3 class="text-sm font-extrabold uppercase tracking-wider text-natural-tan border-b border-natural-green/5 pb-2 flex items-center gap-2">
+                <i data-lucide="concierge-bell" class="w-4 h-4 text-natural-tan"></i>
+                General Services
+              </h3>
+              <ul class="space-y-2.5 text-xs text-natural-green/85 font-medium">
+                <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Concierge</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Category 3: Room Amenities -->
+          <div class="bg-white border border-natural-green/5 p-6 rounded-[32px] shadow-sm flex flex-col space-y-4">
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-natural-tan border-b border-natural-green/5 pb-2 flex items-center gap-2">
+              <i data-lucide="bed-double" class="w-4 h-4 text-natural-tan"></i>
+              Room Amenities
+            </h3>
+            <ul class="space-y-2.5 text-xs text-natural-green/85 font-medium">
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Woollen Blanket</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Wi-Fi</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Bathroom</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Shaving Mirror</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Hot & Cold Water</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Western Toilet Seat</li>
+            </ul>
+          </div>
+
+          <!-- Category 4: Facilities -->
+          <div class="bg-white border border-natural-green/5 p-6 rounded-[32px] shadow-sm flex flex-col space-y-4">
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-natural-tan border-b border-natural-green/5 pb-2 flex items-center gap-2">
+              <i data-lucide="building-2" class="w-4 h-4 text-natural-tan"></i>
+              Facilities
+            </h3>
+            <ul class="space-y-2.5 text-xs text-natural-green/85 font-medium">
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Beach</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Free Wi-Fi</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Pets allowed</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Check-in/out [private]</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Taxi service</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Daily housekeeping</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Bottle of water</li>
+              <li class="flex items-center gap-2"><span class="text-natural-tan">&#x2714;</span> Pet-friendly [charges apply]</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Resort Timing & Registration Info Block -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-natural-green text-natural-cream p-8 md:p-12 rounded-[32px] border border-natural-cream/10 shadow-2xl items-center mt-12">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="inline-block px-3 py-1 bg-natural-tan/15 border border-natural-tan/20 text-natural-tan text-[10px] uppercase font-bold tracking-[0.2em] rounded-full">
+              Easy Policies & Helpful Rules
+            </div>
+            <h3 class="text-3xl font-serif italic text-white tracking-tight">
+              A Trusted Beachfront Stay
+            </h3>
+            <p class="text-xs md:text-sm text-natural-cream/80 font-sans leading-relaxed">
+              Ocean Beach View Gokarna is a top choice for beach lovers. Guests like our quick service, clean rooms, and simple check-in. Our policies are made to give you a stress-free holiday.
+            </p>
+            <div class="flex flex-wrap items-center gap-6 pt-2 font-sans text-xs">
+              <p class="text-[11px] text-natural-cream/70 leading-relaxed max-w-sm">
+                "One of the highly recommended beachfront hotels in Gokarna, popular among families and couples."
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Timetable -->
+          <div class="lg:col-span-5 bg-white/5 border border-natural-cream/10 rounded-2xl p-6 md:p-8 font-sans space-y-6">
+            <h4 class="text-sm font-extrabold text-natural-tan uppercase tracking-widest flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4 text-natural-tan"></i> Check-In & Check-Out Times
+            </h4>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white/5 border border-natural-cream/5 p-4 rounded-xl">
+                <span class="text-[10px] uppercase tracking-wider text-natural-cream/60 font-bold block">Check-In</span>
+                <b class="text-lg text-white mt-1 block">02:00 PM</b>
+                <span class="text-[9px] text-natural-cream/50 mt-1 block font-medium">At the reception</span>
+              </div>
+              <div class="bg-white/5 border border-natural-cream/5 p-4 rounded-xl">
+                <span class="text-[10px] uppercase tracking-wider text-natural-cream/60 font-bold block">Check-Out</span>
+                <b class="text-lg text-white mt-1 block">12:00 PM</b>
+                <span class="text-[9px] text-natural-cream/50 mt-1 block font-medium">Simple handover</span>
+              </div>
+            </div>
+
+            <p class="text-[10px] text-natural-cream/65 italic leading-relaxed font-semibold">
+              * Easy check-in, friendly staff, and nice spaces ensure a pleasant stay for families and solo travelers.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY SECTION -->
+    <section id="gallery" class="py-24 px-6 bg-white border-t border-natural-green/5">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Header Info -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <span class="text-natural-tan font-sans tracking-[0.2em] text-xs uppercase block mb-2 font-bold">
+              PHOTO GALLERY
+            </span>
+            <h2 class="text-4xl md:text-5xl font-serif italic tracking-tight text-natural-green">
+              See Our Resort Pictures
+            </h2>
+            <p class="mt-3 text-natural-green/80 max-w-xl text-xs md:text-sm leading-relaxed font-sans">
+              Take a look at Gokarna Ocean Beach View. All photos show our real rooms, beach decks, and ocean views.
+            </p>
+          </div>
+
+          <!-- Dynamic Tabs selector to filter images in pure JS -->
+          <div class="flex flex-wrap items-center gap-1.5 border border-natural-green/10 bg-natural-cream/40 p-1 rounded-2xl w-fit font-sans text-[10px] font-bold uppercase tracking-wider">
+            <button onclick="filterGallery('all')" class="gallery-tab-btn active bg-natural-green text-natural-cream py-2 px-4 rounded-xl transition-all" data-category="all">
+              Show All
+            </button>
+            <button onclick="filterGallery('resort')" class="gallery-tab-btn text-natural-green/80 hover:text-natural-green py-2 px-4 rounded-xl transition-all" data-category="resort">
+              Resort Views
+            </button>
+            <button onclick="filterGallery('rooms')" class="gallery-tab-btn text-natural-green/80 hover:text-natural-green py-2 px-4 rounded-xl transition-all" data-category="rooms">
+              Cottages & Rooms
+            </button>
+            <button onclick="filterGallery('dining')" class="gallery-tab-btn text-natural-green/80 hover:text-natural-green py-2 px-4 rounded-xl transition-all" data-category="dining">
+              Beach Dining
+            </button>
+            <button onclick="filterGallery('activities')" class="gallery-tab-btn text-natural-green/80 hover:text-natural-green py-2 px-4 rounded-xl transition-all" data-category="activities">
+              Activities
+            </button>
+          </div>
+        </div>
+
+        <!-- Gallery Thumbnails Grid -->
+        <div id="galleryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Image 1 -->
+          <div class="gallery-card bg-natural-cream/30 border border-natural-green/5 p-3 rounded-3xl group cursor-pointer" data-category="resort" onclick="openLightbox(0)">
+            <div class="h-56 overflow-hidden rounded-2xl relative bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('./src/assets/images/resort_hero_beachfront_1781337316828.jpg')"></div>
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            </div>
+            <div class="p-3 font-sans">
+              <h4 class="text-xs font-extrabold text-natural-green truncate">Beachside Cottages</h4>
+              <p class="text-[10px] text-natural-green/60 mt-0.5 truncate">Our wooden beach cottages under coconut trees at sunset.</p>
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="gallery-card bg-natural-cream/30 border border-natural-green/5 p-3 rounded-3xl group cursor-pointer" data-category="rooms" onclick="openLightbox(1)">
+            <div class="h-56 overflow-hidden rounded-2xl relative bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('./src/assets/images/resort_room_interior_1781337333690.jpg')"></div>
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            </div>
+            <div class="p-3 font-sans">
+              <h4 class="text-xs font-extrabold text-natural-green truncate">Ocean View Bedroom</h4>
+              <p class="text-[10px] text-natural-green/60 mt-0.5 truncate">Large windows with views of the beautiful ocean.</p>
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div class="gallery-card bg-natural-cream/30 border border-natural-green/5 p-3 rounded-3xl group cursor-pointer" data-category="dining" onclick="openLightbox(2)">
+            <div class="h-56 overflow-hidden rounded-2xl relative bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('./src/assets/images/resort_outdoor_dining_1781337351538.jpg')"></div>
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            </div>
+            <div class="p-3 font-sans">
+              <h4 class="text-xs font-extrabold text-natural-green truncate">Outdoor Beach Dining</h4>
+              <p class="text-[10px] text-natural-green/60 mt-0.5 truncate">Enjoy fresh local seafood and grilled dishes under clean lights.</p>
+            </div>
+          </div>
+
+          <!-- Image 4 -->
+          <div class="gallery-card bg-natural-cream/30 border border-natural-green/5 p-3 rounded-3xl group cursor-pointer" data-category="activities" onclick="openLightbox(3)">
+            <div class="h-56 overflow-hidden rounded-2xl relative bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('./src/assets/images/resort_beach_deck_1781337367282.jpg')"></div>
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            </div>
+            <div class="p-3 font-sans">
+              <h4 class="text-xs font-extrabold text-natural-green truncate">Beach Chairs & Deck</h4>
+              <p class="text-[10px] text-natural-green/60 mt-0.5 truncate">A great place for morning yoga, stretching, or relaxing by the waves.</p>
+            </div>
+          </div>
+
+          <!-- Image 5 -->
+          <div class="gallery-card bg-natural-cream/30 border border-natural-green/5 p-3 rounded-3xl group cursor-pointer" data-category="activities" onclick="openLightbox(4)">
+            <div class="h-56 overflow-hidden rounded-2xl relative bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&q=80&w=800')"></div>
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            </div>
+            <div class="p-3 font-sans">
+              <h4 class="text-xs font-extrabold text-natural-green truncate">Gokarna Sea Cliffs</h4>
+              <p class="text-[10px] text-natural-green/60 mt-0.5 truncate">Beautiful walking paths from our beach to nearby beaches.</p>
+            </div>
+          </div>
+
+          <!-- Image 6 -->
+          <div class="gallery-card bg-natural-cream/30 border border-natural-green/5 p-3 rounded-3xl group cursor-pointer" data-category="resort" onclick="openLightbox(5)">
+            <div class="h-56 overflow-hidden rounded-2xl relative bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800')"></div>
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            </div>
+            <div class="p-3 font-sans">
+              <h4 class="text-xs font-extrabold text-natural-green truncate">Green Garden Paths</h4>
+              <p class="text-[10px] text-natural-green/60 mt-0.5 truncate">Sandy walking paths surrounded by beautiful green trees.</p>
+            </div>
+          </div>
+
+          <!-- Image 7 -->
+          <div class="gallery-card bg-natural-cream/30 border border-natural-green/5 p-3 rounded-3xl group cursor-pointer" data-category="dining" onclick="openLightbox(6)">
+            <div class="h-56 overflow-hidden rounded-2xl relative bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=800')"></div>
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            </div>
+            <div class="p-3 font-sans">
+              <h4 class="text-xs font-extrabold text-natural-green truncate">Fresh Coconut Drinks</h4>
+              <p class="text-[10px] text-natural-green/60 mt-0.5 truncate">Cold, refreshing drinks served directly to your beach chair.</p>
+            </div>
+          </div>
+
+          <!-- Image 8 -->
+          <div class="gallery-card bg-natural-cream/30 border border-natural-green/5 p-3 rounded-3xl group cursor-pointer" data-category="rooms" onclick="openLightbox(7)">
+            <div class="h-56 overflow-hidden rounded-2xl relative bg-slate-100">
+              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=800')"></div>
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            </div>
+            <div class="p-3 font-sans">
+              <h4 class="text-xs font-extrabold text-natural-green truncate">Handmade Wood Furniture</h4>
+              <p class="text-[10px] text-natural-green/60 mt-0.5 truncate">Beautiful furniture made by local woodworkers.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- IMMERSIVE PHOTO LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="hidden fixed inset-0 z-50 bg-black/95 flex flex-col justify-between p-4 md:p-8 select-none">
+      
+      <!-- Top Actions Layer -->
+      <div class="flex items-center justify-between text-white font-sans max-w-7xl mx-auto w-full">
+        <span class="text-xs font-bold tracking-widest text-[#C2A383] uppercase" id="lightboxTracker">
+          Image 1 of 8
+        </span>
+        <button onclick="closeLightbox()" class="text-natural-cream hover:text-white p-2 rounded-full cursor-pointer hover:bg-white/10 transition-colors" aria-label="Close Lightbox">
+          <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+      </div>
+
+      <!-- Main Stage Area linking back and forwards -->
+      <div class="max-w-5xl mx-auto w-full flex items-center justify-between flex-1 gap-4">
+        
+        <!-- Prev Button -->
+        <button onclick="prevLightboxImage()" class="text-natural-cream/80 hover:text-white bg-white/5 hover:bg-white/10 p-4 rounded-full cursor-pointer transition-all flex items-center justify-center border border-white/5" aria-label="Previous Image">
+          <i data-lucide="chevron-left" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Big Display Image -->
+        <div class="flex-1 flex flex-col items-center justify-center max-h-[70vh] relative">
+          <img id="lightboxImg" src="" alt="Resort Highlight Preview" class="max-w-full max-h-[65vh] object-contain rounded-2xl shadow-2xl transition-all duration-300">
+        </div>
+
+        <!-- Next Button -->
+        <button onclick="nextLightboxImage()" class="text-natural-cream/80 hover:text-white bg-white/5 hover:bg-white/10 p-4 rounded-full cursor-pointer transition-all flex items-center justify-center border border-white/5" aria-label="Next Image">
+          <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </button>
+
+      </div>
+
+      <!-- Footer Overlay -->
+      <div class="max-w-3xl mx-auto w-full text-center pb-4">
+        <span class="text-[10px] tracking-[0.25em] text-[#C2A383] font-bold uppercase block mb-1" id="lightboxCategory">
+          Resort view photo
+        </span>
+        <h3 id="lightboxTitle" class="text-white text-lg md:text-xl font-serif italic tracking-tight mt-1">
+          Scenic Beachfront View
+        </h3>
+        <p id="lightboxDesc" class="text-xs text-natural-cream/70 font-sans mt-2 max-w-xl mx-auto">
+          Highlight details.
+        </p>
+      </div>
+    </div>
+
+    <!-- GUEST REVIEWS SECTION -->
+    <section id="reviews" class="py-24 px-6 bg-natural-green text-natural-cream scroll-mt-10 border-t border-natural-cream/10">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Title Content -->
+        <div class="text-center mb-16">
+          <span class="text-natural-tan font-sans tracking-[0.2em] text-xs uppercase block mb-2 font-bold">
+            GUEST REVIEWS
+          </span>
+          <h2 class="text-4xl md:text-5xl font-serif italic tracking-tight text-white mb-2">
+            What Our Guests Say
+          </h2>
+          <p class="mt-3 text-natural-cream/80 max-w-2xl mx-auto text-xs md:text-sm font-sans leading-relaxed">
+            Read real reviews from families and couples who stayed with us right next to the beach.
+          </p>
+        </div>
+
+        <!-- Filters Grid in Vanilla JS -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-10 bg-natural-cream/10 p-4 rounded-3xl border border-natural-cream/15 font-sans">
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="text-xs font-bold text-natural-cream/70 uppercase tracking-wider block">
+              Filter:
+            </span>
+            <div class="flex gap-2">
+              <button onclick="filterReviews('all')" class="review-tab-btn active bg-natural-tan text-natural-green text-[10px] uppercase tracking-wider font-extrabold py-2 px-4 rounded-xl transition-all" data-rating="all">
+                All reviews
+              </button>
+              <button onclick="filterReviews(5)" class="review-tab-btn border border-natural-cream/10 text-natural-cream/70 hover:text-white text-[10px] uppercase tracking-wider font-extrabold py-2 px-4 rounded-xl transition-all" data-rating="5">
+                5 Stars (3)
+              </button>
+              <button onclick="filterReviews(4)" class="review-tab-btn border border-natural-cream/10 text-natural-cream/70 hover:text-white text-[10px] uppercase tracking-wider font-extrabold py-2 px-4 rounded-xl transition-all" data-rating="4">
+                4 Stars (1)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reviews List cards -->
+        <div id="reviewsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-sans">
+          
+          <!-- Review 1 (5 Stars) -->
+          <div class="review-card bg-white/5 border border-white/10 p-6 rounded-[32px] flex flex-col justify-between h-full group hover:border-[#C2A383]/40 transition-colors" data-rating="5">
+            <div>
+              <!-- Stars -->
+              <div class="flex text-yellow-400 gap-1 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+              </div>
+              <p class="text-stone-300 italic text-xs leading-relaxed font-sans mb-6">
+                "An extremely clean room right on the beach sands. Our family loved waking up to the ocean sound! The coconut trees, direct sand gateway, and quick room service made our weekend fantastic. We highly recommend this resort to anyone visiting Gokarna."
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-3 border-t border-white/5 pt-4">
+              <div class="w-10 h-10 rounded-full bg-natural-tan/10 border border-natural-tan/20 flex items-center justify-center text-natural-tan">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <b class="text-xs block text-white leading-none">Amit & Pooja Hegde</b>
+                <span class="text-[9px] text-[#C2A383] mt-1 block uppercase font-bold tracking-widest">
+                  Stayed in Premium Beachfront Cottage • May 2026
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 (5 Stars) -->
+          <div class="review-card bg-white/5 border border-white/10 p-6 rounded-[32px] flex flex-col justify-between h-full group hover:border-[#C2A383]/40 transition-colors" data-rating="5">
+            <div>
+              <div class="flex text-yellow-400 gap-1 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+              </div>
+              <p class="text-stone-300 italic text-xs leading-relaxed font-sans mb-6">
+                "Finding a beachfront place that allows pets and has secure parking is hard. Ocean Beach View offered both! Safe parking inside gates and endless beach play for our retriever. The local Malnad style fish curry was delicious!"
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-3 border-t border-white/5 pt-4">
+              <div class="w-10 h-10 rounded-full bg-natural-tan/10 border border-natural-tan/20 flex items-center justify-center text-natural-tan">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <b class="text-xs block text-white leading-none">Siddharth Sen</b>
+                <span class="text-[9px] text-[#C2A383] mt-1 block uppercase font-bold tracking-widest">
+                  Stayed in Attic Sunset Cottage • Jun 2026
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 (5 Stars) -->
+          <div class="review-card bg-white/5 border border-white/10 p-6 rounded-[32px] flex flex-col justify-between h-full group hover:border-[#C2A383]/40 transition-colors" data-rating="5">
+            <div>
+              <div class="flex text-yellow-400 gap-1 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+              </div>
+              <p class="text-stone-300 italic text-xs leading-relaxed font-sans mb-6">
+                "Highly recommended beachfront stay. Standard check-in operations were incredibly swift and smooth. Hot water was consistent, and having the private ocean canopy balcony allowed us to watch sunset directly from our suite."
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-3 border-t border-white/5 pt-4">
+              <div class="w-10 h-10 rounded-full bg-natural-tan/10 border border-natural-tan/20 flex items-center justify-center text-natural-tan">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <b class="text-xs block text-white leading-none">Ananya Nair</b>
+                <span class="text-[9px] text-[#C2A383] mt-1 block uppercase font-bold tracking-widest">
+                  Stayed in Arabian Sea-View Suite • Apr 2026
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 (4 Stars) -->
+          <div class="review-card bg-white/5 border border-white/10 p-6 rounded-[32px] flex flex-col justify-between h-full group hover:border-[#C2A383]/40 transition-colors" data-rating="4">
+            <div>
+              <div class="flex text-yellow-400 gap-1 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-transparent text-slate-500"></i>
+              </div>
+              <p class="text-stone-300 italic text-xs leading-relaxed font-sans mb-6">
+                "Peaceful place with extremely nice cottages. The staff are warm and helped book local cabs on short notice. Wifi works stably and check out was easy. Great experience."
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-3 border-t border-white/5 pt-4">
+              <div class="w-10 h-10 rounded-full bg-natural-tan/10 border border-natural-tan/20 flex items-center justify-center text-natural-tan">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <b class="text-xs block text-white leading-none">Rakesh Sharma</b>
+                <span class="text-[9px] text-[#C2A383] mt-1 block uppercase font-bold tracking-widest">
+                  Stayed in Premium Beachfront Cottage • May 2026
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Custom No-reviews state -->
+        <div id="noReviewsNotice" class="hidden text-center py-16 bg-white/5 rounded-[32px] border border-white/10 font-sans mt-6">
+          <i data-lucide="star" class="w-10 h-10 text-natural-cream/35 mx-auto mb-2"></i>
+          <h4 class="font-serif italic text-white text-xl">No reviews found</h4>
+          <p class="text-xs text-natural-cream/70 mt-1 font-bold">Please choose another filter above.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT, MAPS & WHATSAPP RESERVATION SECTION -->
+    <section id="contact" class="py-24 px-6 bg-natural-cream text-natural-green scroll-mt-10">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Header Info -->
+        <div class="text-center mb-16">
+          <span class="text-natural-tan font-sans tracking-[0.2em] text-xs uppercase block mb-2 font-bold">
+            DIRECT BOOKING
+          </span>
+          <h2 class="text-4xl md:text-5xl font-serif italic text-natural-green tracking-tight">
+            Connect & Confirm Your Stay
+          </h2>
+          <p class="mt-3 text-natural-green/80 max-w-2xl mx-auto text-xs md:text-sm font-sans leading-relaxed">
+            Would you like to book a stay? Fill in the simple form below. Sending the form will open a WhatsApp chat directly with our manager <b>(+91 9980242504)</b>.
+          </p>
+        </div>
+
+        <!-- Main Body Grid Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          
+          <!-- LEFT: Map and address info -->
+          <div class="lg:col-span-12 xl:col-span-5 flex flex-col justify-between space-y-8">
+            <div class="bg-natural-green rounded-[32px] p-8 text-natural-cream border border-natural-cream/10 shadow-xl space-y-6 font-sans">
+              <h3 class="text-2xl font-serif italic text-white tracking-tight">Our Address & Location</h3>
+              <p class="text-natural-cream/80 text-xs leading-relaxed">
+                Located directly on Belehittal Road near Dandebagh Beach front. Feel free to reach out to us.
+              </p>
+
+              <!-- Address links -->
+              <div class="space-y-4">
+                <div class="flex items-start gap-3.5">
+                  <div class="bg-natural-tan/15 p-2.5 rounded-xl text-natural-tan mt-1 border border-natural-tan/10">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-[10px] font-bold text-natural-cream/60 uppercase tracking-wider">Our Address</h4>
+                    <a href="https://maps.app.goo.gl/RTsx93UkxYYpeDyQA" target="_blank" rel="noopener noreferrer" class="text-xs md:text-sm text-white mt-1 block font-bold leading-relaxed hover:text-natural-tan hover:underline cursor-pointer transition-colors">
+                      Sindoora kare, Belehittal Rd, Dandebagh, Gokarna, Karnataka 581326
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3.5">
+                  <div class="bg-natural-tan/15 p-2.5 rounded-xl text-natural-tan mt-1 border border-natural-tan/10">
+                    <i data-lucide="message-square" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-[10px] font-bold text-natural-cream/60 uppercase tracking-wider">WhatsApp</h4>
+                    <span class="text-xs md:text-sm text-natural-tan mt-1 block font-extrabold leading-relaxed text-yellow-300">
+                      +91 9980242504
+                    </span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3.5">
+                  <div class="bg-natural-tan/15 p-2.5 rounded-xl text-natural-tan mt-1 border border-natural-tan/10">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-[10px] font-bold text-natural-cream/60 uppercase tracking-wider">Our Email</h4>
+                    <span class="text-xs md:text-sm text-white mt-1 block font-bold">
+                      bookings@gokarnaoceanbeachview.club
+                    </span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3.5">
+                  <div class="bg-natural-tan/15 p-2.5 rounded-xl text-natural-tan mt-1 border border-natural-tan/10">
+                    <i data-lucide="clock" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-[10px] font-bold text-natural-cream/60 uppercase tracking-wider font-sans">Office Hours</h4>
+                    <span class="text-xs md:text-sm text-white mt-1 block font-bold">
+                      07:00 AM — 10:30 PM (Everyday)
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OTA Booking Links -->
+            <div class="bg-white rounded-[32px] p-6 border border-natural-green/10 shadow-xl font-sans text-natural-green space-y-4">
+              <h4 class="text-md font-serif italic text-natural-green flex items-center gap-2">
+                🌐 Book Online Instantly
+              </h4>
+              <p class="text-[11px] text-natural-green/70 leading-relaxed font-semibold">
+                Prefer booking using your favorite travel portals? See live holiday availability, read hotel reviews, or secure flexible cancellation policies:
+              </p>
+              
+              <div class="grid grid-cols-1 gap-2.5 pt-1">
+                <a href="https://www.goibibo.com/hotels/ocean-beach-view-gokarna-hotel-in-gokarn-5047959583919922180/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between border border-natural-green/10 bg-natural-cream/10 hover:border-natural-tan hover:bg-natural-cream/35 px-4 py-3 rounded-xl transition-all group font-sans cursor-pointer">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                    <span class="text-xs font-extrabold text-natural-green">Book on Goibibo</span>
+                  </div>
+                  <span class="text-[10px] text-natural-tan font-black uppercase tracking-wider group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                    Check Availability &rarr;
+                  </span>
+                </a>
+
+                <a href="https://www.makemytrip.com/hotels/hotel-details/?checkin=06132026&checkout=07152026&locusId=CTXGO&locusType=city&city=CTXGO&country=IN&searchText=Ocean+Beach+View+Gokarna&roomStayQualifier=2e0e&_uCurrency=INR&reference=hotel&rf=directSearch&topHtlId=202309051646541392&homeStay=true&type=hotel&funnelName=homestay&rsc=1e2e0e&cc=IN&hotelId=202309051646541392&isPropSearch=T" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between border border-natural-green/10 bg-natural-cream/10 hover:border-natural-tan hover:bg-natural-cream/35 px-4 py-3 rounded-xl transition-all group font-sans cursor-pointer">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span class="text-xs font-extrabold text-natural-green">Book on MakeMyTrip</span>
+                  </div>
+                  <span class="text-[10px] text-natural-tan font-black uppercase tracking-wider group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                    Check Availability &rarr;
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Stylized Proximity Map vector scheme -->
+            <div class="bg-white rounded-[32px] p-6 border border-natural-green/10 shadow-xl flex-1 flex flex-col justify-between font-sans">
+              <div>
+                <h4 class="text-lg font-serif italic text-natural-green">Resort Beach Map</h4>
+                <p class="text-[10px] text-natural-green/60 font-medium font-bold">Dandebagh beach, Belehittal road area</p>
+              </div>
+
+              <!-- Vector Map representation -->
+              <div class="my-6 relative bg-natural-cream/40 rounded-2xl p-4 border border-natural-green/5 h-48 flex items-center justify-center overflow-hidden">
+                <svg viewBox="0 0 400 200" class="w-full h-full select-none" aria-hidden="true">
+                  <!-- Shoreline waves path -->
+                  <path d="M 60 0 Q 80 50 50 100 T 70 200" fill="none" stroke="#C2A383" stroke-width="2" stroke-dasharray="4 4" />
+                  <path d="M 0 0 L 60 0 Q 80 50 50 100 T 70 200 L 0 200 Z" fill="#EAE5DA" opacity="0.4" />
+                  <text x="15" y="100" fill="#2C3E35" font-family="Playfair Display" font-style="italic" font-size="12" rotate="-90" opacity="0.4">Arabian Sea</text>
+                  
+                  <!-- Sandy Beach zone -->
+                  <rect x="70" y="0" width="80" height="200" fill="#F4F1EA" opacity="0.8" />
+                  <text x="110" y="100" fill="#C2A383" font-family="Inter" font-weight="bold" font-size="9" transform="rotate(-90 110 100)" letter-spacing="1">SANDY BEACH</text>
+
+                  <!-- Belehittal Road line -->
+                  <line x1="280" y1="0" x2="280" y2="200" stroke="#C2A383" stroke-width="8" opacity="0.6" />
+                  <text x="295" y="110" fill="#2C3E35" font-family="Inter" font-size="8" font-weight="bold" transform="rotate(90 295 110)">BELEHITTAL ROAD</text>
+
+                  <!-- Resort Placement -->
+                  <g transform="translate(180, 75)">
+                    <rect x="0" y="0" width="80" height="60" rx="12" fill="#2C3E35" />
+                    <text x="40" y="25" fill="#F4F1EA" font-family="Playfair Display" font-size="9" text-anchor="middle" font-weight="bold">Ocean Beach</text>
+                    <text x="40" y="40" fill="#C2A383" font-family="Inter" font-size="7" font-weight="bold" text-anchor="middle" letter-spacing="0.5">VIEW RESORT</text>
+                    <circle cx="8" cy="8" r="4" fill="#C2A383" />
+                  </g>
+                  
+                  <!-- Connections pathways -->
+                  <path d="M 150 100 L 180 100" stroke="#2C3E35" stroke-dasharray="2 3" stroke-width="1.5" />
+                  <text x="165" y="92" fill="#2C3E35" font-family="Inter" font-size="7" font-weight="bold" text-anchor="middle">Gate</text>
+                  <path d="M 260 105 L 276 105" stroke="#2C3E35" stroke-dasharray="2 3" stroke-width="1.5" />
+                </svg>
+
+                <div class="absolute bottom-2 left-2 bg-white/95 border border-natural-green/10 px-2.5 py-1 rounded-lg text-[9px] font-bold text-natural-green flex items-center gap-1 shadow-sm">
+                  <span class="w-2.5 h-2.5 bg-natural-green rounded-full"></span> Direct beach entrance gate
+                </div>
+              </div>
+
+              <a href="https://maps.app.goo.gl/RTsx93UkxYYpeDyQA" target="_blank" rel="noopener noreferrer" class="w-full border border-natural-green text-natural-green hover:bg-natural-green hover:text-natural-cream text-center text-xs font-bold uppercase tracking-widest py-3.5 rounded-full shadow-sm block transition-colors cursor-pointer">
+                📍 Open Resort on Google Maps &rarr;
+              </a>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Live calculating WhatsApp booking Form (7 Columns) -->
+          <div class="lg:col-span-12 xl:col-span-12 xl:col-start-6 bg-white border border-natural-green/10 rounded-[36px] p-6 md:p-10 shadow-2xl z-10">
+            
+            <form id="bookingForm" onsubmit="sendWhatsApp(event)" class="space-y-6">
+              
+              <!-- Form category flag -->
+              <div class="flex items-center gap-3">
+                <div class="bg-natural-green/5 text-natural-green border border-natural-green/10 p-2.5 rounded-xl">
+                  <i data-lucide="file-text" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-serif italic text-natural-green tracking-tight">WhatsApp Booking Form</h3>
+                  <p class="text-xs text-natural-green/70">Please enter your dates below to check if rooms are available</p>
+                </div>
+              </div>
+
+              <!-- General inputs grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5 font-sans pt-2">
+                <div>
+                  <label class="block text-[10px] uppercase tracking-wider font-extrabold text-natural-green/60 mb-2">My Full Name</label>
+                  <input type="text" id="guestName" required placeholder="e.g. Rahul Patel" class="w-full bg-natural-cream/30 border border-natural-green/15 focus:border-natural-green focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-natural-green placeholder:text-natural-green/30 focus:outline-none transition-colors" oninput="updateLiveSummary()">
+                </div>
+                <div>
+                  <label class="block text-[10px] uppercase tracking-wider font-extrabold text-natural-green/60 mb-2">My WhatsApp Number</label>
+                  <input type="tel" id="guestPhone" required placeholder="e.g. +91 9876543210" class="w-full bg-natural-cream/30 border border-natural-green/15 focus:border-natural-green focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-natural-green placeholder:text-natural-green/30 focus:outline-none transition-colors" oninput="updateLiveSummary()">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5 font-sans">
+                <div>
+                  <label class="block text-[10px] uppercase tracking-wider font-extrabold text-natural-green/60 mb-2">My Email Address (Optional)</label>
+                  <input type="email" id="guestEmail" placeholder="e.g. rahul@gmail.com" class="w-full bg-natural-cream/30 border border-natural-green/15 focus:border-natural-green focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-natural-green placeholder:text-natural-green/30 focus:outline-none transition-colors" oninput="updateLiveSummary()">
+                </div>
+                <div>
+                  <label class="block text-[10px] uppercase tracking-wider font-extrabold text-natural-green/60 mb-2">Cottage Room Type</label>
+                  <select id="guestCottage" class="w-full bg-natural-cream/30 border border-natural-green/15 focus:border-natural-green focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-natural-green focus:outline-none transition-colors" onchange="updateLiveSummary()">
+                    <option value="Arabian Sea-View Suite">Arabian Sea-View Suite</option>
+                    <option value="Beachfront Premium Cottage" selected>Beachfront Premium Cottage</option>
+                    <option value="Sunset View Attic Cottage">Sunset View Attic Cottage</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-5 font-sans">
+                <div>
+                  <label class="block text-[10px] uppercase tracking-wider font-extrabold text-natural-green/60 mb-2">Arrival/Check-In Date</label>
+                  <input type="date" id="checkInDate" required class="w-full bg-natural-cream/30 border border-natural-green/15 focus:border-natural-green focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-natural-green focus:outline-none transition-colors" onchange="updateLiveSummary()">
+                </div>
+                <div>
+                  <label class="block text-[10px] uppercase tracking-wider font-extrabold text-natural-green/60 mb-2">Departure/Check-Out Date</label>
+                  <input type="date" id="checkOutDate" required class="w-full bg-natural-cream/30 border border-natural-green/15 focus:border-natural-green focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-natural-green focus:outline-none transition-colors" onchange="updateLiveSummary()">
+                </div>
+                <div>
+                  <label class="block text-[10px] uppercase tracking-wider font-extrabold text-natural-green/60 mb-2">Number of Adult Guests</label>
+                  <select id="adultsCount" class="w-full bg-natural-cream/30 border border-natural-green/15 focus:border-natural-green focus:bg-white rounded-xl px-4 py-3 text-xs font-bold text-natural-green focus:outline-none transition-colors" onchange="updateLiveSummary()">
+                    <option value="1">1 Adult</option>
+                    <option value="2" selected>2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults / Family</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[10px] uppercase tracking-wider font-extrabold text-natural-green/60 mb-2">Inquiry / Vacation Notes & Requests</label>
+                <textarea id="guestNotes" rows="3" required placeholder="Let us know about check-in timing, airport taxi requirement, custom meals or kids bed configuration requests." class="w-full bg-natural-cream/30 border border-natural-green/15 focus:border-natural-green focus:bg-white rounded-xl p-4 text-xs font-bold text-natural-green placeholder:text-natural-green/30 focus:outline-none transition-colors" oninput="updateLiveSummary()"></textarea>
+              </div>
+
+              <!-- LIVE SUMMARY DYNAMIC PANEL -->
+              <div class="bg-natural-cream/50 rounded-2xl p-4 border border-natural-green/5 text-xs text-natural-green space-y-2 font-sans transition-all" id="summaryPanel">
+                <h4 class="text-[10px] uppercase tracking-widest font-extrabold text-natural-tan flex items-center gap-1.5 leading-none">
+                  <span class="w-1.5 h-1.5 bg-natural-tan rounded-full"></span> Live Staying details
+                </h4>
+                <p id="summaryText" class="text-natural-green/85 leading-relaxed font-semibold">
+                  Please enter your name, dates, and WhatsApp number above to generate your holiday summary.
+                </p>
+              </div>
+
+              <!-- Action button submit -->
+              <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase tracking-widest py-4.5 rounded-full shadow-lg transition-all flex items-center justify-center gap-3 cursor-pointer">
+                <i data-lucide="message-square" class="w-4 h-4"></i>
+                <span>Confirm Inquiry via Direct WhatsApp</span>
+              </button>
+
+              <div class="mt-6 pt-5 border-t border-natural-cream/15 flex items-center gap-2.5 text-natural-green/70 font-sans">
+                <i data-lucide="help-circle" class="w-4 h-4 text-natural-tan flex-shrink-0"></i>
+                <p class="text-[10px] leading-relaxed font-bold">
+                  Tapping the button above will open WhatsApp with your chosen dates and details. You can chat with us there to finalize your booking.
+                </p>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-natural-green text-natural-cream py-16 px-6 border-t border-white/5 font-sans">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 text-sm">
+        
+        <div class="md:col-span-5 space-y-4">
+          <h3 class="font-serif italic text-2xl text-white font-bold leading-none">
+            Ocean Beach View
+          </h3>
+          <span class="text-[9px] uppercase tracking-[0.3em] opacity-80 block font-bold text-natural-tan leading-none">
+            Gokarna Resort
+          </span>
+          <p class="text-xs text-natural-cream/75 leading-relaxed max-w-sm pt-2">
+            Enjoy a peaceful stay on the quiet beach of Dandebagh, Gokarna. With clean, comfortable rooms, we promise a relaxing holiday right next to the sea.
+          </p>
+          <div class="flex gap-2 pt-1 text-xs">
+            <span class="text-natural-tan bg-natural-tan/10 border border-natural-tan/20 px-2.5 py-1 rounded-full font-bold flex items-center gap-1.5">
+              <i data-lucide="compass" class="w-3.5 h-3.5"></i> Dandebagh beach
+            </span>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="text-xs font-extrabold uppercase tracking-widest text-[#C2A383]">Navigation</h4>
+          <div class="flex flex-col gap-2.5 text-xs text-natural-cream/80 font-semibold">
+            <a href="#accommodation" class="hover:text-white transition-colors">Choose Cottages</a>
+            <a href="#amenities" class="hover:text-white transition-colors">Resort Facilities</a>
+            <a href="#gallery" class="hover:text-white transition-colors">Photo Gallery</a>
+            <a href="#reviews" class="hover:text-white transition-colors">Visitor Reviews</a>
+            <a href="#contact" class="hover:text-white transition-colors">Contact Form</a>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 space-y-4 font-sans">
+          <h4 class="text-xs font-extrabold uppercase tracking-widest text-[#C2A383]">Location Coordinates</h4>
+          <p class="text-xs text-natural-cream/80 leading-relaxed font-medium">
+            Belehittal Rd, Dandebagh, Gokarna, near Mahabaleshwar Beach, Uttara Kannada, Karnataka 581326, India.
+          </p>
+          <div class="pt-2">
+            <a href="https://maps.app.goo.gl/RTsx93UkxYYpeDyQA" target="_blank" rel="noopener noreferrer" class="text-xs text-[#C2A383] hover:text-white font-extrabold underline flex items-center gap-1">
+              📍 View live location on Google Maps &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer notes -->
+      <div class="max-w-7xl mx-auto border-t border-natural-cream/10 mt-12 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-natural-cream/55 font-sans font-medium">
+        <p>© 2026 Gokarna Ocean Beach View Resort. All Rights Reserved.</p>
+        <p>A clean and peaceful beach resort in Gokarna, Karnataka.</p>
+      </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+      // 1. Initializing Lucide Icons
+      document.addEventListener("DOMContentLoaded", function() {
+        lucide.createIcons();
+      });
+
+      // 2. Mobile navbar toggler
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileDropdown = document.getElementById("mobileDropdown");
+      const mobileMenuIcon = mobileMenuBtn ? mobileMenuBtn.querySelector("i") : null;
+
+      if (mobileMenuBtn && mobileDropdown) {
+        mobileMenuBtn.addEventListener("click", function() {
+          mobileDropdown.classList.toggle("hidden");
+          const isOpen = !mobileDropdown.classList.contains("hidden");
+          if (mobileMenuIcon) {
+            mobileMenuIcon.setAttribute("data-lucide", isOpen ? "x" : "menu");
+            lucide.createIcons();
+          }
+        });
+      }
+
+      // Hide mobile dropdown when any menu link is clicked
+      document.querySelectorAll(".mobile-nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+          if (mobileDropdown) {
+            mobileDropdown.classList.add("hidden");
+          }
+          if (mobileMenuIcon) {
+            mobileMenuIcon.setAttribute("data-lucide", "menu");
+            lucide.createIcons();
+          }
+        });
+      });
+
+      // 3. Selection of cottage automatically scrolling and setting room input
+      function selectRoomAndScroll(roomSlug) {
+        const optionMap = {
+          'suite': 'Arabian Sea-View Suite',
+          'cottage': 'Beachfront Premium Cottage',
+          'attic': 'Sunset View Attic Cottage'
+        };
+        const selectBox = document.getElementById("guestCottage");
+        if (selectBox && optionMap[roomSlug]) {
+          selectBox.value = optionMap[roomSlug];
+        }
+        
+        // Scroll smoothly to reservation contact
+        const contactSection = document.getElementById("contact");
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Trigger summary updating
+        updateLiveSummary();
+      }
+
+      // 4. Photo Gallery Filtering Logic
+      function filterGallery(category) {
+        // Toggle active style on buttons
+        const tabBtns = document.querySelectorAll(".gallery-tab-btn");
+        tabBtns.forEach(btn => {
+          if (btn.getAttribute("data-category") === category) {
+            btn.classList.add("bg-natural-green", "text-natural-cream");
+            btn.classList.remove("text-natural-green/80");
+          } else {
+            btn.classList.remove("bg-natural-green", "text-natural-cream");
+            btn.classList.add("text-natural-green/80");
+          }
+        });
+
+        // Loop cards and show/hide
+        const cards = document.querySelectorAll(".gallery-card");
+        cards.forEach(card => {
+          const itemCat = card.getAttribute("data-category");
+          if (category === "all" || itemCat === category) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      }
+
+      // 5. Immersive Lightbox Modal Logic
+      const GALLERY_ITEMS = [
+        {
+          src: "./src/assets/images/resort_hero_beachfront_1781337316828.jpg",
+          title: "Beachside Cottages",
+          category: "Resort Views",
+          desc: "Our wooden beach cottages under coconut trees at sunset."
+        },
+        {
+          src: "./src/assets/images/resort_room_interior_1781337333690.jpg",
+          title: "Ocean View Bedroom",
+          category: "Cottages & Rooms",
+          desc: "Large windows with views of the beautiful ocean."
+        },
+        {
+          src: "./src/assets/images/resort_outdoor_dining_1781337351538.jpg",
+          title: "Outdoor Beach Dining",
+          category: "Beach Dining",
+          desc: "Enjoy fresh local seafood and grilled dishes under clean lights."
+        },
+        {
+          src: "./src/assets/images/resort_beach_deck_1781337367282.jpg",
+          title: "Beach Chairs & Deck",
+          category: "Activities",
+          desc: "A great place for morning yoga, stretching, or relaxing by the waves."
+        },
+        {
+          src: "https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&q=80&w=800",
+          title: "Gokarna Sea Cliffs",
+          category: "Activities",
+          desc: "Beautiful walking paths from our beach to nearby Mahabaleshwar and Half Moon beaches."
+        },
+        {
+          src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800",
+          title: "Green Garden Paths",
+          category: "Resort Views",
+          desc: "Sandy walking paths surrounded by beautiful green trees."
+        },
+        {
+          src: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=800",
+          title: "Fresh Coconut Drinks",
+          category: "Beach Dining",
+          desc: "Cold, refreshing drinks served directly to your beach chair."
+        },
+        {
+          src: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=800",
+          title: "Handmade Wood Furniture",
+          category: "Cottages & Rooms",
+          desc: "Beautiful furniture made by local woodworkers."
+        }
+      ];
+
+      let lightboxIndex = 0;
+
+      function openLightbox(index) {
+        lightboxIndex = index;
+        const modal = document.getElementById("lightboxModal");
+        if (modal) {
+          modal.classList.remove("hidden");
+          document.body.style.overflow = "hidden"; // lock page scroll
+          updateLightboxContent();
+        }
+      }
+
+      function closeLightbox() {
+        const modal = document.getElementById("lightboxModal");
+        if (modal) {
+          modal.classList.add("hidden");
+          document.body.style.overflow = ""; // unlock
+        }
+      }
+
+      function updateLightboxContent() {
+        const item = GALLERY_ITEMS[lightboxIndex];
+        
+        const img = document.getElementById("lightboxImg");
+        const title = document.getElementById("lightboxTitle");
+        const category = document.getElementById("lightboxCategory");
+        const desc = document.getElementById("lightboxDesc");
+        const tracker = document.getElementById("lightboxTracker");
+
+        if (img) img.src = item.src;
+        if (title) title.innerText = item.title;
+        if (category) category.innerText = "📸 " + item.category + " PHOTO";
+        if (desc) desc.innerText = item.desc;
+        if (tracker) tracker.innerText = "Image " + (lightboxIndex + 1) + " of " + GALLERY_ITEMS.length;
+      }
+
+      function prevLightboxImage() {
+        lightboxIndex = (lightboxIndex - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length;
+        updateLightboxContent();
+      }
+
+      function nextLightboxImage() {
+        lightboxIndex = (lightboxIndex + 1) % GALLERY_ITEMS.length;
+        updateLightboxContent();
+      }
+
+      // Close index keys listeners
+      document.addEventListener("keydown", function(e) {
+        const modal = document.getElementById("lightboxModal");
+        if (modal && !modal.classList.contains("hidden")) {
+          if (e.key === "Escape") closeLightbox();
+          if (e.key === "ArrowLeft") prevLightboxImage();
+          if (e.key === "ArrowRight") nextLightboxImage();
+        }
+      });
+
+      // 6. Guest Reviews Filter Logic
+      function filterReviews(starsFilter) {
+        // Toggle active tab style
+        const starBtnElements = document.querySelectorAll(".review-tab-btn");
+        starBtnElements.forEach(btn => {
+          const ratingAttr = btn.getAttribute("data-rating");
+          const isMatch = (starsFilter === "all" && ratingAttr === "all") || (ratingAttr == starsFilter);
+          
+          if (isMatch) {
+            btn.classList.add("bg-natural-tan", "text-natural-green");
+            btn.classList.remove("border-natural-cream/10", "text-natural-cream/70");
+          } else {
+            btn.classList.remove("bg-natural-tan", "text-natural-green");
+            btn.classList.add("border-natural-cream/10", "text-natural-cream/70");
+          }
+        });
+
+        // Loop reviews cards
+        const reviews = document.querySelectorAll(".review-card");
+        let shownCount = 0;
+        
+        reviews.forEach(rev => {
+          const itemStars = parseInt(rev.getAttribute("data-rating"), 10);
+          if (starsFilter === "all" || itemStars === starsFilter) {
+            rev.classList.remove("hidden");
+            shownCount++;
+          } else {
+            rev.classList.add("hidden");
+          }
+        });
+
+        // Notice element if empty
+        const notice = document.getElementById("noReviewsNotice");
+        if (notice) {
+          if (shownCount === 0) {
+            notice.classList.remove("hidden");
+          } else {
+            notice.classList.add("hidden");
+          }
+        }
+      }
+
+      // 7. Live summary updates inside booking form
+      function updateLiveSummary() {
+        const nameVal = document.getElementById("guestName").value.trim();
+        const phoneVal = document.getElementById("guestPhone").value.trim();
+        const cottageVal = document.getElementById("guestCottage").value;
+        const checkInVal = document.getElementById("checkInDate").value;
+        const checkOutVal = document.getElementById("checkOutDate").value;
+        const adultsVal = document.getElementById("adultsCount").value;
+        
+        const summaryText = document.getElementById("summaryText");
+        
+        if (!nameVal || !phoneVal) {
+          summaryText.innerHTML = "Please enter your name, dates, and WhatsApp number above to generate your holiday summary.";
+          return;
+        }
+
+        const dateInForm = checkInVal ? new Date(checkInVal).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }) : "Flexible";
+        const dateOutForm = checkOutVal ? new Date(checkOutVal).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }) : "Flexible";
+        
+        summaryText.innerHTML = `Hi <b>${nameVal}</b>! You are planning a stay in the <b>${cottageVal}</b> for <b>${adultsVal} Guest(s)</b>. Proposed check-in is <b>${dateInForm}</b> and check-out is <b>${dateOutForm}</b>. Tap below to check availability instantly with our reception desk.`;
+      }
+
+      // 8. Compile and send message via WhatsApp
+      function sendWhatsApp(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById("guestName").value.trim();
+        const phone = document.getElementById("guestPhone").value.trim();
+        const email = document.getElementById("guestEmail").value.trim();
+        const cottage = document.getElementById("guestCottage").value;
+        const checkIn = document.getElementById("checkInDate").value;
+        const checkOut = document.getElementById("checkOutDate").value;
+        const adults = document.getElementById("adultsCount").value;
+        const notes = document.getElementById("guestNotes").value.trim();
+
+        if (!name || !phone) return;
+
+        // Compile clean formatted text message
+        let msg = `*Gokarna Ocean Beach View Inquiry* 🏖️\n\n`;
+        msg += `I would like to submit a direct booking request:\n`;
+        msg += `---------------------------------\n`;
+        msg += `👤 *Guest Name*: ${name}\n`;
+        msg += `✉️ *Email Address*: ${email ? email : "Not Provided"}\n`;
+        msg += `📱 *WhatsApp Number*: ${phone}\n`;
+        msg += `🏡 *Room Selected*: ${cottage}\n`;
+        msg += `📅 *Desired Arrival*: ${checkIn ? new Date(checkIn).toDateString() : "Flexible"}\n`;
+        msg += `📅 *Desired Departure*: ${checkOut ? new Date(checkOut).toDateString() : "Flexible"}\n`;
+        msg += `👥 *Adults Count*: ${adults} Guest(s)\n`;
+        msg += `---------------------------------\n`;
+        msg += `📝 *Notes & Custom Request details*:\n"${notes ? notes : "Standard Beach Stay Request"}"\n\n`;
+        msg += `Please check availability and revert back to me at this number. Thank you! 🙏`;
+
+        const encodedMsg = encodeURIComponent(msg);
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=919980242504&text=${encodedMsg}`;
+        
+        window.open(whatsappUrl, "_blank");
+      }
+    </script>
+  </body>
+</html>
